@@ -59,7 +59,9 @@
             <aside class="summary" aria-labelledby="summary-title">
               <h3 id="summary-title">Sumário provisório</h3>
               <ol>
-                <li class="current"><a href="#aula-1">O que é JavaScript?</a></li>
+                <li class="current">
+                  <a href="#aula-1">O que é JavaScript e como pensar sem decorar tudo</a>
+                </li>
                 <li>Variáveis e valores <span>Em breve</span></li>
                 <li>Operadores básicos <span>Em breve</span></li>
                 <li>Condições <span>Em breve</span></li>
@@ -67,43 +69,112 @@
               </ol>
             </aside>
 
-            <!-- Aula modelo para definir a estrutura do curso -->
+            <!-- Primeira aula real do curso -->
             <article class="lesson" id="aula-1">
               <header class="lesson-header">
                 <span>Aula 1</span>
-                <h3>O que é JavaScript?</h3>
+                <h3>O que é JavaScript e como pensar sem decorar tudo</h3>
               </header>
 
               <section>
                 <h4>Objetivo</h4>
-                <p>Entender, de forma inicial, para que o JavaScript é usado.</p>
+                <p>
+                  Entender para que o JavaScript é usado, aprender a ler um
+                  código simples em português e fazer um primeiro teste no
+                  console do navegador.
+                </p>
               </section>
 
               <section>
                 <h4>Explicação simples</h4>
                 <p>
-                  JavaScript é uma linguagem de programação muito usada para
-                  adicionar comportamento e interatividade às páginas da web.
+                  JavaScript é uma linguagem de programação: uma forma de
+                  escrever instruções para o computador. Em uma página, cada
+                  tecnologia tem um papel principal:
+                </p>
+                <ul>
+                  <li><strong>HTML</strong> organiza o conteúdo.</li>
+                  <li><strong>CSS</strong> cuida da aparência.</li>
+                  <li>
+                    <strong>JavaScript</strong> cria comportamentos, lógica e
+                    interação.
+                  </li>
+                </ul>
+                <p>
+                  Lógica é a sequência de instruções usada para chegar a um
+                  resultado. No começo, você não precisa decorar todos os
+                  comandos. O mais importante é entender o que cada linha pede
+                  ao computador e saber onde consultar quando tiver dúvida.
                 </p>
               </section>
 
               <section class="pronunciation">
                 <h4>Como ler em português</h4>
-                <p><strong>JavaScript</strong>: “djáva-scrípt”.</p>
-              </section>
-
-              <section>
-                <h4>Exemplo</h4>
-                <pre><code>// Mostra uma mensagem no console
-console.log("Olá, mundo!");</code></pre>
-              </section>
-
-              <section>
-                <h4>Exercício</h4>
                 <p>
-                  Altere o exemplo para exibir a mensagem
-                  <strong>“Estou aprendendo JavaScript!”</strong>.
+                  Leia o código como uma sequência de instruções simples:
+                  <strong
+                    >“Guarde o texto Carlos dentro de uma caixinha chamada
+                    nome. Depois, mostre no console a mensagem Olá,
+                    Carlos.”</strong
+                  >
                 </p>
+                <p>
+                  Essa “caixinha” é uma <strong>variável</strong>: um nome usado
+                  para guardar um valor. Traduzir cada linha para o português
+                  ajuda mais do que tentar decorar o código.
+                </p>
+              </section>
+
+              <section>
+                <h4>Exemplo comentado</h4>
+                <pre><code>// Guarda um texto na variável nome
+const nome = "Carlos";
+
+// Mostra a mensagem no console
+console.log("Olá, " + nome);
+
+// Também é possível mostrar um número
+console.log(10);</code></pre>
+                <p>
+                  <code>const</code> cria uma variável. O sinal de
+                  <code>+</code> junta o texto <code>"Olá, "</code> ao nome
+                  guardado. Já <code>console.log()</code> mostra o resultado no
+                  console. Textos ficam entre aspas; números, como
+                  <code>10</code>, não precisam delas.
+                </p>
+              </section>
+
+              <section>
+                <h4>Erros comuns</h4>
+                <ul>
+                  <li>Esquecer as aspas ao escrever um texto.</li>
+                  <li>Digitar <code>console.log</code> de forma diferente.</li>
+                  <li>Usar <code>nome</code> antes de criar essa variável.</li>
+                </ul>
+              </section>
+
+              <section>
+                <h4>Exercício básico</h4>
+                <p>
+                  Crie uma variável com o seu nome e mostre no console uma
+                  mensagem de boas-vindas. Por exemplo:
+                  <strong>“Olá, Ana!”</strong>
+                </p>
+              </section>
+
+              <section>
+                <h4>Como testar no console</h4>
+                <ol>
+                  <li>Abra as ferramentas do navegador com a tecla <kbd>F12</kbd>.</li>
+                  <li>Escolha a aba <strong>Console</strong>.</li>
+                  <li>Digite ou cole uma linha do código por vez.</li>
+                  <li>Pressione <kbd>Enter</kbd> e observe a mensagem.</li>
+                </ol>
+                <p>O console é um espaço de teste: errar e tentar novamente faz parte.</p>
+              </section>
+
+              <section>
+                <h4>Resposta correta</h4>
 
                 <!-- A resposta começa oculta e é controlada pelo JavaScript -->
                 <button
@@ -116,13 +187,34 @@ console.log("Olá, mundo!");</code></pre>
                 </button>
 
                 <div class="answer" id="exercise-answer" hidden>
-                  <h5>Resposta comentada</h5>
-                  <pre><code>console.log("Estou aprendendo JavaScript!");</code></pre>
+                  <pre><code>// Troque Ana pelo seu nome
+const meuNome = "Ana";
+
+// Mostra a mensagem de boas-vindas
+console.log("Olá, " + meuNome + "!");</code></pre>
+                  <h5>Explicação da resposta</h5>
                   <p>
-                    Mantemos <code>console.log()</code> e trocamos apenas o texto
-                    entre aspas, que é a mensagem exibida.
+                    Na primeira linha, <code>const meuNome = "Ana";</code> cria a
+                    variável <code>meuNome</code> e guarda o texto
+                    <code>"Ana"</code> nela.
+                  </p>
+                  <p>
+                    Na segunda instrução, <code>console.log()</code> mostra a
+                    mensagem. Os sinais de <code>+</code> juntam o começo da
+                    frase, o nome guardado e o ponto de exclamação.
                   </p>
                 </div>
+              </section>
+
+              <section>
+                <h4>Aplicação prática no projeto</h4>
+                <p>
+                  Por enquanto, basta reconhecer o papel do JavaScript. Nas
+                  próximas etapas dos projetos, ele poderá abrir respostas,
+                  reagir a botões e atualizar partes da página. Essas mudanças
+                  serão feitas aos poucos, depois que cada conceito necessário
+                  for ensinado.
+                </p>
               </section>
             </article>
           </div>

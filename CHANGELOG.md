@@ -2,6 +2,15 @@
 
 Este arquivo registra as principais mudanças do projeto Guias de Programação.
 
+## 2026-08-14 — Aula 1 do JavaScript Iniciante
+
+### Adicionado
+
+- Aula 1 real: **O que é JavaScript e como pensar sem decorar tudo**.
+- Explicação dos papéis de HTML, CSS e JavaScript.
+- Primeiro exemplo e exercício para testar no console do navegador.
+- Leitura do código em português e resposta comentada linha por linha.
+
 ## 2026-08-14 — Estrutura inicial
 
 ### Adicionado
