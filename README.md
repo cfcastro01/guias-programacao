@@ -22,7 +22,8 @@ guias-programacao/
 ├── CHANGELOG.md
 ├── cursos/
 │   └── javascript-iniciante/
-│       └── README.md
+│       ├── README.md
+│       └── MODELO_DE_AULA.md
 └── projetos/
     ├── landing-page-interativa/
     │   └── README.md
@@ -34,6 +35,7 @@ guias-programacao/
 - `AGENTS.md` orienta futuras alterações realizadas por IA/Codex.
 - `CHANGELOG.md` registra as principais mudanças do projeto.
 - `cursos/` organiza cada curso em uma pasta própria.
+- `MODELO_DE_AULA.md` define o padrão didático das aulas de JavaScript Iniciante.
 - `projetos/` reserva uma pasta para cada projeto prático.
 - Os READMEs internos registram somente o escopo planejado, sem antecipar o conteúdo completo.
 
