@@ -2,6 +2,18 @@
 
 Este arquivo registra as principais mudanças do projeto Guias de Programação.
 
+## 2026-08-14 — Aula 2 do JavaScript Iniciante
+
+### Adicionado
+
+- Aula 2 real: **Variáveis e valores: guardando informações no JavaScript**.
+- Exemplos básicos de texto, número e valor booleano com `const` e `let`.
+- Exercício com resposta comentada e teste pelo console do navegador.
+
+### Alterado
+
+- Controle das respostas expansíveis adaptado para funcionar em mais de uma aula.
+
 ## 2026-08-14 — Aula 1 do JavaScript Iniciante
 
 ### Adicionado

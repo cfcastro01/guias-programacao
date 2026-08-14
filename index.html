@@ -55,22 +55,25 @@
           </div>
 
           <div class="course-layout">
-            <!-- Sumário provisório; apenas a primeira aula está disponível -->
+            <!-- Sumário provisório; as duas primeiras aulas estão disponíveis -->
             <aside class="summary" aria-labelledby="summary-title">
               <h3 id="summary-title">Sumário provisório</h3>
               <ol>
                 <li class="current">
                   <a href="#aula-1">O que é JavaScript e como pensar sem decorar tudo</a>
                 </li>
-                <li>Variáveis e valores <span>Em breve</span></li>
+                <li class="current">
+                  <a href="#aula-2">Variáveis e valores</a>
+                </li>
                 <li>Operadores básicos <span>Em breve</span></li>
                 <li>Condições <span>Em breve</span></li>
                 <li>Funções <span>Em breve</span></li>
               </ol>
             </aside>
 
-            <!-- Primeira aula real do curso -->
-            <article class="lesson" id="aula-1">
+            <div class="lessons">
+              <!-- Primeira aula real do curso -->
+              <article class="lesson" id="aula-1">
               <header class="lesson-header">
                 <span>Aula 1</span>
                 <h3>O que é JavaScript e como pensar sem decorar tudo</h3>
@@ -216,7 +219,180 @@ console.log("Olá, " + meuNome + "!");</code></pre>
                   for ensinado.
                 </p>
               </section>
-            </article>
+              </article>
+
+              <!-- Segunda aula real do curso -->
+              <article class="lesson" id="aula-2">
+                <header class="lesson-header">
+                  <span>Aula 2</span>
+                  <h3>Variáveis e valores: guardando informações no JavaScript</h3>
+                </header>
+
+                <section>
+                  <h4>Objetivo</h4>
+                  <p>
+                    Entender o que são variáveis, conhecer valores básicos e
+                    usar <code>const</code> e <code>let</code> em testes simples
+                    no console.
+                  </p>
+                </section>
+
+                <section>
+                  <h4>Explicação simples</h4>
+                  <p>
+                    Uma variável guarda uma informação para que possamos usá-la
+                    depois. Podemos imaginá-la como uma caixinha com nome, mas
+                    isso é apenas uma analogia para facilitar o começo.
+                  </p>
+                  <p>
+                    Em <code>const nome = "Ana";</code>, <code>nome</code> é o
+                    nome da variável e <code>"Ana"</code> é o valor guardado.
+                    Use <code>const</code> quando esse valor não precisar mudar.
+                    Use <code>let</code> quando ele precisar mudar durante o
+                    programa.
+                  </p>
+                  <p>
+                    Você também pode encontrar <code>var</code> em códigos
+                    antigos. Ele é outra forma de criar variáveis, mas não será
+                    nosso foco agora.
+                  </p>
+                  <p>Por enquanto, vamos usar três tipos de valor:</p>
+                  <ul>
+                    <li><strong>Texto ou string:</strong> fica entre aspas, como <code>"Ana"</code>.</li>
+                    <li><strong>Número:</strong> não usa aspas, como <code>30</code>.</li>
+                    <li>
+                      <strong>Verdadeiro ou falso, chamado booleano:</strong>
+                      usa <code>true</code> ou <code>false</code>.
+                    </li>
+                  </ul>
+                </section>
+
+                <section class="pronunciation">
+                  <h4>Como ler em português</h4>
+                  <p>
+                    <strong
+                      >“Crie uma caixinha chamada nome e guarde o texto Ana.
+                      Crie uma caixinha chamada idade e guarde o número 30.
+                      Crie uma caixinha chamada estaEstudando e guarde
+                      verdadeiro. Depois, mostre esses valores no console.”</strong
+                    >
+                  </p>
+                  <p>
+                    Para <code>let pontos = 0;</code> e
+                    <code>pontos = 10;</code>, leia: “Comece com zero pontos.
+                    Depois, troque esse valor por dez.”
+                  </p>
+                </section>
+
+                <section>
+                  <h4>Exemplo comentado</h4>
+                  <pre><code>// Valores que não precisam mudar
+const nome = "Ana";
+const idade = 30;
+const estaEstudando = true;
+
+console.log(nome);
+console.log(idade);
+console.log(estaEstudando);
+
+// Este valor pode mudar
+let pontos = 0;
+pontos = 10;
+
+console.log(pontos);</code></pre>
+                  <p>
+                    As três primeiras variáveis usam <code>const</code>. A
+                    variável <code>pontos</code> usa <code>let</code> porque seu
+                    valor muda de <code>0</code> para <code>10</code>.
+                  </p>
+                </section>
+
+                <section>
+                  <h4>Erros comuns</h4>
+                  <ul>
+                    <li>Esquecer as aspas em um texto.</li>
+                    <li>Colocar aspas em um número e transformá-lo em texto.</li>
+                    <li>Tentar trocar o valor de uma variável criada com <code>const</code>.</li>
+                    <li>Escrever <code>True</code> ou <code>False</code> com letra maiúscula.</li>
+                  </ul>
+                </section>
+
+                <section>
+                  <h4>Exercício básico</h4>
+                  <p>Crie variáveis para guardar:</p>
+                  <ul>
+                    <li>seu nome;</li>
+                    <li>sua idade;</li>
+                    <li>se você está estudando JavaScript;</li>
+                    <li>uma pontuação inicial.</li>
+                  </ul>
+                  <p>Depois, mostre cada valor no console.</p>
+                </section>
+
+                <section>
+                  <h4>Como testar no console</h4>
+                  <ol>
+                    <li>Abra as ferramentas do navegador com <kbd>F12</kbd>.</li>
+                    <li>Entre na aba <strong>Console</strong>.</li>
+                    <li>Digite ou cole as variáveis uma vez.</li>
+                    <li>Execute cada <code>console.log()</code> e confira o valor mostrado.</li>
+                  </ol>
+                </section>
+
+                <section>
+                  <h4>Resposta correta</h4>
+
+                  <button
+                    class="answer-toggle"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="exercise-answer-2"
+                  >
+                    Mostrar resposta comentada
+                  </button>
+
+                  <div class="answer" id="exercise-answer-2" hidden>
+                    <pre><code>// Troque os valores pelos seus dados
+const meuNome = "Ana";
+const minhaIdade = 30;
+const estouEstudandoJavaScript = true;
+let pontuacao = 0;
+
+console.log(meuNome);
+console.log(minhaIdade);
+console.log(estouEstudandoJavaScript);
+console.log(pontuacao);</code></pre>
+                    <h5>Explicação da resposta</h5>
+                    <ul>
+                      <li><code>const meuNome = "Ana";</code> guarda um texto.</li>
+                      <li><code>const minhaIdade = 30;</code> guarda um número.</li>
+                      <li>
+                        <code>const estouEstudandoJavaScript = true;</code> guarda
+                        o valor verdadeiro.
+                      </li>
+                      <li>
+                        <code>let pontuacao = 0;</code> guarda a pontuação em uma
+                        variável que poderá mudar.
+                      </li>
+                      <li>
+                        Cada <code>console.log()</code> mostra no console o valor
+                        da variável escrita entre os parênteses.
+                      </li>
+                    </ul>
+                  </div>
+                </section>
+
+                <section>
+                  <h4>Aplicação prática no projeto</h4>
+                  <p>
+                    Nos projetos futuros, variáveis poderão guardar o nome de
+                    um botão, o texto de uma mensagem, a quantidade de itens, o
+                    estado de aberto ou fechado e uma pontuação ou progresso.
+                    Essas aplicações serão construídas aos poucos.
+                  </p>
+                </section>
+              </article>
+            </div>
           </div>
         </div>
       </section>
