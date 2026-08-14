@@ -2,6 +2,14 @@
 
 Este arquivo registra as principais mudanças do projeto Guias de Programação.
 
+## 2026-08-14 — Aula 3 do JavaScript Iniciante
+
+### Adicionado
+
+- Aula 3 real: **Operadores básicos: calculando, comparando e juntando valores**.
+- Exemplos de operadores matemáticos, de atribuição, comparação e lógica.
+- Exercício com resposta comentada e teste pelo console do navegador.
+
 ## 2026-08-14 — Aula 2 do JavaScript Iniciante
 
 ### Adicionado

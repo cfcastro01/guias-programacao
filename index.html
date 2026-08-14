@@ -55,7 +55,7 @@
           </div>
 
           <div class="course-layout">
-            <!-- Sumário provisório; as duas primeiras aulas estão disponíveis -->
+            <!-- Sumário provisório; as três primeiras aulas estão disponíveis -->
             <aside class="summary" aria-labelledby="summary-title">
               <h3 id="summary-title">Sumário provisório</h3>
               <ol>
@@ -65,7 +65,9 @@
                 <li class="current">
                   <a href="#aula-2">Variáveis e valores</a>
                 </li>
-                <li>Operadores básicos <span>Em breve</span></li>
+                <li class="current">
+                  <a href="#aula-3">Operadores básicos</a>
+                </li>
                 <li>Condições <span>Em breve</span></li>
                 <li>Funções <span>Em breve</span></li>
               </ol>
@@ -389,6 +391,208 @@ console.log(pontuacao);</code></pre>
                     um botão, o texto de uma mensagem, a quantidade de itens, o
                     estado de aberto ou fechado e uma pontuação ou progresso.
                     Essas aplicações serão construídas aos poucos.
+                  </p>
+                </section>
+              </article>
+
+              <!-- Terceira aula real do curso -->
+              <article class="lesson" id="aula-3">
+                <header class="lesson-header">
+                  <span>Aula 3</span>
+                  <h3>Operadores básicos: calculando, comparando e juntando valores</h3>
+                </header>
+
+                <section>
+                  <h4>Objetivo</h4>
+                  <p>
+                    Entender como operadores calculam, juntam e comparam
+                    valores, além de começar a fazer perguntas que resultam em
+                    <code>true</code> ou <code>false</code>.
+                  </p>
+                </section>
+
+                <section>
+                  <h4>Explicação simples</h4>
+                  <p>
+                    Operadores são símbolos que dizem ao JavaScript o que fazer
+                    com os valores. Alguns devolvem um número, outros juntam
+                    textos e outros respondem verdadeiro ou falso.
+                  </p>
+                  <p><strong>Operadores matemáticos:</strong></p>
+                  <ul>
+                    <li><code>+</code> soma números ou junta textos.</li>
+                    <li><code>-</code> faz uma subtração.</li>
+                    <li><code>*</code> faz uma multiplicação.</li>
+                    <li><code>/</code> faz uma divisão.</li>
+                    <li><code>%</code> encontra o resto de uma divisão.</li>
+                  </ul>
+                  <p>
+                    O operador <code>=</code> faz uma
+                    <strong>atribuição</strong>: ele guarda um valor em uma
+                    variável. Já <code>===</code> compara dois valores e pergunta
+                    se eles são exatamente iguais.
+                  </p>
+                  <p><strong>Operadores de comparação:</strong></p>
+                  <ul>
+                    <li><code>===</code> pergunta se os valores são iguais.</li>
+                    <li><code>!==</code> pergunta se os valores são diferentes.</li>
+                    <li><code>&gt;</code> e <code>&lt;</code> comparam qual valor é maior ou menor.</li>
+                    <li>
+                      <code>&gt;=</code> e <code>&lt;=</code> também aceitam valores
+                      iguais na comparação.
+                    </li>
+                  </ul>
+                  <p><strong>Operadores lógicos:</strong></p>
+                  <ul>
+                    <li><code>&amp;&amp;</code> exige que as duas respostas sejam verdadeiras.</li>
+                    <li><code>||</code> exige que pelo menos uma seja verdadeira.</li>
+                    <li><code>!</code> inverte verdadeiro e falso.</li>
+                  </ul>
+                  <p>
+                    Por enquanto, use esses operadores apenas para montar
+                    perguntas simples. As decisões com condições serão assunto
+                    da próxima aula.
+                  </p>
+                </section>
+
+                <section class="pronunciation">
+                  <h4>Como ler em português</h4>
+                  <ul>
+                    <li><code>preco - desconto</code>: pegue o preço e tire o desconto.</li>
+                    <li><code>"Olá, " + nome</code>: junte o texto “Olá” ao nome.</li>
+                    <li><code>total === 40</code>: total é exatamente igual a 40?</li>
+                    <li><code>temCadastro &amp;&amp; pagou</code>: tem cadastro E pagou?</li>
+                    <li><code>temCadastro || pagou</code>: tem cadastro OU pagou?</li>
+                    <li><code>!pagou</code>: inverta a resposta guardada em pagou.</li>
+                  </ul>
+                </section>
+
+                <section>
+                  <h4>Exemplo comentado</h4>
+                  <pre><code>// Calcula o preço com desconto
+const preco = 50;
+const desconto = 10;
+const total = preco - desconto;
+
+console.log(total);
+
+// O sinal de + junta textos
+const nome = "Ana";
+console.log("Olá, " + nome);
+
+// Estas comparações respondem true ou false
+console.log(total === 40);
+console.log(total > 30);
+console.log(total &lt; 30);
+
+// Combina e inverte respostas
+const temCadastro = true;
+const pagou = false;
+
+console.log(temCadastro &amp;&amp; pagou);
+console.log(temCadastro || pagou);
+console.log(!pagou);</code></pre>
+                  <p>
+                    Com números, <code>+</code> soma: <code>2 + 3</code> resulta
+                    em <code>5</code>. Com textos, ele junta:
+                    <code>"Olá, " + "Ana"</code> resulta em
+                    <code>"Olá, Ana"</code>.
+                  </p>
+                </section>
+
+                <section>
+                  <h4>Erros comuns</h4>
+                  <ul>
+                    <li>Usar <code>=</code> quando a intenção é comparar com <code>===</code>.</li>
+                    <li>Esperar uma soma ao usar <code>+</code> com um número entre aspas.</li>
+                    <li>Escrever <code>&gt; =</code> em vez de <code>&gt;=</code>.</li>
+                    <li>Confundir <code>&amp;&amp;</code> com <code>||</code>.</li>
+                  </ul>
+                </section>
+
+                <section>
+                  <h4>Exercício básico</h4>
+                  <p>Crie:</p>
+                  <ul>
+                    <li>uma variável com o valor de um produto;</li>
+                    <li>uma variável com o valor de um desconto;</li>
+                    <li>uma variável com o preço final;</li>
+                    <li>uma comparação para saber se o preço final é menor que 100;</li>
+                    <li>as variáveis booleanas <code>temCupom</code> e <code>freteGratis</code>;</li>
+                    <li>um teste usando <code>&amp;&amp;</code> ou <code>||</code>.</li>
+                  </ul>
+                  <p>Mostre os resultados no console.</p>
+                </section>
+
+                <section>
+                  <h4>Como testar no console</h4>
+                  <ol>
+                    <li>Abra as ferramentas do navegador com <kbd>F12</kbd>.</li>
+                    <li>Entre na aba <strong>Console</strong>.</li>
+                    <li>Digite as variáveis e pressione <kbd>Enter</kbd>.</li>
+                    <li>Execute os <code>console.log()</code> e observe os resultados.</li>
+                  </ol>
+                  <p>
+                    Se você repetir uma variável criada com <code>const</code> e
+                    o mesmo nome, o navegador pode mostrar um erro. Recarregue
+                    a página e limpe as mensagens do console, ou use outro nome
+                    para a variável.
+                  </p>
+                </section>
+
+                <section>
+                  <h4>Resposta correta</h4>
+
+                  <button
+                    class="answer-toggle"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="exercise-answer-3"
+                  >
+                    Mostrar resposta comentada
+                  </button>
+
+                  <div class="answer" id="exercise-answer-3" hidden>
+                    <pre><code>const valorProduto = 120;
+const valorDesconto = 30;
+const precoFinal = valorProduto - valorDesconto;
+const custaMenosDeCem = precoFinal &lt; 100;
+
+const temCupom = true;
+const freteGratis = false;
+const temBeneficio = temCupom || freteGratis;
+
+console.log(precoFinal);
+console.log(custaMenosDeCem);
+console.log(temBeneficio);</code></pre>
+                    <h5>Explicação da resposta</h5>
+                    <ul>
+                      <li><code>valorProduto</code> guarda o número <code>120</code>.</li>
+                      <li><code>valorDesconto</code> guarda o número <code>30</code>.</li>
+                      <li><code>precoFinal</code> guarda o resultado da subtração: <code>90</code>.</li>
+                      <li>
+                        <code>custaMenosDeCem</code> guarda <code>true</code>,
+                        porque <code>90</code> é menor que <code>100</code>.
+                      </li>
+                      <li><code>temCupom</code> guarda verdadeiro.</li>
+                      <li><code>freteGratis</code> guarda falso.</li>
+                      <li>
+                        <code>temBeneficio</code> guarda <code>true</code>, pois
+                        o operador <code>||</code> precisa de apenas uma resposta
+                        verdadeira.
+                      </li>
+                      <li>Os três <code>console.log()</code> mostram os resultados.</li>
+                    </ul>
+                  </div>
+                </section>
+
+                <section>
+                  <h4>Aplicação prática no projeto</h4>
+                  <p>
+                    Nos projetos futuros, operadores poderão calcular totais,
+                    verificar se um item está completo, comparar valores,
+                    decidir se uma resposta deve aparecer e conferir se uma
+                    ação pode acontecer. Essa lógica será construída aos poucos.
                   </p>
                 </section>
               </article>
