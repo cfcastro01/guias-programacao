@@ -2,6 +2,15 @@
 
 Este arquivo registra as principais mudanças do projeto Guias de Programação.
 
+## 2026-09-28 — Aula 5 do JavaScript Iniciante
+
+### Adicionado
+
+- Aula 5 real: **Funções: criando instruções para usar quando precisar**.
+- Explicações sobre criação, chamada, parâmetros e referência a uma função.
+- Introdução breve a funções anônimas, com exercício e resposta comentada.
+- Controle de conclusão integrado ao progresso local do curso.
+
 ## 2026-09-28 — Aula 4 do JavaScript Iniciante
 
 ### Adicionado

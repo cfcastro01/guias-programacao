@@ -1,6 +1,6 @@
 # Guias de Programação
 
-Projeto local de cursos e projetos práticos para quem está começando a programar. A versão atual apresenta o curso **JavaScript Iniciante**, com um sumário provisório e as quatro primeiras aulas.
+Projeto local de cursos e projetos práticos para quem está começando a programar. A versão atual apresenta o curso **JavaScript Iniciante**, com um sumário provisório e as cinco primeiras aulas.
 
 ## Tecnologias
 
@@ -57,7 +57,7 @@ Na primeira execução, o `npx` pode pedir confirmação para baixar temporariam
 
 ## Escopo atual
 
-Esta é apenas a estrutura inicial. As Aulas 1, 2, 3 e 4 estão na página principal
+Esta é apenas a estrutura inicial. As Aulas 1, 2, 3, 4 e 5 estão na página principal
 para facilitar o desenvolvimento neste começo. Cada aula disponível pode ser
 marcada como concluída, e esse estado permanece salvo localmente no navegador.
 Quando houver mais conteúdo, cada curso ou projeto poderá receber suas próprias
