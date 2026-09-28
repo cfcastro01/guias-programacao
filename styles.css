@@ -209,7 +209,8 @@ h1 {
 .summary {
   position: sticky;
   top: 92px;
-  overflow: hidden;
+  max-height: calc(100vh - 116px);
+  overflow-y: auto;
   border: 1px solid var(--border);
   border-radius: var(--radius);
   background: var(--surface);
@@ -220,6 +221,29 @@ h1 {
   margin: 0;
   border-bottom: 1px solid var(--border);
   font-size: 1rem;
+}
+
+.summary:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.summary-group {
+  border-bottom: 1px solid var(--border);
+}
+
+.summary-group:last-child {
+  border-bottom: 0;
+}
+
+.summary-group h4 {
+  padding: 0.9rem 1.3rem 0.65rem;
+  margin: 0;
+  background: #141520;
+  color: var(--text);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .summary ol {
@@ -242,6 +266,11 @@ h1 {
   background: var(--surface-soft);
   color: var(--primary);
   font-weight: 750;
+}
+
+.summary li.future {
+  background: var(--surface);
+  color: var(--text-soft);
 }
 
 .summary a {
@@ -269,6 +298,41 @@ h1 {
 
 .summary li.is-completed .lesson-status {
   color: var(--accent);
+}
+
+.summary-project {
+  padding-bottom: 1rem;
+  background: #141520;
+}
+
+.summary-project-card {
+  padding: 1rem;
+  margin: 0 1.3rem;
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--primary);
+  border-radius: 10px;
+  background: var(--surface-soft);
+}
+
+.summary-project-card strong,
+.summary-project-card .project-status {
+  display: block;
+}
+
+.summary-project-card .project-status {
+  margin-top: 0.25rem;
+  color: var(--primary);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.summary-project-card p {
+  margin: 0.65rem 0 0;
+  color: var(--text-soft);
+  font-size: 0.85rem;
+  line-height: 1.55;
 }
 
 /* Coluna com as aulas disponíveis */
@@ -506,6 +570,8 @@ footer p {
 
   .summary {
     position: static;
+    max-height: none;
+    overflow: visible;
   }
 
   .projects-grid {

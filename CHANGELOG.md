@@ -2,6 +2,14 @@
 
 Este arquivo registra as principais mudanças do projeto Guias de Programação.
 
+## 2026-09-28 — Trilha planejada no sumário
+
+### Alterado
+
+- Sumário reorganizado em cinco blocos didáticos, com as aulas 1 a 5 disponíveis.
+- Aulas 6 a 16 incluídas como conteúdos futuros, sem links ou progresso.
+- Landing Page Interativa e Mini Checklist apresentados como projetos planejados.
+
 ## 2026-09-28 — Aula 5 do JavaScript Iniciante
 
 ### Adicionado
