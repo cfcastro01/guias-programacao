@@ -108,9 +108,13 @@
               <div class="summary-group">
                 <h4>Dados e coleções</h4>
                 <ol start="6">
-                  <li class="future">
-                    Arrays: trabalhando com listas
-                    <span class="coming-soon">Em breve</span>
+                  <li
+                    class="current"
+                    data-course-id="javascript-iniciante"
+                    data-lesson-id="aula-6"
+                  >
+                    <a href="#aula-6">Arrays: trabalhando com listas</a>
+                    <span class="lesson-status">Não concluída</span>
                   </li>
                   <li class="future">
                     Objetos: organizando informações
@@ -1312,6 +1316,259 @@ mostrarAviso();</code></pre>
                       type="checkbox"
                       data-course-id="javascript-iniciante"
                       data-lesson-id="aula-5"
+                    />
+                    <span class="completion-label-text">Marcar aula como concluída</span>
+                  </label>
+                  <p>Você pode desmarcar esta opção quando quiser.</p>
+                </section>
+              </article>
+
+              <!-- Sexta aula real do curso -->
+              <article class="lesson" id="aula-6">
+                <header class="lesson-header">
+                  <span>Aula 6</span>
+                  <h3>Arrays: trabalhando com listas</h3>
+                </header>
+
+                <section>
+                  <h4>Objetivo</h4>
+                  <p>
+                    Entender como criar uma lista em JavaScript, acessar seus
+                    itens pela posição, consultar sua quantidade e adicionar ou
+                    remover um item no final.
+                  </p>
+                </section>
+
+                <section>
+                  <h4>Explicação simples</h4>
+                  <p>
+                    Um <strong>array</strong> é uma lista de valores organizada
+                    dentro de uma única variável. Em vez de criar uma variável
+                    para cada fruta:
+                  </p>
+                  <pre><code>const fruta1 = "Maçã";
+const fruta2 = "Banana";
+const fruta3 = "Uva";</code></pre>
+                  <p>podemos guardar os três valores em uma lista:</p>
+                  <pre><code>const frutas = ["Maçã", "Banana", "Uva"];</code></pre>
+                  <p>
+                    Os colchetes <code>[]</code> indicam o começo e o fim do
+                    array. Dentro deles, os itens são separados por vírgulas.
+                    Uma variável simples guarda um valor; nesse exemplo, o array
+                    guarda vários valores relacionados.
+                  </p>
+                  <p>
+                    Cada item ocupa uma posição chamada <strong>índice</strong>.
+                    O primeiro índice é <code>0</code>:
+                  </p>
+                  <pre><code>frutas[0]  → "Maçã"
+frutas[1]  → "Banana"
+frutas[2]  → "Uva"</code></pre>
+                  <p>
+                    Uma lista com três itens possui os índices <code>0</code>,
+                    <code>1</code> e <code>2</code>. Por isso,
+                    <code>frutas[3]</code> aponta para a quarta posição, não para
+                    o terceiro item. Como essa posição não existe, o console
+                    poderá mostrar <code>undefined</code>, que indica a ausência
+                    de um valor ali.
+                  </p>
+                  <p>
+                    <code>frutas.length</code> informa a quantidade de itens e
+                    resulta em <code>3</code>. <code>length</code> é uma
+                    propriedade: uma informação da lista. Já
+                    <code>push()</code> e <code>pop()</code> são métodos: ações
+                    realizadas na lista. <code>push()</code> adiciona um item no
+                    final e <code>pop()</code> remove o último item. Os métodos
+                    serão estudados com mais detalhes em outra aula.
+                  </p>
+                </section>
+
+                <section class="pronunciation">
+                  <h4>Como ler em português</h4>
+                  <ul>
+                    <li>
+                      <code>const frutas = ["Maçã", "Banana", "Uva"];</code>:
+                      “Crie uma lista chamada frutas e guarde nela Maçã, Banana
+                      e Uva”.
+                    </li>
+                    <li>
+                      <code>frutas[0]</code>: “Pegue o item da posição zero da
+                      lista frutas”.
+                    </li>
+                    <li>
+                      <code>frutas.length</code>: “Informe quantos itens existem
+                      na lista frutas”.
+                    </li>
+                    <li>
+                      <code>frutas.push("Laranja")</code>: “Adicione Laranja ao
+                      final da lista frutas”.
+                    </li>
+                    <li>
+                      <code>frutas.pop()</code>: “Remova o último item da lista
+                      frutas”.
+                    </li>
+                  </ul>
+                </section>
+
+                <section>
+                  <h4>Exemplo comentado</h4>
+                  <pre><code>const frutas = ["Maçã", "Banana", "Uva"];
+
+// Mostra a lista completa
+console.log(frutas);
+
+// Mostra itens pelas posições zero e um
+console.log(frutas[0]);
+console.log(frutas[1]);
+
+// Mostra a quantidade: 3
+console.log(frutas.length);
+
+// Adiciona Laranja ao final
+frutas.push("Laranja");
+console.log(frutas);
+
+// Remove o último item
+frutas.pop();
+console.log(frutas);</code></pre>
+                  <p>
+                    No começo, o console mostra as três frutas. Os acessos
+                    <code>frutas[0]</code> e <code>frutas[1]</code> mostram Maçã
+                    e Banana. Depois do <code>push()</code>, a lista passa a ter
+                    quatro itens. O <code>pop()</code> remove Laranja, e a lista
+                    volta a ter três itens.
+                  </p>
+                </section>
+
+                <section>
+                  <h4>Erros comuns</h4>
+                  <ul>
+                    <li>Esquecer os colchetes <code>[]</code> da lista.</li>
+                    <li>Esquecer a vírgula entre os itens.</li>
+                    <li>Pensar que o primeiro item está no índice <code>1</code>.</li>
+                    <li>Tentar acessar um índice que não existe.</li>
+                    <li>Escrever <code>.length()</code> em vez de <code>.length</code>.</li>
+                    <li>Esquecer os parênteses em <code>.push()</code> ou <code>.pop()</code>.</li>
+                    <li>
+                      Achar que <code>pop()</code> escolhe qual item remover. Ele
+                      sempre remove o último.
+                    </li>
+                  </ul>
+                </section>
+
+                <section>
+                  <h4>Exercício básico</h4>
+                  <ol>
+                    <li>
+                      Crie um array chamado <code>tarefas</code> com “Estudar
+                      JavaScript”, “Fazer exercício” e “Revisar aula”.
+                    </li>
+                    <li>
+                      Mostre a lista completa, o primeiro item, o segundo item e
+                      a quantidade de itens.
+                    </li>
+                    <li>Adicione “Praticar código” ao final.</li>
+                    <li>Mostre novamente a lista e sua quantidade.</li>
+                    <li>Remova o último item com <code>pop()</code>.</li>
+                    <li>Mostre o resultado final.</li>
+                  </ol>
+                </section>
+
+                <section>
+                  <h4>Como testar no console</h4>
+                  <ol>
+                    <li>Abra as ferramentas do navegador com <kbd>F12</kbd>.</li>
+                    <li>Entre na aba <strong>Console</strong>.</li>
+                    <li>Crie o array primeiro.</li>
+                    <li>Execute os outros comandos um por vez.</li>
+                    <li>Observe como a lista muda depois de <code>push()</code> e <code>pop()</code>.</li>
+                  </ol>
+                  <p>
+                    Se repetir uma declaração com <code>const</code> e o mesmo
+                    nome, recarregue a página ou troque o nome da variável antes
+                    de testar novamente.
+                  </p>
+                </section>
+
+                <section>
+                  <h4>Resposta correta</h4>
+
+                  <button
+                    class="answer-toggle"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="exercise-answer-6"
+                  >
+                    Mostrar resposta comentada
+                  </button>
+
+                  <div class="answer" id="exercise-answer-6" hidden>
+                    <pre><code>const tarefas = [
+  "Estudar JavaScript",
+  "Fazer exercício",
+  "Revisar aula"
+];
+
+console.log(tarefas);
+console.log(tarefas[0]);
+console.log(tarefas[1]);
+console.log(tarefas.length);
+
+tarefas.push("Praticar código");
+
+console.log(tarefas);
+console.log(tarefas.length);
+
+tarefas.pop();
+
+console.log(tarefas);</code></pre>
+                    <h5>Explicação da resposta</h5>
+                    <ul>
+                      <li>
+                        Os colchetes criam a lista, e as vírgulas separam as
+                        três tarefas.
+                      </li>
+                      <li>
+                        <code>tarefas[0]</code> acessa a primeira tarefa, e
+                        <code>tarefas[1]</code> acessa a segunda.
+                      </li>
+                      <li>
+                        O primeiro <code>tarefas.length</code> mostra
+                        <code>3</code>.
+                      </li>
+                      <li>
+                        <code>push("Praticar código")</code> adiciona uma quarta
+                        tarefa ao final, então a quantidade passa a ser
+                        <code>4</code>.
+                      </li>
+                      <li>
+                        <code>pop()</code> remove a última tarefa e deixa a lista
+                        novamente com os três itens iniciais.
+                      </li>
+                    </ul>
+                  </div>
+                </section>
+
+                <section>
+                  <h4>Aplicação prática no projeto</h4>
+                  <p>
+                    Arrays poderão guardar itens de um checklist, perguntas,
+                    nomes de cards, opções de menu, mensagens e listas de
+                    tarefas. No Mini Checklist, um array poderá representar a
+                    lista de tarefas. O projeto será desenvolvido apenas no
+                    momento adequado da trilha.
+                  </p>
+                </section>
+
+                <section class="lesson-completion">
+                  <h4>Conclusão da aula</h4>
+                  <label class="completion-control" for="completion-aula-6">
+                    <input
+                      class="lesson-completion-input"
+                      id="completion-aula-6"
+                      type="checkbox"
+                      data-course-id="javascript-iniciante"
+                      data-lesson-id="aula-6"
                     />
                     <span class="completion-label-text">Marcar aula como concluída</span>
                   </label>

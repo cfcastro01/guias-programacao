@@ -2,6 +2,14 @@
 
 Este arquivo registra as principais mudanças do projeto Guias de Programação.
 
+## 2026-09-28 — Aula 6 do JavaScript Iniciante
+
+### Adicionado
+
+- Aula 6 real: **Arrays: trabalhando com listas**.
+- Explicações sobre índices, `length`, `push()` e `pop()`.
+- Exercício com resposta comentada e controle de conclusão integrado ao progresso local.
+
 ## 2026-09-28 — Roadmap do projeto
 
 ### Adicionado
