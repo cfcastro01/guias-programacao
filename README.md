@@ -8,7 +8,9 @@ Projeto local de cursos e projetos práticos para quem está começando a progra
 - CSS
 - JavaScript puro
 
-O projeto não utiliza dependências externas, frameworks ou banco de dados.
+O projeto não utiliza dependências externas, frameworks ou banco de dados. O
+progresso das aulas concluídas é salvo somente no navegador, com
+`localStorage`.
 
 ## Estrutura
 
@@ -55,4 +57,8 @@ Na primeira execução, o `npx` pode pedir confirmação para baixar temporariam
 
 ## Escopo atual
 
-Esta é apenas a estrutura inicial. As Aulas 1, 2 e 3 estão na página principal para facilitar o desenvolvimento neste começo. Quando houver mais conteúdo, cada curso ou projeto poderá receber suas próprias páginas dentro da pasta correspondente.
+Esta é apenas a estrutura inicial. As Aulas 1, 2 e 3 estão na página principal
+para facilitar o desenvolvimento neste começo. Cada aula disponível pode ser
+marcada como concluída, e esse estado permanece salvo localmente no navegador.
+Quando houver mais conteúdo, cada curso ou projeto poderá receber suas próprias
+páginas dentro da pasta correspondente.

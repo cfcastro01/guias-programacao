@@ -2,6 +2,14 @@
 
 Este arquivo registra as principais mudanças do projeto Guias de Programação.
 
+## 2026-09-28 — Progresso local das aulas
+
+### Adicionado
+
+- Controle para marcar e desmarcar as três aulas disponíveis como concluídas.
+- Persistência do progresso no navegador com `localStorage`, agrupada por curso.
+- Indicador textual de conclusão no sumário, acompanhado de destaque visual.
+
 ## 2026-08-14 — Aula 3 do JavaScript Iniciante
 
 ### Adicionado

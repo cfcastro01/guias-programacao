@@ -248,12 +248,27 @@ h1 {
   text-decoration: none;
 }
 
-.summary li span {
+.summary .coming-soon,
+.summary .lesson-status {
   display: block;
   margin-left: 1.45rem;
   font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
+}
+
+.summary .lesson-status {
+  margin-top: 0.2rem;
+  color: var(--text-soft);
+  letter-spacing: 0.04em;
+}
+
+.summary li.is-completed {
+  box-shadow: inset 4px 0 0 var(--accent);
+}
+
+.summary li.is-completed .lesson-status {
+  color: var(--accent);
 }
 
 /* Coluna com as aulas disponíveis */
@@ -375,6 +390,50 @@ a:focus-visible {
 
 .answer pre {
   margin-bottom: 1rem;
+}
+
+.lesson-completion {
+  background: #141622;
+}
+
+.completion-control {
+  display: flex;
+  padding: 1rem;
+  align-items: center;
+  gap: 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface-soft);
+  cursor: pointer;
+  font-weight: 750;
+}
+
+.completion-control:hover {
+  border-color: var(--primary);
+}
+
+.lesson-completion.is-completed .completion-control {
+  border-color: var(--accent);
+  background: #242115;
+}
+
+.lesson-completion-input {
+  width: 1.25rem;
+  height: 1.25rem;
+  flex: 0 0 auto;
+  margin: 0;
+  accent-color: var(--primary-dark);
+}
+
+.lesson-completion-input:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.lesson-completion p {
+  margin: 0.65rem 0 0;
+  color: var(--text-soft);
+  font-size: 0.9rem;
 }
 
 /* Área reservada para projetos que serão desenvolvidos no futuro */
