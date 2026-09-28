@@ -2,6 +2,17 @@
 
 Este arquivo registra as principais mudanças do projeto Guias de Programação.
 
+## 2026-09-28 — Roadmap do projeto
+
+### Adicionado
+
+- Arquivo `ROADMAP.md` com as etapas atuais e futuras do projeto.
+- Laboratório de JavaScript registrado como ideia futura para exercícios no site.
+
+### Observação
+
+- Nenhuma alteração funcional foi feita no site.
+
 ## 2026-09-28 — Trilha planejada no sumário
 
 ### Alterado

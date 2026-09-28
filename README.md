@@ -20,6 +20,7 @@ guias-programacao/
 ├── styles.css
 ├── script.js
 ├── README.md
+├── ROADMAP.md
 ├── AGENTS.md
 ├── CHANGELOG.md
 ├── cursos/
@@ -36,6 +37,7 @@ guias-programacao/
 - Os arquivos da raiz formam a página funcional atual.
 - `AGENTS.md` orienta futuras alterações realizadas por IA/Codex.
 - `CHANGELOG.md` registra as principais mudanças do projeto.
+- `ROADMAP.md` apresenta as próximas etapas e possibilidades futuras.
 - `cursos/` organiza cada curso em uma pasta própria.
 - `MODELO_DE_AULA.md` define o padrão didático das aulas de JavaScript Iniciante.
 - `projetos/` reserva uma pasta para cada projeto prático.
@@ -64,3 +66,8 @@ O sumário também apresenta as aulas 6 a 16 e os dois projetos práticos como
 conteúdos planejados, ainda sem links ou controles de progresso.
 Quando houver mais conteúdo, cada curso ou projeto poderá receber suas próprias
 páginas dentro da pasta correspondente.
+
+## Evolução futura
+
+Consulte o [ROADMAP.md](ROADMAP.md) para acompanhar as próximas etapas e as
+ideias que ainda não fazem parte do escopo atual.
