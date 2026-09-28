@@ -2,6 +2,14 @@
 
 Este arquivo registra as principais mudanças do projeto Guias de Programação.
 
+## 2026-09-28 — Aula 7 do JavaScript Iniciante
+
+### Adicionado
+
+- Aula 7 real: **Objetos: organizando informações**.
+- Explicações sobre propriedades, acesso com ponto, alteração e adição de dados.
+- Exercício com resposta comentada e controle de conclusão integrado ao progresso local.
+
 ## 2026-09-28 — Aula 6 do JavaScript Iniciante
 
 ### Adicionado

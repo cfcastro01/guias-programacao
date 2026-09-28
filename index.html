@@ -116,9 +116,13 @@
                     <a href="#aula-6">Arrays: trabalhando com listas</a>
                     <span class="lesson-status">Não concluída</span>
                   </li>
-                  <li class="future">
-                    Objetos: organizando informações
-                    <span class="coming-soon">Em breve</span>
+                  <li
+                    class="current"
+                    data-course-id="javascript-iniciante"
+                    data-lesson-id="aula-7"
+                  >
+                    <a href="#aula-7">Objetos: organizando informações</a>
+                    <span class="lesson-status">Não concluída</span>
                   </li>
                   <li class="future">
                     Métodos: quando uma coisa faz alguma coisa
@@ -1569,6 +1573,292 @@ console.log(tarefas);</code></pre>
                       type="checkbox"
                       data-course-id="javascript-iniciante"
                       data-lesson-id="aula-6"
+                    />
+                    <span class="completion-label-text">Marcar aula como concluída</span>
+                  </label>
+                  <p>Você pode desmarcar esta opção quando quiser.</p>
+                </section>
+              </article>
+
+              <!-- Sétima aula real do curso -->
+              <article class="lesson" id="aula-7">
+                <header class="lesson-header">
+                  <span>Aula 7</span>
+                  <h3>Objetos: organizando informações</h3>
+                </header>
+
+                <section>
+                  <h4>Objetivo</h4>
+                  <p>
+                    Entender como criar um objeto, acessar suas propriedades e
+                    alterar ou adicionar informações relacionadas à mesma coisa.
+                  </p>
+                </section>
+
+                <section>
+                  <h4>Explicação simples</h4>
+                  <p>
+                    Um <strong>objeto</strong> agrupa informações que pertencem
+                    à mesma coisa. Em vez de manter os dados de uma pessoa em
+                    variáveis separadas:
+                  </p>
+                  <pre><code>const nome = "Ana";
+const idade = 30;
+const estaEstudando = true;</code></pre>
+                  <p>podemos reuni-los em um objeto:</p>
+                  <pre><code>const pessoa = {
+  nome: "Ana",
+  idade: 30,
+  estaEstudando: true
+};</code></pre>
+                  <p>
+                    As chaves <code>{ }</code> indicam o começo e o fim do
+                    objeto. <code>nome</code>, <code>idade</code> e
+                    <code>estaEstudando</code> são propriedades, também chamadas
+                    de chaves. Cada propriedade é seguida por dois-pontos
+                    <code>:</code> e pelo seu valor. As propriedades são
+                    separadas por vírgulas.
+                  </p>
+                  <p>
+                    Para acessar uma informação, usamos um ponto entre o objeto
+                    e a propriedade: <code>pessoa.nome</code>. Nessa leitura,
+                    <code>pessoa</code> é o objeto, o ponto indica que queremos
+                    algo dentro dele e <code>nome</code> é a propriedade
+                    desejada.
+                  </p>
+                  <p>
+                    O ponto já apareceu em <code>console.log()</code>,
+                    <code>frutas.length</code> e <code>frutas.push()</code>. Por
+                    enquanto, vamos usá-lo apenas para acessar propriedades. O
+                    assunto será aprofundado na aula de métodos.
+                  </p>
+
+                  <h5>Array ou objeto?</h5>
+                  <pre><code>const frutas = ["Maçã", "Banana", "Uva"];
+
+const pessoa = {
+  nome: "Ana",
+  idade: 30
+};</code></pre>
+                  <ul>
+                    <li>
+                      Um array representa uma lista, e seus itens são acessados
+                      principalmente pela posição, como <code>frutas[0]</code>.
+                    </li>
+                    <li>
+                      Um objeto reúne informações relacionadas sobre algo, e
+                      seus valores são acessados pelo nome da propriedade, como
+                      <code>pessoa.nome</code>.
+                    </li>
+                  </ul>
+                  <p>
+                    Como explicação inicial, pense assim: um array responde
+                    melhor a “quais itens existem nesta lista?”, enquanto um
+                    objeto responde melhor a “quais informações descrevem esta
+                    coisa?”. Essa comparação ajuda no começo, mas não é uma regra
+                    absoluta para todos os programas.
+                  </p>
+                </section>
+
+                <section class="pronunciation">
+                  <h4>Como ler em português</h4>
+                  <p>Para o objeto <code>pessoa</code>, leia:</p>
+                  <ul>
+                    <li>
+                      <code>const pessoa = { ... };</code>: “Crie um objeto
+                      chamado pessoa. Nele, guarde o nome Ana, a idade 30 e a
+                      informação de que está estudando”.
+                    </li>
+                    <li>
+                      <code>pessoa.nome</code>: “Pegue a informação nome do
+                      objeto pessoa”.
+                    </li>
+                    <li>
+                      <code>pessoa.idade</code>: “Pegue a idade da pessoa”.
+                    </li>
+                    <li>
+                      <code>pessoa.idade = 31</code>: “Troque a idade da pessoa
+                      para 31”.
+                    </li>
+                    <li>
+                      <code>pessoa.cidade = "Rio de Janeiro"</code>: “Adicione ao
+                      objeto pessoa a informação cidade com o valor Rio de
+                      Janeiro”.
+                    </li>
+                  </ul>
+                </section>
+
+                <section>
+                  <h4>Exemplo comentado</h4>
+                  <pre><code>const curso = {
+  nome: "JavaScript Iniciante",
+  aulasDisponiveis: 7,
+  gratuito: true
+};
+
+// Mostra o objeto completo
+console.log(curso);
+
+// Acessa duas propriedades
+console.log(curso.nome);
+console.log(curso.aulasDisponiveis);
+
+// Altera um valor existente
+curso.aulasDisponiveis = 8;
+console.log(curso.aulasDisponiveis);
+
+// Adiciona uma nova propriedade
+curso.categoria = "Programação";
+console.log(curso);</code></pre>
+                  <p>
+                    Primeiro, o objeto reúne três informações sobre o curso. O
+                    ponto permite mostrar uma propriedade específica. Depois,
+                    <code>aulasDisponiveis</code> muda de <code>7</code> para
+                    <code>8</code>, e <code>categoria</code> é adicionada ao
+                    objeto.
+                  </p>
+                  <p>
+                    Mesmo criado com <code>const</code>, o objeto pode ter uma
+                    propriedade interna alterada. De forma simples:
+                    <code>const</code> impede trocar a variável
+                    <code>curso</code> por outro valor, mas as informações dentro
+                    do objeto ainda podem mudar.
+                  </p>
+                </section>
+
+                <section>
+                  <h4>Erros comuns</h4>
+                  <ul>
+                    <li>Confundir as chaves <code>{ }</code> do objeto com os colchetes <code>[]</code> do array.</li>
+                    <li>Esquecer os dois-pontos entre a chave e o valor.</li>
+                    <li>Esquecer a vírgula entre as propriedades.</li>
+                    <li>Tentar usar <code>pessoa[0]</code> para acessar a primeira propriedade.</li>
+                    <li>Escrever um nome de propriedade diferente do que existe.</li>
+                    <li>Esquecer o ponto em <code>pessoa.nome</code>.</li>
+                    <li>
+                      Confundir o sinal <code>=</code> usado para alterar um valor
+                      com os dois-pontos usados na criação do objeto.
+                    </li>
+                  </ul>
+                </section>
+
+                <section>
+                  <h4>Exercício básico</h4>
+                  <p>Crie um objeto chamado <code>livro</code> com:</p>
+                  <ul>
+                    <li><code>titulo</code>: “JavaScript para Iniciantes”;</li>
+                    <li><code>autor</code>: “Ana”;</li>
+                    <li><code>paginas</code>: <code>200</code>;</li>
+                    <li><code>estaLendo</code>: <code>true</code>.</li>
+                  </ul>
+                  <p>Depois:</p>
+                  <ol>
+                    <li>mostre o objeto completo;</li>
+                    <li>mostre somente o título;</li>
+                    <li>mostre somente a quantidade de páginas;</li>
+                    <li>altere o número de páginas;</li>
+                    <li>adicione uma propriedade chamada <code>categoria</code>;</li>
+                    <li>mostre o objeto novamente.</li>
+                  </ol>
+                </section>
+
+                <section>
+                  <h4>Como testar no console</h4>
+                  <ol>
+                    <li>Abra as ferramentas do navegador com <kbd>F12</kbd>.</li>
+                    <li>Entre na aba <strong>Console</strong>.</li>
+                    <li>Cole primeiro o objeto completo e pressione <kbd>Enter</kbd>.</li>
+                    <li>Acesse cada propriedade separadamente.</li>
+                    <li>Altere um valor e adicione uma nova propriedade.</li>
+                    <li>Mostre o objeto novamente para observar as mudanças.</li>
+                  </ol>
+                  <p>
+                    Se repetir uma declaração com <code>const</code> e o mesmo
+                    nome, recarregue a página ou troque o nome da variável antes
+                    de testar novamente.
+                  </p>
+                </section>
+
+                <section>
+                  <h4>Resposta correta</h4>
+
+                  <button
+                    class="answer-toggle"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="exercise-answer-7"
+                  >
+                    Mostrar resposta comentada
+                  </button>
+
+                  <div class="answer" id="exercise-answer-7" hidden>
+                    <pre><code>const livro = {
+  titulo: "JavaScript para Iniciantes",
+  autor: "Ana",
+  paginas: 200,
+  estaLendo: true
+};
+
+console.log(livro);
+console.log(livro.titulo);
+console.log(livro.paginas);
+
+livro.paginas = 220;
+livro.categoria = "Programação";
+
+console.log(livro);</code></pre>
+                    <h5>Explicação da resposta</h5>
+                    <ul>
+                      <li>
+                        As chaves criam o objeto e agrupam as informações do
+                        livro.
+                      </li>
+                      <li>
+                        Cada par possui uma chave, dois-pontos e um valor; as
+                        vírgulas separam as propriedades.
+                      </li>
+                      <li>
+                        <code>livro.titulo</code> e <code>livro.paginas</code>
+                        usam o ponto para acessar informações específicas.
+                      </li>
+                      <li>
+                        <code>livro.paginas = 220</code> altera uma propriedade
+                        que já existia.
+                      </li>
+                      <li>
+                        <code>livro.categoria = "Programação"</code> cria uma nova
+                        propriedade no objeto.
+                      </li>
+                    </ul>
+                  </div>
+                </section>
+
+                <section>
+                  <h4>Aplicação prática no projeto</h4>
+                  <p>
+                    Objetos poderão representar uma tarefa, uma aula, um
+                    usuário, um produto ou uma configuração. No Mini Checklist,
+                    uma tarefa poderá ser representada assim:
+                  </p>
+                  <pre><code>{
+  texto: "Estudar JavaScript",
+  concluida: false
+}</code></pre>
+                  <p>
+                    Esse é apenas um exemplo conceitual. O projeto não será
+                    implementado nesta aula.
+                  </p>
+                </section>
+
+                <section class="lesson-completion">
+                  <h4>Conclusão da aula</h4>
+                  <label class="completion-control" for="completion-aula-7">
+                    <input
+                      class="lesson-completion-input"
+                      id="completion-aula-7"
+                      type="checkbox"
+                      data-course-id="javascript-iniciante"
+                      data-lesson-id="aula-7"
                     />
                     <span class="completion-label-text">Marcar aula como concluída</span>
                   </label>
