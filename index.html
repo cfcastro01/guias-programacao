@@ -55,7 +55,7 @@
           </div>
 
           <div class="course-layout">
-            <!-- Sumário provisório; as três primeiras aulas estão disponíveis -->
+            <!-- Sumário provisório; as quatro primeiras aulas estão disponíveis -->
             <aside class="summary" aria-labelledby="summary-title">
               <h3 id="summary-title">Sumário provisório</h3>
               <ol>
@@ -83,7 +83,14 @@
                   <a href="#aula-3">Operadores básicos</a>
                   <span class="lesson-status">Não concluída</span>
                 </li>
-                <li>Condições <span class="coming-soon">Em breve</span></li>
+                <li
+                  class="current"
+                  data-course-id="javascript-iniciante"
+                  data-lesson-id="aula-4"
+                >
+                  <a href="#aula-4">Condições</a>
+                  <span class="lesson-status">Não concluída</span>
+                </li>
                 <li>Funções <span class="coming-soon">Em breve</span></li>
               </ol>
             </aside>
@@ -650,6 +657,256 @@ console.log(temBeneficio);</code></pre>
                       type="checkbox"
                       data-course-id="javascript-iniciante"
                       data-lesson-id="aula-3"
+                    />
+                    <span class="completion-label-text">Marcar aula como concluída</span>
+                  </label>
+                  <p>Você pode desmarcar esta opção quando quiser.</p>
+                </section>
+              </article>
+
+              <!-- Quarta aula real do curso -->
+              <article class="lesson" id="aula-4">
+                <header class="lesson-header">
+                  <span>Aula 4</span>
+                  <h3>Condições: fazendo o JavaScript tomar decisões</h3>
+                </header>
+
+                <section>
+                  <h4>Objetivo</h4>
+                  <p>
+                    Entender como usar <code>if</code>, <code>else</code> e
+                    <code>else if</code> para executar instruções diferentes de
+                    acordo com uma condição.
+                  </p>
+                </section>
+
+                <section>
+                  <h4>Explicação simples</h4>
+                  <p>
+                    Uma condição é uma pergunta que resulta em
+                    <code>true</code> ou <code>false</code>. Na Aula 3, você usou
+                    comparações e operadores lógicos para formar perguntas.
+                    Agora, o JavaScript usará essas respostas para decidir qual
+                    trecho do código executar.
+                  </p>
+                  <ul>
+                    <li><code>if</code> significa algo próximo de <strong>se</strong>.</li>
+                    <li><code>else</code> significa algo próximo de <strong>senão</strong>.</li>
+                    <li>
+                      <code>else if</code> significa algo próximo de
+                      <strong>senão, se...</strong>
+                    </li>
+                  </ul>
+                  <p>
+                    A condição fica entre parênteses. As instruções ficam em um
+                    bloco entre chaves <code>{ }</code>. O bloco do
+                    <code>if</code> só é executado quando sua condição é
+                    verdadeira. Se ela for falsa, o JavaScript segue para o
+                    próximo <code>else if</code> ou para o <code>else</code>.
+                  </p>
+                </section>
+
+                <section class="pronunciation">
+                  <h4>Como ler em português</h4>
+                  <ul>
+                    <li>
+                      <code>if (idade &gt;= 18)</code>: “Se a idade for maior ou
+                      igual a 18...”
+                    </li>
+                    <li><code>else</code>: “Senão...”</li>
+                    <li>
+                      <code>else if (nota &gt;= 6)</code>: “Senão, se a nota for
+                      maior ou igual a 6...”
+                    </li>
+                    <li>
+                      <code>temCadastro &amp;&amp; pagamentoConfirmado</code>: “Se tem
+                      cadastro E o pagamento está confirmado...”
+                    </li>
+                  </ul>
+                  <p>
+                    Leia de cima para baixo. Assim que uma condição verdadeira
+                    for encontrada, seu bloco é executado e os demais blocos
+                    dessa sequência são ignorados.
+                  </p>
+                </section>
+
+                <section>
+                  <h4>Exemplo comentado</h4>
+                  <pre><code>const idade = 18;
+
+// Escolhe um dos dois caminhos
+if (idade &gt;= 18) {
+  console.log("Pode entrar.");
+} else {
+  console.log("Não pode entrar.");
+}
+
+const nota = 7;
+
+// Testa as condições em ordem
+if (nota &gt;= 9) {
+  console.log("Ótimo");
+} else if (nota &gt;= 6) {
+  console.log("Aprovado");
+} else {
+  console.log("Reprovado");
+}
+
+const temCadastro = true;
+const pagamentoConfirmado = true;
+
+// As duas respostas precisam ser verdadeiras
+if (temCadastro &amp;&amp; pagamentoConfirmado) {
+  console.log("Acesso liberado");
+}</code></pre>
+                  <p>
+                    No primeiro exemplo, apenas uma das duas mensagens aparece.
+                    No segundo, o JavaScript testa a nota de cima para baixo e
+                    para na primeira condição verdadeira. No último, o bloco só
+                    executa quando os dois valores são <code>true</code>.
+                  </p>
+                  <p>
+                    Você também pode usar <code>||</code> quando basta uma das
+                    respostas ser verdadeira e <code>!</code> para inverter uma
+                    resposta, como em <code>if (!pagamentoConfirmado)</code>.
+                  </p>
+                </section>
+
+                <section>
+                  <h4>Erros comuns</h4>
+                  <ul>
+                    <li>Usar <code>=</code> para comparar em vez de <code>===</code>.</li>
+                    <li>Esquecer os parênteses ao redor da condição.</li>
+                    <li>Esquecer as chaves <code>{ }</code> do bloco.</li>
+                    <li>Criar uma condição que nunca pode ser verdadeira.</li>
+                    <li>
+                      Colocar primeiro uma condição muito ampla no
+                      <code>else if</code>. Por exemplo, testar
+                      <code>nota &gt;= 6</code> antes de <code>nota &gt;= 9</code>.
+                    </li>
+                    <li>Confundir <code>&amp;&amp;</code>, que exige as duas respostas, com <code>||</code>.</li>
+                  </ul>
+                </section>
+
+                <section>
+                  <h4>Exercício básico</h4>
+                  <p>Comece com esta variável:</p>
+                  <pre><code>const temperatura = 28;</code></pre>
+                  <p>Escreva uma condição que mostre:</p>
+                  <ul>
+                    <li><strong>“Está quente”</strong> se a temperatura for maior que 30;</li>
+                    <li>
+                      <strong>“Temperatura agradável”</strong> se ela for maior
+                      ou igual a 20;
+                    </li>
+                    <li><strong>“Está frio”</strong> nos demais casos.</li>
+                  </ul>
+                  <p>Depois, use estes dois valores:</p>
+                  <pre><code>const temIngresso = true;
+const documentoValido = true;</code></pre>
+                  <p>
+                    Mostre <strong>“Entrada permitida”</strong> somente quando os
+                    dois valores forem <code>true</code>.
+                  </p>
+                </section>
+
+                <section>
+                  <h4>Como testar no console</h4>
+                  <ol>
+                    <li>Abra as ferramentas do navegador com <kbd>F12</kbd>.</li>
+                    <li>Entre na aba <strong>Console</strong>.</li>
+                    <li>Cole e execute um bloco completo de cada vez.</li>
+                    <li>Troque os valores e observe qual mensagem aparece.</li>
+                  </ol>
+                  <p>
+                    Repetir uma variável criada com <code>const</code> e o mesmo
+                    nome pode gerar um erro. Nesse caso, recarregue a página ou
+                    troque o nome da variável antes de testar novamente.
+                  </p>
+                </section>
+
+                <section>
+                  <h4>Resposta correta</h4>
+
+                  <button
+                    class="answer-toggle"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="exercise-answer-4"
+                  >
+                    Mostrar resposta comentada
+                  </button>
+
+                  <div class="answer" id="exercise-answer-4" hidden>
+                    <pre><code>const temperatura = 28;
+
+if (temperatura &gt; 30) {
+  console.log("Está quente");
+} else if (temperatura &gt;= 20) {
+  console.log("Temperatura agradável");
+} else {
+  console.log("Está frio");
+}
+
+const temIngresso = true;
+const documentoValido = true;
+
+if (temIngresso &amp;&amp; documentoValido) {
+  console.log("Entrada permitida");
+}</code></pre>
+                    <h5>Explicação da resposta</h5>
+                    <ul>
+                      <li>
+                        Primeiro, <code>temperatura &gt; 30</code> pergunta se o
+                        valor é maior que 30. Para <code>28</code>, a resposta é
+                        <code>false</code>.
+                      </li>
+                      <li>
+                        Depois, <code>temperatura &gt;= 20</code> resulta em
+                        <code>true</code>. Por isso, aparece “Temperatura
+                        agradável”.
+                      </li>
+                      <li>
+                        O <code>else</code> só seria executado se as duas
+                        comparações anteriores fossem falsas.
+                      </li>
+                      <li>
+                        A ordem é importante: a pergunta sobre mais de 30 vem
+                        antes da pergunta sobre 20 ou mais.
+                      </li>
+                      <li>
+                        Na última condição, <code>&amp;&amp;</code> exige que
+                        <code>temIngresso</code> e <code>documentoValido</code>
+                        sejam verdadeiros para mostrar a mensagem.
+                      </li>
+                    </ul>
+                  </div>
+                </section>
+
+                <section>
+                  <h4>Aplicação prática no projeto</h4>
+                  <p>
+                    Condições poderão mostrar estados diferentes, decidir se
+                    uma aula está concluída, validar se uma resposta pode
+                    aparecer, verificar se uma ação deve acontecer e alterar
+                    mensagens conforme os dados ou as escolhas da pessoa.
+                  </p>
+                  <p>
+                    O site já usa condições internamente para decidir como
+                    exibir alguns estados. O armazenamento desses estados será
+                    estudado com mais calma em outro momento.
+                  </p>
+                </section>
+
+                <section class="lesson-completion">
+                  <h4>Conclusão da aula</h4>
+                  <label class="completion-control" for="completion-aula-4">
+                    <input
+                      class="lesson-completion-input"
+                      id="completion-aula-4"
+                      type="checkbox"
+                      data-course-id="javascript-iniciante"
+                      data-lesson-id="aula-4"
                     />
                     <span class="completion-label-text">Marcar aula como concluída</span>
                   </label>

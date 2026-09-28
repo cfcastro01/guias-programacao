@@ -2,6 +2,14 @@
 
 Este arquivo registra as principais mudanças do projeto Guias de Programação.
 
+## 2026-09-28 — Aula 4 do JavaScript Iniciante
+
+### Adicionado
+
+- Aula 4 real: **Condições: fazendo o JavaScript tomar decisões**.
+- Exemplos básicos com `if`, `else`, `else if`, comparações e operadores lógicos.
+- Exercício com resposta comentada e controle de conclusão integrado ao progresso local.
+
 ## 2026-09-28 — Progresso local das aulas
 
 ### Adicionado
