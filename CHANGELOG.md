@@ -2,6 +2,14 @@
 
 Este arquivo registra as principais mudanças do projeto Guias de Programação.
 
+## 2026-09-28 — Aula 8 do JavaScript Iniciante
+
+### Adicionado
+
+- Aula 8 real: **Métodos: quando uma coisa faz alguma coisa**.
+- Diferença entre propriedades e métodos, com exemplos em textos e arrays.
+- Exercício com resposta comentada e controle de conclusão integrado ao progresso local.
+
 ## 2026-09-28 — Aula 7 do JavaScript Iniciante
 
 ### Adicionado

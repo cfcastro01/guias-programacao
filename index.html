@@ -124,9 +124,13 @@
                     <a href="#aula-7">Objetos: organizando informações</a>
                     <span class="lesson-status">Não concluída</span>
                   </li>
-                  <li class="future">
-                    Métodos: quando uma coisa faz alguma coisa
-                    <span class="coming-soon">Em breve</span>
+                  <li
+                    class="current"
+                    data-course-id="javascript-iniciante"
+                    data-lesson-id="aula-8"
+                  >
+                    <a href="#aula-8">Métodos: quando uma coisa faz alguma coisa</a>
+                    <span class="lesson-status">Não concluída</span>
                   </li>
                 </ol>
               </div>
@@ -1859,6 +1863,306 @@ console.log(livro);</code></pre>
                       type="checkbox"
                       data-course-id="javascript-iniciante"
                       data-lesson-id="aula-7"
+                    />
+                    <span class="completion-label-text">Marcar aula como concluída</span>
+                  </label>
+                  <p>Você pode desmarcar esta opção quando quiser.</p>
+                </section>
+              </article>
+
+              <!-- Oitava aula real do curso -->
+              <article class="lesson" id="aula-8">
+                <header class="lesson-header">
+                  <span>Aula 8</span>
+                  <h3>Métodos: quando uma coisa faz alguma coisa</h3>
+                </header>
+
+                <section>
+                  <h4>Objetivo</h4>
+                  <p>
+                    Entender o que é um método, diferenciá-lo de uma propriedade
+                    e usar ações simples disponíveis em textos e arrays.
+                  </p>
+                </section>
+
+                <section>
+                  <h4>Explicação simples</h4>
+                  <p>Você já encontrou o ponto em códigos como estes:</p>
+                  <pre><code>frutas.length
+frutas.push("Laranja")
+console.log("Olá")</code></pre>
+                  <p>
+                    O ponto <code>.</code> aparece quando queremos acessar algo
+                    relacionado a um valor ou objeto. Para começar, podemos
+                    pensar assim:
+                  </p>
+                  <ul>
+                    <li><strong>propriedade</strong> é uma informação;</li>
+                    <li><strong>método</strong> é uma ação.</li>
+                  </ul>
+                  <pre><code>const frutas = ["Maçã", "Banana"];
+
+frutas.length;
+frutas.push("Uva");</code></pre>
+                  <p>
+                    <code>length</code> informa quantos itens existem.
+                    <code>push()</code> executa a ação de adicionar um item. Se a
+                    propriedade descreve alguma coisa, o método normalmente faz
+                    alguma coisa. Essa é uma simplificação útil para quem está
+                    começando, não uma definição completa da linguagem.
+                  </p>
+
+                  <h5>Função e método</h5>
+                  <p>Na Aula 5, criamos uma função independente:</p>
+                  <pre><code>function cumprimentar(nome) {
+  console.log("Olá, " + nome);
+}
+
+cumprimentar("Ana");</code></pre>
+                  <p>Agora compare com uma ação disponível em um texto:</p>
+                  <pre><code>const nome = "ana";
+
+nome.toUpperCase();</code></pre>
+                  <p>
+                    <code>cumprimentar()</code> é uma função chamada diretamente.
+                    <code>toUpperCase()</code> é uma ação disponível no valor de
+                    texto. Quando uma função aparece ligada a algo por meio do
+                    ponto, chamamos essa função de <strong>método</strong>.
+                  </p>
+
+                  <h5>Propriedade e método lado a lado</h5>
+                  <p>Em <code>frutas.length</code>:</p>
+                  <ul>
+                    <li><code>frutas</code> é a lista;</li>
+                    <li>o ponto acessa algo relacionado à lista;</li>
+                    <li><code>length</code> é a informação sobre a quantidade;</li>
+                    <li>não usamos <code>()</code>.</li>
+                  </ul>
+                  <p>Em <code>frutas.push("Laranja")</code>:</p>
+                  <ul>
+                    <li><code>frutas</code> é a lista;</li>
+                    <li>o ponto acessa uma ação disponível;</li>
+                    <li><code>push</code> é a ação de adicionar ao final;</li>
+                    <li><code>()</code> executa o método;</li>
+                    <li><code>"Laranja"</code> é a informação entregue ao método.</li>
+                  </ul>
+                  <p>
+                    Portanto, <code>length</code> é uma propriedade e
+                    <code>push()</code> é um método. Essa diferença explica por
+                    que algumas palavras depois do ponto usam parênteses e
+                    outras não.
+                  </p>
+                </section>
+
+                <section class="pronunciation">
+                  <h4>Como ler em português</h4>
+                  <ul>
+                    <li>
+                      <code>nome.toUpperCase()</code>: “Pegue o texto nome e
+                      execute a ação de transformá-lo em maiúsculas”.
+                    </li>
+                    <li>
+                      <code>nome.includes("Car")</code>: “Pergunte se o texto
+                      nome contém Car”.
+                    </li>
+                    <li>
+                      <code>frutas.push("Laranja")</code>: “Na lista frutas,
+                      execute a ação de adicionar Laranja ao final”.
+                    </li>
+                    <li>
+                      <code>frutas.length</code>: “Veja a informação quantidade
+                      de itens da lista frutas”.
+                    </li>
+                    <li>
+                      <code>console.log(nome)</code>: “No console, execute a ação
+                      log para mostrar o valor de nome”.
+                    </li>
+                  </ul>
+                  <p>
+                    Você usa <code>console.log()</code> desde a primeira aula.
+                    De forma simples, <code>console</code> oferece ferramentas
+                    relacionadas ao console e <code>log()</code> é a ação usada
+                    para mostrar uma informação. Você já usava um método antes
+                    mesmo de conhecer esse nome.
+                  </p>
+                </section>
+
+                <section>
+                  <h4>Exemplo comentado</h4>
+                  <pre><code>const nome = "Carlos";
+
+console.log(nome);
+console.log(nome.toUpperCase());
+console.log(nome.toLowerCase());
+console.log(nome.includes("Car"));
+
+const frutas = ["Maçã", "Banana"];
+
+console.log(frutas.length);
+
+frutas.push("Uva");
+console.log(frutas);
+
+frutas.pop();
+console.log(frutas);</code></pre>
+                  <p>
+                    <code>toUpperCase()</code> produz <code>"CARLOS"</code>,
+                    <code>toLowerCase()</code> produz <code>"carlos"</code> e
+                    <code>includes("Car")</code> produz <code>true</code> porque
+                    o trecho existe no texto.
+                  </p>
+                  <p>
+                    <code>frutas.length</code> começa mostrando <code>2</code>.
+                    <code>push()</code> adiciona Uva, e <code>pop()</code> remove
+                    esse último item. Agora podemos dar nome ao que já vimos na
+                    Aula 6: <code>push()</code> e <code>pop()</code> são métodos
+                    do array.
+                  </p>
+                  <p>
+                    Os métodos de texto não precisam alterar a variável
+                    original. Depois de mostrar <code>nome.toUpperCase()</code>,
+                    a variável <code>nome</code> ainda guarda <code>"Carlos"</code>.
+                    O método produz o texto em maiúsculas para aquele resultado,
+                    mas não troca automaticamente o valor guardado.
+                  </p>
+                </section>
+
+                <section>
+                  <h4>Erros comuns</h4>
+                  <ul>
+                    <li>Escrever <code>.length()</code> em vez de <code>.length</code>.</li>
+                    <li>Esquecer <code>()</code> em um método como <code>.push()</code>.</li>
+                    <li>Esquecer o ponto antes da propriedade ou do método.</li>
+                    <li>Escrever o nome do método incorretamente.</li>
+                    <li>
+                      Esquecer que JavaScript diferencia letras maiúsculas e
+                      minúsculas, como em <code>toUpperCase()</code>.
+                    </li>
+                    <li>Achar que <code>toUpperCase()</code> altera automaticamente a variável original.</li>
+                    <li>
+                      Tentar usar um método em um tipo de valor que não oferece
+                      aquela ação. Textos e arrays podem ter métodos diferentes.
+                    </li>
+                  </ul>
+                </section>
+
+                <section>
+                  <h4>Exercício básico</h4>
+                  <p>Comece com:</p>
+                  <pre><code>const mensagem = "estou aprendendo javascript";</code></pre>
+                  <ol>
+                    <li>Mostre o texto original.</li>
+                    <li>Mostre o texto em letras maiúsculas.</li>
+                    <li>Pergunte se ele contém <code>"javascript"</code>.</li>
+                    <li>
+                      Crie <code>const estudos = ["Variáveis", "Funções"];</code>.
+                    </li>
+                    <li>Mostre a quantidade de itens.</li>
+                    <li>Adicione <code>"Arrays"</code> com <code>push()</code>.</li>
+                    <li>Mostre a lista.</li>
+                    <li>Remova o último item com <code>pop()</code>.</li>
+                    <li>Mostre a lista novamente.</li>
+                  </ol>
+                </section>
+
+                <section>
+                  <h4>Como testar no console</h4>
+                  <ol>
+                    <li>Abra as ferramentas do navegador com <kbd>F12</kbd>.</li>
+                    <li>Entre na aba <strong>Console</strong>.</li>
+                    <li>Crie primeiro as variáveis.</li>
+                    <li>Execute os outros comandos separadamente.</li>
+                    <li>Observe quais comandos apenas produzem um resultado.</li>
+                    <li>Observe como <code>push()</code> e <code>pop()</code> modificam o array.</li>
+                    <li>Compare <code>mensagem</code> antes e depois de <code>toUpperCase()</code>.</li>
+                  </ol>
+                  <p>
+                    Se houver conflito ao repetir uma declaração com
+                    <code>const</code>, recarregue a página ou troque o nome da
+                    variável antes de testar novamente.
+                  </p>
+                </section>
+
+                <section>
+                  <h4>Resposta correta</h4>
+
+                  <button
+                    class="answer-toggle"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="exercise-answer-8"
+                  >
+                    Mostrar resposta comentada
+                  </button>
+
+                  <div class="answer" id="exercise-answer-8" hidden>
+                    <pre><code>const mensagem = "estou aprendendo javascript";
+
+console.log(mensagem);
+console.log(mensagem.toUpperCase());
+console.log(mensagem.includes("javascript"));
+
+const estudos = ["Variáveis", "Funções"];
+
+console.log(estudos.length);
+
+estudos.push("Arrays");
+console.log(estudos);
+
+estudos.pop();
+console.log(estudos);</code></pre>
+                    <h5>Explicação da resposta</h5>
+                    <ul>
+                      <li><code>console.log(mensagem)</code> mostra o texto original.</li>
+                      <li>
+                        <code>toUpperCase()</code> é um método que produz a versão
+                        em letras maiúsculas.
+                      </li>
+                      <li>
+                        <code>includes("javascript")</code> é um método que
+                        responde <code>true</code>, pois o trecho existe.
+                      </li>
+                      <li>
+                        <code>estudos.length</code> é uma propriedade e informa
+                        que a lista começa com dois itens.
+                      </li>
+                      <li><code>push()</code> adiciona Arrays ao final da lista.</li>
+                      <li><code>pop()</code> remove o último item da lista.</li>
+                    </ul>
+                  </div>
+                </section>
+
+                <section>
+                  <h4>Aplicação prática no projeto</h4>
+                  <p>
+                    Métodos aparecerão nos projetos para transformar textos,
+                    verificar se um texto contém uma informação, adicionar uma
+                    tarefa à lista, remover um item e mostrar informações no
+                    console. Nas próximas aulas, conheceremos métodos que
+                    percorrem listas, como <code>forEach</code>,
+                    <code>map</code> e <code>filter</code>, sem estudá-los agora.
+                  </p>
+
+                  <h5>Fechando o bloco Dados e coleções</h5>
+                  <ul>
+                    <li><strong>Array</strong> organiza uma lista.</li>
+                    <li><strong>Objeto</strong> organiza informações relacionadas.</li>
+                    <li>
+                      <strong>Método</strong> executa uma ação disponível sobre
+                      determinado valor ou estrutura.
+                    </li>
+                  </ul>
+                </section>
+
+                <section class="lesson-completion">
+                  <h4>Conclusão da aula</h4>
+                  <label class="completion-control" for="completion-aula-8">
+                    <input
+                      class="lesson-completion-input"
+                      id="completion-aula-8"
+                      type="checkbox"
+                      data-course-id="javascript-iniciante"
+                      data-lesson-id="aula-8"
                     />
                     <span class="completion-label-text">Marcar aula como concluída</span>
                   </label>
