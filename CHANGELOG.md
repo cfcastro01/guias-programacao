@@ -2,6 +2,32 @@
 
 Este arquivo registra as principais mudanças do projeto Guias de Programação.
 
+## 2026-09-30 — Páginas separadas por curso
+
+### Alterado
+
+- Página inicial simplificada para apresentar os cursos disponíveis.
+- Conteúdo do JavaScript Iniciante movido para sua própria página.
+- Sumário do Desenvolvimento de Software com IA movido para sua própria página.
+- Navegação e caminhos relativos adaptados para localhost e GitHub Pages.
+
+### Mantido
+
+- Formato e chave do progresso local do curso JavaScript.
+- CSS compartilhado e JavaScript existente, sem duplicação.
+
+## 2026-09-30 — Estrutura inicial do curso Desenvolvimento de Software com IA
+
+### Adicionado
+
+- Card do novo curso na apresentação do site.
+- Sumário planejado com 15 módulos, ainda sem aulas disponíveis.
+- Pasta do curso com README e modelo didático próprio para aulas conceituais.
+
+### Alterado
+
+- Documentação geral e roadmap atualizados para incluir o novo curso.
+
 ## 2026-09-28 — Aula 8 do JavaScript Iniciante
 
 ### Adicionado

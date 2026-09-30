@@ -3,6 +3,7 @@
 ## Agora
 
 - Concluir o curso JavaScript Iniciante.
+- Desenvolver aos poucos as aulas do curso Desenvolvimento de Software com IA.
 - Manter aulas curtas, progressivas e com exercícios.
 - Continuar salvando o progresso local com `localStorage`.
 - Desenvolver os projetos práticos no momento adequado da trilha.
@@ -15,6 +16,12 @@
 - Projeto prático 1: Landing Page Interativa.
 - Aulas 14–16: consolidação.
 - Projeto prático 2: Mini Checklist.
+
+## Desenvolvimento de Software com IA
+
+- Estrutura inicial organizada em 15 módulos.
+- Próxima etapa: definir a primeira aula sem antecipar o restante do conteúdo.
+- Manter atividades conceituais e práticas, com atenção à validação e ao uso seguro de agentes.
 
 ## Melhoria futura — Laboratório de JavaScript
 

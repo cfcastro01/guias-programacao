@@ -1,6 +1,6 @@
 # Guias de Programação
 
-Projeto local de cursos e projetos práticos para quem está começando a programar. A versão atual apresenta o curso **JavaScript Iniciante**, com oito aulas disponíveis e uma trilha planejada organizada no sumário.
+Projeto local de cursos e projetos práticos para quem está começando a programar. A versão atual apresenta o curso **JavaScript Iniciante**, com oito aulas disponíveis, e a estrutura inicial do curso **Desenvolvimento de Software com IA**.
 
 ## Tecnologias
 
@@ -24,9 +24,14 @@ guias-programacao/
 ├── AGENTS.md
 ├── CHANGELOG.md
 ├── cursos/
-│   └── javascript-iniciante/
+│   ├── javascript-iniciante/
+│   │   ├── index.html
+│   │   ├── README.md
+│   │   └── MODELO_DE_AULA.md
+│   └── desenvolvimento-software-ia/
+│       ├── index.html
 │       ├── README.md
-│       └── MODELO_DE_AULA.md
+│       └── MODELO_DE_AULA_IA.md
 └── projetos/
     ├── landing-page-interativa/
     │   └── README.md
@@ -34,12 +39,14 @@ guias-programacao/
         └── README.md
 ```
 
-- Os arquivos da raiz formam a página funcional atual.
+- O `index.html` da raiz apresenta os cursos disponíveis.
+- Cada pasta em `cursos/` possui a página inicial do respectivo curso.
+- `styles.css` é compartilhado pelas três páginas e `script.js` atende às interações das aulas de JavaScript.
 - `AGENTS.md` orienta futuras alterações realizadas por IA/Codex.
 - `CHANGELOG.md` registra as principais mudanças do projeto.
 - `ROADMAP.md` apresenta as próximas etapas e possibilidades futuras.
 - `cursos/` organiza cada curso em uma pasta própria.
-- `MODELO_DE_AULA.md` define o padrão didático das aulas de JavaScript Iniciante.
+- Cada curso possui seu próprio modelo didático dentro da respectiva pasta.
 - `projetos/` reserva uma pasta para cada projeto prático.
 - Os READMEs internos registram somente o escopo planejado, sem antecipar o conteúdo completo.
 
@@ -59,13 +66,12 @@ Na primeira execução, o `npx` pode pedir confirmação para baixar temporariam
 
 ## Escopo atual
 
-Esta é apenas a estrutura inicial. As Aulas 1, 2, 3, 4, 5, 6, 7 e 8 estão na página principal
-para facilitar o desenvolvimento neste começo. Cada aula disponível pode ser
+Esta é apenas a estrutura inicial. As Aulas 1, 2, 3, 4, 5, 6, 7 e 8 estão na página do curso JavaScript Iniciante. Cada aula disponível pode ser
 marcada como concluída, e esse estado permanece salvo localmente no navegador.
 O sumário também apresenta as aulas 9 a 16 e os dois projetos práticos como
-conteúdos planejados, ainda sem links ou controles de progresso.
-Quando houver mais conteúdo, cada curso ou projeto poderá receber suas próprias
-páginas dentro da pasta correspondente.
+conteúdos planejados, ainda sem links ou controles de progresso. O curso
+Desenvolvimento de Software com IA possui inicialmente apenas seu sumário; suas
+aulas serão publicadas aos poucos e ainda não participam do progresso local.
 
 ## Evolução futura
 

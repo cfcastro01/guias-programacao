@@ -2,16 +2,22 @@
 
 Área reservada para organizar o curso **JavaScript Iniciante**.
 
-## Estrutura planejada
+## Estrutura atual
 
-O curso terá inicialmente cinco aulas:
+O curso possui oito aulas disponíveis:
 
-1. O que é JavaScript?
+1. O que é JavaScript e como pensar sem decorar tudo
 2. Variáveis e valores
 3. Operadores básicos
 4. Condições
 5. Funções
+6. Arrays
+7. Objetos
+8. Métodos
 
-Cada aula poderá seguir a estrutura já usada no modelo atual: objetivo, explicação simples, leitura em português, exemplo, exercício e resposta comentada.
+As aulas, o sumário e os projetos planejados estão em `index.html`. Cada aula
+segue o modelo de objetivo, explicação simples, leitura em português, exemplo,
+exercício e resposta comentada.
 
-> O conteúdo completo e as páginas individuais ainda não foram criados. A aula modelo permanece em `index.html` na raiz do projeto.
+O progresso é salvo no navegador com a chave `guias-programacao-progress` e o
+identificador de curso `javascript-iniciante`.
