@@ -112,9 +112,13 @@
               <div class="summary-group">
                 <h4>Repetição e transformação</h4>
                 <ol start="9">
-                  <li class="future">
-                    Repetindo ações com forEach
-                    <span class="coming-soon">Em breve</span>
+                  <li
+                    class="current"
+                    data-course-id="javascript-iniciante"
+                    data-lesson-id="aula-9"
+                  >
+                    <a href="#aula-9">Repetindo ações com forEach</a>
+                    <span class="lesson-status">Não concluída</span>
                   </li>
                   <li class="future">
                     Transformando e filtrando listas com map e filter
@@ -2137,6 +2141,384 @@ console.log(estudos);</code></pre>
                       type="checkbox"
                       data-course-id="javascript-iniciante"
                       data-lesson-id="aula-8"
+                    />
+                    <span class="completion-label-text">Marcar aula como concluída</span>
+                  </label>
+                  <p>Você pode desmarcar esta opção quando quiser.</p>
+                </section>
+              </article>
+
+              <!-- Nona aula real do curso -->
+              <article class="lesson" id="aula-9">
+                <header class="lesson-header">
+                  <span>Aula 9</span>
+                  <h3>Repetindo ações com <code>forEach</code></h3>
+                </header>
+
+                <section>
+                  <h4>Objetivo</h4>
+                  <p>
+                    Entender como percorrer um array e executar a mesma ação
+                    uma vez para cada item usando <code>forEach</code>.
+                  </p>
+                </section>
+
+                <section>
+                  <h4>Explicação simples</h4>
+                  <p>Imagine que temos uma lista de frutas:</p>
+                  <pre><code>const frutas = ["Maçã", "Banana", "Uva"];</code></pre>
+                  <p>Podemos mostrar cada item acessando uma posição por vez:</p>
+                  <pre><code>console.log(frutas[0]);
+console.log(frutas[1]);
+console.log(frutas[2]);</code></pre>
+                  <p>
+                    Isso funciona com três itens, mas seria ruim se tivéssemos
+                    dezenas ou centenas. Além de escrever muitos comandos,
+                    precisaríamos adicionar outro <code>console.log()</code>
+                    sempre que a lista crescesse.
+                  </p>
+                  <p>
+                    <strong>Percorrer uma lista</strong> significa visitar seus
+                    itens, um depois do outro. Queremos dizer ao JavaScript:
+                  </p>
+                  <blockquote>
+                    <p>Faça esta mesma ação para cada item da lista.</p>
+                  </blockquote>
+                  <pre><code>frutas.forEach(function (fruta) {
+  console.log(fruta);
+});</code></pre>
+                  <p>
+                    <code>forEach</code> é um método do array. Ele executa a
+                    função que recebeu uma vez para cada item da lista. Essa
+                    função não tem nome, por isso é chamada de
+                    <strong>função anônima</strong>.
+                  </p>
+
+                  <h5>Entendendo cada parte</h5>
+                  <dl>
+                    <dt><code>frutas</code></dt>
+                    <dd>É o array que queremos percorrer.</dd>
+                    <dt><code>.forEach</code></dt>
+                    <dd>
+                      É o método do array. Podemos ler seu nome como “para cada
+                      item”.
+                    </dd>
+                    <dt><code>function (fruta)</code></dt>
+                    <dd>É a função executada para cada item.</dd>
+                    <dt><code>fruta</code></dt>
+                    <dd>É o parâmetro que representa o item atual da lista.</dd>
+                    <dt><code>{ ... }</code></dt>
+                    <dd>Contém o que deve acontecer com cada item.</dd>
+                  </dl>
+
+                  <h5>Retomando funções</h5>
+                  <p>Na Aula 5 vimos algo conceitualmente parecido:</p>
+                  <pre><code>botao.addEventListener("click", mostrarMensagem);</code></pre>
+                  <p>Agora vemos:</p>
+                  <pre><code>frutas.forEach(function (fruta) {
+  console.log(fruta);
+});</code></pre>
+                  <p>
+                    Nos dois casos, uma função é entregue para outro código
+                    executar no momento adequado. No <code>forEach</code>, o
+                    JavaScript executa essa função uma vez para cada item da
+                    lista.
+                  </p>
+                  <p>
+                    Você poderá encontrar o nome <strong>callback</strong> para
+                    esse tipo de função em códigos e documentações. Vamos
+                    aprofundar isso somente mais adiante.
+                  </p>
+
+                  <h5>Parênteses dentro de parênteses</h5>
+                  <p>Podemos reorganizar o mesmo código para enxergar as partes:</p>
+                  <pre><code>frutas.forEach(
+  function (fruta) {
+    console.log(fruta);
+  }
+);</code></pre>
+                  <ul>
+                    <li>
+                      Os parênteses externos pertencem ao
+                      <code>forEach(...)</code>.
+                    </li>
+                    <li>Dentro deles, estamos entregando uma função.</li>
+                    <li>
+                      Os parênteses de <code>function (fruta)</code> pertencem à
+                      função.
+                    </li>
+                    <li>
+                      <code>fruta</code> é a informação que a função recebe.
+                    </li>
+                    <li>
+                      As chaves <code>{}</code> guardam as instruções da função.
+                    </li>
+                    <li>
+                      No final, <code>);</code> fecha a chamada do
+                      <code>forEach</code>.
+                    </li>
+                  </ul>
+                  <p>
+                    É a mesma ideia de entregar uma função vista na Aula 5,
+                    agora escrita diretamente dentro dos parênteses do método.
+                  </p>
+                </section>
+
+                <section class="pronunciation">
+                  <h4>Como ler em português</h4>
+                  <pre><code>frutas.forEach(function (fruta) {
+  console.log(fruta);
+});</code></pre>
+                  <p>Leia aproximadamente assim:</p>
+                  <blockquote>
+                    <p>
+                      Para cada item da lista frutas, chame esse item de fruta
+                      e mostre fruta no console.
+                    </p>
+                  </blockquote>
+                  <p>
+                    <code>fruta</code> não é uma palavra especial do JavaScript.
+                    É um nome escolhido pelo programador para o parâmetro. Os
+                    exemplos abaixo fazem a mesma coisa:
+                  </p>
+                  <pre><code>frutas.forEach(function (item) {
+  console.log(item);
+});
+
+frutas.forEach(function (nomeDaFruta) {
+  console.log(nomeDaFruta);
+});</code></pre>
+                  <p>
+                    Um nome claro ajuda a entender o código, mas ele não precisa
+                    ser igual ao nome do array.
+                  </p>
+                </section>
+
+                <section>
+                  <h4>Exemplo comentado</h4>
+                  <pre><code>const tarefas = [
+  "Estudar JavaScript",
+  "Fazer exercício",
+  "Revisar aula"
+];
+
+tarefas.forEach(function (tarefa) {
+  console.log(tarefa);
+});</code></pre>
+                  <p>A função é executada três vezes, uma para cada tarefa:</p>
+                  <pre><code>Estudar JavaScript
+Fazer exercício
+Revisar aula</code></pre>
+                  <p>
+                    Podemos mudar a ação feita em cada execução. Aqui, o array
+                    continua igual; apenas acrescentamos um texto na saída:
+                  </p>
+                  <pre><code>tarefas.forEach(function (tarefa) {
+  console.log("Tarefa: " + tarefa);
+});</code></pre>
+                  <p>O resultado será:</p>
+                  <pre><code>Tarefa: Estudar JavaScript
+Tarefa: Fazer exercício
+Tarefa: Revisar aula</code></pre>
+
+                  <h5>Um pequeno complemento: o índice</h5>
+                  <pre><code>tarefas.forEach(function (tarefa, indice) {
+  console.log(indice, tarefa);
+});</code></pre>
+                  <p>
+                    <code>tarefa</code> representa o item atual e
+                    <code>indice</code> representa sua posição. Como vimos na
+                    Aula 6, o primeiro índice é <code>0</code>.
+                  </p>
+                  <p>
+                    O <code>forEach</code> é usado principalmente para executar
+                    uma ação para cada item. Ele não cria uma nova lista. Na
+                    próxima aula veremos métodos que conseguem criar novas
+                    listas a partir de uma lista existente.
+                  </p>
+                </section>
+
+                <section>
+                  <h4>Erros comuns</h4>
+                  <ul>
+                    <li>
+                      Esquecer que <code>forEach</code> precisa receber uma
+                      função.
+                    </li>
+                    <li>
+                      Esquecer os parênteses em <code>forEach()</code>.
+                    </li>
+                    <li>
+                      Esquecer o ponto e escrever <code>lista forEach</code> em
+                      vez de <code>lista.forEach</code>.
+                    </li>
+                    <li>
+                      Tentar usar fora da função o parâmetro criado nela. O nome
+                      <code>tarefa</code>, por exemplo, só representa o item
+                      dentro daquela função.
+                    </li>
+                    <li>
+                      Acreditar que o parâmetro precisa ter o mesmo nome do
+                      array.
+                    </li>
+                    <li>
+                      Confundir o item com o índice. No exemplo com dois
+                      parâmetros, <code>tarefa</code> é o item e
+                      <code>indice</code> é a posição.
+                    </li>
+                    <li>
+                      Estranhar os níveis de <code>()</code>, <code>{}</code> e
+                      <code>);</code>. Leia por partes: chamada do método, função
+                      recebida, instruções e fechamento do método.
+                    </li>
+                  </ul>
+                </section>
+
+                <section>
+                  <h4>Exercício básico</h4>
+                  <p>Comece com esta lista:</p>
+                  <pre><code>const cursos = [
+  "JavaScript",
+  "HTML",
+  "CSS"
+];</code></pre>
+                  <ol>
+                    <li>Use <code>forEach</code> para percorrer a lista.</li>
+                    <li>Mostre cada curso no console.</li>
+                    <li>
+                      Mostre cada item no formato
+                      <code>Estou estudando JavaScript</code>.
+                    </li>
+                    <li>
+                      Como complemento, percorra a lista novamente e mostre o
+                      índice ao lado do curso.
+                    </li>
+                  </ol>
+                  <p>Os resultados devem incluir:</p>
+                  <pre><code>Estou estudando JavaScript
+Estou estudando HTML
+Estou estudando CSS
+
+0 JavaScript
+1 HTML
+2 CSS</code></pre>
+                </section>
+
+                <section>
+                  <h4>Como testar no console</h4>
+                  <ol>
+                    <li>Abra as ferramentas do navegador com <kbd>F12</kbd>.</li>
+                    <li>Entre na aba <strong>Console</strong>.</li>
+                    <li>Crie primeiro o array <code>cursos</code>.</li>
+                    <li>Execute depois o bloco com <code>forEach</code>.</li>
+                    <li>Troque os itens da lista e execute o teste novamente.</li>
+                    <li>
+                      Adicione outro item ao array e observe que não é preciso
+                      criar um novo <code>console.log()</code> manual para outra
+                      posição.
+                    </li>
+                  </ol>
+                  <p>
+                    Se houver conflito ao repetir uma declaração com
+                    <code>const</code>, recarregue a página ou troque o nome da
+                    variável antes de testar novamente.
+                  </p>
+                </section>
+
+                <section>
+                  <h4>Resposta correta</h4>
+
+                  <button
+                    class="answer-toggle"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="exercise-answer-9"
+                  >
+                    Mostrar resposta comentada
+                  </button>
+
+                  <div class="answer" id="exercise-answer-9" hidden>
+                    <pre><code>const cursos = [
+  "JavaScript",
+  "HTML",
+  "CSS"
+];
+
+cursos.forEach(function (curso) {
+  console.log("Estou estudando " + curso);
+});
+
+cursos.forEach(function (curso, indice) {
+  console.log(indice, curso);
+});</code></pre>
+
+                    <h5>Explicação da resposta</h5>
+                    <ul>
+                      <li>
+                        <code>const cursos = [...]</code> cria um array com três
+                        textos.
+                      </li>
+                      <li>
+                        <code>cursos.forEach(...)</code> percorre esse array.
+                      </li>
+                      <li>
+                        <code>function (curso)</code> é a função anônima que o
+                        método executa para cada item.
+                      </li>
+                      <li>
+                        A cada execução, o parâmetro <code>curso</code> representa
+                        o item atual: primeiro JavaScript, depois HTML e por fim
+                        CSS.
+                      </li>
+                      <li>
+                        O primeiro <code>console.log()</code> junta o texto fixo
+                        ao curso atual.
+                      </li>
+                      <li>
+                        No segundo <code>forEach</code>, <code>indice</code> recebe
+                        a posição atual, começando em <code>0</code>.
+                      </li>
+                    </ul>
+                  </div>
+                </section>
+
+                <section>
+                  <h4>Aplicação prática no projeto</h4>
+                  <p>No Mini Checklist, poderemos ter uma lista como esta:</p>
+                  <pre><code>const tarefas = [
+  "Estudar",
+  "Praticar",
+  "Revisar"
+];</code></pre>
+                  <p>
+                    Futuramente, um <code>forEach</code> poderá seguir a ideia:
+                    “Para cada tarefa, criar ou exibir um item na interface”.
+                    Ainda não vamos criar elementos na página. Esse padrão
+                    aparecerá bastante quando começarmos a trabalhar com a
+                    página nas Aulas 11 a 13.
+                  </p>
+                </section>
+
+                <section class="lesson-completion">
+                  <h4>Conclusão da aula</h4>
+                  <p>Até agora:</p>
+                  <ul>
+                    <li>um array guarda vários itens;</li>
+                    <li><code>forEach</code> permite visitar cada item;</li>
+                    <li>a função informa o que fazer com cada um.</li>
+                  </ul>
+                  <p>
+                    Na Aula 10, veremos <code>map</code> e <code>filter</code>,
+                    usados quando queremos transformar ou selecionar itens de
+                    uma lista.
+                  </p>
+                  <label class="completion-control" for="completion-aula-9">
+                    <input
+                      class="lesson-completion-input"
+                      id="completion-aula-9"
+                      type="checkbox"
+                      data-course-id="javascript-iniciante"
+                      data-lesson-id="aula-9"
                     />
                     <span class="completion-label-text">Marcar aula como concluída</span>
                   </label>

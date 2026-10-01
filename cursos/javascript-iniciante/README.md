@@ -4,7 +4,7 @@
 
 ## Estrutura atual
 
-O curso possui oito aulas disponíveis:
+O curso possui nove aulas disponíveis:
 
 1. O que é JavaScript e como pensar sem decorar tudo
 2. Variáveis e valores
@@ -14,6 +14,7 @@ O curso possui oito aulas disponíveis:
 6. Arrays
 7. Objetos
 8. Métodos
+9. Repetindo ações com `forEach`
 
 As aulas, o sumário e os projetos planejados estão em `index.html`. Cada aula
 segue o modelo de objetivo, explicação simples, leitura em português, exemplo,

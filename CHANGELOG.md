@@ -2,6 +2,14 @@
 
 Este arquivo registra as principais mudanças do projeto Guias de Programação.
 
+## 2026-09-30 — Aula 9 do JavaScript Iniciante
+
+### Adicionado
+
+- Aula 9 real: **Repetindo ações com `forEach`**.
+- Explicação sobre percorrer arrays, função anônima, item atual e índice.
+- Exercício com resposta comentada e controle de conclusão integrado ao progresso local.
+
 ## 2026-09-30 — Páginas separadas por curso
 
 ### Alterado
