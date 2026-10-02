@@ -150,9 +150,13 @@
                     <a href="#aula-12">Eventos: reagindo a cliques e outras ações</a>
                     <span class="lesson-status">Não concluída</span>
                   </li>
-                  <li class="future">
-                    Classes e estados visuais
-                    <span class="coming-soon">Em breve</span>
+                  <li
+                    class="current"
+                    data-course-id="javascript-iniciante"
+                    data-lesson-id="aula-13"
+                  >
+                    <a href="#aula-13">Classes e estados visuais</a>
+                    <span class="lesson-status">Não concluída</span>
                   </li>
                 </ol>
               </div>
@@ -3734,6 +3738,400 @@ botaoAviso.addEventListener("click", function () {
                       type="checkbox"
                       data-course-id="javascript-iniciante"
                       data-lesson-id="aula-12"
+                    />
+                    <span class="completion-label-text">Marcar aula como concluída</span>
+                  </label>
+                  <p>Você pode desmarcar esta opção quando quiser.</p>
+                </section>
+              </article>
+
+              <!-- Encerramento do bloco JavaScript na página -->
+              <article class="lesson" id="aula-13">
+                <header class="lesson-header">
+                  <span>Aula 13</span>
+                  <h3>Classes e estados visuais</h3>
+                </header>
+
+                <section>
+                  <h4>Objetivo</h4>
+                  <p>
+                    Usar classes CSS para representar estados da interface,
+                    adicionando, removendo, alternando e verificando classes
+                    com <code>classList</code>.
+                  </p>
+                </section>
+
+                <section>
+                  <h4>Explicação simples</h4>
+                  <p>Imagine um botão e uma mensagem:</p>
+                  <pre><code>&lt;button id="botao"&gt;Alternar destaque&lt;/button&gt;
+&lt;p id="mensagem"&gt;Mensagem importante&lt;/p&gt;</code></pre>
+                  <p>No CSS, temos uma regra para destacar o parágrafo:</p>
+                  <pre><code>.destaque {
+  font-weight: bold;
+  background: #eee;
+}</code></pre>
+                  <p>
+                    Queremos que o clique altere a aparência da mensagem. Em
+                    vez de mudar várias propriedades CSS pelo JavaScript,
+                    podemos adicionar ou remover a classe <code>destaque</code>.
+                    O CSS já sabe qual aparência essa classe representa.
+                  </p>
+
+                  <h5>O que é um estado visual?</h5>
+                  <p>
+                    Um <strong>estado</strong> representa como alguma coisa
+                    está naquele momento: um menu aberto ou fechado, um botão
+                    ativo ou inativo, uma tarefa concluída ou não concluída,
+                    um aviso visível ou oculto. O estado visual é a forma como
+                    essa situação aparece na interface.
+                  </p>
+                  <ul>
+                    <li><strong>HTML:</strong> organiza a estrutura.</li>
+                    <li><strong>CSS:</strong> define a aparência.</li>
+                    <li><strong>JavaScript:</strong> decide quando o estado muda.</li>
+                  </ul>
+
+                  <h5><code>classList</code>: as classes do elemento</h5>
+                  <pre><code>const mensagem = document.getElementById("mensagem");
+
+console.log(mensagem.classList);</code></pre>
+                  <p>
+                    <code>mensagem</code> representa o elemento encontrado no
+                    DOM. <code>classList</code> é uma propriedade que representa
+                    as classes CSS associadas a ele. Ela oferece métodos para
+                    trabalhar com essas classes: <code>add()</code>,
+                    <code>remove()</code>, <code>toggle()</code> e
+                    <code>contains()</code>.
+                  </p>
+
+                  <h5>Adicionar com <code>add()</code></h5>
+                  <pre><code>mensagem.classList.add("destaque");</code></pre>
+                  <p>
+                    O elemento passa a ter a classe <code>destaque</code> e a
+                    usar as regras CSS definidas para ela. Adicionar uma classe
+                    que já está presente mantém essa classe no elemento.
+                  </p>
+
+                  <h5>Remover com <code>remove()</code></h5>
+                  <pre><code>mensagem.classList.remove("destaque");</code></pre>
+                  <p>
+                    A classe é removida do elemento. As regras ligadas a esse
+                    destaque deixam de ser aplicadas, mas as outras classes e
+                    regras do elemento continuam existindo.
+                  </p>
+
+                  <h5>Alternar com <code>toggle()</code></h5>
+                  <pre><code>mensagem.classList.toggle("destaque");</code></pre>
+                  <ul>
+                    <li>Se a classe não está presente, adiciona.</li>
+                    <li>Se a classe já está presente, remove.</li>
+                  </ul>
+                  <p>
+                    Essa alternância permite representar dois estados: aberto
+                    ou fechado, ativo ou inativo, concluído ou não concluído.
+                    Cada chamada troca a presença da classe.
+                  </p>
+
+                  <h5>Verificar com <code>contains()</code></h5>
+                  <pre><code>console.log(mensagem.classList.contains("destaque"));</code></pre>
+                  <p>
+                    A pergunta é: “O elemento mensagem possui a classe
+                    destaque?”. A resposta é <code>true</code> quando possui
+                    e <code>false</code> quando não possui. Esse método apenas
+                    verifica; não altera a classe.
+                  </p>
+
+                  <h5>Nomes que representam estados</h5>
+                  <p>Por exemplo, o CSS pode definir:</p>
+                  <pre><code>.ativo {
+  font-weight: bold;
+}</code></pre>
+                  <p>E o JavaScript pode aplicar esse estado ao botão:</p>
+                  <pre><code>botao.classList.add("ativo");</code></pre>
+                  <p>
+                    Nomes como <code>ativo</code>, <code>aberto</code> e
+                    <code>concluido</code> explicam a situação do elemento.
+                    Como boa prática inicial, prefira esses nomes quando a
+                    classe representar um estado, em vez de nomes apenas
+                    visuais, como <code>verde</code> ou <code>grande</code>.
+                    Isso não é uma regra absoluta para todas as classes.
+                  </p>
+
+                  <h5>Alternar e depois verificar</h5>
+                  <pre><code>mensagem.classList.toggle("destaque");
+
+if (mensagem.classList.contains("destaque")) {
+  console.log("Destaque ativo");
+} else {
+  console.log("Destaque inativo");
+}</code></pre>
+                  <p>
+                    <code>toggle()</code> muda o estado.
+                    <code>contains()</code> verifica o estado após a mudança.
+                    Como vimos na Aula 4, <code>if</code> usa a resposta
+                    verdadeira ou falsa para decidir qual instrução executar.
+                  </p>
+
+                  <h5>Um exemplo conceitual: menu aberto ou fechado</h5>
+                  <pre><code>&lt;button id="menu-botao"&gt;Menu&lt;/button&gt;
+
+&lt;nav id="menu" class="menu"&gt;
+  ...
+&lt;/nav&gt;</code></pre>
+                  <pre><code>.menu {
+  display: none;
+}
+
+.menu.aberto {
+  display: block;
+}</code></pre>
+                  <pre><code>const botaoMenu = document.getElementById("menu-botao");
+const menu = document.getElementById("menu");
+
+botaoMenu.addEventListener("click", function () {
+  menu.classList.toggle("aberto");
+});</code></pre>
+                  <p>
+                    <code>.menu</code> oculta o menu. <code>.menu.aberto</code>
+                    corresponde ao elemento que tem as duas classes, e faz o
+                    menu aparecer. O JavaScript apenas alterna
+                    <code>aberto</code>, mantendo <code>menu</code>.
+                    O CSS decide como esse estado deve aparecer.
+                  </p>
+                  <p>
+                    Esse exemplo mostra a ideia de estado. Um menu real também
+                    precisa considerar acessibilidade, como uso por teclado e
+                    indicação de seu estado para quem utiliza leitor de tela.
+                    Esses detalhes serão tratados no momento adequado.
+                  </p>
+                </section>
+
+                <section class="pronunciation">
+                  <h4>Como ler em português</h4>
+                  <pre><code>mensagem.classList.add("destaque");</code></pre>
+                  <p>“Adicione a classe destaque ao elemento mensagem”.</p>
+                  <pre><code>mensagem.classList.remove("destaque");</code></pre>
+                  <p>“Remova a classe destaque do elemento mensagem”.</p>
+                  <pre><code>mensagem.classList.toggle("destaque");</code></pre>
+                  <p>“Se a classe destaque não existir, adicione. Se existir, remova”.</p>
+                  <pre><code>mensagem.classList.contains("destaque");</code></pre>
+                  <p>“Pergunte se o elemento mensagem possui a classe destaque”.</p>
+                </section>
+
+                <section>
+                  <h4>Exemplo comentado</h4>
+                  <p>Em uma página local, use este HTML:</p>
+                  <pre><code>&lt;button id="botao"&gt;Alternar destaque&lt;/button&gt;
+&lt;p id="mensagem"&gt;Mensagem importante&lt;/p&gt;</code></pre>
+                  <p>Adicione esta regra CSS:</p>
+                  <pre><code>.destaque {
+  font-weight: bold;
+  background: #eee;
+}</code></pre>
+                  <p>Depois execute o JavaScript:</p>
+                  <pre><code>const botao = document.getElementById("botao");
+const mensagem = document.getElementById("mensagem");
+
+function alternarDestaque() {
+  mensagem.classList.toggle("destaque");
+}
+
+botao.addEventListener("click", alternarDestaque);</code></pre>
+                  <ol>
+                    <li>Encontra o botão.</li>
+                    <li>Encontra a mensagem.</li>
+                    <li>Define a função <code>alternarDestaque</code>.</li>
+                    <li>Registra a função como resposta ao clique.</li>
+                    <li>Ao clicar, <code>toggle()</code> altera a presença da classe.</li>
+                    <li>O CSS muda a aparência conforme a classe presente.</li>
+                  </ol>
+                  <p>
+                    Aqui as Aulas 11, 12 e 13 trabalham juntas:
+                    <strong>encontrar elemento → ouvir evento → alterar classe
+                    → CSS muda a aparência</strong>.
+                  </p>
+                </section>
+
+                <section>
+                  <h4>Erros comuns</h4>
+                  <ul>
+                    <li>Escrever o nome da classe errado.</li>
+                    <li>Usar um ponto no nome passado ao <code>classList</code>.</li>
+                    <li>
+                      Esquecer que <code>classList</code> é uma propriedade:
+                      não escrevemos <code>classList()</code>.
+                    </li>
+                    <li>Esquecer <code>()</code> em <code>add</code>, <code>remove</code>, <code>toggle</code> ou <code>contains</code>.</li>
+                    <li>Esperar uma mudança visual sem uma regra CSS correspondente.</li>
+                    <li>Usar no JavaScript um nome diferente da classe definida no CSS.</li>
+                    <li>
+                      Confundir <code>toggle()</code> com <code>add()</code>:
+                      alternar pode remover; adicionar mantém a classe presente.
+                    </li>
+                    <li>
+                      Tentar mudar várias propriedades de aparência pelo
+                      JavaScript quando uma classe seria mais simples.
+                    </li>
+                  </ul>
+                  <p>Correto:</p>
+                  <pre><code>elemento.classList.add("ativo");</code></pre>
+                  <p>Errado para adicionar a classe chamada ativo:</p>
+                  <pre><code>elemento.classList.add(".ativo");</code></pre>
+                  <p>
+                    O ponto pertence ao seletor CSS <code>.ativo</code>, mas não
+                    faz parte do nome da classe passado ao <code>classList</code>.
+                  </p>
+                </section>
+
+                <section>
+                  <h4>Exercício básico</h4>
+                  <p>Use estes elementos:</p>
+                  <pre><code>&lt;button id="botao-status"&gt;Alternar status&lt;/button&gt;
+&lt;p id="status"&gt;Curso em andamento&lt;/p&gt;</code></pre>
+                  <p>E esta regra CSS:</p>
+                  <pre><code>.concluido {
+  font-weight: bold;
+  text-decoration: line-through;
+}</code></pre>
+                  <ol>
+                    <li>Encontre o botão.</li>
+                    <li>Encontre o parágrafo e guarde-o na variável <code>status</code>.</li>
+                    <li>Crie a função <code>alternarStatus</code>.</li>
+                    <li>Dentro dela, use <code>status.classList.toggle("concluido")</code>.</li>
+                    <li>Registre o clique com <code>addEventListener</code>.</li>
+                    <li>Clique várias vezes e observe a classe entrar e sair.</li>
+                  </ol>
+                  <p>
+                    Como complemento, use <code>contains()</code> e uma condição
+                    para mostrar no console se o status está concluído.
+                  </p>
+                </section>
+
+                <section>
+                  <h4>Como testar no console</h4>
+                  <ol>
+                    <li>Crie <code>exercicio-classes.html</code> em uma pasta de estudos.</li>
+                    <li>Copie o HTML completo abaixo, que já inclui a regra CSS.</li>
+                    <li>Salve e abra o arquivo no navegador.</li>
+                    <li>Abra <kbd>F12</kbd> e entre na aba <strong>Console</strong>.</li>
+                    <li>Execute o JavaScript do exercício.</li>
+                    <li>Clique várias vezes e observe a aparência e as mensagens no console.</li>
+                    <li>
+                      Se desejar, abra a aba <strong>Elementos</strong> do
+                      DevTools, selecione o parágrafo e observe a classe
+                      <code>concluido</code> entrar e sair ao clicar.
+                    </li>
+                  </ol>
+                  <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-BR"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8" /&gt;
+    &lt;title&gt;Exercício de classes&lt;/title&gt;
+    &lt;style&gt;
+      .concluido {
+        font-weight: bold;
+        text-decoration: line-through;
+      }
+    &lt;/style&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;button id="botao-status"&gt;Alternar status&lt;/button&gt;
+    &lt;p id="status"&gt;Curso em andamento&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                  <p>
+                    O texto do parágrafo permanece igual: o exercício muda
+                    apenas sua aparência. Para testar o destaque ou o menu,
+                    substitua os elementos e a regra CSS pelos do exemplo
+                    escolhido e execute o JavaScript correspondente.
+                  </p>
+                  <p>
+                    Recarregue antes de testar outra versão para evitar eventos
+                    registrados várias vezes ou conflitos ao repetir
+                    <code>const</code>. Pratique no HTML local, sem alterar os
+                    elementos da página do curso.
+                  </p>
+                </section>
+
+                <section>
+                  <h4>Resposta correta</h4>
+                  <button
+                    class="answer-toggle"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="exercise-answer-13"
+                  >
+                    Mostrar resposta comentada
+                  </button>
+                  <div class="answer" id="exercise-answer-13" hidden>
+                    <pre><code>const botaoStatus = document.getElementById("botao-status");
+const status = document.getElementById("status");
+
+function alternarStatus() {
+  status.classList.toggle("concluido");
+
+  if (status.classList.contains("concluido")) {
+    console.log("Status concluído");
+  } else {
+    console.log("Status em andamento");
+  }
+}
+
+botaoStatus.addEventListener("click", alternarStatus);</code></pre>
+                    <h5>Explicação da resposta</h5>
+                    <ul>
+                      <li>As duas primeiras linhas encontram o botão e o parágrafo.</li>
+                      <li><code>alternarStatus</code> guarda as instruções executadas ao clicar.</li>
+                      <li><code>toggle("concluido")</code> adiciona ou remove a classe.</li>
+                      <li><code>contains("concluido")</code> pergunta se ela está presente.</li>
+                      <li>
+                        <code>if</code> mostra “Status concluído” quando a resposta
+                        é verdadeira; <code>else</code> mostra “Status em andamento”
+                        quando é falsa.
+                      </li>
+                      <li>
+                        A última linha registra o evento e entrega
+                        <code>alternarStatus</code> sem <code>()</code>, para
+                        executar a função a cada clique.
+                      </li>
+                    </ul>
+                  </div>
+                </section>
+
+                <section>
+                  <h4>Aplicação prática no projeto</h4>
+                  <p>
+                    Na Landing Page Interativa, esse padrão poderá abrir e
+                    fechar um menu, destacar uma seção ativa, mostrar ou ocultar
+                    conteúdo, alterar o estado de um botão e indicar um item
+                    selecionado. A base para o Projeto prático 1 agora está
+                    completa; vamos construir o projeto no próximo passo da
+                    trilha, sem iniciá-lo nesta aula.
+                  </p>
+                </section>
+
+                <section class="lesson-completion">
+                  <h4>Conclusão da aula</h4>
+                  <p>Encerrando o bloco <strong>JavaScript na página</strong>:</p>
+                  <ul>
+                    <li><strong>Aula 11:</strong> encontrar elementos.</li>
+                    <li><strong>Aula 12:</strong> reagir a eventos.</li>
+                    <li><strong>Aula 13:</strong> alterar estados visuais.</li>
+                  </ul>
+                  <p>
+                    <strong>Encontrar → ouvir → alterar.</strong> Esse padrão
+                    aparece com frequência em interfaces feitas com JavaScript.
+                    O próximo item é o <strong>Projeto prático 1 — Landing Page
+                    Interativa</strong>, que continua planejado.
+                  </p>
+                  <label class="completion-control" for="completion-aula-13">
+                    <input
+                      class="lesson-completion-input"
+                      id="completion-aula-13"
+                      type="checkbox"
+                      data-course-id="javascript-iniciante"
+                      data-lesson-id="aula-13"
                     />
                     <span class="completion-label-text">Marcar aula como concluída</span>
                   </label>

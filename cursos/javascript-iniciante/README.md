@@ -4,7 +4,7 @@
 
 ## Estrutura atual
 
-O curso possui doze aulas disponíveis:
+O curso possui treze aulas disponíveis:
 
 1. O que é JavaScript e como pensar sem decorar tudo
 2. Variáveis e valores
@@ -18,6 +18,7 @@ O curso possui doze aulas disponíveis:
 10. Transformando e filtrando listas com `map` e `filter`
 11. DOM: encontrando elementos do HTML
 12. Eventos: reagindo a cliques e outras ações
+13. Classes e estados visuais
 
 As aulas, o sumário e os projetos planejados estão em `index.html`. Cada aula
 segue o modelo de objetivo, explicação simples, leitura em português, exemplo,

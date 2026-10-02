@@ -1,6 +1,6 @@
 # Guias de Programação
 
-Projeto local de cursos e projetos práticos para quem está começando a programar. A versão atual apresenta o curso **JavaScript Iniciante**, com doze aulas disponíveis, e a estrutura inicial do curso **Desenvolvimento de Software com IA**.
+Projeto local de cursos e projetos práticos para quem está começando a programar. A versão atual apresenta o curso **JavaScript Iniciante**, com treze aulas disponíveis, e a estrutura inicial do curso **Desenvolvimento de Software com IA**.
 
 ## Tecnologias
 
@@ -66,9 +66,9 @@ Na primeira execução, o `npx` pode pedir confirmação para baixar temporariam
 
 ## Escopo atual
 
-Esta é apenas a estrutura inicial. As Aulas 1 a 12 estão na página do curso JavaScript Iniciante. Cada aula disponível pode ser
+Esta é apenas a estrutura inicial. As Aulas 1 a 13 estão na página do curso JavaScript Iniciante. Cada aula disponível pode ser
 marcada como concluída, e esse estado permanece salvo localmente no navegador.
-O sumário também apresenta as aulas 13 a 16 e os dois projetos práticos como
+O sumário também apresenta as aulas 14 a 16 e os dois projetos práticos como
 conteúdos planejados, ainda sem links ou controles de progresso. O curso
 Desenvolvimento de Software com IA possui inicialmente apenas seu sumário; suas
 aulas serão publicadas aos poucos e ainda não participam do progresso local.

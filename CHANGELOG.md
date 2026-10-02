@@ -2,6 +2,15 @@
 
 Este arquivo registra as principais mudanças do projeto Guias de Programação.
 
+## 2026-10-02 — Aula 13 do JavaScript Iniciante
+
+### Adicionado
+
+- Aula 13 real: **Classes e estados visuais**.
+- Introdução a `classList`, seus quatro métodos e à ligação entre DOM, eventos e CSS.
+- Exercício com resposta comentada expansível e conclusão integrada ao progresso existente.
+- Encerramento do bloco JavaScript na página, preparando a Landing Page Interativa ainda planejada.
+
 ## 2026-10-02 — Aula 12 do JavaScript Iniciante
 
 ### Adicionado
