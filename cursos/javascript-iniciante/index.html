@@ -142,9 +142,13 @@
                     <a href="#aula-11">DOM: encontrando elementos do HTML</a>
                     <span class="lesson-status">Não concluída</span>
                   </li>
-                  <li class="future">
-                    Eventos: reagindo a cliques e outras ações
-                    <span class="coming-soon">Em breve</span>
+                  <li
+                    class="current"
+                    data-course-id="javascript-iniciante"
+                    data-lesson-id="aula-12"
+                  >
+                    <a href="#aula-12">Eventos: reagindo a cliques e outras ações</a>
+                    <span class="lesson-status">Não concluída</span>
                   </li>
                   <li class="future">
                     Classes e estados visuais
@@ -3325,6 +3329,411 @@ console.log(status.textContent);</code></pre>
                       type="checkbox"
                       data-course-id="javascript-iniciante"
                       data-lesson-id="aula-11"
+                    />
+                    <span class="completion-label-text">Marcar aula como concluída</span>
+                  </label>
+                  <p>Você pode desmarcar esta opção quando quiser.</p>
+                </section>
+              </article>
+
+              <!-- Eventos conectam elementos da página a funções -->
+              <article class="lesson" id="aula-12">
+                <header class="lesson-header">
+                  <span>Aula 12</span>
+                  <h3>Eventos: reagindo a cliques e outras ações</h3>
+                </header>
+
+                <section>
+                  <h4>Objetivo</h4>
+                  <p>
+                    Fazer o JavaScript reagir a um clique ou à digitação,
+                    conectando um elemento do DOM a uma função com
+                    <code>addEventListener</code>.
+                  </p>
+                </section>
+
+                <section>
+                  <h4>Explicação simples</h4>
+                  <p>Na Aula 11, aprendemos a encontrar elementos como este:</p>
+                  <pre><code>&lt;button id="botao"&gt;Clique aqui&lt;/button&gt;</code></pre>
+                  <pre><code>const botao = document.getElementById("botao");</code></pre>
+                  <p>Agora queremos dizer:</p>
+                  <blockquote>
+                    <p>Quando a pessoa clicar neste botão, faça alguma coisa.</p>
+                  </blockquote>
+
+                  <h5>O que é um evento?</h5>
+                  <p>
+                    Um <strong>evento</strong> é algo que acontece na página:
+                    um clique, uma digitação, uma mudança de valor, o envio de
+                    um formulário ou um movimento do mouse. O navegador percebe
+                    o que aconteceu e o JavaScript pode reagir. Vamos praticar
+                    apenas clique e digitação nesta aula.
+                  </p>
+
+                  <h5><code>addEventListener</code>: registrando uma reação</h5>
+                  <p>Na Aula 5, vimos conceitualmente esta instrução:</p>
+                  <pre><code>botao.addEventListener("click", mostrarMensagem);</code></pre>
+                  <ul>
+                    <li><code>botao</code> é o elemento encontrado no DOM;</li>
+                    <li>o ponto <code>.</code> acessa um método desse elemento;</li>
+                    <li>
+                      <code>addEventListener()</code> registra uma função para
+                      responder a um evento, como se ficasse esperando por ele;
+                    </li>
+                    <li><code>"click"</code> é o evento observado;</li>
+                    <li>
+                      <code>mostrarMensagem</code> é a função que será executada
+                      quando acontecer o clique.
+                    </li>
+                  </ul>
+
+                  <h5>Passar a função ou executá-la agora?</h5>
+                  <pre><code>botao.addEventListener("click", mostrarMensagem);</code></pre>
+                  <p>
+                    <code>mostrarMensagem</code>, sem <code>()</code>, entrega a
+                    função para o navegador executar depois, quando o evento
+                    acontecer.
+                  </p>
+                  <p>Compare com esta escrita, que não serve para esse objetivo:</p>
+                  <pre><code>botao.addEventListener("click", mostrarMensagem());</code></pre>
+                  <p>
+                    <code>mostrarMensagem()</code>, com <code>()</code>, executa
+                    a função imediatamente, enquanto essa linha é executada,
+                    antes de qualquer clique. O resultado dessa chamada é
+                    passado ao método, em vez da própria função. Aqui queremos
+                    entregar a função, não chamá-la nesse momento.
+                  </p>
+
+                  <h5>Uma função nomeada</h5>
+                  <p>Em uma página com este botão:</p>
+                  <pre><code>&lt;button id="botao"&gt;Mostrar mensagem&lt;/button&gt;</code></pre>
+                  <pre><code>const botao = document.getElementById("botao");
+
+function mostrarMensagem() {
+  console.log("O botão foi clicado!");
+}
+
+botao.addEventListener("click", mostrarMensagem);</code></pre>
+                  <ol>
+                    <li>O JavaScript encontra o botão.</li>
+                    <li>Define a função <code>mostrarMensagem</code>.</li>
+                    <li>Registra essa função como resposta ao clique.</li>
+                    <li>O navegador espera o evento.</li>
+                    <li>A função executa quando a pessoa clica.</li>
+                  </ol>
+                  <p>
+                    Definir uma função não executa suas instruções. Neste
+                    exemplo, a mensagem só aparece no console ao clicar. Cada
+                    novo clique executa a função novamente.
+                  </p>
+
+                  <h5>Uma função anônima</h5>
+                  <p>Como alternativa ao registro anterior, podemos escrever:</p>
+                  <pre><code>botao.addEventListener("click", function () {
+  console.log("O botão foi clicado!");
+});</code></pre>
+                  <p>
+                    A ideia é a mesma, mas a função está escrita diretamente
+                    dentro do método e não tem nome: é uma função anônima.
+                    Na Aula 9, também entregamos uma função ao
+                    <code>forEach</code>. A diferença é que ele a executa ao
+                    percorrer a lista; aqui, ela executa quando ocorre o evento.
+                  </p>
+
+                  <h5>Parênteses dentro de parênteses</h5>
+                  <pre><code>botao.addEventListener(
+  "click",
+  function () {
+    console.log("O botão foi clicado!");
+  }
+);</code></pre>
+                  <ul>
+                    <li>Os parênteses externos são a chamada de <code>addEventListener</code>.</li>
+                    <li>
+                      <code>"click"</code> é o primeiro argumento, ou seja, a
+                      primeira informação entregue ao método.
+                    </li>
+                    <li>A função é o segundo argumento.</li>
+                    <li>
+                      Os <code>()</code> de <code>function ()</code> são o espaço
+                      dos parâmetros, vazio neste exemplo.
+                    </li>
+                    <li>As chaves <code>{}</code> guardam as instruções da função.</li>
+                    <li><code>);</code> fecha a chamada do método.</li>
+                  </ul>
+
+                  <h5>Uma reação que aparece na página</h5>
+                  <pre><code>&lt;button id="botao"&gt;Clique aqui&lt;/button&gt;
+&lt;p id="mensagem"&gt;Nenhum clique ainda.&lt;/p&gt;</code></pre>
+                  <pre><code>const botao = document.getElementById("botao");
+const mensagem = document.getElementById("mensagem");
+
+function mostrarMensagem() {
+  mensagem.textContent = "Você clicou no botão!";
+}
+
+botao.addEventListener("click", mostrarMensagem);</code></pre>
+                  <p>
+                    Na Aula 11, lemos <code>textContent</code>. Agora usamos
+                    <code>=</code> para atribuir um novo texto à propriedade.
+                    O clique acontece, a função executa, a propriedade recebe
+                    o texto e a mensagem na página muda.
+                  </p>
+
+                  <h5>Um segundo evento: <code>input</code></h5>
+                  <p>Em outro exemplo, use um campo e um parágrafo:</p>
+                  <pre><code>&lt;label for="nome"&gt;Seu nome&lt;/label&gt;
+&lt;input id="nome" type="text" /&gt;
+&lt;p id="saida"&gt;&lt;/p&gt;</code></pre>
+                  <pre><code>const nome = document.getElementById("nome");
+const saida = document.getElementById("saida");
+
+nome.addEventListener("input", function () {
+  saida.textContent = nome.value;
+});</code></pre>
+                  <p>
+                    <code>"input"</code> acontece quando o conteúdo do campo
+                    muda durante a digitação. <code>.value</code> é a propriedade
+                    que acessa o valor digitado. A função copia esse valor para
+                    o texto do parágrafo, inclusive quando apagamos letras.
+                  </p>
+
+                  <h5>Conectando as aulas anteriores</h5>
+                  <ul>
+                    <li><strong>Aula 5 — Funções:</strong> criamos instruções reutilizáveis.</li>
+                    <li><strong>Aula 11 — DOM:</strong> encontramos elementos da página.</li>
+                    <li><strong>Aula 12 — Eventos:</strong> ligamos uma ação da pessoa a uma função.</li>
+                  </ul>
+                  <pre><code>const botao = document.getElementById("botao");
+
+function abrirMensagem() {
+  console.log("Olá!");
+}
+
+botao.addEventListener("click", abrirMensagem);</code></pre>
+                  <p>
+                    Encontrar o elemento, definir a função e registrar o evento
+                    são etapas que trabalham juntas para criar a interação.
+                  </p>
+                </section>
+
+                <section class="pronunciation">
+                  <h4>Como ler em português</h4>
+                  <pre><code>botao.addEventListener("click", mostrarMensagem);</code></pre>
+                  <p>
+                    “No botão, espere um clique. Quando acontecer, use a função
+                    mostrarMensagem”.
+                  </p>
+                  <pre><code>nome.addEventListener("input", function () {
+  saida.textContent = nome.value;
+});</code></pre>
+                  <p>
+                    “No campo nome, espere uma alteração de digitação. Quando
+                    acontecer, copie o valor digitado para o texto de saída”.
+                  </p>
+                </section>
+
+                <section>
+                  <h4>Exemplo comentado</h4>
+                  <p>Use este HTML em uma página local:</p>
+                  <pre><code>&lt;button id="botao"&gt;Clique aqui&lt;/button&gt;
+&lt;p id="mensagem"&gt;Esperando um clique...&lt;/p&gt;</code></pre>
+                  <pre><code>const botao = document.getElementById("botao");
+const mensagem = document.getElementById("mensagem");
+
+function atualizarMensagem() {
+  mensagem.textContent = "Clique recebido!";
+}
+
+botao.addEventListener("click", atualizarMensagem);</code></pre>
+                  <ul>
+                    <li>A primeira linha encontra o botão pelo ID.</li>
+                    <li>A segunda encontra o parágrafo onde aparecerá a mensagem.</li>
+                    <li><code>function atualizarMensagem()</code> define as instruções.</li>
+                    <li>
+                      Dentro da função, a atribuição a <code>textContent</code>
+                      troca o texto quando a função executar.
+                    </li>
+                    <li>
+                      A última linha registra a reação ao clique, entregando
+                      <code>atualizarMensagem</code> sem <code>()</code>.
+                    </li>
+                  </ul>
+                  <p>
+                    Antes do clique, o parágrafo mantém “Esperando um clique...”.
+                    Depois do clique, mostra “Clique recebido!”.
+                  </p>
+                </section>
+
+                <section>
+                  <h4>Erros comuns</h4>
+                  <ul>
+                    <li>Escrever um ID diferente do que está no HTML.</li>
+                    <li>
+                      Tentar registrar o evento antes de encontrar o elemento
+                      ou antes de ele estar disponível na página.
+                    </li>
+                    <li>Escrever o nome do evento errado, como <code>"clik"</code>.</li>
+                    <li>
+                      Usar <code>mostrarMensagem()</code> quando deveria entregar
+                      <code>mostrarMensagem</code>.
+                    </li>
+                    <li>Esquecer de fechar parênteses ou chaves.</li>
+                    <li>
+                      Confundir o evento com a função: <code>"click"</code> diz
+                      quando reagir; a função diz o que fazer.
+                    </li>
+                    <li>
+                      Esperar uma mudança ao registrar o evento. A função só
+                      roda quando o evento acontece.
+                    </li>
+                    <li>
+                      Receber <code>null</code> porque o elemento não foi
+                      encontrado. Confira o ID e a página aberta antes de usar
+                      <code>addEventListener</code>.
+                    </li>
+                  </ul>
+                </section>
+
+                <section>
+                  <h4>Exercício básico</h4>
+                  <pre><code>&lt;button id="mostrar-aviso"&gt;Mostrar aviso&lt;/button&gt;
+&lt;p id="aviso"&gt;Nenhum aviso ainda.&lt;/p&gt;</code></pre>
+                  <ol>
+                    <li>Encontre o botão.</li>
+                    <li>Encontre o parágrafo.</li>
+                    <li>Crie uma função chamada <code>mostrarAviso</code>.</li>
+                    <li>
+                      Dentro da função, troque o texto do parágrafo para
+                      <code>"Aviso exibido!"</code>.
+                    </li>
+                    <li>Use <code>addEventListener</code> para executar a função ao clicar.</li>
+                  </ol>
+                  <p>
+                    Como complemento, repita o exercício usando uma função
+                    anônima no lugar da nomeada. Teste cada versão separadamente.
+                  </p>
+                </section>
+
+                <section>
+                  <h4>Como testar no console</h4>
+                  <ol>
+                    <li>
+                      Crie <code>exercicio-eventos.html</code> em uma pasta de
+                      estudos, usando um editor de texto.
+                    </li>
+                    <li>Copie o HTML completo abaixo e salve o arquivo.</li>
+                    <li>Abra o arquivo no navegador.</li>
+                    <li>Abra <kbd>F12</kbd> e entre na aba <strong>Console</strong>.</li>
+                    <li>Execute o JavaScript do exercício.</li>
+                    <li>Clique no botão e observe a mudança no texto.</li>
+                  </ol>
+                  <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-BR"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8" /&gt;
+    &lt;title&gt;Exercício de eventos&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;button id="mostrar-aviso"&gt;Mostrar aviso&lt;/button&gt;
+    &lt;p id="aviso"&gt;Nenhum aviso ainda.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                  <p>
+                    Para testar os outros exemplos, substitua os elementos do
+                    corpo desse HTML pelos elementos do exemplo escolhido,
+                    salve e recarregue antes de executar o JavaScript
+                    correspondente. No exemplo de <code>input</code>, digite
+                    e apague letras para observar a saída.
+                  </p>
+                  <p>
+                    Recarregue a página antes de testar outra versão. Executar
+                    registros repetidos com novas funções pode fazer o mesmo
+                    clique disparar mais de uma reação. Se houver conflito ao
+                    repetir <code>const</code>, recarregue ou troque o nome da
+                    variável. Não conecte esses exemplos aos botões da página
+                    do curso: use o HTML local preparado para o teste.
+                  </p>
+                </section>
+
+                <section>
+                  <h4>Resposta correta</h4>
+                  <button
+                    class="answer-toggle"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="exercise-answer-12"
+                  >
+                    Mostrar resposta comentada
+                  </button>
+                  <div class="answer" id="exercise-answer-12" hidden>
+                    <pre><code>const botaoAviso = document.getElementById("mostrar-aviso");
+const aviso = document.getElementById("aviso");
+
+function mostrarAviso() {
+  aviso.textContent = "Aviso exibido!";
+}
+
+botaoAviso.addEventListener("click", mostrarAviso);</code></pre>
+                    <h5>Explicação da resposta</h5>
+                    <ul>
+                      <li><code>botaoAviso</code> guarda o botão encontrado pelo ID.</li>
+                      <li><code>aviso</code> guarda o parágrafo encontrado pelo ID.</li>
+                      <li>
+                        <code>mostrarAviso</code> é a função nomeada que contém
+                        a mudança do texto.
+                      </li>
+                      <li>
+                        <code>aviso.textContent = "Aviso exibido!"</code> atribui
+                        o novo texto quando a função executa.
+                      </li>
+                      <li>
+                        <code>addEventListener</code> registra o clique e recebe
+                        a função sem <code>()</code>, para executá-la depois.
+                      </li>
+                    </ul>
+                    <h5>Complemento com função anônima</h5>
+                    <p>Após recarregar a página, teste esta versão alternativa:</p>
+                    <pre><code>const botaoAviso = document.getElementById("mostrar-aviso");
+const aviso = document.getElementById("aviso");
+
+botaoAviso.addEventListener("click", function () {
+  aviso.textContent = "Aviso exibido!";
+});</code></pre>
+                    <p>
+                      As instruções são as mesmas, mas a função está escrita
+                      diretamente no registro do evento, sem um nome próprio.
+                    </p>
+                  </div>
+                </section>
+
+                <section>
+                  <h4>Aplicação prática no projeto</h4>
+                  <p>
+                    Na futura Landing Page Interativa, eventos poderão permitir
+                    abrir e fechar um menu, mostrar conteúdo, reagir a botões,
+                    atualizar mensagens e responder à digitação. Primeiro
+                    encontramos os elementos; depois conectamos funções às
+                    ações da pessoa. O projeto será implementado mais adiante.
+                  </p>
+                </section>
+
+                <section class="lesson-completion">
+                  <h4>Conclusão da aula</h4>
+                  <p>
+                    Agora sabemos encontrar elementos e reagir a ações. Na
+                    Aula 13, <strong>Classes e estados visuais</strong>, veremos
+                    como alterar classes para representar estados como aberto,
+                    fechado, ativo ou concluído.
+                  </p>
+                  <label class="completion-control" for="completion-aula-12">
+                    <input
+                      class="lesson-completion-input"
+                      id="completion-aula-12"
+                      type="checkbox"
+                      data-course-id="javascript-iniciante"
+                      data-lesson-id="aula-12"
                     />
                     <span class="completion-label-text">Marcar aula como concluída</span>
                   </label>

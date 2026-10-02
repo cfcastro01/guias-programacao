@@ -2,6 +2,14 @@
 
 Este arquivo registra as principais mudanças do projeto Guias de Programação.
 
+## 2026-10-02 — Aula 12 do JavaScript Iniciante
+
+### Adicionado
+
+- Aula 12 real: **Eventos: reagindo a cliques e outras ações**.
+- Exemplos de `click` e `input`, funções nomeadas e anônimas e atualização de texto.
+- Exercício local com resposta comentada expansível e conclusão integrada ao progresso existente.
+
 ## 2026-10-02 — Aula 11 do JavaScript Iniciante
 
 ### Adicionado
