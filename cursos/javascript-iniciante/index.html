@@ -164,8 +164,8 @@
               <div class="summary-group summary-project">
                 <h4>Projeto prático 1</h4>
                 <div class="summary-project-card">
-                  <strong>Landing Page Interativa</strong>
-                  <span class="project-status">Em breve</span>
+                  <strong><a href="#projeto-1">Landing Page Interativa</a></strong>
+                  <span class="project-status">Etapa 1 disponível</span>
                   <p>
                     Projeto visual para aplicar DOM, eventos, classes e
                     interação com HTML/CSS.
@@ -4138,12 +4138,84 @@ botaoStatus.addEventListener("click", alternarStatus);</code></pre>
                   <p>Você pode desmarcar esta opção quando quiser.</p>
                 </section>
               </article>
+
+              <article class="lesson" id="projeto-1">
+                <header class="lesson-header">
+                  <span>Projeto Prático 1</span>
+                  <h3>Landing Page Interativa</h3>
+                </header>
+                <section>
+                  <h4>Objetivo</h4>
+                  <p>Aplicar aos poucos o DOM, os eventos, as classes e os estados visuais estudados nas Aulas 11–13. Vamos começar pela estrutura que receberá as interações depois.</p>
+                </section>
+                <section>
+                  <h4>O que vamos construir</h4>
+                  <p>Uma landing page, ou página de apresentação, para a cafeteria fictícia <strong>Café Origem</strong>. Ela reúne uma apresentação, informações sobre a cafeteria, métodos de preparo e um convite à visita.</p>
+                  <p><strong><a href="../../projetos/landing-page-interativa/exercicio/">Abrir versão de exercício — trabalhe aqui</a></strong></p>
+                  <p><a href="../../projetos/landing-page-interativa/original/">Ver projeto original para comparação</a></p>
+                </section>
+                <section>
+                  <h4>Como fazer os exercícios deste projeto</h4>
+                  <p>Trabalhe nos arquivos da pasta <code>projetos/landing-page-interativa/exercicio/</code>. A pasta <code>original/</code> guarda a Etapa 1 de referência e não deve ser alterada durante os exercícios.</p>
+                  <p>Abra os arquivos de exercício no seu editor de código. Cada etapa indicará qual arquivo abrir, o que modificar, como testar e qual resultado esperar.</p>
+                  <ul>
+                    <li><strong>index.html:</strong> altere a estrutura ou os elementos da página quando a tarefa pedir.</li>
+                    <li><strong>styles.css:</strong> altere aparência, layout ou estados visuais.</li>
+                    <li><strong>script.js:</strong> escreva o comportamento e as interações nas próximas etapas.</li>
+                    <li><strong>Console:</strong> use como apoio para conferir valores, testar pequenas expressões e ler erros. Depurar significa investigar a causa de um problema.</li>
+                  </ul>
+                  <p>As soluções serão escritas nos arquivos reais de <code>exercicio/</code>. O Console não será o local principal para construir o projeto.</p>
+                  <p>Depois de uma alteração, salve o arquivo e recarregue a versão de exercício no navegador. Abra o original em outra aba, na mesma largura de janela, para comparar. Nesta etapa, as duas versões começam iguais; ainda não é preciso adicionar JavaScript.</p>
+                </section>
+                <section>
+                  <h4>Formato das próximas etapas</h4>
+                  <p>Cada etapa terá: <strong>Objetivo</strong>, <strong>Arquivos usados</strong>, <strong>Sua tarefa</strong>, <strong>Como testar</strong>, <strong>Resultado esperado</strong>, <strong>Compare com o original</strong> e <strong>Resposta comentada</strong>.</p>
+                  <p>Tente resolver a tarefa antes de consultar a resposta. O original continuará representando a Etapa 1, sem receber automaticamente as soluções das próximas etapas.</p>
+                </section>
+                <section>
+                  <h4>Como o projeto será desenvolvido</h4>
+                  <ol>
+                    <li><strong>Estrutura e visual — concluída:</strong> HTML, CSS, adaptação para celular e elementos preparados para receber JavaScript.</li>
+                    <li><strong>Menu mobile:</strong> abrir e fechar a navegação em telas pequenas.</li>
+                    <li><strong>Estado ativo:</strong> destacar o método de preparo escolhido.</li>
+                    <li><strong>Conteúdo expansível:</strong> mostrar e ocultar parte da história do café.</li>
+                    <li><strong>Revisão final:</strong> conferir as interações e o uso por teclado.</li>
+                  </ol>
+                  <p>Na <strong>Etapa 1 — Estrutura e visual</strong>, os links já levam às seções. Os botões das próximas etapas estão desativados, a navegação fica visível no celular e a história aparece por inteiro. Ainda não há interações JavaScript.</p>
+                </section>
+                <section class="pronunciation">
+                  <h4>Como ler em português</h4>
+                  <p><strong>“Primeiro organizamos a página e sua aparência. Depois encontramos os elementos, ouvimos os cliques e mudamos seus estados.”</strong></p>
+                  <p>HTML organiza o conteúdo, CSS define o visual e JavaScript acrescentará o comportamento nas próximas etapas.</p>
+                </section>
+                <section>
+                  <h4>Conceitos que serão aplicados depois</h4>
+                  <ul>
+                    <li>Encontrar elementos da página usando o DOM.</li>
+                    <li>Reagir a cliques por meio de eventos.</li>
+                    <li>Abrir e fechar o menu.</li>
+                    <li>Alternar classes CSS.</li>
+                    <li>Controlar estados visuais, como selecionado e expandido.</li>
+                  </ul>
+                  <p>Esses comportamentos serão implementados em tarefas separadas. Nesta etapa, observe a estrutura e teste apenas a navegação por links.</p>
+                </section>
+                <section>
+                  <h4>Exercício básico</h4>
+                  <p>Abra a versão de exercício do Café Origem, use o link <strong>Preparos</strong> e identifique os três métodos. Diminua a largura da janela e observe a organização dos cards.</p>
+                  <h5>Resposta comentada</h5>
+                  <p>O link leva à seção de preparos, com Coado, Prensa francesa e Espresso. Os cards ficam em uma coluna nas telas pequenas e em três colunas quando há espaço. Essa adaptação é feita pelo CSS; não precisa de JavaScript.</p>
+                </section>
+                <section>
+                  <h4>Antes da próxima etapa</h4>
+                  <p>Confira a leitura, os links e a versão para celular. O projeto ainda está em desenvolvimento e só terá controle de conclusão quando todas as etapas estiverem prontas.</p>
+                </section>
+              </article>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Espaço reservado para os projetos práticos futuros -->
+      <!-- Projetos disponíveis e planejados -->
       <section class="projects-section" id="projetos">
         <div class="container">
           <div class="section-heading">
@@ -4157,9 +4229,9 @@ botaoStatus.addEventListener("click", alternarStatus);</code></pre>
 
           <div class="projects-grid">
             <article class="project-card">
-              <span>Planejado</span>
-              <h3>Landing page interativa</h3>
-              <p>Uma página simples para praticar estrutura, estilo e interação.</p>
+              <span>Etapa 1 disponível</span>
+              <h3><a href="#projeto-1">Landing Page Interativa</a></h3>
+              <p>A base visual do Café Origem está pronta. As interações serão adicionadas nas próximas etapas.</p>
             </article>
 
             <article class="project-card">

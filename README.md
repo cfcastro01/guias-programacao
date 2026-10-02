@@ -1,6 +1,6 @@
 # Guias de Programação
 
-Projeto local de cursos e projetos práticos para quem está começando a programar. A versão atual apresenta o curso **JavaScript Iniciante**, com treze aulas disponíveis, e a estrutura inicial do curso **Desenvolvimento de Software com IA**.
+Projeto local de cursos e projetos práticos para quem está começando a programar. O curso **JavaScript Iniciante** possui treze aulas disponíveis e a primeira etapa da Landing Page Interativa. O curso **Desenvolvimento de Software com IA** possui sua estrutura inicial e a primeira aula publicada.
 
 ## Tecnologias
 
@@ -34,6 +34,14 @@ guias-programacao/
 │       └── MODELO_DE_AULA_IA.md
 └── projetos/
     ├── landing-page-interativa/
+    │   ├── original/
+    │   │   ├── index.html
+    │   │   ├── styles.css
+    │   │   └── script.js
+    │   ├── exercicio/
+    │   │   ├── index.html
+    │   │   ├── styles.css
+    │   │   └── script.js
     │   └── README.md
     └── mini-checklist/
         └── README.md
@@ -47,8 +55,8 @@ guias-programacao/
 - `ROADMAP.md` apresenta as próximas etapas e possibilidades futuras.
 - `cursos/` organiza cada curso em uma pasta própria.
 - Cada curso possui seu próprio modelo didático dentro da respectiva pasta.
-- `projetos/` reserva uma pasta para cada projeto prático.
-- Os READMEs internos registram somente o escopo planejado, sem antecipar o conteúdo completo.
+- `projetos/` organiza cada projeto prático; a Landing Page Interativa usa seus próprios arquivos HTML, CSS e JavaScript.
+- Os READMEs internos registram o escopo, a etapa atual e os próximos passos.
 
 ## Como abrir em localhost
 
@@ -68,9 +76,16 @@ Na primeira execução, o `npx` pode pedir confirmação para baixar temporariam
 
 Esta é apenas a estrutura inicial. As Aulas 1 a 13 estão na página do curso JavaScript Iniciante. Cada aula disponível pode ser
 marcada como concluída, e esse estado permanece salvo localmente no navegador.
-O sumário também apresenta as aulas 14 a 16 e os dois projetos práticos como
-conteúdos planejados, ainda sem links ou controles de progresso. O curso
-Desenvolvimento de Software com IA possui a primeira aula publicada e as demais
+O sumário também apresenta as aulas 14 a 16 e o Mini Checklist como conteúdos
+planejados. O Projeto Prático 1 já possui uma seção após a Aula 13 e sua
+**Etapa 1 — Estrutura e visual** está disponível: uma landing page estática da
+cafeteria fictícia Café Origem, ainda sem interações JavaScript ou controle de
+conclusão. Trabalhe na [versão de exercício](projetos/landing-page-interativa/exercicio/)
+e use o [original](projetos/landing-page-interativa/original/) para comparação.
+A pasta original preserva a Etapa 1; as próximas atividades serão feitas somente
+em exercicio. Consulte o [README do projeto](projetos/landing-page-interativa/README.md)
+para abrir as duas versões no navegador ou no servidor local.
+O curso Desenvolvimento de Software com IA possui a primeira aula publicada e as demais
 aulas planejadas em seu sumário. A aula disponível também pode ser marcada como
 concluída no progresso local.
 

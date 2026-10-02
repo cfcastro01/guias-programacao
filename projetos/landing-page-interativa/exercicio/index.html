@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Café Origem: uma cafeteria fictícia para quem aprecia café e boas pausas." />
+    <title>Café Origem — Uma boa pausa começa aqui</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+    <header class="site-header">
+      <div class="container header-content">
+        <a class="brand" href="#inicio" aria-label="Café Origem — início">Café Origem<span aria-hidden="true">.</span></a>
+        <button class="menu-toggle" id="menu-button" type="button" aria-controls="site-navigation" aria-label="Abrir menu" disabled>
+          <span class="menu-icon" aria-hidden="true"></span> Menu
+        </button>
+        <nav class="site-navigation" id="site-navigation" aria-label="Navegação principal">
+          <a href="#sobre">Nossa essência</a>
+          <a href="#preparos">Preparos</a>
+          <a href="#visite">Visite a Origem <span aria-hidden="true">↗</span></a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="conteudo">
+      <section class="hero" id="inicio" aria-labelledby="hero-title">
+        <div class="container hero-layout">
+          <div class="hero-copy">
+            <p class="eyebrow">Café especial. Sem pressa.</p>
+            <h1 id="hero-title">Uma boa pausa<br />começa na <em>origem.</em></h1>
+            <p class="hero-description">Grãos escolhidos com cuidado, conversas que ficam e um café preparado no seu tempo.</p>
+            <a class="button" href="#preparos">Encontre seu preparo <span aria-hidden="true">↗</span></a>
+            <p class="hero-note">Do primeiro aroma ao último gole.</p>
+          </div>
+          <div class="coffee-scene" aria-hidden="true">
+            <span class="scene-label">Origem, em cada xícara</span>
+            <div class="steam"><span></span><span></span><span></span></div>
+            <div class="saucer"></div>
+            <div class="cup"><div class="coffee"></div></div>
+            <div class="bean bean-one"></div><div class="bean bean-two"></div>
+            <span class="scene-caption">Uma pausa para sentir.</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="about section-space" id="sobre" aria-labelledby="about-title">
+        <div class="container about-layout">
+          <div><p class="eyebrow">Nossa essência</p><h2 id="about-title">Café bom aproxima.</h2></div>
+          <div class="about-copy">
+            <p>A Origem nasceu de uma ideia simples: fazer da pausa um pequeno ritual. Aqui, cada grão tem uma história e cada mesa tem espaço para uma nova conversa.</p>
+            <p>Valorizamos produtores, preparos cuidadosos e a alegria de receber. Um lugar para chegar, respirar e ficar mais um pouco.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="methods section-space" id="preparos" aria-labelledby="methods-title">
+        <div class="container">
+          <div class="section-heading"><p class="eyebrow">Seu café, seu ritmo</p><h2 id="methods-title">Três jeitos de fazer uma pausa.</h2><p>Um mesmo cuidado, diferentes aromas e texturas.</p></div>
+          <div class="methods-grid">
+            <article class="method-card" id="metodo-coado">
+              <span class="method-number" aria-hidden="true">01 /</span><p class="method-profile">Leve & delicado</p>
+              <h3>Coado</h3><p>A água passa devagar pelo filtro, revelando uma bebida suave e aromas delicados. Para apreciar cada detalhe.</p>
+              <button class="method-select" type="button" disabled>Escolher coado <span aria-hidden="true">↗</span></button>
+            </article>
+            <article class="method-card" id="metodo-prensa">
+              <span class="method-number" aria-hidden="true">02 /</span><p class="method-profile">Encorpado & aromático</p>
+              <h3>Prensa francesa</h3><p>O café fica em contato com a água antes de ser separado por uma prensa. Mais textura, sabor e tempo para curtir.</p>
+              <button class="method-select" type="button" disabled>Escolher prensa <span aria-hidden="true">↗</span></button>
+            </article>
+            <article class="method-card" id="metodo-espresso">
+              <span class="method-number" aria-hidden="true">03 /</span><p class="method-profile">Curto & intenso</p>
+              <h3>Espresso</h3><p>Preparado sob pressão, concentra o sabor em uma pequena xícara. Uma pausa breve, com personalidade.</p>
+              <button class="method-select" type="button" disabled>Escolher espresso <span aria-hidden="true">↗</span></button>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="story section-space" id="historia" aria-labelledby="story-title">
+        <div class="container story-layout">
+          <div><p class="eyebrow">Da terra à xícara</p><h2 id="story-title">Muito antes do primeiro gole.</h2></div>
+          <div>
+            <p>O sabor começa no lugar onde o café cresce. Solo, clima e cuidado na colheita ajudam a construir o que você sente na xícara.</p>
+            <div class="story-content" id="story-content"><p>Depois, a torra revela os aromas e o preparo dá o toque final. É por isso que gostamos de conhecer a origem dos grãos e de respeitar cada etapa do caminho.</p></div>
+            <button class="story-toggle" id="story-button" type="button" aria-controls="story-content" disabled>Ver mais <span aria-hidden="true">+</span></button>
+          </div>
+        </div>
+      </section>
+
+      <section class="visit section-space" id="visite" aria-labelledby="visit-title">
+        <div class="container visit-layout">
+          <div><p class="eyebrow">A próxima pausa é sua</p><h2 id="visit-title">Puxe uma cadeira.<br />O café está esperando.</h2><p>Uma xícara, um encontro, um tempo para você.</p></div>
+          <div class="visit-info"><p><strong>Encontre a Origem</strong><br />Rua dos Grãos, 120 — Centro</p><p>Segunda a sábado<br />Das 8h às 18h</p><a class="text-link" href="#sobre">Conheça nossa essência <span aria-hidden="true">↗</span></a></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer"><div class="container footer-content"><a class="brand" href="#inicio">Café Origem<span aria-hidden="true">.</span></a><p>Cafeteria fictícia · Projeto de estudo</p><a href="../../../cursos/javascript-iniciante/#projeto-1">Voltar ao curso</a></div></footer>
+    <script src="script.js"></script>
+  </body>
+</html>

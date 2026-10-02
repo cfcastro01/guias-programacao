@@ -2,6 +2,25 @@
 
 Este arquivo registra as principais mudanças do projeto Guias de Programação.
 
+## 2026-10-02 — Organização didática do Projeto Prático 1
+
+### Alterado
+
+- Etapa 1 atual preservada em original/ e copiada para exercicio/, com ajuste do caminho de retorno ao curso.
+- Links explícitos para trabalhar na versão de exercício e consultar o original para comparação.
+- Orientações sobre arquivos HTML, CSS e JavaScript, uso auxiliar do Console e formato das próximas etapas.
+- READMEs atualizados; sem nova etapa, interações JavaScript ou progresso do projeto.
+
+## 2026-10-02 — Início do Projeto Prático 1
+
+### Adicionado
+
+- Etapa 1 da Landing Page Interativa: Café Origem, uma cafeteria fictícia com HTML semântico, CSS responsivo e composição visual sem imagens externas.
+- Seção do projeto após a Aula 13 e links no sumário e na área de projetos do curso JavaScript.
+- Arquivos independentes do projeto e README com as cinco etapas planejadas.
+- Botões preparados e desativados para menu, seleção de preparo e conteúdo expansível; script.js contém apenas um comentário.
+- Documentação geral e do curso atualizada. Projeto ainda sem interações JavaScript ou controle de conclusão.
+
 ## 2026-10-02 — Blocos recolhíveis nos sumários dos cursos
 
 ### Adicionado
