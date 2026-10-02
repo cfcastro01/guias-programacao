@@ -2,6 +2,15 @@
 
 Este arquivo registra as principais mudanças do projeto Guias de Programação.
 
+## 2026-10-02 — Blocos recolhíveis nos sumários dos cursos
+
+### Adicionado
+
+- Blocos de aulas de JavaScript e módulos de Desenvolvimento de Software com IA com abertura e fechamento nativos por `details` e `summary`, indicador visual espaçado do título e foco por teclado.
+- Blocos com todas as aulas disponíveis concluídas começam fechados após restaurar o progresso; os demais começam abertos.
+- Itens planejados não entram no cálculo, e alterações de conclusão não recolhem os blocos durante a sessão.
+- Cards dos projetos práticos e conteúdo das aulas preservados.
+
 ## 2026-10-02 — Aula 13 do JavaScript Iniciante
 
 ### Adicionado

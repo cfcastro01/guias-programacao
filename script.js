@@ -124,6 +124,31 @@ lessonCompletionInputs.forEach((completionInput) => {
   });
 });
 
+function initializeSummaryGroups() {
+  const summaryGroups = document.querySelectorAll(".summary details.summary-group");
+
+  summaryGroups.forEach((summaryGroup) => {
+    const availableLessons = Array.from(
+      summaryGroup.querySelectorAll("[data-course-id][data-lesson-id]"),
+    ).filter((lesson) =>
+      Array.from(lessonCompletionInputs).some(
+        (input) =>
+          input.dataset.courseId === lesson.dataset.courseId &&
+          input.dataset.lessonId === lesson.dataset.lessonId,
+      ),
+    );
+
+    const isCompleted =
+      availableLessons.length > 0 &&
+      availableLessons.every((lesson) => lesson.classList.contains("is-completed"));
+
+    summaryGroup.open = !isCompleted;
+  });
+}
+
+// Calcula só ao carregar; depois, abrir e fechar fica a cargo do usuário.
+initializeSummaryGroups();
+
 const exerciseAnswerInputs = document.querySelectorAll(
   ".exercise-answer-input",
 );
