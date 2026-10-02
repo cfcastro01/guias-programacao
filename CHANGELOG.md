@@ -43,6 +43,14 @@ Este arquivo registra as principais mudanças do projeto Guias de Programação.
 - Explicação sobre percorrer arrays, função anônima, item atual e índice.
 - Exercício com resposta comentada e controle de conclusão integrado ao progresso local.
 
+## 2026-09-30 — Aula 1 de Desenvolvimento de Software com IA
+
+### Adicionado
+
+- Aula **O que é desenvolvimento de software** no primeiro módulo do curso.
+- Exercício conceitual com resposta comentada e expansível.
+- Seleção de resposta do exercício e conclusão da aula salvas de forma independente no progresso local.
+
 ## 2026-09-30 — Páginas separadas por curso
 
 ### Alterado

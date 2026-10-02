@@ -123,3 +123,37 @@ lessonCompletionInputs.forEach((completionInput) => {
     updateLessonInterface(courseId, lessonId, completionInput.checked);
   });
 });
+
+const exerciseAnswerInputs = document.querySelectorAll(
+  ".exercise-answer-input",
+);
+
+function saveExerciseAnswer(courseId, exerciseId, answer) {
+  const progress = readProgress();
+  const courseProgress = isObject(progress[courseId])
+    ? progress[courseId]
+    : {};
+
+  courseProgress[exerciseId] = answer;
+  progress[courseId] = courseProgress;
+
+  try {
+    localStorage.setItem(progressStorageKey, JSON.stringify(progress));
+  } catch {
+    // A página continua funcionando mesmo se o navegador bloquear o armazenamento.
+  }
+}
+
+exerciseAnswerInputs.forEach((answerInput) => {
+  const { courseId, exerciseId } = answerInput.dataset;
+  const courseProgress = savedProgress[courseId];
+
+  answerInput.checked =
+    isObject(courseProgress) && courseProgress[exerciseId] === answerInput.value;
+
+  answerInput.addEventListener("change", () => {
+    if (answerInput.checked) {
+      saveExerciseAnswer(courseId, exerciseId, answerInput.value);
+    }
+  });
+});

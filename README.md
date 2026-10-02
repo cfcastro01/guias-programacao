@@ -70,8 +70,9 @@ Esta é apenas a estrutura inicial. As Aulas 1 a 13 estão na página do curso J
 marcada como concluída, e esse estado permanece salvo localmente no navegador.
 O sumário também apresenta as aulas 14 a 16 e os dois projetos práticos como
 conteúdos planejados, ainda sem links ou controles de progresso. O curso
-Desenvolvimento de Software com IA possui inicialmente apenas seu sumário; suas
-aulas serão publicadas aos poucos e ainda não participam do progresso local.
+Desenvolvimento de Software com IA possui a primeira aula publicada e as demais
+aulas planejadas em seu sumário. A aula disponível também pode ser marcada como
+concluída no progresso local.
 
 ## Evolução futura
 

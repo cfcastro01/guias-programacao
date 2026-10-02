@@ -17,6 +17,10 @@ arquitetura, desenvolvimento com IA, agentes, skills, MCP, aplicações com IA,
 workflow profissional, decisões técnicas, projeto prático e preparação
 profissional.
 
-O sumário está publicado em `index.html`. As aulas ainda não foram criadas; elas
-deverão ser adicionadas aos poucos e seguir o padrão definido em
-`MODELO_DE_AULA_IA.md`.
+O sumário e a primeira aula, **O que é desenvolvimento de software**, estão
+publicados em `index.html`. As próximas aulas deverão ser adicionadas aos poucos
+e seguir o padrão definido em `MODELO_DE_AULA_IA.md`.
+
+O progresso é salvo no navegador com a chave
+`guias-programacao-progress` e o identificador de curso
+`desenvolvimento-software-ia`.
