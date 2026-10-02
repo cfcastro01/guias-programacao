@@ -2,6 +2,14 @@
 
 Este arquivo registra as principais mudanças do projeto Guias de Programação.
 
+## 2026-10-02 — Aula 10 do JavaScript Iniciante
+
+### Adicionado
+
+- Aula 10 real: **Transformando e filtrando listas com `map` e `filter`**.
+- Comparação entre percorrer, transformar e selecionar itens de arrays.
+- Exercício com resposta comentada e controle de conclusão integrado ao progresso local.
+
 ## 2026-09-30 — Aula 9 do JavaScript Iniciante
 
 ### Adicionado

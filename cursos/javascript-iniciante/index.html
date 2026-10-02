@@ -120,9 +120,13 @@
                     <a href="#aula-9">Repetindo ações com forEach</a>
                     <span class="lesson-status">Não concluída</span>
                   </li>
-                  <li class="future">
-                    Transformando e filtrando listas com map e filter
-                    <span class="coming-soon">Em breve</span>
+                  <li
+                    class="current"
+                    data-course-id="javascript-iniciante"
+                    data-lesson-id="aula-10"
+                  >
+                    <a href="#aula-10">Transformando e filtrando listas com map e filter</a>
+                    <span class="lesson-status">Não concluída</span>
                   </li>
                 </ol>
               </div>
@@ -2519,6 +2523,432 @@ cursos.forEach(function (curso, indice) {
                       type="checkbox"
                       data-course-id="javascript-iniciante"
                       data-lesson-id="aula-9"
+                    />
+                    <span class="completion-label-text">Marcar aula como concluída</span>
+                  </label>
+                  <p>Você pode desmarcar esta opção quando quiser.</p>
+                </section>
+              </article>
+
+              <!-- Décima aula real do curso -->
+              <article class="lesson" id="aula-10">
+                <header class="lesson-header">
+                  <span>Aula 10</span>
+                  <h3>Transformando e filtrando listas com <code>map</code> e <code>filter</code></h3>
+                </header>
+
+                <section>
+                  <h4>Objetivo</h4>
+                  <p>
+                    Entender a diferença entre percorrer, transformar e
+                    selecionar itens de uma lista usando <code>forEach</code>,
+                    <code>map</code> e <code>filter</code>.
+                  </p>
+                </section>
+
+                <section>
+                  <h4>Explicação simples</h4>
+                  <h5>Retomando <code>forEach</code></h5>
+                  <p>Na Aula 9, percorremos uma lista assim:</p>
+                  <pre><code>const numeros = [1, 2, 3];
+
+numeros.forEach(function (numero) {
+  console.log(numero);
+});</code></pre>
+                  <p>
+                    <code>forEach</code> executa uma ação para cada item. Ele é
+                    útil quando queremos mostrar algo ou executar uma instrução
+                    para cada valor.
+                  </p>
+                  <p>
+                    Mas e se quisermos criar uma nova lista com os valores
+                    modificados? É aí que entra o <code>map</code>.
+                  </p>
+
+                  <h5><code>map</code>: transformar cada item</h5>
+                  <pre><code>const numeros = [1, 2, 3];
+
+const dobrados = numeros.map(function (numero) {
+  return numero * 2;
+});
+
+console.log(dobrados);</code></pre>
+                  <p>O resultado é uma nova lista:</p>
+                  <pre><code>[2, 4, 6]</code></pre>
+                  <ul>
+                    <li><code>numeros</code> continua sendo <code>[1, 2, 3]</code>;</li>
+                    <li><code>map</code> percorre cada item;</li>
+                    <li>a função transforma o item atual;</li>
+                    <li>
+                      <code>return</code> informa qual valor entrará na nova
+                      lista;
+                    </li>
+                    <li><code>dobrados</code> recebe a nova lista.</li>
+                  </ul>
+
+                  <h5>O papel de <code>return</code></h5>
+                  <pre><code>return numero * 2;</code></pre>
+                  <p>Podemos ler essa linha assim:</p>
+                  <blockquote>
+                    <p>Devolva o resultado de número vezes dois.</p>
+                  </blockquote>
+                  <p>
+                    Dentro do <code>map</code>, cada valor devolvido por
+                    <code>return</code> é colocado na nova lista. Por enquanto,
+                    essa é a ideia de <code>return</code> que precisamos.
+                  </p>
+
+                  <h5>A lista original não muda</h5>
+                  <pre><code>const numeros = [1, 2, 3];
+
+const dobrados = numeros.map(function (numero) {
+  return numero * 2;
+});
+
+console.log(numeros);
+console.log(dobrados);</code></pre>
+                  <p>O console mostra:</p>
+                  <pre><code>[1, 2, 3]
+[2, 4, 6]</code></pre>
+                  <p>
+                    <code>map</code> usa os itens da lista original para montar
+                    outra lista. Ele não troca automaticamente os valores de
+                    <code>numeros</code>.
+                  </p>
+
+                  <h5><code>filter</code>: selecionar alguns itens</h5>
+                  <p>Agora temos uma lista de idades:</p>
+                  <pre><code>const idades = [12, 18, 25, 15, 30];</code></pre>
+                  <p>Queremos uma nova lista somente com maiores de idade:</p>
+                  <pre><code>const maioresDeIdade = idades.filter(function (idade) {
+  return idade &gt;= 18;
+});
+
+console.log(maioresDeIdade);</code></pre>
+                  <p>O resultado é:</p>
+                  <pre><code>[18, 25, 30]</code></pre>
+                  <p>
+                    <code>filter</code> também percorre a lista. Para cada item,
+                    a função responde <code>true</code> ou <code>false</code>:
+                  </p>
+                  <ul>
+                    <li><code>true</code>: o item entra na nova lista;</li>
+                    <li><code>false</code>: o item fica de fora.</li>
+                  </ul>
+
+                  <h5>Retomando condições</h5>
+                  <p>Na Aula 4, vimos que esta comparação é uma pergunta:</p>
+                  <pre><code>idade &gt;= 18</code></pre>
+                  <p>
+                    Ela já resulta em <code>true</code> ou <code>false</code>. No
+                    <code>filter</code>, essa resposta decide se o valor entra na
+                    nova lista. Por isso podemos escrever diretamente:
+                  </p>
+                  <pre><code>return idade &gt;= 18;</code></pre>
+
+                  <h5><code>forEach</code>, <code>map</code> e <code>filter</code></h5>
+                  <p>Compare os três métodos usando a mesma lista:</p>
+                  <pre><code>const numeros = [1, 2, 3, 4];
+
+numeros.forEach(function (numero) {
+  console.log(numero);
+});
+
+const dobrados = numeros.map(function (numero) {
+  return numero * 2;
+});
+
+const maioresQueDois = numeros.filter(function (numero) {
+  return numero &gt; 2;
+});</code></pre>
+                  <ul>
+                    <li><code>forEach</code>: fazer uma ação para cada item;</li>
+                    <li>
+                      <code>map</code>: transformar cada item e criar uma nova
+                      lista;
+                    </li>
+                    <li>
+                      <code>filter</code>: selecionar itens e criar uma nova
+                      lista.
+                    </li>
+                  </ul>
+                  <p>
+                    Para começar, lembre: <strong>fazer, transformar e
+                    selecionar</strong>. Essa é uma orientação didática inicial
+                    para escolher entre os três métodos.
+                  </p>
+
+                  <h5>Parênteses dentro de parênteses</h5>
+                  <p>Podemos abrir o código para enxergar suas partes:</p>
+                  <pre><code>numeros.map(
+  function (numero) {
+    return numero * 2;
+  }
+);</code></pre>
+                  <ul>
+                    <li><code>map(...)</code> é a chamada do método;</li>
+                    <li>dentro dela, entregamos uma função;</li>
+                    <li><code>numero</code> representa o item atual;</li>
+                    <li>as chaves <code>{}</code> contêm as instruções;</li>
+                    <li>
+                      <code>return</code> devolve o valor que entrará na nova
+                      lista.
+                    </li>
+                  </ul>
+                  <p>
+                    Em <code>filter</code>, a estrutura é a mesma. A diferença é
+                    que o <code>return</code> devolve uma resposta verdadeira ou
+                    falsa para decidir se o item será mantido.
+                  </p>
+                </section>
+
+                <section class="pronunciation">
+                  <h4>Como ler em português</h4>
+                  <pre><code>numeros.map(function (numero) {
+  return numero * 2;
+});</code></pre>
+                  <blockquote>
+                    <p>
+                      Para cada número da lista numeros, devolva o número vezes
+                      dois e crie uma nova lista com esses resultados.
+                    </p>
+                  </blockquote>
+
+                  <pre><code>idades.filter(function (idade) {
+  return idade &gt;= 18;
+});</code></pre>
+                  <blockquote>
+                    <p>
+                      Para cada idade da lista, mantenha somente aquelas em que
+                      idade maior ou igual a 18 for verdadeiro.
+                    </p>
+                  </blockquote>
+                  <p>
+                    Assim como no <code>forEach</code>, <code>numero</code> e
+                    <code>idade</code> são nomes escolhidos pelo programador para
+                    representar o item atual.
+                  </p>
+                </section>
+
+                <section>
+                  <h4>Exemplo comentado</h4>
+                  <pre><code>const precos = [10, 20, 30];
+
+const precosComDesconto = precos.map(function (preco) {
+  return preco - 5;
+});
+
+console.log(precos);
+console.log(precosComDesconto);
+
+const valoresAltos = precos.filter(function (preco) {
+  return preco &gt;= 20;
+});
+
+console.log(valoresAltos);</code></pre>
+                  <p>O resultado será:</p>
+                  <pre><code>[10, 20, 30]
+[5, 15, 25]
+[20, 30]</code></pre>
+                  <p>
+                    <code>map</code> subtraiu cinco de cada preço para produzir
+                    outra lista. <code>filter</code> manteve somente os preços
+                    maiores ou iguais a vinte. A lista <code>precos</code>
+                    continuou igual.
+                  </p>
+                </section>
+
+                <section>
+                  <h4>Erros comuns</h4>
+                  <ul>
+                    <li>
+                      Esquecer <code>return</code> dentro do <code>map</code>. Sem
+                      o valor devolvido, cada posição da nova lista recebe
+                      <code>undefined</code>, indicando que nenhum valor foi
+                      devolvido.
+                    </li>
+                    <li>
+                      Esperar que <code>map</code> altere automaticamente o array
+                      original.
+                    </li>
+                    <li>
+                      Achar que <code>filter</code> transforma os valores. Ele
+                      seleciona quais valores serão mantidos.
+                    </li>
+                    <li>
+                      Achar que <code>map</code> remove itens. Ele produz um novo
+                      valor para cada item percorrido.
+                    </li>
+                    <li>
+                      Esquecer que <code>filter</code> precisa de uma condição
+                      que resulte em verdadeiro ou falso.
+                    </li>
+                    <li>Confundir quando usar <code>forEach</code>, <code>map</code> ou <code>filter</code>.</li>
+                    <li>Esquecer o ponto antes do nome do método.</li>
+                    <li>Esquecer os parênteses da chamada do método.</li>
+                    <li>
+                      Confundir o parâmetro, que representa o item atual, com a
+                      lista inteira.
+                    </li>
+                  </ul>
+                </section>
+
+                <section>
+                  <h4>Exercício básico</h4>
+                  <p>Comece com esta lista:</p>
+                  <pre><code>const valores = [10, 25, 40, 5];</code></pre>
+                  <ol>
+                    <li>
+                      Crie uma nova lista chamada
+                      <code>valoresDobrados</code> usando <code>map</code>.
+                    </li>
+                    <li>Multiplique cada valor por <code>2</code>.</li>
+                    <li>Mostre a lista original.</li>
+                    <li>Mostre <code>valoresDobrados</code>.</li>
+                    <li>
+                      Crie <code>valoresMaioresOuIguaisA20</code> usando
+                      <code>filter</code>.
+                    </li>
+                    <li>Mantenha somente valores maiores ou iguais a 20.</li>
+                    <li>Mostre essa nova lista.</li>
+                  </ol>
+                  <p>O console deve mostrar:</p>
+                  <pre><code>[10, 25, 40, 5]
+[20, 50, 80, 10]
+[25, 40]</code></pre>
+                </section>
+
+                <section>
+                  <h4>Como testar no console</h4>
+                  <ol>
+                    <li>Abra as ferramentas do navegador com <kbd>F12</kbd>.</li>
+                    <li>Entre na aba <strong>Console</strong>.</li>
+                    <li>Crie primeiro a lista <code>valores</code>.</li>
+                    <li>Execute o bloco com <code>map</code>.</li>
+                    <li>Mostre a lista original e a nova lista.</li>
+                    <li>Execute o bloco com <code>filter</code>.</li>
+                    <li>Troque os números e observe os novos resultados.</li>
+                    <li>Troque a condição do filtro e teste novamente.</li>
+                  </ol>
+                  <p>
+                    Se houver conflito ao repetir uma declaração com
+                    <code>const</code>, recarregue a página ou troque o nome da
+                    variável antes de testar novamente.
+                  </p>
+                </section>
+
+                <section>
+                  <h4>Resposta correta</h4>
+
+                  <button
+                    class="answer-toggle"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="exercise-answer-10"
+                  >
+                    Mostrar resposta comentada
+                  </button>
+
+                  <div class="answer" id="exercise-answer-10" hidden>
+                    <pre><code>const valores = [10, 25, 40, 5];
+
+const valoresDobrados = valores.map(function (valor) {
+  return valor * 2;
+});
+
+console.log(valores);
+console.log(valoresDobrados);
+
+const valoresMaioresOuIguaisA20 = valores.filter(function (valor) {
+  return valor &gt;= 20;
+});
+
+console.log(valoresMaioresOuIguaisA20);</code></pre>
+
+                    <h5>Explicação da resposta</h5>
+                    <ul>
+                      <li>
+                        <code>valores</code> guarda a lista original com quatro
+                        números.
+                      </li>
+                      <li>
+                        <code>map</code> entrega cada número ao parâmetro
+                        <code>valor</code>.
+                      </li>
+                      <li>
+                        <code>return valor * 2</code> cria o item correspondente
+                        da nova lista <code>valoresDobrados</code>.
+                      </li>
+                      <li>
+                        Os dois primeiros <code>console.log()</code> permitem
+                        comparar a lista original com a lista transformada.
+                      </li>
+                      <li>
+                        <code>filter</code> também recebe cada valor da lista.
+                      </li>
+                      <li>
+                        <code>return valor &gt;= 20</code> responde
+                        <code>true</code> ou <code>false</code> para cada número.
+                      </li>
+                      <li>
+                        Somente <code>25</code> e <code>40</code> recebem uma
+                        resposta verdadeira e entram na nova lista.
+                      </li>
+                    </ul>
+                  </div>
+                </section>
+
+                <section>
+                  <h4>Aplicação prática no projeto</h4>
+                  <p>
+                    No Mini Checklist, poderemos organizar tarefas com objetos,
+                    como vimos na Aula 7:
+                  </p>
+                  <pre><code>const tarefas = [
+  { texto: "Estudar", concluida: true },
+  { texto: "Praticar", concluida: false },
+  { texto: "Revisar", concluida: true }
+];</code></pre>
+                  <p>
+                    Conceitualmente, <code>filter</code> poderá criar uma lista
+                    somente com as tarefas concluídas:
+                  </p>
+                  <pre><code>const concluidas = tarefas.filter(function (tarefa) {
+  return tarefa.concluida === true;
+});</code></pre>
+                  <p>
+                    No futuro, <code>map</code> também poderá transformar dados em
+                    outros valores ou em elementos da interface. Ainda não
+                    vamos criar elementos na página nem implementar o projeto.
+                  </p>
+                </section>
+
+                <section class="lesson-completion">
+                  <h4>Conclusão da aula</h4>
+                  <p>Encerrando o bloco Repetição e transformação:</p>
+                  <ul>
+                    <li><code>forEach</code> executa uma ação para cada item;</li>
+                    <li>
+                      <code>map</code> transforma cada item e cria uma nova lista;
+                    </li>
+                    <li>
+                      <code>filter</code> seleciona itens e cria uma nova lista.
+                    </li>
+                  </ul>
+                  <p>
+                    Agora você já consegue guardar listas, percorrê-las,
+                    transformar valores e selecionar valores. O próximo bloco é
+                    <strong>JavaScript na página</strong>. Na Aula 11,
+                    conheceremos o DOM e aprenderemos a encontrar elementos do
+                    HTML.
+                  </p>
+                  <label class="completion-control" for="completion-aula-10">
+                    <input
+                      class="lesson-completion-input"
+                      id="completion-aula-10"
+                      type="checkbox"
+                      data-course-id="javascript-iniciante"
+                      data-lesson-id="aula-10"
                     />
                     <span class="completion-label-text">Marcar aula como concluída</span>
                   </label>
