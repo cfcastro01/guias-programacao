@@ -1,1 +1,1 @@
-// As interações serão adicionadas nas próximas etapas do projeto.
+// Etapa 2: implemente aqui a abertura e o fechamento do menu mobile.

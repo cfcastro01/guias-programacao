@@ -31,11 +31,15 @@ identificador de curso `javascript-iniciante`.
 
 A seção do projeto está disponível após a Aula 13, sem substituir a Aula 14.
 A **Etapa 1 — Estrutura e visual** cria a cafeteria fictícia Café Origem com HTML
-e CSS responsivo. Menu mobile, estado ativo e conteúdo expansível serão
-implementados nas próximas etapas; ainda não há interações JavaScript no projeto.
+e CSS responsivo. A **Etapa 2 — Menu mobile** está disponível como exercício
+guiado: HTML e CSS preparados, JavaScript a ser escrito pelo aluno, dicas,
+diagnóstico e resposta comentada expansível. Estado ativo e conteúdo expansível
+continuam planejados.
 
 Trabalhe na [versão de exercício](../../projetos/landing-page-interativa/exercicio/).
 Use o [original](../../projetos/landing-page-interativa/original/) para comparar
 com a Etapa 1 aprovada, sem editar essa referência. O [README do projeto](../../projetos/landing-page-interativa/README.md)
 explica o papel de HTML, CSS, JavaScript e Console e o formato das próximas tarefas.
-Esta organização didática não cria uma nova etapa. O projeto ainda não possui controle de conclusão. As Aulas 14–16 e o Mini Checklist seguem planejados.
+O original permanece na Etapa 1; apenas exercicio/ recebe a tarefa do menu.
+As Etapas 1 e 2 têm controles de conclusão independentes, usando o progresso existente
+do curso. Não há controle de conclusão geral do projeto. As Aulas 14–16 e o Mini Checklist seguem planejados.

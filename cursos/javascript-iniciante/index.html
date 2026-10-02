@@ -165,7 +165,7 @@
                 <h4>Projeto prático 1</h4>
                 <div class="summary-project-card">
                   <strong><a href="#projeto-1">Landing Page Interativa</a></strong>
-                  <span class="project-status">Etapa 1 disponível</span>
+                  <span class="project-status">Etapa 2 — exercício disponível</span>
                   <p>
                     Projeto visual para aplicar DOM, eventos, classes e
                     interação com HTML/CSS.
@@ -4165,7 +4165,7 @@ botaoStatus.addEventListener("click", alternarStatus);</code></pre>
                     <li><strong>Console:</strong> use como apoio para conferir valores, testar pequenas expressões e ler erros. Depurar significa investigar a causa de um problema.</li>
                   </ul>
                   <p>As soluções serão escritas nos arquivos reais de <code>exercicio/</code>. O Console não será o local principal para construir o projeto.</p>
-                  <p>Depois de uma alteração, salve o arquivo e recarregue a versão de exercício no navegador. Abra o original em outra aba, na mesma largura de janela, para comparar. Nesta etapa, as duas versões começam iguais; ainda não é preciso adicionar JavaScript.</p>
+                  <p>Depois de uma alteração, salve o arquivo e recarregue a versão de exercício no navegador. Abra o original em outra aba, na mesma largura de janela, para comparar. Na Etapa 1, as duas versões começaram iguais. Na Etapa 2, você escreverá o JavaScript do menu somente na versão de exercício.</p>
                 </section>
                 <section>
                   <h4>Formato das próximas etapas</h4>
@@ -4176,12 +4176,12 @@ botaoStatus.addEventListener("click", alternarStatus);</code></pre>
                   <h4>Como o projeto será desenvolvido</h4>
                   <ol>
                     <li><strong>Estrutura e visual — concluída:</strong> HTML, CSS, adaptação para celular e elementos preparados para receber JavaScript.</li>
-                    <li><strong>Menu mobile:</strong> abrir e fechar a navegação em telas pequenas.</li>
+                    <li><strong>Menu mobile — etapa atual:</strong> abrir e fechar a navegação em telas pequenas.</li>
                     <li><strong>Estado ativo:</strong> destacar o método de preparo escolhido.</li>
                     <li><strong>Conteúdo expansível:</strong> mostrar e ocultar parte da história do café.</li>
                     <li><strong>Revisão final:</strong> conferir as interações e o uso por teclado.</li>
                   </ol>
-                  <p>Na <strong>Etapa 1 — Estrutura e visual</strong>, os links já levam às seções. Os botões das próximas etapas estão desativados, a navegação fica visível no celular e a história aparece por inteiro. Ainda não há interações JavaScript.</p>
+                  <p>O <code>original/</code> preserva a <strong>Etapa 1 — Estrutura e visual</strong>. O <code>exercicio/</code> está preparado para a <strong>Etapa 2 — Menu mobile</strong>; o aluno implementará a interação. Estado ativo, conteúdo expansível e revisão final continuam planejados.</p>
                 </section>
                 <section class="pronunciation">
                   <h4>Como ler em português</h4>
@@ -4189,7 +4189,7 @@ botaoStatus.addEventListener("click", alternarStatus);</code></pre>
                   <p>HTML organiza o conteúdo, CSS define o visual e JavaScript acrescentará o comportamento nas próximas etapas.</p>
                 </section>
                 <section>
-                  <h4>Conceitos que serão aplicados depois</h4>
+                  <h4>Conceitos aplicados no projeto</h4>
                   <ul>
                     <li>Encontrar elementos da página usando o DOM.</li>
                     <li>Reagir a cliques por meio de eventos.</li>
@@ -4197,17 +4197,134 @@ botaoStatus.addEventListener("click", alternarStatus);</code></pre>
                     <li>Alternar classes CSS.</li>
                     <li>Controlar estados visuais, como selecionado e expandido.</li>
                   </ul>
-                  <p>Esses comportamentos serão implementados em tarefas separadas. Nesta etapa, observe a estrutura e teste apenas a navegação por links.</p>
+                  <p>O menu será implementado pelo aluno nesta etapa. Os demais comportamentos serão tratados separadamente nas próximas etapas.</p>
                 </section>
-                <section>
-                  <h4>Exercício básico</h4>
-                  <p>Abra a versão de exercício do Café Origem, use o link <strong>Preparos</strong> e identifique os três métodos. Diminua a largura da janela e observe a organização dos cards.</p>
+                <section id="projeto-1-etapa-1">
+                  <h4>Etapa 1 — Revisão da estrutura</h4>
+                  <p>Abra o original do Café Origem, use o link <strong>Preparos</strong> e identifique os três métodos. Diminua a largura da janela e observe a organização dos cards.</p>
                   <h5>Resposta comentada</h5>
                   <p>O link leva à seção de preparos, com Coado, Prensa francesa e Espresso. Os cards ficam em uma coluna nas telas pequenas e em três colunas quando há espaço. Essa adaptação é feita pelo CSS; não precisa de JavaScript.</p>
+                  <div class="lesson-completion">
+                    <h5>Conclusão da etapa</h5>
+                    <label class="completion-control" for="completion-projeto-1-etapa-1">
+                      <input
+                        class="lesson-completion-input"
+                        id="completion-projeto-1-etapa-1"
+                        type="checkbox"
+                        data-course-id="javascript-iniciante"
+                        data-lesson-id="projeto-1-etapa-1"
+                        data-completion-label="Marcar Etapa 1 como concluída"
+                        data-completed-label="Etapa 1 concluída — desmarcar"
+                      />
+                      <span class="completion-label-text">Marcar Etapa 1 como concluída</span>
+                    </label>
+                  </div>
+                </section>
+                <section id="projeto-1-etapa-2">
+                  <h4>Etapa 2 — Menu mobile</h4>
+                  <h5>Objetivo</h5>
+                  <p>Fazer a navegação abrir e fechar ao clicar no botão de menu em telas menores. Vamos conectar a <strong>Aula 11 — DOM</strong>, a <strong>Aula 12 — eventos</strong> e a <strong>Aula 13 — classes e estados visuais</strong>: encontrar → ouvir → alterar.</p>
+                  <h5>Arquivos usados</h5>
+                  <ul>
+                    <li><code>projetos/landing-page-interativa/exercicio/index.html</code></li>
+                    <li><code>projetos/landing-page-interativa/exercicio/styles.css</code></li>
+                    <li><code>projetos/landing-page-interativa/exercicio/script.js</code></li>
+                  </ul>
+                  <h5>Antes de começar</h5>
+                  <p>Trabalhe apenas em <code>exercicio/</code>. Use <code>original/</code> para comparar com a Etapa 1, sem editar essa referência.</p>
+                  <p>O HTML e o CSS já estão preparados. O botão tem o ID <code>menu-button</code> e controla a navegação com ID <code>site-navigation</code>. A classe <code>aberto</code> faz a navegação aparecer em telas abaixo de 700px. Em desktop, ela fica visível normalmente.</p>
+                  <p>O arquivo de JavaScript tem apenas um comentário: você escreverá a interação. Antes de concluir a tarefa, o botão ainda não abre o menu; isso faz parte do exercício.</p>
+                  <h5>Sua tarefa</h5>
+                  <ol>
+                    <li>Em <code>exercicio/script.js</code>, encontre o botão pelo seu ID.</li>
+                    <li>Encontre também a navegação pelo ID.</li>
+                    <li>Guarde os dois elementos em variáveis com nomes claros.</li>
+                    <li>Crie uma função chamada <code>alternarMenu</code>.</li>
+                    <li>Dentro dela, use <code>classList.toggle(...)</code> na navegação para alternar a classe <code>aberto</code>. Não coloque um ponto no nome da classe.</li>
+                    <li>Registre o evento <code>"click"</code> no botão com <code>addEventListener</code>, entregando a função sem executá-la naquele momento.</li>
+                    <li>Depois de alternar a classe, atualize o atributo <code>aria-expanded</code> do botão para <code>"true"</code> quando aberto e <code>"false"</code> quando fechado.</li>
+                  </ol>
+                  <p><code>aria-expanded</code> informa a leitores de tela se o conteúdo controlado está expandido. Esse atributo não abre o menu: o CSS decide o visual pela classe. Para atualizar um atributo, use o método <code>setAttribute(nome, valor)</code> no elemento. Você pode verificar a classe com <code>contains()</code> e decidir o valor com <code>if</code>, como nas Aulas 13 e 4.</p>
+                  <h5>Como ler em português</h5>
+                  <p><strong>“Encontre o botão e a navegação. Ouça o clique. Alterne a classe que mostra o menu e informe se ele está aberto.”</strong></p>
+                  <h5>Dicas</h5>
+                  <ol>
+                    <li><strong>Dica 1:</strong> use duas variáveis: uma para o botão, outra para a navegação. A busca pode ser feita com <code>document.getElementById(...)</code>.</li>
+                    <li><strong>Dica 2:</strong> o evento é <code>"click"</code>. Passe o nome da função ao registrar o evento, sem <code>()</code>.</li>
+                    <li><strong>Dica 3:</strong> a mudança visual usa <code>classList.toggle(...)</code>. O nome da classe precisa ser o mesmo no CSS: <code>aberto</code>.</li>
+                  </ol>
+                  <h5>Como testar</h5>
+                  <ol>
+                    <li>Salve <code>exercicio/script.js</code>.</li>
+                    <li>Abra ou recarregue a <a href="../../projetos/landing-page-interativa/exercicio/">versão de exercício</a>.</li>
+                    <li>Reduza a janela para menos de 700px ou use o modo responsivo das ferramentas do navegador.</li>
+                    <li>Clique no botão Menu e confira se a navegação aparece.</li>
+                    <li>Clique novamente e confira se ela desaparece, sem recarregar.</li>
+                    <li>Use Tab para focar o botão e Enter ou Espaço para testar por teclado.</li>
+                    <li>Aumente a janela para 700px ou mais e confira se a navegação permanece visível.</li>
+                    <li>Se não funcionar, abra F12 e consulte o Console. Na aba Elementos, confira a classe <code>aberto</code> na navegação e <code>aria-expanded</code> no botão.</li>
+                  </ol>
+                  <h5>Checklist de diagnóstico</h5>
+                  <ul>
+                    <li>Os IDs e a classe no HTML coincidem com os nomes usados no JavaScript?</li>
+                    <li>O HTML ainda carrega <code>script.js</code> no final da página?</li>
+                    <li>Você salvou o arquivo e recarregou a versão de exercício?</li>
+                    <li>Há erro no Console?</li>
+                    <li>A classe adicionada existe no CSS? A regra é <code>.site-navigation.aberto</code>.</li>
+                    <li>A janela está abaixo de 700px? Em desktop, a navegação sempre aparece.</li>
+                  </ul>
+                  <h5>Resultado esperado</h5>
+                  <p>Desktop com navegação visível. Mobile com menu inicialmente fechado: o primeiro clique abre e o seguinte fecha. A página não recarrega, e o estado informado por <code>aria-expanded</code> acompanha a classe.</p>
+                  <h5>Compare com o original</h5>
+                  <p><a href="../../projetos/landing-page-interativa/original/">Ver projeto original para comparação</a>: mantém a Etapa 1, com navegação visível no celular e botão desativado. A versão <code>exercicio/</code> terá menu mobile funcional depois que você escrever o JavaScript. Compare usando a mesma largura de janela.</p>
+                  <h5>Resposta comentada</h5>
+                  <p>Tente resolver antes de abrir a resposta. Use-a para conferir e entender sua solução.</p>
+                  <button class="answer-toggle" type="button" aria-expanded="false" aria-controls="resposta-projeto-1-etapa-2">Mostrar resposta comentada</button>
+                  <div class="answer" id="resposta-projeto-1-etapa-2" hidden>
+                    <pre><code>const botaoMenu = document.getElementById("menu-button");
+const menu = document.getElementById("site-navigation");
+
+function alternarMenu() {
+  menu.classList.toggle("aberto");
+
+  if (menu.classList.contains("aberto")) {
+    botaoMenu.setAttribute("aria-expanded", "true");
+  } else {
+    botaoMenu.setAttribute("aria-expanded", "false");
+  }
+}
+
+botaoMenu.addEventListener("click", alternarMenu);</code></pre>
+                    <h5>Explicação da resposta</h5>
+                    <ol>
+                      <li>A primeira linha encontra <code>menu-button</code> e guarda o botão em <code>botaoMenu</code>.</li>
+                      <li>A segunda encontra <code>site-navigation</code> e guarda a navegação em <code>menu</code>.</li>
+                      <li><code>function alternarMenu()</code> define as instruções que serão executadas a cada clique.</li>
+                      <li><code>toggle("aberto")</code> adiciona a classe quando ela não existe e a remove quando já existe. O CSS mostra ou oculta a navegação.</li>
+                      <li>O <code>if</code> usa <code>contains("aberto")</code> para conferir a classe após a alternância. Com ela presente, <code>setAttribute</code> escreve <code>"true"</code> em <code>aria-expanded</code>; no <code>else</code>, escreve <code>"false"</code>. Essa parte informa o estado para acessibilidade.</li>
+                      <li>A última linha registra o clique com <code>addEventListener</code>. A função é passada sem <code>()</code> para ser executada pelo clique, e não ao carregar a página.</li>
+                    </ol>
+                    <p>O conceito principal continua sendo <strong>encontrar → ouvir → alterar</strong>. A atualização do atributo acompanha o estado visual. Essa solução trata apenas o menu: cards e história continuam para as próximas etapas.</p>
+                  </div>
+                  <div class="lesson-completion">
+                    <h5>Conclusão da etapa</h5>
+                    <label class="completion-control" for="completion-projeto-1-etapa-2">
+                      <input
+                        class="lesson-completion-input"
+                        id="completion-projeto-1-etapa-2"
+                        type="checkbox"
+                        data-course-id="javascript-iniciante"
+                        data-lesson-id="projeto-1-etapa-2"
+                        data-completion-label="Marcar Etapa 2 como concluída"
+                        data-completed-label="Etapa 2 concluída — desmarcar"
+                      />
+                      <span class="completion-label-text">Marcar Etapa 2 como concluída</span>
+                    </label>
+                  </div>
                 </section>
                 <section>
                   <h4>Antes da próxima etapa</h4>
-                  <p>Confira a leitura, os links e a versão para celular. O projeto ainda está em desenvolvimento e só terá controle de conclusão quando todas as etapas estiverem prontas.</p>
+                  <p>Conclua a tarefa do menu e confira o uso por teclado e em desktop. Marque cada etapa somente depois de realizar sua tarefa. As marcações são independentes e ficam salvas neste navegador. A conclusão geral do projeto será tratada quando todas as etapas estiverem prontas.</p>
                 </section>
               </article>
             </div>
@@ -4229,9 +4346,9 @@ botaoStatus.addEventListener("click", alternarStatus);</code></pre>
 
           <div class="projects-grid">
             <article class="project-card">
-              <span>Etapa 1 disponível</span>
+              <span>Etapa 2 — exercício disponível</span>
               <h3><a href="#projeto-1">Landing Page Interativa</a></h3>
-              <p>A base visual do Café Origem está pronta. As interações serão adicionadas nas próximas etapas.</p>
+              <p>A base visual está pronta. Na etapa atual, escreva o JavaScript do menu mobile seguindo o exercício guiado.</p>
             </article>
 
             <article class="project-card">

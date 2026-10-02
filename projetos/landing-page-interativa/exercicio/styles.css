@@ -108,10 +108,13 @@ a:focus-visible, button:focus-visible {
   color: var(--clay);
 }
 .site-navigation {
-  display: flex;
+  display: none;
   flex-wrap: wrap;
   gap: 0.25rem 1.25rem;
   width: 100%;
+}
+.site-navigation.aberto {
+  display: flex;
 }
 .site-navigation a {
   padding-block: 0.5rem;
@@ -125,6 +128,7 @@ a:focus-visible, button:focus-visible {
 }
 .menu-toggle {
   display: inline-flex;
+  cursor: pointer;
   align-items: center;
   gap: 0.5rem;
   padding: 0.6rem 0.75rem;
@@ -408,6 +412,7 @@ button:disabled {
 
 @media (min-width: 700px) {
   .site-navigation {
+    display: flex;
     width: auto;
   }
   .menu-toggle {

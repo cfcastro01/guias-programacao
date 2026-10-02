@@ -80,8 +80,8 @@ function updateLessonInterface(courseId, lessonId, isCompleted) {
 
     if (completionLabel) {
       completionLabel.textContent = isCompleted
-        ? "Aula concluída — desmarcar"
-        : "Marcar aula como concluída";
+        ? (completionInput.dataset.completedLabel || "Aula concluída — desmarcar")
+        : (completionInput.dataset.completionLabel || "Marcar aula como concluída");
     }
   });
 

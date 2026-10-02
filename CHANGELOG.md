@@ -2,6 +2,18 @@
 
 Este arquivo registra as principais mudanças do projeto Guias de Programação.
 
+## 2026-10-02 — Etapa 2 do Projeto Prático 1: Menu mobile
+
+### Adicionado
+
+- Exercício guiado relacionando DOM, eventos e classes, com dicas progressivas, teste, diagnóstico e resposta comentada expansível.
+- Botão acessível habilitado e CSS dos estados fechado/aberto em exercicio/, mantendo a navegação visível em desktop.
+- Orientação para atualizar aria-expanded junto com a classe aberto.
+- Script de exercício somente com comentário de tarefa; implementação do menu fica para o aluno.
+- Controles independentes de conclusão das Etapas 1 e 2, reutilizando a chave e o formato do progresso das aulas, sem conclusão geral do projeto.
+- Rótulos de conclusão personalizáveis por controle, mantendo os textos atuais das aulas.
+- Documentação atualizada; original/ permanece como referência fixa da Etapa 1.
+
 ## 2026-10-02 — Organização didática do Projeto Prático 1
 
 ### Alterado
