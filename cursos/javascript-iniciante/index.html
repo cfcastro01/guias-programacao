@@ -134,9 +134,13 @@
               <div class="summary-group">
                 <h4>JavaScript na página</h4>
                 <ol start="11">
-                  <li class="future">
-                    DOM: encontrando elementos do HTML
-                    <span class="coming-soon">Em breve</span>
+                  <li
+                    class="current"
+                    data-course-id="javascript-iniciante"
+                    data-lesson-id="aula-11"
+                  >
+                    <a href="#aula-11">DOM: encontrando elementos do HTML</a>
+                    <span class="lesson-status">Não concluída</span>
                   </li>
                   <li class="future">
                     Eventos: reagindo a cliques e outras ações
@@ -2949,6 +2953,378 @@ console.log(valoresMaioresOuIguaisA20);</code></pre>
                       type="checkbox"
                       data-course-id="javascript-iniciante"
                       data-lesson-id="aula-10"
+                    />
+                    <span class="completion-label-text">Marcar aula como concluída</span>
+                  </label>
+                  <p>Você pode desmarcar esta opção quando quiser.</p>
+                </section>
+              </article>
+
+              <!-- Primeira aula do bloco JavaScript na página -->
+              <article class="lesson" id="aula-11">
+                <header class="lesson-header">
+                  <span>Aula 11</span>
+                  <h3>DOM: encontrando elementos do HTML</h3>
+                </header>
+
+                <section>
+                  <h4>Objetivo</h4>
+                  <p>
+                    Entender o que é DOM, encontrar elementos da página pelo ID
+                    ou por um seletor simples e ler o texto desses elementos.
+                  </p>
+                </section>
+
+                <section>
+                  <h4>Explicação simples</h4>
+                  <p>
+                    Até agora, testamos os exemplos principalmente no console.
+                    Imagine uma página com este HTML:
+                  </p>
+                  <pre><code>&lt;h1 id="titulo"&gt;Meu curso&lt;/h1&gt;
+&lt;p class="descricao"&gt;Estou aprendendo JavaScript.&lt;/p&gt;</code></pre>
+                  <p>
+                    O JavaScript pode encontrar esses elementos e trabalhar com
+                    eles. A primeira etapa é saber como localizá-los.
+                  </p>
+
+                  <h5>O que é DOM?</h5>
+                  <p>
+                    DOM significa <strong>Document Object Model</strong>. Você
+                    não precisa memorizar esse nome. Quando o navegador abre um
+                    HTML, ele organiza os elementos da página em uma estrutura
+                    que o JavaScript consegue acessar. Chamamos essa
+                    representação de <strong>DOM</strong>.
+                  </p>
+                  <pre><code>document
+└── body
+    ├── h1
+    └── p</code></pre>
+                  <p>
+                    Essa é apenas uma forma visual de imaginar a organização:
+                    dentro do documento existe o corpo da página, com o título
+                    e o parágrafo. O HTML descreve o conteúdo; o DOM é a
+                    representação desse conteúdo no navegador.
+                  </p>
+
+                  <h5><code>document</code>: a página carregada</h5>
+                  <pre><code>console.log(document);</code></pre>
+                  <p>
+                    <code>document</code> representa a página carregada no
+                    navegador. Podemos ler: “Mostre no console o documento da
+                    página”.
+                  </p>
+
+                  <h5>Encontrando pelo ID</h5>
+                  <pre><code>const titulo = document.getElementById("titulo");
+
+console.log(titulo);</code></pre>
+                  <ul>
+                    <li><code>document</code> representa a página;</li>
+                    <li>
+                      <code>getElementById()</code> é um método para procurar um
+                      elemento pelo ID;
+                    </li>
+                    <li><code>"titulo"</code> é o ID que queremos encontrar;</li>
+                    <li>
+                      <code>titulo</code> é a variável em que guardamos uma
+                      referência ao elemento encontrado: uma forma de acessá-lo
+                      novamente no código.
+                    </li>
+                  </ul>
+                  <p>
+                    Em HTML, o ID identifica um elemento e deve ser único na
+                    página. O console pode mostrar algo parecido com:
+                  </p>
+                  <pre><code>&lt;h1 id="titulo"&gt;Meu curso&lt;/h1&gt;</code></pre>
+                  <p>
+                    A variável representa o elemento encontrado, e não apenas
+                    o texto <code>"Meu curso"</code>.
+                  </p>
+
+                  <h5>Lendo o texto com <code>textContent</code></h5>
+                  <pre><code>console.log(titulo.textContent);</code></pre>
+                  <p>Agora o resultado é somente o texto:</p>
+                  <pre><code>Meu curso</code></pre>
+                  <p>
+                    <code>titulo</code> representa o elemento.
+                    <code>.textContent</code> acessa o texto dele. Como vimos na
+                    Aula 8, isso é uma <strong>propriedade</strong>: uma
+                    informação, sem parênteses. Nesta aula, vamos apenas ler
+                    essa informação.
+                  </p>
+
+                  <h5>Encontrando com <code>querySelector</code></h5>
+                  <pre><code>const descricao = document.querySelector(".descricao");</code></pre>
+                  <p>
+                    <code>querySelector()</code> procura o primeiro elemento
+                    que corresponde a um <strong>seletor CSS</strong>. Um
+                    seletor é uma forma de indicar qual elemento procuramos,
+                    como fazemos ao aplicar estilos:
+                  </p>
+                  <ul>
+                    <li><code>#titulo</code>: um ID;</li>
+                    <li><code>.descricao</code>: uma classe;</li>
+                    <li><code>p</code>: uma tag, neste caso um parágrafo.</li>
+                  </ul>
+                  <pre><code>document.querySelector("#titulo");
+document.querySelector(".descricao");
+document.querySelector("p");</code></pre>
+                  <p>
+                    Uma classe pode aparecer em vários elementos. Se houver
+                    mais de um elemento correspondente, <code>querySelector</code>
+                    encontra apenas o primeiro na ordem da página.
+                  </p>
+
+                  <h5><code>getElementById</code> e <code>querySelector</code></h5>
+                  <pre><code>document.getElementById("titulo");
+document.querySelector("#titulo");</code></pre>
+                  <p>
+                    Os dois exemplos encontram o mesmo elemento.
+                    <code>getElementById</code> procura especificamente um ID:
+                    escrevemos seu nome <strong>sem #</strong>.
+                    <code>querySelector</code> recebe um seletor: para um ID,
+                    usamos <strong>#</strong>; para uma classe,
+                    <strong>.</strong>; para uma tag, seu nome.
+                  </p>
+                  <p>
+                    Se você já possui um ID específico, <code>getElementById</code>
+                    é direto. <code>querySelector</code> é mais flexível e usa
+                    seletores parecidos com CSS.
+                  </p>
+
+                  <h5>Quando o elemento não existe</h5>
+                  <pre><code>const botao = document.querySelector(".botao-inexistente");
+
+console.log(botao);</code></pre>
+                  <p>Se essa classe não estiver na página, o resultado será:</p>
+                  <pre><code>null</code></pre>
+                  <p>
+                    <code>null</code> indica que nenhum elemento foi encontrado.
+                    Confira o HTML e o seletor antes de tentar ler
+                    <code>textContent</code>: não há texto de um elemento para
+                    acessar quando a busca não encontrou nada.
+                  </p>
+                </section>
+
+                <section class="pronunciation">
+                  <h4>Como ler em português</h4>
+                  <pre><code>const titulo = document.getElementById("titulo");</code></pre>
+                  <p>
+                    “Na página, encontre o elemento com ID titulo e guarde na
+                    variável titulo”.
+                  </p>
+                  <pre><code>const descricao = document.querySelector(".descricao");</code></pre>
+                  <p>
+                    “Na página, encontre o primeiro elemento com a classe
+                    descricao e guarde na variável descricao”.
+                  </p>
+                  <pre><code>console.log(titulo.textContent);</code></pre>
+                  <p>
+                    “Mostre no console o texto que está dentro do elemento
+                    titulo”.
+                  </p>
+                  <p>
+                    Os conceitos anteriores começam a trabalhar juntos:
+                    <code>const</code> cria a variável que guarda a referência;
+                    <code>document.querySelector()</code> é um método que faz a
+                    busca; <code>titulo.textContent</code> é uma propriedade
+                    que informa o texto.
+                  </p>
+                </section>
+
+                <section>
+                  <h4>Exemplo comentado</h4>
+                  <p>Em uma página com este HTML:</p>
+                  <pre><code>&lt;h1 id="titulo"&gt;Guia de JavaScript&lt;/h1&gt;
+&lt;p class="descricao"&gt;Curso para iniciantes.&lt;/p&gt;</code></pre>
+                  <p>Execute no console:</p>
+                  <pre><code>const titulo = document.getElementById("titulo");
+const descricao = document.querySelector(".descricao");
+
+console.log(titulo);
+console.log(descricao);
+
+console.log(titulo.textContent);
+console.log(descricao.textContent);</code></pre>
+                  <p>
+                    Os dois primeiros comandos mostram os elementos. Os dois
+                    últimos mostram apenas seus textos:
+                  </p>
+                  <pre><code>Guia de JavaScript
+Curso para iniciantes.</code></pre>
+                  <p>
+                    Esses seletores dependem do HTML da página aberta. Apenas
+                    copiar um exemplo de HTML para o console não coloca esses
+                    elementos na página. Veja abaixo como testar.
+                  </p>
+                </section>
+
+                <section>
+                  <h4>Erros comuns</h4>
+                  <ul>
+                    <li>Escrever um ID diferente do que está no HTML.</li>
+                    <li>Esquecer as aspas ao escrever o ID ou seletor.</li>
+                    <li>Usar <code>#</code> dentro de <code>getElementById()</code>.</li>
+                    <li>Esquecer <code>#</code> ao buscar um ID com <code>querySelector()</code>.</li>
+                    <li>Esquecer <code>.</code> ao buscar uma classe com <code>querySelector()</code>.</li>
+                    <li>Confundir o elemento encontrado com seu texto.</li>
+                    <li>
+                      Procurar um elemento que não existe na página aberta e
+                      receber <code>null</code>.
+                    </li>
+                    <li>
+                      Escrever <code>querySelector</code> com letras erradas.
+                      JavaScript diferencia maiúsculas e minúsculas.
+                    </li>
+                  </ul>
+                </section>
+
+                <section>
+                  <h4>Exercício básico</h4>
+                  <p>Use uma página com estes elementos:</p>
+                  <pre><code>&lt;h2 id="nome-curso"&gt;JavaScript Iniciante&lt;/h2&gt;
+&lt;p class="status"&gt;Aula em andamento&lt;/p&gt;</code></pre>
+                  <ol>
+                    <li>Encontre o <code>h2</code> pelo ID.</li>
+                    <li>Guarde o elemento na variável <code>nomeCurso</code>.</li>
+                    <li>Encontre o parágrafo pela classe.</li>
+                    <li>Guarde o elemento na variável <code>status</code>.</li>
+                    <li>Mostre os dois elementos no console.</li>
+                    <li>Mostre apenas os textos usando <code>.textContent</code>.</li>
+                  </ol>
+                </section>
+
+                <section>
+                  <h4>Como testar no console</h4>
+                  <h5>Primeiro, na própria página do curso</h5>
+                  <ol>
+                    <li>Abra <kbd>F12</kbd> e entre na aba <strong>Console</strong>.</li>
+                    <li>
+                      Teste elementos que já existem nesta página, usando o
+                      código abaixo.
+                    </li>
+                    <li>Compare os elementos mostrados com seus textos.</li>
+                  </ol>
+                  <pre><code>console.log(document);
+
+const tituloSumario = document.getElementById("summary-title");
+const primeiroCabecalho = document.querySelector(".lesson-header");
+
+console.log(tituloSumario);
+console.log(tituloSumario.textContent);
+console.log(primeiroCabecalho);
+console.log(primeiroCabecalho.textContent);</code></pre>
+                  <p>
+                    O texto do sumário será <code>Sumário do curso</code>.
+                    A classe encontra o primeiro cabeçalho de aula, o da Aula 1.
+                    O texto do cabeçalho pode incluir espaços e quebras de linha
+                    escritos no HTML. Esses comandos apenas leem a página.
+                  </p>
+
+                  <h5>Depois, em um HTML local para o exercício</h5>
+                  <ol>
+                    <li>
+                      Em um editor de texto, crie um arquivo chamado
+                      <code>exercicio-dom.html</code> em uma pasta de estudos.
+                    </li>
+                    <li>Copie o HTML completo abaixo e salve o arquivo.</li>
+                    <li>Abra o arquivo no navegador.</li>
+                    <li>
+                      Nessa página, abra <kbd>F12</kbd>, entre em
+                      <strong>Console</strong> e execute o JavaScript do exercício.
+                    </li>
+                  </ol>
+                  <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-BR"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8" /&gt;
+    &lt;title&gt;Exercício de DOM&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h2 id="nome-curso"&gt;JavaScript Iniciante&lt;/h2&gt;
+    &lt;p class="status"&gt;Aula em andamento&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                  <p>
+                    Se houver conflito ao repetir uma declaração com
+                    <code>const</code>, recarregue a página ou troque o nome da
+                    variável. Confira também se o console pertence à página
+                    que contém os elementos procurados.
+                  </p>
+                </section>
+
+                <section>
+                  <h4>Resposta correta</h4>
+                  <button
+                    class="answer-toggle"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="exercise-answer-11"
+                  >
+                    Mostrar resposta comentada
+                  </button>
+                  <div class="answer" id="exercise-answer-11" hidden>
+                    <pre><code>const nomeCurso = document.getElementById("nome-curso");
+const status = document.querySelector(".status");
+
+console.log(nomeCurso);
+console.log(status);
+
+console.log(nomeCurso.textContent);
+console.log(status.textContent);</code></pre>
+                    <h5>Explicação da resposta</h5>
+                    <ul>
+                      <li>
+                        A primeira linha encontra o elemento com ID
+                        <code>nome-curso</code> e guarda a referência em
+                        <code>nomeCurso</code>.
+                      </li>
+                      <li>
+                        A segunda encontra o primeiro elemento com a classe
+                        <code>status</code> e guarda a referência na variável
+                        <code>status</code>.
+                      </li>
+                      <li><code>console.log(nomeCurso)</code> mostra o elemento <code>h2</code>.</li>
+                      <li><code>console.log(status)</code> mostra o elemento <code>p</code>.</li>
+                      <li>
+                        <code>console.log(nomeCurso.textContent)</code> mostra
+                        <code>JavaScript Iniciante</code>.
+                      </li>
+                      <li>
+                        <code>console.log(status.textContent)</code> mostra
+                        <code>Aula em andamento</code>.
+                      </li>
+                    </ul>
+                  </div>
+                </section>
+
+                <section>
+                  <h4>Aplicação prática no projeto</h4>
+                  <p>
+                    Na futura Landing Page Interativa, antes de abrir um menu,
+                    trocar uma classe, alterar um texto ou reagir a um botão,
+                    o JavaScript precisa encontrar o elemento da página.
+                    A Aula 11 ensina essa primeira etapa. A implementação do
+                    projeto virá depois.
+                  </p>
+                </section>
+
+                <section class="lesson-completion">
+                  <h4>Conclusão da aula</h4>
+                  <p>
+                    Agora sabemos encontrar elementos da página e ler seus
+                    textos. Na Aula 12, <strong>Eventos: reagindo a cliques e
+                    outras ações</strong>, veremos como fazer o JavaScript
+                    reagir quando a pessoa clicar, digitar ou realizar outra ação.
+                  </p>
+                  <label class="completion-control" for="completion-aula-11">
+                    <input
+                      class="lesson-completion-input"
+                      id="completion-aula-11"
+                      type="checkbox"
+                      data-course-id="javascript-iniciante"
+                      data-lesson-id="aula-11"
                     />
                     <span class="completion-label-text">Marcar aula como concluída</span>
                   </label>

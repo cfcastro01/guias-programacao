@@ -2,6 +2,14 @@
 
 Este arquivo registra as principais mudanças do projeto Guias de Programação.
 
+## 2026-10-02 — Aula 11 do JavaScript Iniciante
+
+### Adicionado
+
+- Aula 11 real: **DOM: encontrando elementos do HTML**.
+- Introdução ao DOM, buscas com `getElementById` e `querySelector` e leitura com `textContent`.
+- Exercício em HTML local, resposta comentada expansível e conclusão integrada ao progresso existente.
+
 ## 2026-10-02 — Aula 10 do JavaScript Iniciante
 
 ### Adicionado
