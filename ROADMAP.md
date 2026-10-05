@@ -23,33 +23,27 @@
 - Próxima etapa: definir a primeira aula sem antecipar o restante do conteúdo.
 - Manter atividades conceituais e práticas, com atenção à validação e ao uso seguro de agentes.
 
-## Melhoria futura — Laboratório de JavaScript
+## Piloto atual — Laboratório de JavaScript
 
-Criar uma área de exercícios integrada ao site para que o aluno possa praticar
-diretamente na página, inclusive pelo navegador do celular, sem depender do
-Console do DevTools.
+A Aula 5 usa um laboratório integrado para praticar apresentarPessoa(nome).
+As demais aulas mantêm o fluxo atual no Console.
 
-### Escopo inicial desejado
+### Implementado no piloto
 
-- Campo para digitar JavaScript.
-- Botões **Executar** e **Limpar**.
-- Área de saída.
-- Captura de `console.log()`.
-- Exibição de erros de forma amigável.
-- Interface responsiva.
-- Possibilidade de reutilizar o laboratório em várias aulas.
+- Campo de JavaScript, Executar, Limpar saída, logs, erros e resultado dos testes.
+- Validação por comportamento com três nomes, sem comparar a solução escrita.
+- Rascunho e última tentativa salvos em guias-programacao-labs.
+- Execução em iframe sandbox sem allow-same-origin, com Worker novo por tentativa,
+  limite de dois segundos, saída limitada e rede bloqueada por CSP.
+- Interface responsiva, foco visível e mensagens de resultado acessíveis.
+- Aprovação apenas informativa: o progresso das aulas continua independente.
 
-A primeira versão deve ser simples e focada somente em JavaScript. Inicialmente,
-ela não deve incluir editor completo de HTML/CSS, preview visual semelhante ao
-CodePen, destaque de sintaxe avançado, dependências externas ou execução de
-projetos completos.
+### Próximas decisões
 
-### Cuidados técnicos futuros
-
-- Executar o código do exercício de forma isolada.
-- Evitar que erros quebrem a própria página.
-- Considerar proteção contra loops infinitos.
-- Manter uma boa experiência em celular.
+- Validar o piloto em navegadores desktop e mobile antes de migrar outras aulas.
+- Avaliar se exercícios obrigatórios devem liberar o checkbox de conclusão; sem bloqueio agora.
+- Manter fora deste MVP HTML/CSS editáveis, DOM, preview, código assíncrono,
+  autocomplete, syntax highlighting, dependências e projetos completos.
 
 ## Futuro
 

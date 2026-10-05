@@ -475,6 +475,75 @@ h1 {
   background: var(--surface-soft);
 }
 
+/* Piloto da Aula 5: editor simples, sem afetar o visual das outras aulas. */
+.javascript-lab .lab-code-label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: 750;
+}
+.javascript-lab .lab-code {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  min-height: 12rem;
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--code);
+  color: var(--text);
+  font: 1rem/1.6 "Cascadia Code", Consolas, monospace;
+  resize: vertical;
+}
+.javascript-lab .lab-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+.javascript-lab .lab-actions button {
+  min-height: 44px;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--primary-dark);
+  color: #fff;
+  font: inherit;
+  font-weight: 750;
+  cursor: pointer;
+}
+.javascript-lab .lab-actions button:hover {
+  background: #4838ad;
+}
+.javascript-lab .lab-actions button:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+.javascript-lab .lab-code:focus-visible,
+.javascript-lab .lab-actions button:focus-visible,
+.javascript-lab .lab-result:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+.javascript-lab .lab-storage-notice:empty {
+  display: none;
+}
+.javascript-lab .lab-result {
+  min-height: 5rem;
+  max-height: 20rem;
+  overflow: auto;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.javascript-lab h5 {
+  margin: 1rem 0 0.5rem;
+  font-size: 1rem;
+}
+@media (max-width: 480px) {
+  .javascript-lab .lab-actions {
+    flex-direction: column;
+  }
+}
+
 pre {
   overflow-x: auto;
   padding: 1.2rem;

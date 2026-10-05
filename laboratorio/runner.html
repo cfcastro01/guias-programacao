@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline' 'unsafe-eval'; worker-src blob:; connect-src 'none'; base-uri 'none'; form-action 'none'" />
+    <title>Executor do laboratório</title>
+  </head>
+  <body>
+    <script>
+      // Esta função vira o código do Worker, sem interpolar o código do aluno no HTML.
+      function executeInWorker() {
+        self.onmessage = function (event) {
+          const { code, exercise } = event.data;
+          const send = self.postMessage.bind(self);
+          let logCount = 0;
+          let testLogs = null;
+          let testLogCount = 0;
+
+          function format(value) {
+            if (typeof value === "string") return value.slice(0, 2000);
+            try {
+              const json = JSON.stringify(value);
+              return String(json === undefined ? value : json).slice(0, 2000);
+            } catch {
+              return "[Valor não serializável]";
+            }
+          }
+
+          function describeError(error) {
+            return (error instanceof Error ? error.name + ": " + error.message : String(error)).slice(0, 2000);
+          }
+
+          const capturedConsole = {
+            log: function (...values) {
+              const text = values.map(format).join(" ").slice(0, 2000);
+              // Chamadas dos testes não entram na saída escrita pelo aluno.
+              if (testLogs !== null) {
+                if (testLogs.length < 2) testLogs.push(text);
+                testLogCount += 1;
+                return;
+              }
+              if (logCount < 60) send({ type: "log", text });
+              if (logCount === 60) send({ type: "log", text: "Limite de saída atingido; os demais logs foram omitidos." });
+              logCount += 1;
+            },
+          };
+
+          try {
+            const name = exercise.functionName;
+            if (!/^[a-zA-Z_$][\w$]*$/.test(name)) throw new Error("Configuração inválida.");
+            const run = new Function("console", code + "\n;return typeof " + name + " === 'function' ? " + name + " : null;");
+            const studentFunction = run(capturedConsole);
+            if (!studentFunction) {
+              send({ type: "result", status: "incorrect", detail: "A função " + name + " não foi encontrada. Confira o nome." });
+              return;
+            }
+
+            let passed = true;
+            let hadError = false;
+            exercise.cases.forEach(function (test) {
+              testLogs = [];
+              testLogCount = 0;
+              let hint = "";
+              let error = "";
+              try {
+                studentFunction(...test.args);
+              } catch (failure) {
+                error = describeError(failure);
+                hadError = true;
+              }
+              const correct = !error && testLogCount === 1 && testLogs[0] === test.expected;
+              if (!correct) {
+                passed = false;
+                if (error) hint = "A função apresentou um erro neste teste: " + error;
+                else if (testLogCount === 0) hint = "A função não produziu saída. Use console.log dentro dela.";
+                else if (testLogCount > 1) hint = "A função produziu mais de uma saída. Cada chamada deve mostrar uma única saudação.";
+                else {
+                  hint = "Confira o texto produzido.";
+                  const textHint = (exercise.textHints || []).find(function (item) {
+                    return testLogs[0] === test.expected.replace(item.expected, item.received);
+                  });
+                  if (textHint) hint = textHint.message;
+                }
+              }
+              send({ type: "test", label: "Teste com " + test.args.join(", "), expected: test.expected, received: testLogs, passed: correct, hint });
+            });
+            send({ type: "result", status: hadError ? "error" : passed ? "passed" : "incorrect", detail: hadError ? "A função apresentou um erro durante os testes. Confira os detalhes abaixo." : "" });
+          } catch (error) {
+            send({ type: "result", status: "error", detail: describeError(error) });
+          }
+        };
+      }
+
+      let started = false;
+      window.addEventListener("message", function (event) {
+        const data = event.data;
+        if (event.source !== parent || started || !data || data.type !== "run" || typeof data.id !== "string" || typeof data.code !== "string" || data.code.length > 20000) return;
+        started = true;
+        let worker;
+        let timer;
+        let finished = false;
+        let url;
+        let logMessages = 0;
+        let testMessages = 0;
+        function send(message) {
+          parent.postMessage({ ...message, channel: "guias-lab", id: data.id }, "*");
+        }
+        function finish(status, detail) {
+          if (finished) return;
+          finished = true;
+          clearTimeout(timer);
+          worker?.terminate();
+          if (url) URL.revokeObjectURL(url);
+          send({ type: "result", status, detail });
+        }
+        try {
+          url = URL.createObjectURL(new Blob(["(" + executeInWorker.toString() + ")();"], { type: "text/javascript" }));
+          worker = new Worker(url);
+          worker.onmessage = function (event) {
+            const message = event.data;
+            if (!message || finished) return;
+            if (message.type === "log" && typeof message.text === "string" && logMessages < 61) {
+              logMessages += 1;
+              send({ type: "log", text: message.text.slice(0, 2100) });
+            }
+            if (message.type === "test" && testMessages < 20 && typeof message.label === "string" && typeof message.expected === "string" && Array.isArray(message.received) && typeof message.hint === "string" && typeof message.passed === "boolean") {
+              testMessages += 1;
+              send({ type: "test", label: message.label.slice(0, 200), expected: message.expected.slice(0, 2000), received: message.received.slice(0, 2).map(function (text) { return String(text).slice(0, 2000); }), passed: message.passed, hint: message.hint.slice(0, 2100) });
+            }
+            if (message.type === "result" && ["passed", "incorrect", "error"].includes(message.status)) finish(message.status, String(message.detail || "").slice(0, 2000));
+          };
+          worker.onerror = function (event) {
+            event.preventDefault();
+            finish("error", "Erro no executor: " + event.message);
+          };
+          timer = setTimeout(function () {
+            finish("timeout", "Confira se existe uma repetição sem fim.");
+          }, 2000);
+          worker.postMessage({ code: data.code, exercise: data.exercise });
+        } catch (error) {
+          finish("error", "Não foi possível iniciar o executor: " + error.message);
+        }
+      });
+      parent.postMessage({ channel: "guias-lab", type: "ready" }, "*");
+    </script>
+  </body>
+</html>

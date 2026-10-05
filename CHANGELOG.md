@@ -2,6 +2,20 @@
 
 Este arquivo registra as principais mudanças do projeto Guias de Programação.
 
+## 2026-10-05 — Piloto do laboratório de JavaScript na Aula 5
+
+### Adicionado
+
+- Laboratório integrado com rascunho automático, execução, logs, erros, resultado informativo e Limpar saída sem apagar código.
+- Testes comportamentais de apresentarPessoa com três nomes; mostrarAviso permanece complementar.
+- Controlador reutilizável, configuração de exercício separada e executor em iframe sandbox com Worker, timeout e limites de saída.
+- Persistência em guias-programacao-labs; progresso e respostas existentes preservados, sem bloquear conclusão.
+- Modelo didático e roadmap atualizados para registrar o piloto, sem migrar outras aulas.
+- Aula 5 reorganizada com exercício, editor e resultado próximos; complemento opcional depois do laboratório.
+- Resultado compacto com logs próprios, status e um exemplo de falha; chamadas internas dos testes não aparecem como logs.
+- Aula 5 enxugada, com exercício numerado, complemento curto e sem cards por teste.
+- Blocos genéricos de aplicação em projetos removidos das aulas; exemplos específicos e revisão de Dados e coleções preservados.
+
 ## 2026-10-05 — Etapa 5 do Projeto Prático 1: Revisão final
 
 ### Adicionado

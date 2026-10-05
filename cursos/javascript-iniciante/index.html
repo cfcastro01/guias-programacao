@@ -342,16 +342,7 @@ console.log("Olá, " + meuNome + "!");</code></pre>
                 </div>
               </section>
 
-              <section>
-                <h4>Aplicação prática no projeto</h4>
-                <p>
-                  Por enquanto, basta reconhecer o papel do JavaScript. Nas
-                  próximas etapas dos projetos, ele poderá abrir respostas,
-                  reagir a botões e atualizar partes da página. Essas mudanças
-                  serão feitas aos poucos, depois que cada conceito necessário
-                  for ensinado.
-                </p>
-              </section>
+
 
               <section class="lesson-completion">
                 <h4>Conclusão da aula</h4>
@@ -530,15 +521,7 @@ console.log(pontuacao);</code></pre>
                   </div>
                 </section>
 
-                <section>
-                  <h4>Aplicação prática no projeto</h4>
-                  <p>
-                    Nos projetos futuros, variáveis poderão guardar o nome de
-                    um botão, o texto de uma mensagem, a quantidade de itens, o
-                    estado de aberto ou fechado e uma pontuação ou progresso.
-                    Essas aplicações serão construídas aos poucos.
-                  </p>
-                </section>
+
 
                 <section class="lesson-completion">
                   <h4>Conclusão da aula</h4>
@@ -747,15 +730,7 @@ console.log(temBeneficio);</code></pre>
                   </div>
                 </section>
 
-                <section>
-                  <h4>Aplicação prática no projeto</h4>
-                  <p>
-                    Nos projetos futuros, operadores poderão calcular totais,
-                    verificar se um item está completo, comparar valores,
-                    decidir se uma resposta deve aparecer e conferir se uma
-                    ação pode acontecer. Essa lógica será construída aos poucos.
-                  </p>
-                </section>
+
 
                 <section class="lesson-completion">
                   <h4>Conclusão da aula</h4>
@@ -992,20 +967,7 @@ if (temIngresso &amp;&amp; documentoValido) {
                   </div>
                 </section>
 
-                <section>
-                  <h4>Aplicação prática no projeto</h4>
-                  <p>
-                    Condições poderão mostrar estados diferentes, decidir se
-                    uma aula está concluída, validar se uma resposta pode
-                    aparecer, verificar se uma ação deve acontecer e alterar
-                    mensagens conforme os dados ou as escolhas da pessoa.
-                  </p>
-                  <p>
-                    O site já usa condições internamente para decidir como
-                    exibir alguns estados. O armazenamento desses estados será
-                    estudado com mais calma em outro momento.
-                  </p>
-                </section>
+
 
                 <section class="lesson-completion">
                   <h4>Conclusão da aula</h4>
@@ -1031,220 +993,65 @@ if (temIngresso &amp;&amp; documentoValido) {
                 </header>
 
                 <section>
-                  <h4>Objetivo</h4>
-                  <p>
-                    Entender como criar e chamar uma função, entregar uma
-                    informação para ela e reconhecer quando uma função deve ser
-                    executada agora ou usada depois.
-                  </p>
-                </section>
-
-                <section>
-                  <h4>Explicação simples</h4>
-
-                  <h5>5.1 — Criando e executando uma função</h5>
-                  <p>
-                    Uma função é um bloco de instruções que recebe um nome e
-                    pode ser usado quando for necessário. Funções ajudam a
-                    organizar o código e evitam repetir as mesmas instruções.
-                  </p>
+                  <h4>O que é uma função?</h4>
+                  <p>Uma função reúne instruções sob um nome para reutilizá-las. Nesta aula, você vai criar funções, chamá-las e passar informações para elas.</p>
                   <pre><code>function mostrarMensagem() {
   console.log("Olá!");
 }
 
 mostrarMensagem();</code></pre>
-                  <p>
-                    A palavra <code>function</code> indica que estamos criando
-                    uma função. <code>mostrarMensagem</code> é o nome dela. O
-                    código entre as chaves é o bloco de instruções. Na última
-                    linha, <code>mostrarMensagem()</code> chama e executa a
-                    função.
-                  </p>
+                </section>
 
-                  <h5>5.2 — Parâmetros: informações que entram na função</h5>
-                  <p>
-                    Um parâmetro é uma informação que a função espera receber.
-                    Ele permite usar a mesma função com valores diferentes.
-                  </p>
+                <section class="pronunciation">
+                  <h4>Como ler em português</h4>
+                  <ul>
+                    <li><code>function mostrarMensagem()</code>: “Crie uma função chamada mostrarMensagem”.</li>
+                    <li><code>{ }</code>: “Guarde aqui as instruções da função”.</li>
+                    <li><code>mostrarMensagem()</code>: “Execute a função agora”.</li>
+                  </ul>
+                  <p>Na definição, os parênteses recebem os parâmetros; na chamada, indicam a execução. As chaves guardam o que a função faz.</p>
+                </section>
+
+                <section>
+                  <h4>Como usar</h4>
+                  <p>Um <strong>parâmetro</strong> é uma informação que a função espera receber. O valor entregue na chamada é o <strong>argumento</strong>: abaixo, <code>nome</code> é o parâmetro; Ana e Carlos são argumentos.</p>
                   <pre><code>function cumprimentar(nome) {
   console.log("Olá, " + nome);
 }
 
 cumprimentar("Ana");
 cumprimentar("Carlos");</code></pre>
-                  <p>
-                    <code>nome</code> é o parâmetro definido pela função.
-                    <code>"Ana"</code> e <code>"Carlos"</code> são argumentos:
-                    os valores entregues em cada chamada. Essa diferença de
-                    nomes ajuda na leitura, mas o mais importante agora é
-                    perceber que o valor entra na função e pode ser usado por
-                    suas instruções.
-                  </p>
-
-                  <h5>5.3 — Chamar uma função ou passar para usar depois</h5>
-                  <p>Compare estas duas formas:</p>
+                  <p>Leia <code>cumprimentar("Ana")</code>: “Execute cumprimentar e entregue Ana como nome”. A mesma função trabalha com valores diferentes.</p>
                   <ul>
-                    <li><code>mostrarMensagem()</code>: execute a função agora.</li>
-                    <li>
-                      <code>mostrarMensagem</code>: use a função sem executá-la
-                      ainda.
-                    </li>
+                    <li><code>mostrarMensagem()</code> executa agora.</li>
+                    <li><code>mostrarMensagem</code> é uma referência à função, para usá-la depois.</li>
                   </ul>
-                  <p>
-                    Em códigos futuros, você encontrará instruções como esta:
-                  </p>
                   <pre><code>botao.addEventListener("click", mostrarMensagem);</code></pre>
-                  <p>
-                    Leia: “Quando acontecer um clique, use a função
-                    <code>mostrarMensagem</code>”. Ela aparece sem
-                    <code>()</code> porque deve ser executada depois, quando o
-                    clique ocorrer. O botão e o <code>addEventListener</code>
-                    serão estudados em outra aula.
-                  </p>
-                  <p>Também é possível encontrar uma função sem nome:</p>
-                  <pre><code>function () {
-  console.log("Olá!");
-}</code></pre>
-                  <p>
-                    Ela é chamada de <strong>função anônima</strong>. Por
-                    enquanto, basta reconhecer esse formato. Assuntos mais
-                    avançados sobre funções serão estudados em outros cursos.
-                    Funções também podem devolver resultados, mas o
-                    <code>return</code> será visto separadamente mais adiante.
-                  </p>
+                  <p>Leia: “Quando houver um clique, execute mostrarMensagem”. Aqui não usamos <code>()</code>, pois a execução deve esperar o clique. Eventos e funções sem nome (anônimas) serão retomados nas aulas sobre a página.</p>
+                  <p><strong>Cuidados:</strong> definir uma função não a executa. Confira os parênteses, o fechamento das chaves e o nome do parâmetro usado dentro dela.</p>
                 </section>
 
-                <section class="pronunciation">
-                  <h4>Como ler em português</h4>
-                  <p>Leia cada parte da primeira função assim:</p>
-                  <ul>
-                    <li><code>function</code>: “Estou criando uma função”.</li>
-                    <li><code>mostrarMensagem</code>: “Este é o nome da função”.</li>
-                    <li>
-                      <code>()</code>: “Aqui poderiam entrar parâmetros, que são
-                      informações para a função”.
-                    </li>
-                    <li>
-                      <code>{ }</code>: “Aqui está o bloco de instruções da
-                      função”.
-                    </li>
-                    <li>
-                      <code>mostrarMensagem()</code>: “Execute essa função agora”.
-                    </li>
-                  </ul>
-                  <p>
-                    Os parênteses <code>()</code> e as chaves <code>{ }</code>
-                    têm trabalhos diferentes. Na definição, os parênteses são o
-                    espaço dos parâmetros e as chaves guardam as instruções. Na
-                    chamada, os parênteses indicam que queremos executar a
-                    função.
-                  </p>
-                  <p>
-                    Leia <code>cumprimentar("Ana")</code> como: “Execute
-                    cumprimentar e entregue o texto Ana para ela usar como
-                    nome”.
-                  </p>
-                  <p>Agora observe os parênteses dentro de outros parênteses:</p>
-                  <pre><code>botao.addEventListener(
-  "click",
-  function () {
-    console.log("Olá!");
-  }
-);</code></pre>
-                  <p>Essa instrução recebe duas informações:</p>
-                  <ol>
-                    <li><code>"click"</code>: qual evento observar;</li>
-                    <li><code>function () { ... }</code>: o que fazer quando acontecer.</li>
-                  </ol>
-                  <p>
-                    Leia o conjunto como: “Quando acontecer um clique, execute
-                    estas instruções”. Esse exemplo serve apenas para reconhecer
-                    a estrutura; não vamos estudar eventos ou páginas agora.
-                  </p>
-                </section>
-
-                <section>
-                  <h4>Exemplo comentado</h4>
-                  <pre><code>// Cria a função, mas ainda não mostra nada
-function mostrarMensagem() {
-  console.log("Olá!");
-}
-
-// Executa a função agora
-mostrarMensagem();
-
-// O parâmetro nome recebe um valor em cada chamada
-function cumprimentar(nome) {
-  console.log("Olá, " + nome);
-}
-
-cumprimentar("Ana");
-cumprimentar("Carlos");</code></pre>
-                  <p>
-                    Primeiro, as funções são definidas. Depois, cada par de
-                    parênteses nas chamadas faz a função executar. A função
-                    <code>cumprimentar</code> reutiliza as mesmas instruções com
-                    dois nomes diferentes.
-                  </p>
-                </section>
-
-                <section>
-                  <h4>Erros comuns</h4>
-                  <ul>
-                    <li>Criar a função, mas esquecer de chamá-la.</li>
-                    <li>
-                      Escrever apenas <code>mostrarMensagem</code> esperando que
-                      ela seja executada imediatamente.
-                    </li>
-                    <li>
-                      Usar <code>mostrarMensagem()</code> quando outra parte do
-                      código espera receber a função para executá-la depois.
-                    </li>
-                    <li>Esquecer <code>()</code> na definição ou na chamada.</li>
-                    <li>Confundir o papel de <code>()</code> com o de <code>{ }</code>.</li>
-                    <li>Esquecer de fechar uma chave.</li>
-                    <li>
-                      Definir o parâmetro <code>nome</code>, mas usar outro nome
-                      dentro da função.
-                    </li>
-                  </ul>
-                </section>
-
-                <section>
+                <section class="javascript-lab" data-course-id="javascript-iniciante" data-exercise-id="aula-5-exercicio-1">
                   <h4>Exercício básico</h4>
                   <ol>
                     <li>Crie uma função chamada <code>apresentarPessoa</code>.</li>
                     <li>Ela deve receber um parâmetro chamado <code>nome</code>.</li>
-                    <li>
-                      Dentro dela, mostre <code>"Olá, " + nome + "!"</code> no
-                      console.
-                    </li>
-                    <li>Chame a função com os nomes Ana e Carlos.</li>
+                    <li>Dentro dela, mostre <code>"Olá, " + nome + "!"</code> no console.</li>
+                    <li>Teste a função com Ana e Carlos. Ela deve funcionar com qualquer nome.</li>
                   </ol>
-                  <p>Como complemento, crie e execute esta função:</p>
-                  <pre><code>function mostrarAviso() {
-  console.log("Atenção!");
-}
-
-mostrarAviso();</code></pre>
-                </section>
-
-                <section>
-                  <h4>Como testar no console</h4>
-                  <ol>
-                    <li>Abra as ferramentas do navegador com <kbd>F12</kbd>.</li>
-                    <li>Entre na aba <strong>Console</strong>.</li>
-                    <li>Cole primeiro a definição completa da função.</li>
-                    <li>Pressione <kbd>Enter</kbd> e observe que nada é mostrado ainda.</li>
-                    <li>Chame a função separadamente e pressione <kbd>Enter</kbd>.</li>
-                    <li>Teste novamente com valores diferentes.</li>
-                  </ol>
-                  <p>
-                    Apenas definir uma função não executa suas instruções. A
-                    mensagem aparece quando você faz a chamada com
-                    <code>()</code>. Se repetir uma definição e encontrar um
-                    erro, recarregue a página ou troque o nome usado no teste.
-                  </p>
+                  <label class="lab-code-label" for="lab-code-aula-5">Seu código JavaScript</label>
+                  <textarea class="lab-code" id="lab-code-aula-5" rows="8" maxlength="20000" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" aria-describedby="lab-help-aula-5"></textarea>
+                  <div class="lab-actions">
+                    <button class="lab-run" type="button">Executar</button>
+                    <button class="lab-clear" type="button">Limpar</button>
+                  </div>
+                  <h5 id="lab-result-title-aula-5">Resultado</h5>
+                  <pre class="lab-result" role="status" aria-live="polite" aria-atomic="true" tabindex="0" aria-labelledby="lab-result-title-aula-5"></pre>
+                  <p id="lab-help-aula-5">Rascunho salvo neste navegador. Limpar preserva o código. O laboratório testa outros nomes e não bloqueia a conclusão.</p>
+                  <p class="lab-storage-notice" role="status" aria-live="polite"></p>
+                  <noscript>Ative o JavaScript para usar o laboratório ou pratique no Console do navegador.</noscript>
+                  <h5>Complemento opcional</h5>
+                  <p>Crie <code>mostrarAviso()</code> para mostrar <code>"Atenção!"</code> e chame a função. Este complemento não faz parte dos testes.</p>
                 </section>
 
                 <section>
@@ -1296,17 +1103,6 @@ mostrarAviso();</code></pre>
                       </li>
                     </ul>
                   </div>
-                </section>
-
-                <section>
-                  <h4>Aplicação prática no projeto</h4>
-                  <p>
-                    Nos projetos, funções poderão abrir ou fechar um menu,
-                    mostrar uma mensagem, atualizar um contador, verificar uma
-                    informação, reagir a um clique e executar a mesma lógica em
-                    lugares diferentes. Essas aplicações serão construídas aos
-                    poucos nas próximas etapas.
-                  </p>
                 </section>
 
                 <section class="lesson-completion">
@@ -1551,16 +1347,7 @@ console.log(tarefas);</code></pre>
                   </div>
                 </section>
 
-                <section>
-                  <h4>Aplicação prática no projeto</h4>
-                  <p>
-                    Arrays poderão guardar itens de um checklist, perguntas,
-                    nomes de cards, opções de menu, mensagens e listas de
-                    tarefas. No Mini Checklist, um array poderá representar a
-                    lista de tarefas. O projeto será desenvolvido apenas no
-                    momento adequado da trilha.
-                  </p>
-                </section>
+
 
                 <section class="lesson-completion">
                   <h4>Conclusão da aula</h4>
@@ -2127,17 +1914,7 @@ console.log(estudos);</code></pre>
                 </section>
 
                 <section>
-                  <h4>Aplicação prática no projeto</h4>
-                  <p>
-                    Métodos aparecerão nos projetos para transformar textos,
-                    verificar se um texto contém uma informação, adicionar uma
-                    tarefa à lista, remover um item e mostrar informações no
-                    console. Nas próximas aulas, conheceremos métodos que
-                    percorrem listas, como <code>forEach</code>,
-                    <code>map</code> e <code>filter</code>, sem estudá-los agora.
-                  </p>
-
-                  <h5>Fechando o bloco Dados e coleções</h5>
+                  <h4>Fechando o bloco Dados e coleções</h4>
                   <ul>
                     <li><strong>Array</strong> organiza uma lista.</li>
                     <li><strong>Objeto</strong> organiza informações relacionadas.</li>
@@ -3307,16 +3084,7 @@ console.log(status.textContent);</code></pre>
                   </div>
                 </section>
 
-                <section>
-                  <h4>Aplicação prática no projeto</h4>
-                  <p>
-                    Na futura Landing Page Interativa, antes de abrir um menu,
-                    trocar uma classe, alterar um texto ou reagir a um botão,
-                    o JavaScript precisa encontrar o elemento da página.
-                    A Aula 11 ensina essa primeira etapa. A implementação do
-                    projeto virá depois.
-                  </p>
-                </section>
+
 
                 <section class="lesson-completion">
                   <h4>Conclusão da aula</h4>
@@ -3712,16 +3480,7 @@ botaoAviso.addEventListener("click", function () {
                   </div>
                 </section>
 
-                <section>
-                  <h4>Aplicação prática no projeto</h4>
-                  <p>
-                    Na futura Landing Page Interativa, eventos poderão permitir
-                    abrir e fechar um menu, mostrar conteúdo, reagir a botões,
-                    atualizar mensagens e responder à digitação. Primeiro
-                    encontramos os elementos; depois conectamos funções às
-                    ações da pessoa. O projeto será implementado mais adiante.
-                  </p>
-                </section>
+
 
                 <section class="lesson-completion">
                   <h4>Conclusão da aula</h4>
@@ -4099,17 +3858,7 @@ botaoStatus.addEventListener("click", alternarStatus);</code></pre>
                   </div>
                 </section>
 
-                <section>
-                  <h4>Aplicação prática no projeto</h4>
-                  <p>
-                    Na Landing Page Interativa, esse padrão poderá abrir e
-                    fechar um menu, destacar uma seção ativa, mostrar ou ocultar
-                    conteúdo, alterar o estado de um botão e indicar um item
-                    selecionado. A base para o Projeto prático 1 agora está
-                    completa; vamos construir o projeto no próximo passo da
-                    trilha, sem iniciá-lo nesta aula.
-                  </p>
-                </section>
+
 
                 <section class="lesson-completion">
                   <h4>Conclusão da aula</h4>
@@ -4712,5 +4461,7 @@ metodos.forEach(function (metodo) {
     </footer>
 
     <script src="../../script.js"></script>
+    <script src="../../laboratorio/exercicios.js"></script>
+    <script src="../../laboratorio.js"></script>
   </body>
 </html>

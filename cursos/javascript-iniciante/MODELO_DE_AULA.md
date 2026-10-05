@@ -13,10 +13,9 @@ Este documento define o padrão das aulas do curso **JavaScript Iniciante**. O o
 5. **Exemplo comentado:** mostra um exemplo curto, com comentários apenas quando ajudarem na compreensão.
 6. **Erros comuns:** alerta sobre enganos frequentes relacionados ao assunto.
 7. **Exercício básico:** propõe uma tarefa pequena para praticar o conceito.
-8. **Como testar no console:** orienta como executar e conferir o código no console do navegador.
+8. **Como testar:** nas aulas ainda não migradas, orientar o uso do Console; na Aula 5, usar o laboratório dentro da página como piloto.
 9. **Resposta correta:** apresenta uma solução clara para o exercício.
 10. **Explicação da resposta:** explica por que a solução funciona e, quando necessário, detalha cada linha.
-11. **Aplicação prática no projeto, quando fizer sentido:** conecta o conceito a uma pequena evolução de um projeto do curso.
 
 ## Diretrizes de escrita
 
@@ -55,3 +54,14 @@ As aulas podem se conectar aos projetos **Landing Page Interativa** e **Mini Che
 - Usar React, Vue, TypeScript ou bibliotecas.
 - Antecipar conceitos avançados.
 - Escrever código difícil apenas para parecer profissional.
+
+## Piloto do laboratório — Aula 5
+
+- Usar textarea, Executar, Limpar saída e resultado acessível, sem editor completo.
+- Salvar rascunho e última tentativa em guias-programacao-labs, separados do progresso.
+- Validar comportamento de apresentarPessoa com nomes diferentes, sem comparar código.
+- Posicionar laboratório e resultado logo após o exercício principal; deixar complementos depois.
+- Usar uma única área de resultado com logs do aluno, status e um exemplo de falha com esperado, recebido e dica curta.
+- Mostrar resultado incorreto, erros e interrupção por tempo excedido.
+- Manter resposta expansível e conclusão livre; aprovação não marca nem bloqueia a aula.
+- Não migrar outras aulas até validar o piloto em desktop e celular.
