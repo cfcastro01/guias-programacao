@@ -56,7 +56,7 @@ O original continua intacto na Etapa 1, com navegação visível e botão desati
 Em exercicio/, os botões de preparo estão habilitados, mas a seleção só funcionará
 depois da implementação pelo aluno. O botão da história está habilitado em exercicio/,
 com o conteúdo adicional fechado; a interação também será escrita pelo aluno.
-Na página do curso, as Etapas 1, 2, 3 e 4 podem ser marcadas como concluídas de forma
+Na página do curso, as Etapas 1, 2, 3, 4 e 5 podem ser marcadas como concluídas de forma
 independente, depois de realizar cada tarefa. O progresso usa a mesma chave
 `guias-programacao-progress` das aulas e permanece salvo neste navegador.
 
@@ -93,20 +93,21 @@ de exercício no navegador. Compare com o original usando a mesma largura de jan
 Na Etapa 2, escreva o JavaScript do menu. A resposta comentada está oculta no curso
 e deve ser consultada depois da tentativa. Na Etapa 3, escreva a seleção de preparo,
 preservando o menu. Na Etapa 4, escreva a abertura da história e a atualização do
-botão, mantendo as soluções anteriores. A revisão final segue planejada.
+botão, mantendo as soluções anteriores. A Etapa 5 revisa a leitura dos códigos e os padrões, sem nova funcionalidade.
 
 ## Etapas
 
 1. **Estrutura e visual — disponível:** HTML, CSS e responsividade.
 2. **Menu mobile — disponível:** abrir e fechar a navegação.
 3. **Estado ativo — disponível:** destacar o método de preparo escolhido.
-4. **Conteúdo expansível — atual:** mostrar e ocultar parte da história.
-5. **Revisão final:** conferir comportamento, teclado e responsividade.
+4. **Conteúdo expansível — disponível:** mostrar e ocultar parte da história.
+5. **Revisão final — atual/disponível:** leitura de código, padrões, comportamento, teclado e responsividade.
 
 Os conceitos praticados incluem encontrar elementos no DOM, reagir a cliques e
 alternar classes CSS. O HTML já prepara menu-button e site-navigation;
 method-card e method-select; story-button e story-content.
-Não há controle de conclusão geral do projeto; ele será tratado quando todas as etapas estiverem prontas.
+O conteúdo do Projeto Prático 1 está completo, com as cinco etapas disponíveis.
+Cada aluno marca seu progresso individualmente; não há controle geral de conclusão.
 
 ## Etapa 2 — Menu mobile
 
@@ -188,7 +189,30 @@ No exercício, abrir e fechar só funcionará depois da sua implementação.
 Consulte [a Etapa 4 no curso](../../cursos/javascript-iniciante/#projeto-1-etapa-4)
 para a tarefa, quatro dicas, diagnóstico e resposta comentada expansível.
 
-## Formato das próximas etapas
+## Etapa 5 — Revisão final
+
+O Projeto Prático 1 está **completo como conteúdo do curso**: todas as cinco etapas
+estão disponíveis. Isso não significa que o aluno já concluiu as atividades.
+Nenhuma marcação é automática, e não há checkbox geral de projeto.
+
+A revisão consolida os padrões do menu, da seleção exclusiva e da história:
+encontrar elementos, guardar referências, criar um comportamento, esperar um evento
+e alterar a interface. Há exemplos curtos com leitura em português, tabela de
+comparação, revisão de conceitos, checklist de entendimento e exercício final de
+leitura com resposta comentada expansível.
+
+Use os códigos das respostas das Etapas 2–4 como referência para estudar. A Etapa 5
+não acrescenta funcionalidade nem preenche exercicio/script.js. Esse arquivo
+permanece apenas com instruções; as soluções continuam sendo escritas pelo aluno.
+Original/ continua como referência fixa da Etapa 1.
+
+Depois de implementar as etapas, confira as três interações, teclado, responsividade
+e Console. Marque a Etapa 5 quando tiver feito a revisão. Retome os conceitos que
+precisam de prática antes de seguir para a Aula 14, ainda planejada.
+
+Consulte [a Etapa 5 no curso](../../cursos/javascript-iniciante/#projeto-1-etapa-5).
+
+## Formato dos exercícios
 
 1. **Objetivo:** o que será aprendido.
 2. **Arquivos usados:** indicar os caminhos de exercicio/index.html,

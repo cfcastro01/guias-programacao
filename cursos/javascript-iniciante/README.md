@@ -37,12 +37,15 @@ diagnóstico e resposta comentada expansível. A **Etapa 3 — Estado ativo** é
 de seleção exclusiva dos métodos: botões acessíveis, CSS preparado, quatro dicas
 e resposta expansível. A **Etapa 4 — Conteúdo expansível** oferece HTML e CSS
 preparados, exercício de mostrar/ocultar história e atualizar o botão, quatro dicas
-e resposta comentada expansível. A revisão final continua planejada.
+e resposta comentada expansível. A **Etapa 5 — Revisão final** consolida os três padrões, com leitura em português,
+tabela, revisão de conceitos e exercício de leitura com resposta expansível.
+O Projeto Prático 1 está completo como conteúdo: todas as etapas estão disponíveis,
+sem marcar automaticamente a conclusão do aluno ou implementar as soluções.
 
 Trabalhe na [versão de exercício](../../projetos/landing-page-interativa/exercicio/).
 Use o [original](../../projetos/landing-page-interativa/original/) para comparar
 com a Etapa 1 aprovada, sem editar essa referência. O [README do projeto](../../projetos/landing-page-interativa/README.md)
 explica o papel de HTML, CSS, JavaScript e Console e o formato das próximas tarefas.
 O original permanece na Etapa 1; apenas exercicio/ recebe as tarefas do menu, da seleção de preparo e da história.
-As Etapas 1, 2, 3 e 4 têm controles de conclusão independentes, usando o progresso existente
+As Etapas 1, 2, 3, 4 e 5 têm controles de conclusão independentes, usando o progresso existente
 do curso. Não há controle de conclusão geral do projeto. As Aulas 14–16 e o Mini Checklist seguem planejados.

@@ -447,6 +447,34 @@ h1 {
   background: #242115;
 }
 
+.project-review-table-scroll {
+  overflow-x: auto;
+  margin-block: 1rem;
+}
+.project-review-table-scroll:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+.project-review-table {
+  width: 100%;
+  min-width: 34rem;
+  border-collapse: collapse;
+  text-align: left;
+}
+.project-review-table caption {
+  padding-bottom: 0.75rem;
+  text-align: left;
+  font-weight: 750;
+}
+.project-review-table th,
+.project-review-table td {
+  padding: 0.75rem;
+  border: 1px solid var(--border);
+}
+.project-review-table thead {
+  background: var(--surface-soft);
+}
+
 pre {
   overflow-x: auto;
   padding: 1.2rem;

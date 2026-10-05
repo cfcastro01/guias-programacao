@@ -2,6 +2,17 @@
 
 Este arquivo registra as principais mudanças do projeto Guias de Programação.
 
+## 2026-10-05 — Etapa 5 do Projeto Prático 1: Revisão final
+
+### Adicionado
+
+- Revisão dos padrões de menu, seleção exclusiva e conteúdo expansível, com trechos lidos em português, tabela comparativa, conceitos e checklist de entendimento.
+- Exercício final de leitura com resposta comentada expansível e relação com padrões usados em projetos reais.
+- Controle independente projeto-1-etapa-5 reutilizando o progresso existente, sem checkbox geral nem marcação automática.
+- Projeto Prático 1 apresentado como completo em conteúdo, com todas as cinco etapas disponíveis e documentação atualizada.
+- Estilos exclusivos para a tabela de revisão, com rolagem em telas pequenas e foco visível por teclado.
+- Nenhuma nova interação; original/, exercicio/ e exercícios das Etapas 2–4 preservados, sem implementar soluções automaticamente.
+
 ## 2026-10-05 — Etapa 4 do Projeto Prático 1: Conteúdo expansível
 
 ### Adicionado

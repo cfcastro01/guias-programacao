@@ -165,7 +165,7 @@
                 <h4>Projeto prático 1</h4>
                 <div class="summary-project-card">
                   <strong><a href="#projeto-1">Landing Page Interativa</a></strong>
-                  <span class="project-status">Etapa 4 — exercício disponível</span>
+                  <span class="project-status">Projeto completo como conteúdo do curso</span>
                   <p>
                     Projeto visual para aplicar DOM, eventos, classes e
                     interação com HTML/CSS.
@@ -4178,10 +4178,10 @@ botaoStatus.addEventListener("click", alternarStatus);</code></pre>
                     <li><strong>Estrutura e visual — disponível:</strong> HTML, CSS, adaptação para celular e elementos preparados para receber JavaScript.</li>
                     <li><strong>Menu mobile — disponível:</strong> abrir e fechar a navegação em telas pequenas.</li>
                     <li><strong>Estado ativo — disponível:</strong> destacar o método de preparo escolhido.</li>
-                    <li><strong>Conteúdo expansível — etapa atual:</strong> mostrar e ocultar parte da história do café.</li>
-                    <li><strong>Revisão final:</strong> conferir as interações e o uso por teclado.</li>
+                    <li><strong>Conteúdo expansível — disponível:</strong> mostrar e ocultar parte da história do café.</li>
+                    <li><strong>Revisão final — etapa atual:</strong> ler os padrões e conferir as interações e o uso por teclado.</li>
                   </ol>
-                  <p>O <code>original/</code> preserva a <strong>Etapa 1 — Estrutura e visual</strong>. O <code>exercicio/</code> está preparado para as <strong>Etapas 2 — Menu mobile, 3 — Estado ativo e 4 — Conteúdo expansível</strong>; o aluno implementará as interações. A revisão final continua planejada.</p>
+                  <p>O <code>original/</code> preserva a <strong>Etapa 1 — Estrutura e visual</strong>. O <code>exercicio/</code> está preparado para as <strong>Etapas 2 — Menu mobile, 3 — Estado ativo e 4 — Conteúdo expansível</strong>; o aluno implementará as interações. A Etapa 5 revisa os padrões e a leitura do código. Todas as cinco etapas estão disponíveis; isso não significa que você já as concluiu.</p>
                 </section>
                 <section class="pronunciation">
                   <h4>Como ler em português</h4>
@@ -4537,9 +4537,138 @@ botaoHistoria.addEventListener("click", alternarHistoria);</code></pre>
                     </label>
                   </div>
                 </section>
+                <section id="projeto-1-etapa-5">
+                  <h4>Etapa 5 — Revisão final</h4>
+                  <h5>Objetivo</h5>
+                  <p>Reconhecer os padrões das Etapas 2–4, relacionar cada trecho com a interface e ler o JavaScript em português antes de seguir para a Aula 14. Esta revisão não acrescenta uma funcionalidade.</p>
+                  <p>Consulte as respostas comentadas das <a href="#projeto-1-etapa-2">Etapas 2</a>, <a href="#projeto-1-etapa-3">3</a> e <a href="#projeto-1-etapa-4">4</a> para acompanhar os exemplos. As interações descritas abaixo são o resultado esperado depois da sua implementação; o arquivo de exercício continua com instruções.</p>
+                  <h5>O que construímos</h5>
+                  <ul>
+                    <li><strong>Menu mobile:</strong> encontrar → ouvir → alternar. DOM encontra botão e navegação; uma função reage ao clique e <code>classList.toggle()</code> abre ou fecha o menu.</li>
+                    <li><strong>Estado ativo:</strong> encontrar vários → percorrer → ouvir → remover → adicionar. <code>querySelectorAll</code> reúne os botões em uma coleção; <code>forEach</code> registra os eventos; as classes deixam somente um método ativo.</li>
+                    <li><strong>Conteúdo expansível:</strong> encontrar → ouvir → alternar → verificar → decidir → atualizar. DOM e eventos conectam botão e conteúdo; <code>toggle</code>, <code>contains</code> e <code>if/else</code> controlam o estado; <code>textContent</code> e <code>aria-expanded</code> acompanham a mudança.</li>
+                  </ul>
+                  <h5>O padrão que se repete</h5>
+                  <ol>
+                    <li><strong>Encontrar elementos:</strong> localizar no HTML o que participa da interação.</li>
+                    <li><strong>Guardar referências:</strong> armazenar os elementos encontrados em variáveis para usá-los depois.</li>
+                    <li><strong>Criar comportamento:</strong> definir as instruções em uma função.</li>
+                    <li><strong>Esperar um evento:</strong> registrar qual função será chamada quando houver clique.</li>
+                    <li><strong>Alterar a interface:</strong> mudar classe, texto ou atributo para representar o novo estado.</li>
+                  </ol>
+                  <p><strong>Encontrar → ouvir → decidir → alterar.</strong> Essa é uma forma de organizar a leitura destes exemplos, não uma regra para todo código. Aprender JavaScript não exige decorar cada linha: procure o elemento, o evento e a mudança que acontece.</p>
+                  <h5>Como ler este JavaScript em português</h5>
+                  <pre><code>const botaoMenu = document.getElementById("menu-button");</code></pre>
+                  <p><strong>Leitura:</strong> encontre o elemento com ID menu-button e guarde sua referência em botaoMenu.</p>
+                  <pre><code>botaoMenu.addEventListener("click", alternarMenu);</code></pre>
+                  <p><strong>Leitura:</strong> quando o botão do menu receber um clique, execute a função alternarMenu. Sem <code>()</code>, entregamos a função ao listener; com <code>()</code>, executaríamos a função naquele momento.</p>
+                  <pre><code>menu.classList.toggle("aberto");</code></pre>
+                  <p><strong>Leitura:</strong> se a navegação tem a classe aberto, remova; se não tem, adicione. O CSS transforma essa classe em uma mudança visual.</p>
+                  <pre><code>metodos.forEach(function (metodo) {
+  // Instruções para cada método.
+});</code></pre>
+                  <p><strong>Leitura:</strong> para cada método encontrado, execute este bloco. O parâmetro metodo representa a opção daquela passagem.</p>
+                  <pre><code>const estaAberto = conteudoHistoria.classList.contains("aberto");</code></pre>
+                  <p><strong>Leitura:</strong> confira se o conteúdo da história tem a classe aberto e guarde true ou false em estaAberto. Consultar o estado não muda a classe.</p>
+                  <pre><code>if (estaAberto) {
+  botaoHistoria.textContent = "Ocultar história";
+}</code></pre>
+                  <p><strong>Leitura:</strong> se o conteúdo estiver aberto, mude o texto do botão para Ocultar história. Na resposta da Etapa 4, o else restaura Ver história quando fechado, e aria-expanded acompanha os dois caminhos.</p>
+                  <h5>Comparar os três padrões</h5>
+                  <p>Em telas pequenas, a tabela pode ser rolada horizontalmente. Por teclado, foque a região e use as setas.</p>
+                  <div class="project-review-table-scroll" role="region" aria-label="Comparação das interações do projeto" tabindex="0">
+                    <table class="project-review-table">
+                      <caption>Elementos, eventos e mudanças das Etapas 2–4</caption>
+                      <thead><tr><th scope="col">Interação</th><th scope="col">Elementos</th><th scope="col">Evento</th><th scope="col">Principal mudança</th></tr></thead>
+                      <tbody>
+                        <tr><th scope="row">Menu</th><td>Botão + navegação</td><td>click</td><td>Abre/fecha com toggle</td></tr>
+                        <tr><th scope="row">Métodos</th><td>Vários botões</td><td>click</td><td>Remove de todos e adiciona a um só</td></tr>
+                        <tr><th scope="row">História</th><td>Botão + conteúdo</td><td>click</td><td>Abre/fecha, muda texto e aria-expanded</td></tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <h5>Revisão dos conceitos</h5>
+                  <dl>
+                    <dt><strong>DOM</strong></dt><dd>A representação do HTML que o JavaScript consulta para encontrar elementos da página.</dd>
+                    <dt><strong>Evento</strong></dt><dd>Algo que acontece, como um clique, e pode disparar uma ação registrada.</dd>
+                    <dt><strong>Função</strong></dt><dd>Agrupa instruções de um comportamento para executá-las quando necessário.</dd>
+                    <dt><strong>Classe</strong></dt><dd>Uma identificação no HTML que pode representar um estado visual definido no CSS, como aberto ou ativo.</dd>
+                    <dt><strong>forEach</strong></dt><dd>Executa um bloco para cada elemento de uma coleção.</dd>
+                    <dt><strong>if/else</strong></dt><dd>Escolhe entre dois caminhos conforme uma condição seja verdadeira ou falsa.</dd>
+                    <dt><strong>textContent</strong></dt><dd>Permite consultar ou alterar o texto de um elemento.</dd>
+                  </dl>
+                  <h5>Checklist de entendimento</h5>
+                  <p>Antes de considerar o projeto concluído, veja se você consegue responder. Use as etapas para consultar; isto não é uma prova.</p>
+                  <ul>
+                    <li>O que <code>document.getElementById()</code> faz?</li>
+                    <li>Quando usar <code>querySelectorAll()</code>?</li>
+                    <li>O que <code>addEventListener()</code> está esperando acontecer?</li>
+                    <li>Qual a diferença entre <code>minhaFuncao</code> e <code>minhaFuncao()</code> em um listener?</li>
+                    <li>O que <code>classList.toggle()</code> faz?</li>
+                    <li>Por que na Etapa 3 removemos <code>ativo</code> dos outros elementos?</li>
+                    <li>Para que serve <code>classList.contains()</code>?</li>
+                    <li>O que o <code>if/else</code> decide na Etapa 4?</li>
+                    <li>Quando o <code>forEach</code> foi útil?</li>
+                    <li>Como você explicaria a sequência encontrar → ouvir → alterar?</li>
+                  </ul>
+                  <h5>Exercício final de leitura</h5>
+                  <p>Leia este recorte da seleção de métodos, sem copiar para o arquivo de exercício. Ele destaca apenas as classes; a resposta completa da Etapa 3 também atualiza aria-pressed.</p>
+                  <pre><code>const metodos = document.querySelectorAll(".method-select");
+
+metodos.forEach(function (metodo) {
+  metodo.addEventListener("click", function () {
+    metodos.forEach(function (outroMetodo) {
+      outroMetodo.classList.remove("ativo");
+    });
+
+    metodo.classList.add("ativo");
+  });
+});</code></pre>
+                  <ol>
+                    <li>Quantos elementos podem estar em <code>metodos</code>? Quantos existem nesta página?</li>
+                    <li>O que o primeiro <code>forEach</code> faz?</li>
+                    <li>O que acontece quando um botão recebe clique?</li>
+                    <li>Por que existe um segundo <code>forEach</code>?</li>
+                    <li>Qual linha deixa o botão clicado ativo?</li>
+                  </ol>
+                  <h5>Resposta comentada</h5>
+                  <p>Tente ler o trecho em voz alta antes de abrir a resposta.</p>
+                  <button class="answer-toggle" type="button" aria-expanded="false" aria-controls="resposta-projeto-1-etapa-5">Mostrar resposta comentada</button>
+                  <div class="answer" id="resposta-projeto-1-etapa-5" hidden>
+                    <ol>
+                      <li><code>querySelectorAll</code> pode encontrar vários elementos, ou nenhum se o seletor não corresponder. Neste HTML, encontra os três botões method-select.</li>
+                      <li>O primeiro <code>forEach</code> percorre cada botão e registra nele uma reação ao clique. Ele não seleciona um método ao carregar a página.</li>
+                      <li>Quando há clique, a função registrada retira o estado ativo de todos e depois destaca somente o botão clicado.</li>
+                      <li>O segundo <code>forEach</code> remove ativo de todos para impedir que duas opções continuem ativas ao mesmo tempo.</li>
+                      <li><code>metodo.classList.add("ativo");</code> deixa o botão clicado ativo.</li>
+                    </ol>
+                    <p><strong>Leitura completa:</strong> encontre todos os botões dos métodos. Para cada botão, registre: quando ele receber um clique, percorra todos os métodos e remova ativo; depois adicione ativo somente neste botão. O evento espera o clique; a mudança visual acontece quando a função é executada.</p>
+                  </div>
+                  <h5>O que você praticou que aparece em projetos reais</h5>
+                  <p>Esses padrões reaparecem em menus, abas, filtros, modais (janelas sobre a página), accordions (blocos que abrem e fecham) e seleção de opções. Futuramente, componentes React ou Vue também lidam com eventos e estados. Aqui, continue praticando com HTML, CSS e JavaScript puro.</p>
+                  <h5>Compare com o original</h5>
+                  <p><a href="../../projetos/landing-page-interativa/original/">original/</a> mantém a Etapa 1 e mostra a página antes das interações. <a href="../../projetos/landing-page-interativa/exercicio/">exercicio/</a> é a versão de trabalho: implemente ali as Etapas 2–4 e compare na mesma largura de janela. Os exemplos desta revisão não preenchem o script automaticamente.</p>
+                  <h5>Revisão da prática</h5>
+                  <p>Depois de implementar as etapas, confira menu em telas pequenas e navegação em desktop, seleção de um só método, abertura da história com texto e aria-expanded sincronizados, foco visível por teclado e ausência de erros no Console. Esta revisão não pede uma nova interação.</p>
+                  <div class="lesson-completion">
+                    <h5>Conclusão da etapa</h5>
+                    <label class="completion-control" for="completion-projeto-1-etapa-5">
+                      <input
+                        class="lesson-completion-input"
+                        id="completion-projeto-1-etapa-5"
+                        type="checkbox"
+                        data-course-id="javascript-iniciante"
+                        data-lesson-id="projeto-1-etapa-5"
+                        data-completion-label="Marcar Etapa 5 como concluída"
+                        data-completed-label="Etapa 5 concluída — desmarcar"
+                      />
+                      <span class="completion-label-text">Marcar Etapa 5 como concluída</span>
+                    </label>
+                  </div>
+                </section>
                 <section>
                   <h4>Antes da próxima etapa</h4>
-                  <p>Conclua a história e confira que conteúdo, texto do botão e aria-expanded acompanham cada clique. Preserve o menu e a seleção de preparo. Marque cada etapa somente depois de realizar sua tarefa. As marcações são independentes e ficam salvas neste navegador. A conclusão geral do projeto será tratada quando todas as etapas estiverem prontas.</p>
+                  <p>O Projeto Prático 1 está completo como conteúdo: as cinco etapas estão disponíveis. Marque cada etapa somente depois de realizar sua tarefa; nenhuma é marcada automaticamente. Não há checkbox geral de projeto. Antes de seguir para a Aula 14, que ainda está planejada, retome os padrões que você precisa praticar.</p>
                 </section>
               </article>
             </div>
@@ -4561,9 +4690,9 @@ botaoHistoria.addEventListener("click", alternarHistoria);</code></pre>
 
           <div class="projects-grid">
             <article class="project-card">
-              <span>Etapa 4 — exercício disponível</span>
+              <span>Projeto completo como conteúdo do curso</span>
               <h3><a href="#projeto-1">Landing Page Interativa</a></h3>
-              <p>As etapas anteriores estão disponíveis. Na etapa atual, escreva o JavaScript para abrir e fechar a história, atualizando também o botão.</p>
+              <p>Todas as cinco etapas estão disponíveis. A revisão final consolida os padrões; as soluções dos exercícios continuam sendo escritas pelo aluno.</p>
             </article>
 
             <article class="project-card">
