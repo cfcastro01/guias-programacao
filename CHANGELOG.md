@@ -2,6 +2,15 @@
 
 Este arquivo registra as principais mudanças do projeto Guias de Programação.
 
+## 2026-10-05 — Laboratório nas Aulas 1 e 9
+
+### Adicionado
+
+- Modo reutilizável de validação da saída de programas, sem função obrigatória nem análise da estrutura do código.
+- Aula 1 com saudação de nome livre e até cinco mensagens extras; Aula 9 com mensagens obrigatórias em ordem e complementos opcionais.
+- Laboratórios compactos com IDs próprios e persistência independente; respostas expansíveis e conclusão livre preservadas.
+- Modo de funções da Aula 5 mantido; demais aulas não migradas.
+
 ## 2026-10-05 — Piloto do laboratório de JavaScript na Aula 5
 
 ### Adicionado

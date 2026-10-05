@@ -289,25 +289,26 @@ console.log(10);</code></pre>
                 </ul>
               </section>
 
-              <section>
-                <h4>Exercício básico</h4>
-                <p>
-                  Crie uma variável com o seu nome e mostre no console uma
-                  mensagem de boas-vindas. Por exemplo:
-                  <strong>“Olá, Ana!”</strong>
-                </p>
-              </section>
-
-              <section>
-                <h4>Como testar no console</h4>
-                <ol>
-                  <li>Abra as ferramentas do navegador com a tecla <kbd>F12</kbd>.</li>
-                  <li>Escolha a aba <strong>Console</strong>.</li>
-                  <li>Digite ou cole uma linha do código por vez.</li>
-                  <li>Pressione <kbd>Enter</kbd> e observe a mensagem.</li>
-                </ol>
-                <p>O console é um espaço de teste: errar e tentar novamente faz parte.</p>
-              </section>
+              <section class="javascript-lab" data-course-id="javascript-iniciante" data-exercise-id="aula-1-exercicio-1">
+                  <h4>Exercício básico</h4>
+                  <ol>
+                    <li>Crie uma variável com seu nome.</li>
+                    <li>Use esse valor para mostrar uma saudação no formato <code>Olá, nome!</code>, por exemplo <code>Olá, Ana!</code>.</li>
+                    <li>Execute o código abaixo e confira o resultado.</li>
+                  </ol>
+                  <p>Use qualquer nome. O laboratório procura uma saudação nesse formato e aceita até cinco mensagens extras de apoio.</p>
+                  <label class="lab-code-label" for="lab-code-aula-1">Seu código JavaScript</label>
+                  <textarea class="lab-code" id="lab-code-aula-1" rows="8" maxlength="20000" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" aria-describedby="lab-help-aula-1"></textarea>
+                  <div class="lab-actions">
+                    <button class="lab-run" type="button">Executar</button>
+                    <button class="lab-clear" type="button">Limpar</button>
+                  </div>
+                  <h5 id="lab-result-title-aula-1">Resultado</h5>
+                  <pre class="lab-result" role="status" aria-live="polite" aria-atomic="true" tabindex="0" aria-labelledby="lab-result-title-aula-1"></pre>
+                  <p id="lab-help-aula-1">Rascunho salvo neste navegador. Limpar preserva o código. O resultado não bloqueia a conclusão.</p>
+                  <p class="lab-storage-notice" role="status" aria-live="polite"></p>
+                  <noscript>Ative o JavaScript para usar o laboratório ou pratique no Console do navegador.</noscript>
+                </section>
 
               <section>
                 <h4>Resposta correta</h4>
@@ -2167,55 +2168,29 @@ Tarefa: Revisar aula</code></pre>
                   </ul>
                 </section>
 
-                <section>
+                <section class="javascript-lab" data-course-id="javascript-iniciante" data-exercise-id="aula-9-exercicio-1">
                   <h4>Exercício básico</h4>
                   <p>Comece com esta lista:</p>
-                  <pre><code>const cursos = [
-  "JavaScript",
-  "HTML",
-  "CSS"
-];</code></pre>
+                  <pre><code>const cursos = ["JavaScript", "HTML", "CSS"];</code></pre>
                   <ol>
                     <li>Use <code>forEach</code> para percorrer a lista.</li>
-                    <li>Mostre cada curso no console.</li>
-                    <li>
-                      Mostre cada item no formato
-                      <code>Estou estudando JavaScript</code>.
-                    </li>
-                    <li>
-                      Como complemento, percorra a lista novamente e mostre o
-                      índice ao lado do curso.
-                    </li>
+                    <li>Mostre cada curso no formato <code>Estou estudando JavaScript</code>, seguindo a ordem JavaScript, HTML e CSS.</li>
+                    <li>Execute o código abaixo e confira as três mensagens.</li>
                   </ol>
-                  <p>Os resultados devem incluir:</p>
-                  <pre><code>Estou estudando JavaScript
-Estou estudando HTML
-Estou estudando CSS
-
-0 JavaScript
-1 HTML
-2 CSS</code></pre>
-                </section>
-
-                <section>
-                  <h4>Como testar no console</h4>
-                  <ol>
-                    <li>Abra as ferramentas do navegador com <kbd>F12</kbd>.</li>
-                    <li>Entre na aba <strong>Console</strong>.</li>
-                    <li>Crie primeiro o array <code>cursos</code>.</li>
-                    <li>Execute depois o bloco com <code>forEach</code>.</li>
-                    <li>Troque os itens da lista e execute o teste novamente.</li>
-                    <li>
-                      Adicione outro item ao array e observe que não é preciso
-                      criar um novo <code>console.log()</code> manual para outra
-                      posição.
-                    </li>
-                  </ol>
-                  <p>
-                    Se houver conflito ao repetir uma declaração com
-                    <code>const</code>, recarregue a página ou troque o nome da
-                    variável antes de testar novamente.
-                  </p>
+                  <p>O objetivo é praticar <code>forEach</code>. A validação confere somente a saída; não verifica qual estrutura você usou.</p>
+                  <label class="lab-code-label" for="lab-code-aula-9">Seu código JavaScript</label>
+                  <textarea class="lab-code" id="lab-code-aula-9" rows="8" maxlength="20000" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" aria-describedby="lab-help-aula-9"></textarea>
+                  <div class="lab-actions">
+                    <button class="lab-run" type="button">Executar</button>
+                    <button class="lab-clear" type="button">Limpar</button>
+                  </div>
+                  <h5 id="lab-result-title-aula-9">Resultado</h5>
+                  <pre class="lab-result" role="status" aria-live="polite" aria-atomic="true" tabindex="0" aria-labelledby="lab-result-title-aula-9"></pre>
+                  <p id="lab-help-aula-9">Rascunho salvo neste navegador. Limpar preserva o código. O resultado não bloqueia a conclusão.</p>
+                  <p class="lab-storage-notice" role="status" aria-live="polite"></p>
+                  <noscript>Ative o JavaScript para usar o laboratório ou pratique no Console do navegador.</noscript>
+                  <h5>Complemento opcional</h5>
+                  <p>Percorra a lista novamente para mostrar o índice ao lado do curso: <code>0 JavaScript</code>, <code>1 HTML</code> e <code>2 CSS</code>. Esses logs são aceitos, mas não exigidos. Também pode mostrar os nomes dos cursos sem o prefixo; até seis mensagens complementares são permitidas.</p>
                 </section>
 
                 <section>
