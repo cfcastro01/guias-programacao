@@ -1,5 +1,18 @@
 // Os testes de cada exercício ficam separados do controlador.
 window.guiasLabExercises = {
+  "aula-8-exercicio-1": {
+    version: 1,
+    mode: "values",
+    maxExtraLogs: 5,
+    cases: [
+      { value: "estou aprendendo javascript" },
+      { value: "ESTOU APRENDENDO JAVASCRIPT" },
+      { value: true },
+      { value: 2 },
+      { value: ["Variáveis", "Funções", "Arrays"] },
+      { value: ["Variáveis", "Funções"] },
+    ],
+  },
   "aula-6-exercicio-1": {
     version: 1,
     mode: "values",

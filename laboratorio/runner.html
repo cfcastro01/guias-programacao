@@ -34,9 +34,10 @@
           function snapshot(value) {
             if (typeof value === "string") return value.slice(0, 2000);
             if (typeof value === "number" && Number.isFinite(value)) return value;
+            if (typeof value === "boolean") return value;
             if (Array.isArray(value) && value.length <= 100) {
               return Array.from(value, function (item) {
-                return typeof item === "string" || typeof item === "number" ? snapshot(item) : null;
+                return typeof item === "string" || typeof item === "number" || typeof item === "boolean" ? snapshot(item) : null;
               });
             }
             return null;
@@ -133,13 +134,13 @@
                 failure = {
                   expected: test ? JSON.stringify(test.value) : "(nenhum outro valor obrigatório)",
                   received: [value === null ? "(valor não suportado)" : JSON.stringify(value)],
-                  hint: "Confira o tipo, o conteúdo e a ordem dos valores. Use números, textos ou arrays diretamente no console.log.",
+                  hint: "Confira o tipo, o conteúdo e a ordem dos valores. Use números, textos, booleanos ou arrays diretamente no console.log.",
                 };
                 break;
               }
             }
             if (!failure && position < exercise.cases.length) {
-              failure = { expected: JSON.stringify(exercise.cases[position].value), received: [], hint: "Falta um resultado. Confira a sequência pedida e não transforme arrays ou números em texto." };
+              failure = { expected: JSON.stringify(exercise.cases[position].value), received: [], hint: "Falta um resultado. Confira a sequência pedida e não transforme arrays, números ou booleanos em texto." };
             }
             if (!failure && valueCount > programValues.length) {
               failure = { expected: "Uma saída curta", received: ["Limite de valores excedido"], hint: "Remova logs repetidos e execute novamente." };

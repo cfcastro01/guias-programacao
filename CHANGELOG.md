@@ -2,6 +2,15 @@
 
 Este arquivo registra as principais mudanças do projeto Guias de Programação.
 
+## 2026-10-05 — Laboratório na Aula 8
+
+### Adicionado
+
+- Preservação de booleanos no modo values, com comparação por tipo e valor, distinguindo true/false de textos.
+- Aula 8 no laboratório compacto, validando seis resultados de textos, includes, quantidade e arrays após push/pop.
+- Até cinco textos extras de apoio aceitos; resposta expansível, persistência e conclusão livre preservadas.
+- Validação apenas dos resultados, sem fiscalizar os métodos usados; Aula 7 permanece no Console e objetos continuam fora do motor.
+
 ## 2026-10-05 — Laboratório nas Aulas 6 e 10
 
 ### Adicionado
