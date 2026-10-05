@@ -13,7 +13,7 @@ Aulas 11–13 do JavaScript Iniciante.
 
 As duas versões abrem independentemente. Cada uma possui seus próprios arquivos
 HTML, CSS e JavaScript. A cópia inicial tinha o mesmo visual e conteúdo; agora
-exercicio/ está preparado para o aluno desenvolver o menu da Etapa 2.
+exercicio/ está preparado para o aluno desenvolver o menu da Etapa 2 e a seleção da Etapa 3.
 O original permanece na Etapa 1: não recebe automaticamente a solução de cada etapa.
 
 ## Regra de trabalho
@@ -42,19 +42,20 @@ landing-page-interativa/
 
 HTML, CSS e JavaScript puro, sem bibliotecas, backend ou armazenamento de dados.
 
-**Etapa 1 — Estrutura e visual: concluída.** A página tem cabeçalho, apresentação,
+**Etapa 1 — Estrutura e visual: disponível.** A página tem cabeçalho, apresentação,
 sobre, três métodos de preparo, história, convite à visita e rodapé. A xícara é
 feita com CSS. O layout é responsivo e os links internos funcionam.
 
-**Etapa 2 — Menu mobile: atual.** Em exercicio/, o botão menu-button foi habilitado
+**Etapa 2 — Menu mobile: disponível.** Em exercicio/, o botão menu-button foi habilitado
 e possui aria-controls e aria-expanded="false". A navegação site-navigation começa
 fechada abaixo de 700px; a classe aberto a mostra. Em desktop, permanece visível.
-O aluno implementará o JavaScript em exercicio/script.js, que contém apenas a tarefa.
+O aluno implementará o JavaScript em exercicio/script.js, que contém apenas instruções das Etapas 2 e 3.
 Até essa implementação, o botão não abre o menu.
 
 O original continua intacto na Etapa 1, com navegação visível e botão desativado.
-Seleção de preparo e Ver mais continuam desativados nas duas versões.
-Na página do curso, as Etapas 1 e 2 podem ser marcadas como concluídas de forma
+Em exercicio/, os botões de preparo estão habilitados, mas a seleção só funcionará
+depois da implementação pelo aluno. Ver mais continua desativado nas duas versões.
+Na página do curso, as Etapas 1, 2 e 3 podem ser marcadas como concluídas de forma
 independente, depois de realizar cada tarefa. O progresso usa a mesma chave
 `guias-programacao-progress` das aulas e permanece salvo neste navegador.
 
@@ -89,17 +90,18 @@ Escreva as soluções nos arquivos reais de exercício. O Console não é o loca
 principal para construir o projeto. Salve o arquivo editado e recarregue a versão
 de exercício no navegador. Compare com o original usando a mesma largura de janela.
 Na Etapa 2, escreva o JavaScript do menu. A resposta comentada está oculta no curso
-e deve ser consultada depois da tentativa. Não implemente ainda cards ou história.
+e deve ser consultada depois da tentativa. Na Etapa 3, escreva a seleção de preparo,
+preservando o menu. Não implemente ainda a história.
 
 ## Etapas
 
-1. **Estrutura e visual — concluída:** HTML, CSS e responsividade.
-2. **Menu mobile — atual:** abrir e fechar a navegação.
-3. **Estado ativo:** destacar o método de preparo escolhido.
+1. **Estrutura e visual — disponível:** HTML, CSS e responsividade.
+2. **Menu mobile — disponível:** abrir e fechar a navegação.
+3. **Estado ativo — atual:** destacar o método de preparo escolhido.
 4. **Conteúdo expansível:** mostrar e ocultar parte da história.
 5. **Revisão final:** conferir comportamento, teclado e responsividade.
 
-Os conceitos futuros incluem encontrar elementos no DOM, reagir a cliques e
+Os conceitos praticados incluem encontrar elementos no DOM, reagir a cliques e
 alternar classes CSS. O HTML já prepara menu-button e site-navigation;
 method-card e method-select; story-button e story-content.
 Não há controle de conclusão geral do projeto; ele será tratado quando todas as etapas estiverem prontas.
@@ -128,6 +130,34 @@ Compare com original/ na mesma largura: ele mantém a Etapa 1 e não recebe a so
 O exercício só terá o menu funcional depois da sua implementação.
 Consulte [a Etapa 2 no curso](../../cursos/javascript-iniciante/#projeto-1-etapa-2)
 para a tarefa completa, dicas, diagnóstico e resposta expansível.
+
+## Etapa 3 — Estado ativo
+
+Objetivo: selecionar um método de preparo por vez, conectando as Aulas 11 (DOM),
+12 (eventos), 13 (classes) e 9 (forEach): **encontrar → percorrer → ouvir → remover → adicionar**.
+
+Arquivos usados, somente em projetos/landing-page-interativa/exercicio/:
+
+- index.html: os três artigos mantêm o conteúdo; seus botões method-select estão habilitados.
+- styles.css: .method-select.ativo prepara fundo escuro, texto claro e confirmação visual.
+- script.js: escreva a seleção no espaço da Etapa 3, sem apagar o menu da Etapa 2.
+
+Selecione os botões com querySelectorAll, percorra com forEach e registre um clique
+em cada um. No clique, remova ativo de todos e adicione somente ao escolhido.
+Atualize aria-pressed para acompanhar a seleção. Diferente do toggle do menu,
+esta tarefa precisa garantir que apenas uma opção esteja ativa.
+
+Salve e recarregue a versão de exercício. Escolha Coado, Prensa francesa e Espresso:
+a cada escolha, o anterior deve perder o destaque. Teste Tab, Enter e Espaço;
+use o Console para investigar erros. Nenhuma opção começa ativa.
+
+O original mantém os botões desativados da Etapa 1. A seleção no exercício só
+funcionará depois da sua implementação. A classe ativa não é salva no navegador;
+o controle de conclusão da etapa fica na página do curso, usando o progresso existente.
+Disponível significa que o conteúdo pode ser estudado; cada aluno marca sua conclusão.
+
+Consulte [a Etapa 3 no curso](../../cursos/javascript-iniciante/#projeto-1-etapa-3)
+para a tarefa completa, quatro dicas, diagnóstico e resposta comentada expansível.
 
 ## Formato das próximas etapas
 

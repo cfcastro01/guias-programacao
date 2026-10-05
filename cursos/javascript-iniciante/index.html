@@ -165,7 +165,7 @@
                 <h4>Projeto prático 1</h4>
                 <div class="summary-project-card">
                   <strong><a href="#projeto-1">Landing Page Interativa</a></strong>
-                  <span class="project-status">Etapa 2 — exercício disponível</span>
+                  <span class="project-status">Etapa 3 — exercício disponível</span>
                   <p>
                     Projeto visual para aplicar DOM, eventos, classes e
                     interação com HTML/CSS.
@@ -4165,7 +4165,7 @@ botaoStatus.addEventListener("click", alternarStatus);</code></pre>
                     <li><strong>Console:</strong> use como apoio para conferir valores, testar pequenas expressões e ler erros. Depurar significa investigar a causa de um problema.</li>
                   </ul>
                   <p>As soluções serão escritas nos arquivos reais de <code>exercicio/</code>. O Console não será o local principal para construir o projeto.</p>
-                  <p>Depois de uma alteração, salve o arquivo e recarregue a versão de exercício no navegador. Abra o original em outra aba, na mesma largura de janela, para comparar. Na Etapa 1, as duas versões começaram iguais. Na Etapa 2, você escreverá o JavaScript do menu somente na versão de exercício.</p>
+                  <p>Depois de uma alteração, salve o arquivo e recarregue a versão de exercício no navegador. Abra o original em outra aba, na mesma largura de janela, para comparar. Na Etapa 1, as duas versões começaram iguais. Nas Etapas 2 e 3, você escreverá o JavaScript do menu e da seleção de preparo somente na versão de exercício.</p>
                 </section>
                 <section>
                   <h4>Formato das próximas etapas</h4>
@@ -4175,13 +4175,13 @@ botaoStatus.addEventListener("click", alternarStatus);</code></pre>
                 <section>
                   <h4>Como o projeto será desenvolvido</h4>
                   <ol>
-                    <li><strong>Estrutura e visual — concluída:</strong> HTML, CSS, adaptação para celular e elementos preparados para receber JavaScript.</li>
-                    <li><strong>Menu mobile — etapa atual:</strong> abrir e fechar a navegação em telas pequenas.</li>
-                    <li><strong>Estado ativo:</strong> destacar o método de preparo escolhido.</li>
+                    <li><strong>Estrutura e visual — disponível:</strong> HTML, CSS, adaptação para celular e elementos preparados para receber JavaScript.</li>
+                    <li><strong>Menu mobile — disponível:</strong> abrir e fechar a navegação em telas pequenas.</li>
+                    <li><strong>Estado ativo — etapa atual:</strong> destacar o método de preparo escolhido.</li>
                     <li><strong>Conteúdo expansível:</strong> mostrar e ocultar parte da história do café.</li>
                     <li><strong>Revisão final:</strong> conferir as interações e o uso por teclado.</li>
                   </ol>
-                  <p>O <code>original/</code> preserva a <strong>Etapa 1 — Estrutura e visual</strong>. O <code>exercicio/</code> está preparado para a <strong>Etapa 2 — Menu mobile</strong>; o aluno implementará a interação. Estado ativo, conteúdo expansível e revisão final continuam planejados.</p>
+                  <p>O <code>original/</code> preserva a <strong>Etapa 1 — Estrutura e visual</strong>. O <code>exercicio/</code> está preparado para as <strong>Etapas 2 — Menu mobile e 3 — Estado ativo</strong>; o aluno implementará as interações. Conteúdo expansível e revisão final continuam planejados.</p>
                 </section>
                 <section class="pronunciation">
                   <h4>Como ler em português</h4>
@@ -4197,7 +4197,7 @@ botaoStatus.addEventListener("click", alternarStatus);</code></pre>
                     <li>Alternar classes CSS.</li>
                     <li>Controlar estados visuais, como selecionado e expandido.</li>
                   </ul>
-                  <p>O menu será implementado pelo aluno nesta etapa. Os demais comportamentos serão tratados separadamente nas próximas etapas.</p>
+                  <p>O menu e a seleção de preparo serão implementados pelo aluno nas Etapas 2 e 3. O conteúdo expansível será tratado na próxima etapa.</p>
                 </section>
                 <section id="projeto-1-etapa-1">
                   <h4>Etapa 1 — Revisão da estrutura</h4>
@@ -4233,7 +4233,7 @@ botaoStatus.addEventListener("click", alternarStatus);</code></pre>
                   <h5>Antes de começar</h5>
                   <p>Trabalhe apenas em <code>exercicio/</code>. Use <code>original/</code> para comparar com a Etapa 1, sem editar essa referência.</p>
                   <p>O HTML e o CSS já estão preparados. O botão tem o ID <code>menu-button</code> e controla a navegação com ID <code>site-navigation</code>. A classe <code>aberto</code> faz a navegação aparecer em telas abaixo de 700px. Em desktop, ela fica visível normalmente.</p>
-                  <p>O arquivo de JavaScript tem apenas um comentário: você escreverá a interação. Antes de concluir a tarefa, o botão ainda não abre o menu; isso faz parte do exercício.</p>
+                  <p>O arquivo de JavaScript tem apenas comentários de tarefa: você escreverá a interação no espaço da Etapa 2. Antes de concluir a tarefa, o botão ainda não abre o menu; isso faz parte do exercício.</p>
                   <h5>Sua tarefa</h5>
                   <ol>
                     <li>Em <code>exercicio/script.js</code>, encontre o botão pelo seu ID.</li>
@@ -4322,9 +4322,111 @@ botaoMenu.addEventListener("click", alternarMenu);</code></pre>
                     </label>
                   </div>
                 </section>
+                <section id="projeto-1-etapa-3">
+                  <h4>Etapa 3 — Estado ativo</h4>
+                  <h5>Objetivo</h5>
+                  <p>Destacar um método de preparo por vez: ao escolher outro, o anterior perde o destaque. Vamos usar a <strong>Aula 11 — DOM</strong>, a <strong>Aula 12 — eventos</strong>, a <strong>Aula 13 — classes e estados visuais</strong> e a <strong>Aula 9 — forEach</strong>: encontrar → percorrer → ouvir → remover → adicionar.</p>
+                  <h5>Arquivos usados</h5>
+                  <ul>
+                    <li><code>projetos/landing-page-interativa/exercicio/index.html</code></li>
+                    <li><code>projetos/landing-page-interativa/exercicio/styles.css</code></li>
+                    <li><code>projetos/landing-page-interativa/exercicio/script.js</code></li>
+                  </ul>
+                  <h5>Antes de começar</h5>
+                  <p>Trabalhe somente em <code>exercicio/</code>. Use <code>original/</code> apenas para comparar com a base inicial da Etapa 1.</p>
+                  <p>Os três artigos <code>.method-card</code> mantêm seus títulos e textos. Cada um tem um botão <strong>Escolher</strong> com a classe <code>method-select</code>, já habilitado para clique e teclado. O destaque preparado no CSS usa <code>.method-select.ativo</code>: fundo escuro, texto claro e um sinal de confirmação.</p>
+                  <p>Você escreverá o JavaScript no espaço da Etapa 3, preservando o trabalho do menu da Etapa 2. Antes de resolver, os botões ainda não selecionam um método. Nenhuma opção começa ativa.</p>
+                  <h5>Sua tarefa</h5>
+                  <ol>
+                    <li>Selecione todos os botões <code>.method-select</code> e guarde a coleção em uma variável. Uma coleção reúne vários elementos encontrados.</li>
+                    <li>Percorra essa coleção com <code>forEach</code>.</li>
+                    <li>Dentro da repetição, registre um evento <code>"click"</code> em cada botão.</li>
+                    <li>Na função do clique, percorra novamente a coleção e remova <code>ativo</code> de todas as opções.</li>
+                    <li>Depois, adicione <code>ativo</code> somente ao botão clicado, usando o parâmetro da primeira repetição. No nome passado ao <code>classList</code>, não use o ponto do seletor CSS.</li>
+                    <li>Acompanhe a seleção com <code>aria-pressed</code>: escreva <code>"false"</code> em todos os botões e <code>"true"</code> no escolhido, usando <code>setAttribute</code>.</li>
+                  </ol>
+                  <p>Na Etapa 2, <code>toggle</code> abre e fecha o mesmo menu. Aqui existe um grupo: alternar apenas o botão clicado permitiria vários ativos. Por isso, primeiro removemos o estado de todos e depois adicionamos em um só. Clicar novamente na opção escolhida mantém essa opção ativa.</p>
+                  <p><code>aria-pressed</code> informa a leitores de tela se um botão está selecionado. Ele acompanha a classe, mas não controla a aparência. Assim como <code>aria-expanded</code> no menu, é atualizado com <code>setAttribute(nome, valor)</code>.</p>
+                  <h5>Como ler em português</h5>
+                  <p><strong>“Para cada método, quando ele for clicado, remova o estado ativo de todos e depois marque este método como ativo.”</strong></p>
+                  <h5>Dicas</h5>
+                  <ol>
+                    <li><strong>Dica 1:</strong> encontre mais de um elemento com <code>document.querySelectorAll(...)</code>. O seletor deve ser a classe dos botões.</li>
+                    <li><strong>Dica 2:</strong> percorra a coleção com <code>metodos.forEach(function (metodo) { /* ... */ });</code>. O parâmetro <code>metodo</code> representa o botão daquela passagem.</li>
+                    <li><strong>Dica 3:</strong> dentro do clique, percorra todos novamente para remover a classe ativa. Use outro nome para o parâmetro dessa repetição.</li>
+                    <li><strong>Dica 4:</strong> depois da remoção, adicione a classe somente em <code>metodo</code>. A função do clique pode usar esse parâmetro da repetição externa.</li>
+                  </ol>
+                  <h5>Como testar</h5>
+                  <ol>
+                    <li>Salve os arquivos e abra ou recarregue a <a href="../../projetos/landing-page-interativa/exercicio/">versão de exercício</a>.</li>
+                    <li>Na seção Preparos, clique em <strong>Escolher coado</strong> e confira o destaque.</li>
+                    <li>Clique em <strong>Escolher prensa</strong>: Coado deve perder o destaque e Prensa francesa deve recebê-lo.</li>
+                    <li>Clique em <strong>Escolher espresso</strong>: somente Espresso deve permanecer ativo.</li>
+                    <li>Clique novamente em Espresso e confira que ele continua sendo a única opção ativa, sem recarregar a página.</li>
+                    <li>Use Tab para chegar aos botões e Enter ou Espaço para escolher. Confira o foco visível e teste em telas pequenas e grandes.</li>
+                    <li>Confira também que o menu da Etapa 2 continua funcionando, se você já o implementou.</li>
+                    <li>Se houver erro, abra o Console com F12. Na aba Elementos, confira a classe <code>ativo</code> e <code>aria-pressed</code>.</li>
+                  </ol>
+                  <h5>Checklist de diagnóstico</h5>
+                  <ul>
+                    <li>O seletor de <code>querySelectorAll</code> é <code>".method-select"</code>?</li>
+                    <li>A classe usada no JavaScript existe no CSS?</li>
+                    <li>O <code>forEach</code> está percorrendo os três botões?</li>
+                    <li>O <code>addEventListener</code> está dentro da primeira repetição?</li>
+                    <li>Você removeu a classe de todos antes de adicioná-la ao escolhido?</li>
+                    <li>O arquivo foi salvo, está carregado pelo HTML e não há erro no Console?</li>
+                  </ul>
+                  <h5>Resultado esperado</h5>
+                  <p>Nenhuma opção começa ativa. Um clique destaca a opção escolhida; outro método recebe o destaque e o anterior o perde. Nunca ficam dois ativos ao mesmo tempo. Não há recarregamento, e <code>aria-pressed</code> acompanha a seleção.</p>
+                  <h5>Compare com o original</h5>
+                  <p><a href="../../projetos/landing-page-interativa/original/">Ver projeto original para comparação</a>: mantém a Etapa 1, com os botões de preparo desativados e sem seleção funcional. Em <code>exercicio/</code>, depois da sua implementação, será possível selecionar um método por vez. Compare as duas versões na mesma largura.</p>
+                  <h5>Resposta comentada</h5>
+                  <p>Tente resolver antes de abrir a resposta. Acrescente esta solução ao trabalho do menu, sem substituí-lo.</p>
+                  <button class="answer-toggle" type="button" aria-expanded="false" aria-controls="resposta-projeto-1-etapa-3">Mostrar resposta comentada</button>
+                  <div class="answer" id="resposta-projeto-1-etapa-3" hidden>
+                    <pre><code>const metodos = document.querySelectorAll(".method-select");
+
+metodos.forEach(function (metodo) {
+  metodo.addEventListener("click", function () {
+    metodos.forEach(function (outroMetodo) {
+      outroMetodo.classList.remove("ativo");
+      outroMetodo.setAttribute("aria-pressed", "false");
+    });
+
+    metodo.classList.add("ativo");
+    metodo.setAttribute("aria-pressed", "true");
+  });
+});</code></pre>
+                    <h5>Explicação da resposta</h5>
+                    <ol>
+                      <li><code>querySelectorAll</code> encontra os três botões e guarda a coleção em <code>metodos</code>.</li>
+                      <li>O primeiro <code>forEach</code> passa por cada opção. Seu parâmetro <code>metodo</code> representa um botão.</li>
+                      <li>Cada botão recebe seu próprio <code>addEventListener</code>. A função tradicional é registrada para executar quando houver clique.</li>
+                      <li>Ao clicar, o segundo <code>forEach</code> percorre todos os botões. <code>remove("ativo")</code> retira a classe, inclusive do escolhido se já estava ativo.</li>
+                      <li>Depois da repetição interna, <code>add("ativo")</code> destaca somente <code>metodo</code>, o botão que recebeu aquele listener. A função do clique consegue usar o parâmetro da repetição externa.</li>
+                    </ol>
+                    <p><strong>Acessibilidade:</strong> os dois <code>setAttribute</code> mantêm <code>aria-pressed</code> sincronizado: todos recebem <code>"false"</code>, e somente o escolhido recebe <code>"true"</code>. Os botões já aceitam Enter e Espaço; não é necessário criar eventos extras para o teclado.</p>
+                    <p><strong>Como ler:</strong> encontre os métodos; para cada um, ouça o clique; remova o estado de todos; adicione o estado neste. Essa solução seleciona um método, sem implementar o conteúdo expansível da próxima etapa.</p>
+                  </div>
+                  <div class="lesson-completion">
+                    <h5>Conclusão da etapa</h5>
+                    <label class="completion-control" for="completion-projeto-1-etapa-3">
+                      <input
+                        class="lesson-completion-input"
+                        id="completion-projeto-1-etapa-3"
+                        type="checkbox"
+                        data-course-id="javascript-iniciante"
+                        data-lesson-id="projeto-1-etapa-3"
+                        data-completion-label="Marcar Etapa 3 como concluída"
+                        data-completed-label="Etapa 3 concluída — desmarcar"
+                      />
+                      <span class="completion-label-text">Marcar Etapa 3 como concluída</span>
+                    </label>
+                  </div>
+                </section>
                 <section>
                   <h4>Antes da próxima etapa</h4>
-                  <p>Conclua a tarefa do menu e confira o uso por teclado e em desktop. Marque cada etapa somente depois de realizar sua tarefa. As marcações são independentes e ficam salvas neste navegador. A conclusão geral do projeto será tratada quando todas as etapas estiverem prontas.</p>
+                  <p>Conclua a seleção de preparo e confira que somente uma opção fica ativa, inclusive por teclado. Preserve o trabalho do menu. Marque cada etapa somente depois de realizar sua tarefa. As marcações são independentes e ficam salvas neste navegador. A conclusão geral do projeto será tratada quando todas as etapas estiverem prontas.</p>
                 </section>
               </article>
             </div>
@@ -4346,9 +4448,9 @@ botaoMenu.addEventListener("click", alternarMenu);</code></pre>
 
           <div class="projects-grid">
             <article class="project-card">
-              <span>Etapa 2 — exercício disponível</span>
+              <span>Etapa 3 — exercício disponível</span>
               <h3><a href="#projeto-1">Landing Page Interativa</a></h3>
-              <p>A base visual está pronta. Na etapa atual, escreva o JavaScript do menu mobile seguindo o exercício guiado.</p>
+              <p>A base visual e o exercício do menu estão disponíveis. Na etapa atual, escreva o JavaScript para selecionar um método de preparo por vez.</p>
             </article>
 
             <article class="project-card">

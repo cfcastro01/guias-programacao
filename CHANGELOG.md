@@ -2,6 +2,16 @@
 
 Este arquivo registra as principais mudanças do projeto Guias de Programação.
 
+## 2026-10-05 — Etapa 3 do Projeto Prático 1: Estado ativo
+
+### Adicionado
+
+- Exercício guiado de seleção exclusiva dos métodos de preparo, relacionando DOM, eventos, classes e forEach, com quatro dicas, diagnóstico e resposta comentada expansível.
+- Botões internos de preparo habilitados em exercicio/, com aria-pressed e estilo ativo de fundo, contraste e confirmação visual; original/ permanece na Etapa 1.
+- Controle independente de conclusão com projeto-1-etapa-3, reutilizando o progresso existente sem alterar o script compartilhado.
+- Instruções separadas das Etapas 2 e 3 no script de exercício, sem soluções prontas e sem apagar a tarefa do menu.
+- READMEs e apresentação do projeto atualizados; conteúdo expansível segue planejado.
+
 ## 2026-10-02 — Etapa 2 do Projeto Prático 1: Menu mobile
 
 ### Adicionado

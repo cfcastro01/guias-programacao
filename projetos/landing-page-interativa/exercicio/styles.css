@@ -345,6 +345,7 @@ button:disabled {
   font-size: 0.92rem;
 }
 .method-select {
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -358,6 +359,21 @@ button:disabled {
   font-size: 0.85rem;
   font-weight: 650;
   text-align: left;
+}
+.method-select:hover {
+  color: var(--clay);
+  text-decoration: underline;
+  text-underline-offset: 0.3em;
+}
+.method-select.ativo {
+  padding: 1rem;
+  border-radius: 4px;
+  background: var(--olive);
+  color: var(--paper);
+  box-shadow: inset 0 0 0 2px var(--olive);
+}
+.method-select.ativo::after {
+  content: "✓";
 }
 .story {
   background: #eae5d9;
