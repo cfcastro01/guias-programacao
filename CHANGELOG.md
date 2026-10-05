@@ -2,6 +2,16 @@
 
 Este arquivo registra as principais mudanças do projeto Guias de Programação.
 
+## 2026-10-05 — Laboratório nas Aulas 6 e 10
+
+### Adicionado
+
+- Modo reutilizável de validação por valores tipados: arrays simples, números e textos, comparados na sequência pedida.
+- Cópia limitada dos arrays no momento do log, preservando o resultado anterior a push/pop e outras alterações.
+- Exercícios de arrays e map/filter no laboratório compacto, com até cinco textos extras de apoio; respostas e conclusão livre preservadas.
+- Limitação pedagógica explícita: o resultado é validado, sem verificar o uso de push, pop, map ou filter.
+- Modos das Aulas 1, 5 e 9, persistência, isolamento e timeout preservados.
+
 ## 2026-10-05 — Laboratório nas Aulas 1 e 9
 
 ### Adicionado

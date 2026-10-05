@@ -16,6 +16,8 @@
           let testLogs = null;
           let testLogCount = 0;
           const programLogs = [];
+          const programValues = [];
+          let valueCount = 0;
           let programLineCount = 0;
 
           function format(value) {
@@ -26,6 +28,26 @@
             } catch {
               return "[Valor não serializável]";
             }
+          }
+
+          // Guarda uma cópia limitada do valor no momento do log, antes de novas alterações.
+          function snapshot(value) {
+            if (typeof value === "string") return value.slice(0, 2000);
+            if (typeof value === "number" && Number.isFinite(value)) return value;
+            if (Array.isArray(value) && value.length <= 100) {
+              return Array.from(value, function (item) {
+                return typeof item === "string" || typeof item === "number" ? snapshot(item) : null;
+              });
+            }
+            return null;
+          }
+
+          function sameValue(actual, expected) {
+            if (Array.isArray(expected)) {
+              return Array.isArray(actual) && actual.length === expected.length &&
+                expected.every(function (item, index) { return actual[index] === item; });
+            }
+            return actual === expected;
           }
 
           function describeError(error) {
@@ -40,6 +62,12 @@
                 if (testLogs.length < 2) testLogs.push(text);
                 testLogCount += 1;
                 return;
+              }
+              if (exercise.mode === "values") {
+                valueCount += values.length;
+                values.forEach(function (value) {
+                  if (programValues.length < 60) programValues.push(snapshot(value));
+                });
               }
               if (exercise.mode === "output") {
                 const lines = text.split(/\r\n?|\n/);
@@ -91,7 +119,41 @@
             send({ type: "result", status: failure ? "incorrect" : "passed", detail: "" });
           }
 
+          function validateValues() {
+            let position = 0;
+            let extras = 0;
+            let failure = null;
+            for (const value of programValues) {
+              const test = exercise.cases[position];
+              if (test && sameValue(value, test.value)) {
+                position += 1;
+              } else if (typeof value === "string" && extras < exercise.maxExtraLogs) {
+                extras += 1;
+              } else {
+                failure = {
+                  expected: test ? JSON.stringify(test.value) : "(nenhum outro valor obrigatório)",
+                  received: [value === null ? "(valor não suportado)" : JSON.stringify(value)],
+                  hint: "Confira o tipo, o conteúdo e a ordem dos valores. Use números, textos ou arrays diretamente no console.log.",
+                };
+                break;
+              }
+            }
+            if (!failure && position < exercise.cases.length) {
+              failure = { expected: JSON.stringify(exercise.cases[position].value), received: [], hint: "Falta um resultado. Confira a sequência pedida e não transforme arrays ou números em texto." };
+            }
+            if (!failure && valueCount > programValues.length) {
+              failure = { expected: "Uma saída curta", received: ["Limite de valores excedido"], hint: "Remova logs repetidos e execute novamente." };
+            }
+            if (failure) send({ type: "test", label: "Verificação dos valores", passed: false, ...failure });
+            send({ type: "result", status: failure ? "incorrect" : "passed", detail: "" });
+          }
+
           try {
+            if (exercise.mode === "values") {
+              new Function("console", code)(capturedConsole);
+              validateValues();
+              return;
+            }
             if (exercise.mode === "output") {
               new Function("console", code)(capturedConsole);
               validateOutput();

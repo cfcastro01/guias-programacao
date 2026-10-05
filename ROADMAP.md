@@ -23,15 +23,17 @@
 - Próxima etapa: definir a primeira aula sem antecipar o restante do conteúdo.
 - Manter atividades conceituais e práticas, com atenção à validação e ao uso seguro de agentes.
 
-## Laboratório de JavaScript — primeiro lote
+## Laboratório de JavaScript — migração gradual
 
-As Aulas 1, 5 e 9 usam o laboratório integrado. A Aula 5 valida apresentarPessoa(nome);
-as Aulas 1 e 9 validam a saída do programa. As demais mantêm o fluxo no Console.
+As Aulas 1, 5, 6, 9 e 10 usam o laboratório integrado. A Aula 5 valida apresentarPessoa(nome);
+as Aulas 1 e 9 validam a saída do programa e as Aulas 6 e 10 comparam valores tipados.
+As demais mantêm o fluxo no Console.
 
 ### Implementado no piloto
 
 - Campo de JavaScript, Executar, Limpar saída, logs, erros e resultado dos testes.
 - Validação de função com três nomes na Aula 5 e regras de saída nas Aulas 1 e 9, sem analisar código.
+- Comparação de arrays por conteúdo e ordem, números e textos nas Aulas 6 e 10, sem comprovar quais métodos foram usados.
 - Saudação com nome livre e mensagens em ordem; complementos opcionais aceitos por configuração.
 - Rascunho e última tentativa salvos em guias-programacao-labs.
 - Execução em iframe sandbox sem allow-same-origin, com Worker novo por tentativa,
