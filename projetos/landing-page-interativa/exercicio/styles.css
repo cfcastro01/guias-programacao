@@ -381,7 +381,14 @@ button:disabled {
 .story-layout > div:last-child {
   color: var(--muted);
 }
+.story-content {
+  display: none;
+}
+.story-content.aberto {
+  display: block;
+}
 .story-toggle {
+  cursor: pointer;
   display: inline-flex;
   gap: 2rem;
   padding: 0.6rem 0;
@@ -389,6 +396,10 @@ button:disabled {
   border-bottom: 1px solid var(--muted);
   background: transparent;
   color: var(--ink);
+}
+.story-toggle:hover {
+  color: var(--clay);
+  border-bottom-color: currentColor;
 }
 .visit {
   background: var(--olive);

@@ -2,6 +2,16 @@
 
 Este arquivo registra as principais mudanças do projeto Guias de Programação.
 
+## 2026-10-05 — Etapa 4 do Projeto Prático 1: Conteúdo expansível
+
+### Adicionado
+
+- Exercício guiado para alternar a história e atualizar o texto do botão e aria-expanded, com quatro dicas, diagnóstico e resposta comentada expansível.
+- Botão story-button habilitado em exercicio/, com Ver história e atributos acessíveis; estados fechado/aberto preparados no CSS sem animação.
+- Controle projeto-1-etapa-4 reutilizando o progresso existente, sem mudanças no script compartilhado.
+- Instruções da Etapa 4 acrescentadas ao script de exercício, preservando as Etapas 2 e 3 e sem soluções prontas.
+- Documentação e apresentação do projeto atualizadas; original/, aulas e curso de IA preservados.
+
 ## 2026-10-05 — Etapa 3 do Projeto Prático 1: Estado ativo
 
 ### Adicionado

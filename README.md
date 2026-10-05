@@ -1,6 +1,6 @@
 # Guias de Programação
 
-Projeto local de cursos e projetos práticos para quem está começando a programar. O curso **JavaScript Iniciante** possui treze aulas disponíveis e as Etapas 1, 2 e 3 da Landing Page Interativa. O curso **Desenvolvimento de Software com IA** possui sua estrutura inicial e a primeira aula publicada.
+Projeto local de cursos e projetos práticos para quem está começando a programar. O curso **JavaScript Iniciante** possui treze aulas disponíveis e as Etapas 1, 2, 3 e 4 da Landing Page Interativa. O curso **Desenvolvimento de Software com IA** possui sua estrutura inicial e a primeira aula publicada.
 
 ## Tecnologias
 
@@ -83,8 +83,10 @@ cafeteria fictícia Café Origem. A **Etapa 2 — Menu mobile** oferece HTML e C
 preparados e uma tarefa guiada para o aluno escrever o JavaScript, com dicas e
 resposta expansível no curso. A **Etapa 3 — Estado ativo** prepara os botões dos
 três métodos e o CSS de destaque, com exercício de seleção exclusiva, dicas e
-resposta comentada expansível. O script de exercício não contém soluções prontas,
-e as Etapas 1, 2 e 3 têm marcações independentes de conclusão no progresso local.
+resposta comentada expansível. A **Etapa 4 — Conteúdo expansível** prepara a
+história fechada e o botão acessível, com tarefa para alternar o conteúdo e atualizar
+texto e aria-expanded. O script de exercício não contém soluções prontas,
+e as Etapas 1, 2, 3 e 4 têm marcações independentes de conclusão no progresso local.
 Ainda não há marcação de conclusão geral do projeto. Trabalhe na [versão de exercício](projetos/landing-page-interativa/exercicio/)
 e use o [original](projetos/landing-page-interativa/original/) para comparação.
 A pasta original preserva a Etapa 1; as próximas atividades serão feitas somente

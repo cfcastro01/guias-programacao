@@ -165,7 +165,7 @@
                 <h4>Projeto prático 1</h4>
                 <div class="summary-project-card">
                   <strong><a href="#projeto-1">Landing Page Interativa</a></strong>
-                  <span class="project-status">Etapa 3 — exercício disponível</span>
+                  <span class="project-status">Etapa 4 — exercício disponível</span>
                   <p>
                     Projeto visual para aplicar DOM, eventos, classes e
                     interação com HTML/CSS.
@@ -4165,7 +4165,7 @@ botaoStatus.addEventListener("click", alternarStatus);</code></pre>
                     <li><strong>Console:</strong> use como apoio para conferir valores, testar pequenas expressões e ler erros. Depurar significa investigar a causa de um problema.</li>
                   </ul>
                   <p>As soluções serão escritas nos arquivos reais de <code>exercicio/</code>. O Console não será o local principal para construir o projeto.</p>
-                  <p>Depois de uma alteração, salve o arquivo e recarregue a versão de exercício no navegador. Abra o original em outra aba, na mesma largura de janela, para comparar. Na Etapa 1, as duas versões começaram iguais. Nas Etapas 2 e 3, você escreverá o JavaScript do menu e da seleção de preparo somente na versão de exercício.</p>
+                  <p>Depois de uma alteração, salve o arquivo e recarregue a versão de exercício no navegador. Abra o original em outra aba, na mesma largura de janela, para comparar. Na Etapa 1, as duas versões começaram iguais. Nas Etapas 2, 3 e 4, você escreverá o JavaScript do menu, da seleção de preparo e da história somente na versão de exercício.</p>
                 </section>
                 <section>
                   <h4>Formato das próximas etapas</h4>
@@ -4177,11 +4177,11 @@ botaoStatus.addEventListener("click", alternarStatus);</code></pre>
                   <ol>
                     <li><strong>Estrutura e visual — disponível:</strong> HTML, CSS, adaptação para celular e elementos preparados para receber JavaScript.</li>
                     <li><strong>Menu mobile — disponível:</strong> abrir e fechar a navegação em telas pequenas.</li>
-                    <li><strong>Estado ativo — etapa atual:</strong> destacar o método de preparo escolhido.</li>
-                    <li><strong>Conteúdo expansível:</strong> mostrar e ocultar parte da história do café.</li>
+                    <li><strong>Estado ativo — disponível:</strong> destacar o método de preparo escolhido.</li>
+                    <li><strong>Conteúdo expansível — etapa atual:</strong> mostrar e ocultar parte da história do café.</li>
                     <li><strong>Revisão final:</strong> conferir as interações e o uso por teclado.</li>
                   </ol>
-                  <p>O <code>original/</code> preserva a <strong>Etapa 1 — Estrutura e visual</strong>. O <code>exercicio/</code> está preparado para as <strong>Etapas 2 — Menu mobile e 3 — Estado ativo</strong>; o aluno implementará as interações. Conteúdo expansível e revisão final continuam planejados.</p>
+                  <p>O <code>original/</code> preserva a <strong>Etapa 1 — Estrutura e visual</strong>. O <code>exercicio/</code> está preparado para as <strong>Etapas 2 — Menu mobile, 3 — Estado ativo e 4 — Conteúdo expansível</strong>; o aluno implementará as interações. A revisão final continua planejada.</p>
                 </section>
                 <section class="pronunciation">
                   <h4>Como ler em português</h4>
@@ -4197,7 +4197,7 @@ botaoStatus.addEventListener("click", alternarStatus);</code></pre>
                     <li>Alternar classes CSS.</li>
                     <li>Controlar estados visuais, como selecionado e expandido.</li>
                   </ul>
-                  <p>O menu e a seleção de preparo serão implementados pelo aluno nas Etapas 2 e 3. O conteúdo expansível será tratado na próxima etapa.</p>
+                  <p>O menu, a seleção de preparo e o conteúdo expansível serão implementados pelo aluno nas Etapas 2, 3 e 4.</p>
                 </section>
                 <section id="projeto-1-etapa-1">
                   <h4>Etapa 1 — Revisão da estrutura</h4>
@@ -4424,9 +4424,122 @@ metodos.forEach(function (metodo) {
                     </label>
                   </div>
                 </section>
+                <section id="projeto-1-etapa-4">
+                  <h4>Etapa 4 — Conteúdo expansível</h4>
+                  <h5>Objetivo</h5>
+                  <p>Fazer o conteúdo adicional da história aparecer e desaparecer com um botão, atualizando também o texto da ação. Vamos conectar a <strong>Aula 11 — DOM</strong>, a <strong>Aula 12 — eventos</strong>, a <strong>Aula 13 — classes e estados visuais</strong> e a <strong>Aula 5 — funções</strong>, usando também <code>textContent</code>: encontrar → ouvir → alternar estado → atualizar texto.</p>
+                  <h5>Arquivos usados</h5>
+                  <ul>
+                    <li><code>projetos/landing-page-interativa/exercicio/index.html</code></li>
+                    <li><code>projetos/landing-page-interativa/exercicio/styles.css</code></li>
+                    <li><code>projetos/landing-page-interativa/exercicio/script.js</code></li>
+                  </ul>
+                  <h5>Antes de começar</h5>
+                  <p>Trabalhe somente em <code>exercicio/</code>. Use <code>original/</code> apenas para comparar com a base inicial da Etapa 1.</p>
+                  <p>Na seção de história, o botão <code>story-button</code> mostra <strong>Ver história</strong> e tem <code>aria-expanded="false"</code>. Seu <code>aria-controls="story-content"</code> aponta para o conteúdo adicional, cujo ID é <code>story-content</code>. O primeiro parágrafo permanece visível; apenas o bloco adicional começa fechado.</p>
+                  <p>O CSS já prepara <code>.story-content.aberto</code> para mostrar esse bloco. O JavaScript ainda contém apenas instruções: escreva no espaço da Etapa 4, preservando o trabalho das Etapas 2 e 3. Até resolver a tarefa, o botão não abre a história.</p>
+                  <h5>Sua tarefa</h5>
+                  <ol>
+                    <li>Encontre o botão pelo ID <code>story-button</code> e guarde-o em uma variável.</li>
+                    <li>Encontre o conteúdo pelo ID <code>story-content</code> e guarde-o em outra variável.</li>
+                    <li>Crie uma função chamada <code>alternarHistoria</code>.</li>
+                    <li>Dentro dela, use <code>classList.toggle(...)</code> no conteúdo para alternar a classe <code>aberto</code>, sem ponto no nome.</li>
+                    <li>Depois da alternância, consulte <code>classList.contains(...)</code> para descobrir se o conteúdo está aberto. Guarde esse resultado em uma variável.</li>
+                    <li>Use <code>if</code> e <code>else</code> para atualizar <code>textContent</code> do botão: <strong>Ocultar história</strong> quando aberto e <strong>Ver história</strong> quando fechado.</li>
+                    <li>No mesmo teste, atualize <code>aria-expanded</code> do botão com <code>setAttribute</code>: <code>"true"</code> quando aberto e <code>"false"</code> quando fechado.</li>
+                    <li>Registre <code>"click"</code> com <code>addEventListener</code> no botão, passando o nome da função sem <code>()</code>.</li>
+                  </ol>
+                  <p>Na Etapa 2, você alternou o menu. Na Etapa 3, escolheu um item entre vários. Agora uma ação muda mais de uma coisa na interface: o estado do conteúdo, o texto do botão e a informação de acessibilidade.</p>
+                  <p><code>textContent</code> muda o texto de um elemento. O botão foi preparado com texto simples, para que você possa substituí-lo diretamente. <code>aria-expanded</code> comunica o estado a tecnologias assistivas; a classe e o CSS controlam a aparência.</p>
+                  <h5>Como ler em português</h5>
+                  <p><strong>“Quando o botão for clicado, altere o estado do conteúdo. Depois verifique se ele está aberto. Se estiver, atualize o botão para indicar que agora ele pode fechar. Caso contrário, volte ao estado inicial.”</strong></p>
+                  <h5>Dicas</h5>
+                  <ol>
+                    <li><strong>Dica 1:</strong> você precisa de dois elementos: botão e conteúdo. Encontre-os com <code>document.getElementById(...)</code>.</li>
+                    <li><strong>Dica 2:</strong> alterne a classe no conteúdo usando <code>classList.toggle(...)</code>.</li>
+                    <li><strong>Dica 3:</strong> depois de alternar, consulte a presença da mesma classe com <code>classList.contains(...)</code>. O resultado será <code>true</code> ou <code>false</code>.</li>
+                    <li><strong>Dica 4:</strong> use esse resultado em um <code>if</code> para decidir o texto do botão e o valor de <code>aria-expanded</code>.</li>
+                  </ol>
+                  <h5>Como testar</h5>
+                  <ol>
+                    <li>Salve os arquivos e abra ou recarregue a <a href="../../projetos/landing-page-interativa/exercicio/">versão de exercício</a>.</li>
+                    <li>Localize <strong>Muito antes do primeiro gole</strong>. O parágrafo adicional deve estar oculto e o botão deve mostrar <strong>Ver história</strong>.</li>
+                    <li>Clique no botão: o conteúdo deve aparecer, e o texto deve mudar para <strong>Ocultar história</strong>.</li>
+                    <li>Na aba Elementos das ferramentas do navegador, confira <code>aria-expanded="true"</code> no botão e a classe <code>aberto</code> no conteúdo.</li>
+                    <li>Clique novamente: o conteúdo deve sumir, o texto deve voltar para <strong>Ver história</strong> e o atributo para <code>aria-expanded="false"</code>.</li>
+                    <li>Use Tab para focar o botão e Enter ou Espaço para testar por teclado. Confira o foco visível.</li>
+                    <li>Confira também o menu e a seleção de preparo, se você já os implementou. Nenhuma ação deve recarregar a página.</li>
+                    <li>Se não funcionar, abra F12 e consulte o Console para ler os erros.</li>
+                  </ol>
+                  <h5>Checklist de diagnóstico</h5>
+                  <ul>
+                    <li>Os IDs usados no JavaScript coincidem com <code>story-button</code> e <code>story-content</code>?</li>
+                    <li>Os dois elementos foram encontrados? O HTML carrega o script no final da página?</li>
+                    <li>A classe usada existe no CSS, na regra <code>.story-content.aberto</code>?</li>
+                    <li>O <code>toggle</code> está alterando a classe no conteúdo?</li>
+                    <li>O <code>contains</code> está consultando a mesma classe, depois do <code>toggle</code>?</li>
+                    <li>O <code>if</code> atualiza o texto do botão correto e o atributo acompanha o estado?</li>
+                    <li>O listener foi registrado? Você passou a função sem executá-la?</li>
+                    <li>O arquivo foi salvo e recarregado? Há erro no Console?</li>
+                  </ul>
+                  <h5>Resultado esperado</h5>
+                  <p>O conteúdo adicional começa fechado. Um clique abre, troca o texto para <strong>Ocultar história</strong> e informa <code>aria-expanded="true"</code>. O seguinte fecha, restaura <strong>Ver história</strong> e informa <code>"false"</code>, sem recarregar a página. Ao recarregar, a história começa fechada novamente.</p>
+                  <h5>Compare com o original</h5>
+                  <p><a href="../../projetos/landing-page-interativa/original/">Ver projeto original para comparação</a>: mantém a Etapa 1, com todo o texto visível e o botão <strong>Ver mais</strong> desativado. Em <code>exercicio/</code>, o bloco adicional começa oculto e poderá abrir e fechar depois da sua implementação.</p>
+                  <h5>Resposta comentada</h5>
+                  <p>Tente resolver antes de abrir a resposta. Acrescente a solução ao trabalho das Etapas 2 e 3, sem substituí-lo.</p>
+                  <button class="answer-toggle" type="button" aria-expanded="false" aria-controls="resposta-projeto-1-etapa-4">Mostrar resposta comentada</button>
+                  <div class="answer" id="resposta-projeto-1-etapa-4" hidden>
+                    <pre><code>const botaoHistoria = document.getElementById("story-button");
+const conteudoHistoria = document.getElementById("story-content");
+
+function alternarHistoria() {
+  conteudoHistoria.classList.toggle("aberto");
+
+  const estaAberto = conteudoHistoria.classList.contains("aberto");
+
+  if (estaAberto) {
+    botaoHistoria.textContent = "Ocultar história";
+    botaoHistoria.setAttribute("aria-expanded", "true");
+  } else {
+    botaoHistoria.textContent = "Ver história";
+    botaoHistoria.setAttribute("aria-expanded", "false");
+  }
+}
+
+botaoHistoria.addEventListener("click", alternarHistoria);</code></pre>
+                    <h5>Explicação da resposta</h5>
+                    <ol>
+                      <li>A primeira linha encontra o botão e o guarda em <code>botaoHistoria</code>.</li>
+                      <li>A segunda encontra o conteúdo adicional e o guarda em <code>conteudoHistoria</code>.</li>
+                      <li><code>function alternarHistoria()</code> reúne as instruções para cada clique.</li>
+                      <li><code>toggle("aberto")</code> muda o estado: adiciona a classe quando ausente e remove quando presente. O CSS mostra ou oculta o conteúdo.</li>
+                      <li><code>contains("aberto")</code> consulta o estado após a mudança. A variável <code>estaAberto</code> recebe <code>true</code> ou <code>false</code>.</li>
+                      <li>O <code>if</code> decide o que mostrar no botão. Quando aberto, <code>textContent</code> escreve <strong>Ocultar história</strong>; <code>setAttribute</code> informa <code>"true"</code> em <code>aria-expanded</code>.</li>
+                      <li>O <code>else</code> restaura <strong>Ver história</strong> e <code>"false"</code> quando o conteúdo está fechado.</li>
+                      <li>A última linha registra o clique. Passamos <code>alternarHistoria</code> sem <code>()</code> para executar no clique, em vez de executar ao carregar.</li>
+                    </ol>
+                    <p><strong>Como ler:</strong> ouça o clique; alterne o conteúdo; consulte seu estado; atualize o botão. A classe muda a aparência, <code>textContent</code> indica a próxima ação e <code>aria-expanded</code> comunica o estado a tecnologias assistivas.</p>
+                  </div>
+                  <div class="lesson-completion">
+                    <h5>Conclusão da etapa</h5>
+                    <label class="completion-control" for="completion-projeto-1-etapa-4">
+                      <input
+                        class="lesson-completion-input"
+                        id="completion-projeto-1-etapa-4"
+                        type="checkbox"
+                        data-course-id="javascript-iniciante"
+                        data-lesson-id="projeto-1-etapa-4"
+                        data-completion-label="Marcar Etapa 4 como concluída"
+                        data-completed-label="Etapa 4 concluída — desmarcar"
+                      />
+                      <span class="completion-label-text">Marcar Etapa 4 como concluída</span>
+                    </label>
+                  </div>
+                </section>
                 <section>
                   <h4>Antes da próxima etapa</h4>
-                  <p>Conclua a seleção de preparo e confira que somente uma opção fica ativa, inclusive por teclado. Preserve o trabalho do menu. Marque cada etapa somente depois de realizar sua tarefa. As marcações são independentes e ficam salvas neste navegador. A conclusão geral do projeto será tratada quando todas as etapas estiverem prontas.</p>
+                  <p>Conclua a história e confira que conteúdo, texto do botão e aria-expanded acompanham cada clique. Preserve o menu e a seleção de preparo. Marque cada etapa somente depois de realizar sua tarefa. As marcações são independentes e ficam salvas neste navegador. A conclusão geral do projeto será tratada quando todas as etapas estiverem prontas.</p>
                 </section>
               </article>
             </div>
@@ -4448,9 +4561,9 @@ metodos.forEach(function (metodo) {
 
           <div class="projects-grid">
             <article class="project-card">
-              <span>Etapa 3 — exercício disponível</span>
+              <span>Etapa 4 — exercício disponível</span>
               <h3><a href="#projeto-1">Landing Page Interativa</a></h3>
-              <p>A base visual e o exercício do menu estão disponíveis. Na etapa atual, escreva o JavaScript para selecionar um método de preparo por vez.</p>
+              <p>As etapas anteriores estão disponíveis. Na etapa atual, escreva o JavaScript para abrir e fechar a história, atualizando também o botão.</p>
             </article>
 
             <article class="project-card">

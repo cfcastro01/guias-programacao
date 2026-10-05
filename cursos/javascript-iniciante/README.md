@@ -35,12 +35,14 @@ e CSS responsivo. A **Etapa 2 — Menu mobile** está disponível como exercíci
 guiado: HTML e CSS preparados, JavaScript a ser escrito pelo aluno, dicas,
 diagnóstico e resposta comentada expansível. A **Etapa 3 — Estado ativo** é o exercício
 de seleção exclusiva dos métodos: botões acessíveis, CSS preparado, quatro dicas
-e resposta expansível. Conteúdo expansível e revisão final continuam planejados.
+e resposta expansível. A **Etapa 4 — Conteúdo expansível** oferece HTML e CSS
+preparados, exercício de mostrar/ocultar história e atualizar o botão, quatro dicas
+e resposta comentada expansível. A revisão final continua planejada.
 
 Trabalhe na [versão de exercício](../../projetos/landing-page-interativa/exercicio/).
 Use o [original](../../projetos/landing-page-interativa/original/) para comparar
 com a Etapa 1 aprovada, sem editar essa referência. O [README do projeto](../../projetos/landing-page-interativa/README.md)
 explica o papel de HTML, CSS, JavaScript e Console e o formato das próximas tarefas.
-O original permanece na Etapa 1; apenas exercicio/ recebe as tarefas do menu e da seleção de preparo.
-As Etapas 1, 2 e 3 têm controles de conclusão independentes, usando o progresso existente
+O original permanece na Etapa 1; apenas exercicio/ recebe as tarefas do menu, da seleção de preparo e da história.
+As Etapas 1, 2, 3 e 4 têm controles de conclusão independentes, usando o progresso existente
 do curso. Não há controle de conclusão geral do projeto. As Aulas 14–16 e o Mini Checklist seguem planejados.

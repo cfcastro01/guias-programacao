@@ -13,7 +13,7 @@ Aulas 11–13 do JavaScript Iniciante.
 
 As duas versões abrem independentemente. Cada uma possui seus próprios arquivos
 HTML, CSS e JavaScript. A cópia inicial tinha o mesmo visual e conteúdo; agora
-exercicio/ está preparado para o aluno desenvolver o menu da Etapa 2 e a seleção da Etapa 3.
+exercicio/ está preparado para o aluno desenvolver o menu da Etapa 2, a seleção da Etapa 3 e a história da Etapa 4.
 O original permanece na Etapa 1: não recebe automaticamente a solução de cada etapa.
 
 ## Regra de trabalho
@@ -49,13 +49,14 @@ feita com CSS. O layout é responsivo e os links internos funcionam.
 **Etapa 2 — Menu mobile: disponível.** Em exercicio/, o botão menu-button foi habilitado
 e possui aria-controls e aria-expanded="false". A navegação site-navigation começa
 fechada abaixo de 700px; a classe aberto a mostra. Em desktop, permanece visível.
-O aluno implementará o JavaScript em exercicio/script.js, que contém apenas instruções das Etapas 2 e 3.
+O aluno implementará o JavaScript em exercicio/script.js, que contém apenas instruções das Etapas 2, 3 e 4.
 Até essa implementação, o botão não abre o menu.
 
 O original continua intacto na Etapa 1, com navegação visível e botão desativado.
 Em exercicio/, os botões de preparo estão habilitados, mas a seleção só funcionará
-depois da implementação pelo aluno. Ver mais continua desativado nas duas versões.
-Na página do curso, as Etapas 1, 2 e 3 podem ser marcadas como concluídas de forma
+depois da implementação pelo aluno. O botão da história está habilitado em exercicio/,
+com o conteúdo adicional fechado; a interação também será escrita pelo aluno.
+Na página do curso, as Etapas 1, 2, 3 e 4 podem ser marcadas como concluídas de forma
 independente, depois de realizar cada tarefa. O progresso usa a mesma chave
 `guias-programacao-progress` das aulas e permanece salvo neste navegador.
 
@@ -91,14 +92,15 @@ principal para construir o projeto. Salve o arquivo editado e recarregue a vers�
 de exercício no navegador. Compare com o original usando a mesma largura de janela.
 Na Etapa 2, escreva o JavaScript do menu. A resposta comentada está oculta no curso
 e deve ser consultada depois da tentativa. Na Etapa 3, escreva a seleção de preparo,
-preservando o menu. Não implemente ainda a história.
+preservando o menu. Na Etapa 4, escreva a abertura da história e a atualização do
+botão, mantendo as soluções anteriores. A revisão final segue planejada.
 
 ## Etapas
 
 1. **Estrutura e visual — disponível:** HTML, CSS e responsividade.
 2. **Menu mobile — disponível:** abrir e fechar a navegação.
-3. **Estado ativo — atual:** destacar o método de preparo escolhido.
-4. **Conteúdo expansível:** mostrar e ocultar parte da história.
+3. **Estado ativo — disponível:** destacar o método de preparo escolhido.
+4. **Conteúdo expansível — atual:** mostrar e ocultar parte da história.
 5. **Revisão final:** conferir comportamento, teclado e responsividade.
 
 Os conceitos praticados incluem encontrar elementos no DOM, reagir a cliques e
@@ -158,6 +160,33 @@ Disponível significa que o conteúdo pode ser estudado; cada aluno marca sua co
 
 Consulte [a Etapa 3 no curso](../../cursos/javascript-iniciante/#projeto-1-etapa-3)
 para a tarefa completa, quatro dicas, diagnóstico e resposta comentada expansível.
+
+## Etapa 4 — Conteúdo expansível
+
+Objetivo: mostrar e ocultar a história adicional, atualizando também o texto do
+botão e aria-expanded. Conecta DOM (Aula 11), eventos (12), classes (13), funções (5)
+e textContent: **encontrar → ouvir → alternar estado → atualizar texto**.
+
+Arquivos usados, somente em projetos/landing-page-interativa/exercicio/:
+
+- index.html: story-button habilitado, com Ver história, aria-expanded="false" e aria-controls="story-content".
+- styles.css: .story-content começa oculto; .story-content.aberto mostra o bloco.
+- script.js: escreva no espaço da Etapa 4, preservando as tarefas das Etapas 2 e 3.
+
+Encontre botão e conteúdo, crie uma função, alterne aberto e consulte sua presença
+com contains. Use if e else para atualizar textContent (Ocultar história ou Ver
+história) e aria-expanded (true ou false). Registre o clique sem executar a função.
+O arquivo de exercício contém apenas instruções, sem solução pronta.
+
+Salve, recarregue e clique em Ver história. Confira conteúdo visível, texto Ocultar
+história e aria-expanded="true". Clique de novo e confira o retorno ao estado
+fechado. Teste Tab, Enter e Espaço; use o Console para ler erros. Ao recarregar,
+o conteúdo adicional começa fechado novamente; o primeiro parágrafo continua visível.
+
+O original mantém o texto completo visível e Ver mais desativado, como na Etapa 1.
+No exercício, abrir e fechar só funcionará depois da sua implementação.
+Consulte [a Etapa 4 no curso](../../cursos/javascript-iniciante/#projeto-1-etapa-4)
+para a tarefa, quatro dicas, diagnóstico e resposta comentada expansível.
 
 ## Formato das próximas etapas
 
