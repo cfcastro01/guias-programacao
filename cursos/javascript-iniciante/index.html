@@ -873,41 +873,28 @@ if (temCadastro &amp;&amp; pagamentoConfirmado) {
                   </ul>
                 </section>
 
-                <section>
+                <section class="javascript-lab" data-course-id="javascript-iniciante" data-exercise-id="aula-4-exercicio-1">
                   <h4>Exercício básico</h4>
-                  <p>Comece com esta variável:</p>
-                  <pre><code>const temperatura = 28;</code></pre>
-                  <p>Escreva uma condição que mostre:</p>
-                  <ul>
-                    <li><strong>“Está quente”</strong> se a temperatura for maior que 30;</li>
-                    <li>
-                      <strong>“Temperatura agradável”</strong> se ela for maior
-                      ou igual a 20;
-                    </li>
-                    <li><strong>“Está frio”</strong> nos demais casos.</li>
-                  </ul>
-                  <p>Depois, use estes dois valores:</p>
-                  <pre><code>const temIngresso = true;
-const documentoValido = true;</code></pre>
-                  <p>
-                    Mostre <strong>“Entrada permitida”</strong> somente quando os
-                    dois valores forem <code>true</code>.
-                  </p>
-                </section>
-
-                <section>
-                  <h4>Como testar no console</h4>
                   <ol>
-                    <li>Abra as ferramentas do navegador com <kbd>F12</kbd>.</li>
-                    <li>Entre na aba <strong>Console</strong>.</li>
-                    <li>Cole e execute um bloco completo de cada vez.</li>
-                    <li>Troque os valores e observe qual mensagem aparece.</li>
+                    <li>Comece com <code>const temperatura = 28;</code>. Use <code>if / else if / else</code> para mostrar <strong>“Está quente”</strong> acima de 30, <strong>“Temperatura agradável”</strong> entre 20 e 30, ou <strong>“Está frio”</strong> abaixo de 20.</li>
+                    <li>Depois, crie <code>const temIngresso = true;</code> e <code>const documentoValido = true;</code>. Use <code>&amp;&amp;</code> em uma condição para mostrar <strong>“Entrada permitida”</strong> somente quando os dois forem <code>true</code>.</li>
+                    <li>Execute o código completo. Com os valores originais, devem aparecer <strong>“Temperatura agradável”</strong> e <strong>“Entrada permitida”</strong>, nessa ordem.</li>
                   </ol>
-                  <p>
-                    Repetir uma variável criada com <code>const</code> e o mesmo
-                    nome pode gerar um erro. Nesse caso, recarregue a página ou
-                    troque o nome da variável antes de testar novamente.
-                  </p>
+                  <p>O laboratório verifica somente a saída, sem comprovar o uso de <code>if</code>, <code>else if</code>, <code>else</code> ou <code>&amp;&amp;</code>. Aceita até cinco logs extras de apoio.</p>
+                  <label class="lab-code-label" for="lab-code-aula-4">Seu código JavaScript</label>
+                  <textarea class="lab-code" id="lab-code-aula-4" rows="8" maxlength="20000" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" aria-describedby="lab-help-aula-4"></textarea>
+                  <div class="lab-actions">
+                    <button class="lab-run" type="button">Executar</button>
+                    <button class="lab-clear" type="button">Limpar</button>
+                  </div>
+                  <h5 id="lab-result-title-aula-4">Resultado</h5>
+                  <pre class="lab-result" role="status" aria-live="polite" aria-atomic="true" tabindex="0" aria-labelledby="lab-result-title-aula-4"></pre>
+                  <p id="lab-help-aula-4">Rascunho salvo neste navegador. Limpar preserva o código. A verificação usa os valores originais e não bloqueia a conclusão.</p>
+                  <p class="lab-storage-notice" role="status" aria-live="polite"></p>
+                  <noscript>Ative o JavaScript para usar o laboratório ou pratique no Console do navegador.</noscript>
+                  <h5>Testes manuais</h5>
+                  <p>Troque a temperatura e execute: <code>31</code> → “Está quente”; <code>30</code> e <code>20</code> → “Temperatura agradável”; <code>19</code> → “Está frio”. Depois, altere ingresso ou documento para <code>false</code> e confira que “Entrada permitida” não aparece.</p>
+                  <p>Esses testes são manuais: observe a saída mesmo que a verificação indique resultado incorreto. Para a verificação automática, restaure <code>temperatura = 28</code>, <code>temIngresso = true</code> e <code>documentoValido = true</code> antes de clicar em Executar.</p>
                 </section>
 
                 <section>

@@ -13,7 +13,7 @@ Este documento define o padrão das aulas do curso **JavaScript Iniciante**. O o
 5. **Exemplo comentado:** mostra um exemplo curto, com comentários apenas quando ajudarem na compreensão.
 6. **Erros comuns:** alerta sobre enganos frequentes relacionados ao assunto.
 7. **Exercício básico:** propõe uma tarefa pequena para praticar o conceito.
-8. **Como testar:** nas aulas ainda não migradas, orientar o uso do Console; nas Aulas 1, 5, 6, 8, 9 e 10, usar o laboratório compacto dentro da página.
+8. **Como testar:** nas aulas ainda não migradas, orientar o uso do Console; nas Aulas 1, 4, 5, 6, 8, 9 e 10, usar o laboratório compacto dentro da página.
 9. **Resposta correta:** apresenta uma solução clara para o exercício.
 10. **Explicação da resposta:** explica por que a solução funciona e, quando necessário, detalha cada linha.
 
@@ -55,7 +55,7 @@ As aulas podem se conectar aos projetos **Landing Page Interativa** e **Mini Che
 - Antecipar conceitos avançados.
 - Escrever código difícil apenas para parecer profissional.
 
-## Laboratório — Aulas 1, 5, 6, 8, 9 e 10
+## Laboratório — Aulas 1, 4, 5, 6, 8, 9 e 10
 
 - Usar textarea, Executar, Limpar saída e resultado acessível, sem editor completo.
 - Salvar rascunho e última tentativa em guias-programacao-labs, separados do progresso.
@@ -65,6 +65,7 @@ As aulas podem se conectar aos projetos **Landing Page Interativa** e **Mini Che
 - Mostrar resultado incorreto, erros e interrupção por tempo excedido.
 - Manter resposta expansível e conclusão livre; aprovação não marca nem bloqueia a aula.
 - Validar saída por configuração nas Aulas 1 e 9, sem exigir função nomeada ou analisar a estrutura do código.
+- Na Aula 4, verificar somente as mensagens do caso original, em ordem; orientar testes manuais com outras temperaturas e entrada negada, restaurando os valores originais para a verificação automática.
 - Na Aula 8, validar textos, booleanos, quantidade e arrays, distinguindo true de "true"; não verificar o uso dos métodos.
 - Nas Aulas 6 e 10, validar a sequência de arrays, números e textos por tipo, conteúdo e ordem, com cópia no momento do log; não verificar o uso dos métodos.
 - Aceitar o nome escolhido na Aula 1 e manter os índices como complemento opcional na Aula 9.

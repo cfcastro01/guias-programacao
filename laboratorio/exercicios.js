@@ -1,5 +1,15 @@
 // Os testes de cada exercício ficam separados do controlador.
 window.guiasLabExercises = {
+  "aula-4-exercicio-1": {
+    version: 1,
+    mode: "output",
+    allowExtraLogs: true,
+    maxExtraLogs: 5,
+    cases: [
+      { expected: "Temperatura agradável", hint: "Com temperatura = 28, mostre Temperatura agradável antes da mensagem de entrada." },
+      { expected: "Entrada permitida", hint: "Com temIngresso e documentoValido iguais a true, mostre Entrada permitida depois da temperatura." },
+    ],
+  },
   "aula-8-exercicio-1": {
     version: 1,
     mode: "values",

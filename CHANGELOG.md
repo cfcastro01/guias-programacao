@@ -2,6 +2,14 @@
 
 Este arquivo registra as principais mudanças do projeto Guias de Programação.
 
+## 2026-10-07 — Laboratório na Aula 4
+
+### Adicionado
+
+- Aula 4 no laboratório compacto, verificando “Temperatura agradável” e “Entrada permitida”, nessa ordem, com até cinco logs extras de apoio.
+- Testes manuais de temperatura com 31, 30, 20 e 19 e de entrada com ingresso ou documento falso; orientação para restaurar os valores originais antes da verificação automática.
+- Validação somente da saída, sem analisar condições; motor, respostas expansíveis, persistência e conclusão livre preservados. Aulas 2, 3 e 7 continuam no Console.
+
 ## 2026-10-05 — Laboratório na Aula 8
 
 ### Adicionado
