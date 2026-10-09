@@ -25,13 +25,14 @@
 
 ## Laboratório de JavaScript — migração gradual
 
-As Aulas 1, 4, 5, 6, 8, 9 e 10 usam o laboratório integrado. A Aula 5 valida apresentarPessoa(nome);
+As Aulas 1, 2, 4, 5, 6, 8, 9 e 10 usam o laboratório integrado. A Aula 5 valida apresentarPessoa(nome);
 as Aulas 1, 4 e 9 validam a saída do programa e as Aulas 6, 8 e 10 comparam valores tipados.
 As demais mantêm o fluxo no Console.
 
 ### Implementado no piloto
 
 - Campo de JavaScript, Executar, Limpar saída, logs, erros e resultado dos testes.
+- Aula 2 valida somente tipos e ordem (texto, número finito, booleano, número finito), com valores livres e sem mensagens extras; não confirma uso de variáveis, const ou let. Aulas 3 e 7 permanecem no Console.
 - Validação de função com três nomes na Aula 5 e regras de saída nas Aulas 1 e 9, sem analisar código.
 - Aula 4 verifica as duas mensagens do caso original em ordem, com até cinco logs de apoio; fronteiras da temperatura e entrada negada ficam como testes manuais, sem comprovar a estrutura das condições.
 - Booleanos preservados por tipo no modo values; Aula 8 valida métodos por seus resultados, sem comprovar o uso deles. Aula 7 permanece no Console.

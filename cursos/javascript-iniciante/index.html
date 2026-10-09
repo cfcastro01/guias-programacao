@@ -373,7 +373,7 @@ console.log("Olá, " + meuNome + "!");</code></pre>
                   <p>
                     Entender o que são variáveis, conhecer valores básicos e
                     usar <code>const</code> e <code>let</code> em testes simples
-                    no console.
+                    no laboratório da página.
                   </p>
                 </section>
 
@@ -457,26 +457,30 @@ console.log(pontos);</code></pre>
                   </ul>
                 </section>
 
-                <section>
+                <section class="javascript-lab" data-course-id="javascript-iniciante" data-exercise-id="aula-2-exercicio-1">
                   <h4>Exercício básico</h4>
-                  <p>Crie variáveis para guardar:</p>
-                  <ul>
-                    <li>seu nome;</li>
-                    <li>sua idade;</li>
-                    <li>se você está estudando JavaScript;</li>
-                    <li>uma pontuação inicial.</li>
-                  </ul>
-                  <p>Depois, mostre cada valor no console.</p>
-                </section>
-
-                <section>
-                  <h4>Como testar no console</h4>
                   <ol>
-                    <li>Abra as ferramentas do navegador com <kbd>F12</kbd>.</li>
-                    <li>Entre na aba <strong>Console</strong>.</li>
-                    <li>Digite ou cole as variáveis uma vez.</li>
-                    <li>Execute cada <code>console.log()</code> e confira o valor mostrado.</li>
+                    <li>Crie uma variável para o nome, com um texto (<code>string</code>).</li>
+                    <li>Crie uma variável para a idade, com um número (<code>number</code>).</li>
+                    <li>Crie uma variável booleana (<code>boolean</code>) indicando se está estudando JavaScript.</li>
+                    <li>Crie uma variável para a pontuação, com um número.</li>
+                    <li>Escolha valores reais ou fictícios.</li>
+                    <li>Mostre somente os quatro valores no console, nesta ordem: nome, idade, estudando e pontuação.</li>
+                    <li>Use uma chamada <code>console.log(variavel)</code> para cada valor, sem rótulos ou mensagens extras.</li>
                   </ol>
+                  <p>Pratique <code>const</code> para os valores que não precisam mudar e <code>let</code> para a pontuação, que poderá mudar. Use números e <code>true</code> ou <code>false</code> sem aspas.</p>
+                  <p>O laboratório verifica os tipos e a ordem dos valores. Ele não confirma se você usou <code>const</code>, <code>let</code> ou variáveis da forma proposta.</p>
+                  <label class="lab-code-label" for="lab-code-aula-2">Seu código JavaScript</label>
+                  <textarea class="lab-code" id="lab-code-aula-2" rows="8" maxlength="20000" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" aria-describedby="lab-help-aula-2"></textarea>
+                  <div class="lab-actions">
+                    <button class="lab-run" type="button">Executar</button>
+                    <button class="lab-clear" type="button">Limpar</button>
+                  </div>
+                  <h5 id="lab-result-title-aula-2">Resultado</h5>
+                  <pre class="lab-result" role="status" aria-live="polite" aria-atomic="true" tabindex="0" aria-labelledby="lab-result-title-aula-2"></pre>
+                  <p id="lab-help-aula-2">Rascunho salvo neste navegador. Limpar preserva o código. O resultado não bloqueia a conclusão.</p>
+                  <p class="lab-storage-notice" role="status" aria-live="polite"></p>
+                  <noscript>Ative o JavaScript para usar o laboratório ou pratique no Console do navegador.</noscript>
                 </section>
 
                 <section>
@@ -492,7 +496,7 @@ console.log(pontos);</code></pre>
                   </button>
 
                   <div class="answer" id="exercise-answer-2" hidden>
-                    <pre><code>// Troque os valores pelos seus dados
+                    <pre><code>// Escolha valores reais ou fictícios
 const meuNome = "Ana";
 const minhaIdade = 30;
 const estouEstudandoJavaScript = true;

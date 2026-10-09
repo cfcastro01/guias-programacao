@@ -121,26 +121,41 @@
           }
 
           function validateValues() {
+            const typeNames = { string: "texto", number: "número", boolean: "booleano" };
+            const hasTypeCases = exercise.cases.some(function (test) { return test.type !== undefined; });
+            function expectedValue(test) {
+              return test.type !== undefined ? typeNames[test.type] || test.type : JSON.stringify(test.value);
+            }
+            function receivedType(value) {
+              return value === null ? "valor não suportado (use texto, número finito ou booleano)" :
+                Array.isArray(value) ? "array" : typeNames[typeof value] || typeof value;
+            }
             let position = 0;
             let extras = 0;
             let failure = null;
             for (const value of programValues) {
               const test = exercise.cases[position];
-              if (test && sameValue(value, test.value)) {
+              const matches = test && (test.type !== undefined ?
+                typeof value === test.type && (test.type !== "number" || Number.isFinite(value)) :
+                sameValue(value, test.value));
+              if (matches) {
                 position += 1;
               } else if (typeof value === "string" && extras < exercise.maxExtraLogs) {
                 extras += 1;
               } else {
                 failure = {
-                  expected: test ? JSON.stringify(test.value) : "(nenhum outro valor obrigatório)",
-                  received: [value === null ? "(valor não suportado)" : JSON.stringify(value)],
-                  hint: "Confira o tipo, o conteúdo e a ordem dos valores. Use números, textos, booleanos ou arrays diretamente no console.log.",
+                  expected: test ? expectedValue(test) : "(nenhum outro valor obrigatório)",
+                  received: [test?.type !== undefined || (!test && hasTypeCases) ? receivedType(value) :
+                    value === null ? "(valor não suportado)" : JSON.stringify(value)],
+                  hint: test?.type !== undefined || (!test && hasTypeCases) ?
+                    "Mostre somente os valores na ordem pedida, sem rótulos ou mensagens extras. Use números finitos e booleanos sem aspas." :
+                    "Confira o tipo, o conteúdo e a ordem dos valores. Use números, textos, booleanos ou arrays diretamente no console.log.",
                 };
                 break;
               }
             }
             if (!failure && position < exercise.cases.length) {
-              failure = { expected: JSON.stringify(exercise.cases[position].value), received: [], hint: "Falta um resultado. Confira a sequência pedida e não transforme arrays, números ou booleanos em texto." };
+              failure = { expected: expectedValue(exercise.cases[position]), received: [], hint: "Falta um resultado. Confira a sequência pedida e não transforme arrays, números ou booleanos em texto." };
             }
             if (!failure && valueCount > programValues.length) {
               failure = { expected: "Uma saída curta", received: ["Limite de valores excedido"], hint: "Remova logs repetidos e execute novamente." };

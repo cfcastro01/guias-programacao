@@ -1,5 +1,16 @@
 // Os testes de cada exercício ficam separados do controlador.
 window.guiasLabExercises = {
+  "aula-2-exercicio-1": {
+    version: 1,
+    mode: "values",
+    maxExtraLogs: 0,
+    cases: [
+      { type: "string" },
+      { type: "number" },
+      { type: "boolean" },
+      { type: "number" },
+    ],
+  },
   "aula-4-exercicio-1": {
     version: 1,
     mode: "output",

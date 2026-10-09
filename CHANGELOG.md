@@ -2,6 +2,14 @@
 
 Este arquivo registra as principais mudanças do projeto Guias de Programação.
 
+## 2026-10-09 — Laboratório na Aula 2
+
+### Adicionado
+
+- Expectativas reutilizáveis por tipo no modo values, preservando comparação por valor e exigência de números finitos.
+- Aula 2 no laboratório compacto, com valores reais ou fictícios, sequência texto/número/booleano/número, sem rótulos ou logs extras e feedback por tipo.
+- Rascunho, última tentativa, versão e conclusão livre pelo sistema existente; validação não comprova o uso de const, let ou variáveis. Aulas 3 e 7 preservadas no Console.
+
 ## 2026-10-09 — Aula 6 do curso de IA
 
 ### Adicionado
