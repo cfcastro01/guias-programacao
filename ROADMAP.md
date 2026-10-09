@@ -15,7 +15,7 @@
 - Aulas 11–13: JavaScript na página.
 - Projeto prático 1: Landing Page Interativa.
 - Aulas 14–16: debug, leitura de código e persistência local com localStorage disponíveis.
-- Projeto prático 2: Mini Checklist com Etapa 1 — Estrutura e visual disponível; adicionar, concluir e persistir tarefas ficam para próximas etapas.
+- Projeto prático 2: Mini Checklist com Etapas 1 — Estrutura e visual, 2 — Adicionar tarefas e 3 — Marcar tarefa como concluída disponíveis; o aluno implementará as interações. Persistir tarefas fica para uma próxima etapa.
 
 ## Desenvolvimento de Software com IA
 

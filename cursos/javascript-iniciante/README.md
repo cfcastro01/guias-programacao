@@ -67,6 +67,19 @@ com layout responsivo, rótulos e foco visível. Não implementa interações ou
 
 Trabalhe na [versão de exercício](../../projetos/mini-checklist/exercicio/) e compare
 com a [referência fixa da Etapa 1](../../projetos/mini-checklist/original/).
-As duas versões começam iguais. O curso oferece uma atividade de leitura da estrutura,
+As duas versões começaram iguais. O curso oferece uma atividade de leitura da estrutura,
 resposta expansível e conclusão independente da etapa com o progresso existente.
+
+A **Etapa 2 — Adicionar tarefas** está disponível como exercício guiado:
+o botão está habilitado em `exercicio/` e o aluno escreverá o JavaScript para
+guardar objetos no array `tarefas`, rejeitar texto vazio, renderizar a lista e
+limpar o campo. O arquivo contém somente instruções; a resposta comentada fica
+oculta no curso. Não há conclusão de tarefas nem localStorage nesta etapa.
+O original permanece fixo na Etapa 1, e as duas etapas têm progresso independente.
+
+A **Etapa 3 — Marcar tarefa como concluída** continua a solução da Etapa 2.
+O aluno acrescentará checkboxes rotulados, atualizará `concluida` no objeto e
+renderizará o estado com `is-completed`, preservando a inclusão e o foco por teclado.
+O script mantém apenas instruções; a resposta expansível mostra a substituição
+da função de renderização. A Etapa 3 tem conclusão independente. Ainda não há persistência.
 Consulte o [README do projeto](../../projetos/mini-checklist/README.md).

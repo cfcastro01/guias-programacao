@@ -195,7 +195,7 @@
                 <h4>Projeto prático 2</h4>
                 <div class="summary-project-card">
                   <strong><a href="#projeto-2">Mini Checklist</a></strong>
-                  <span class="project-status">Etapa 1 disponível</span>
+                  <span class="project-status">Etapas 1, 2 e 3 disponíveis</span>
                   <p>
                     Projeto para aplicar arrays, objetos, funções, condições,
                     atualização da interface e armazenamento local.
@@ -203,6 +203,14 @@
                   <ol>
                     <li class="current" data-course-id="javascript-iniciante" data-lesson-id="projeto-2-etapa-1">
                       <a href="#projeto-2-etapa-1">Estrutura e visual</a>
+                      <span class="lesson-status">Não concluída</span>
+                    </li>
+                    <li class="current" data-course-id="javascript-iniciante" data-lesson-id="projeto-2-etapa-2">
+                      <a href="#projeto-2-etapa-2">Adicionar tarefas</a>
+                      <span class="lesson-status">Não concluída</span>
+                    </li>
+                    <li class="current" data-course-id="javascript-iniciante" data-lesson-id="projeto-2-etapa-3">
+                      <a href="#projeto-2-etapa-3">Marcar tarefa como concluída</a>
                       <span class="lesson-status">Não concluída</span>
                     </li>
                   </ol>
@@ -4826,14 +4834,14 @@ localStorage.removeItem("aula-16-topicos");</code></pre>
                 <section id="projeto-2-etapa-1">
                   <h4>Etapa 1 — Estrutura e visual</h4>
                   <h5>Objetivo da etapa</h5>
-                  <p>Reconhecer o HTML e o CSS que receberão o JavaScript. A página já tem campo Nova tarefa, botão Adicionar, área de lista e uma mensagem de lista vazia. O botão está desativado: adicionar, concluir e salvar tarefas serão atividades futuras.</p>
+                  <p>Reconhecer o HTML e o CSS que receberão o JavaScript. A página já tem campo Nova tarefa, botão Adicionar, área de lista e uma mensagem de lista vazia. Na referência original desta etapa, o botão está desativado; a versão de exercício está agora preparada para a Etapa 2.</p>
                   <h5>Arquivos usados</h5>
-                  <p>Abra <code>projetos/mini-checklist/exercicio/</code> no editor. <code>index.html</code> organiza o conteúdo, <code>styles.css</code> define o visual e <code>script.js</code> contém somente um comentário. A pasta <code>original/</code> guarda a referência fixa desta etapa; faça suas atividades somente em <code>exercicio/</code>.</p>
+                  <p>Abra <code>projetos/mini-checklist/exercicio/</code> no editor. <code>index.html</code> organiza o conteúdo, <code>styles.css</code> define o visual e <code>script.js</code> contém instruções para a Etapa 2. A pasta <code>original/</code> guarda a referência fixa desta etapa; faça suas atividades somente em <code>exercicio/</code>.</p>
                   <h5>Explicação simples</h5>
                   <p>Os elementos têm nomes para que possamos encontrá-los depois. A lista começa sem itens; o estado vazio é o aviso mostrado enquanto não há tarefas. O CSS já prevê uma tarefa concluída, mas nenhuma interação aplica esse estado ainda.</p>
                   <ul>
                     <li><code>new-task</code>: campo de texto, com rótulo visível.</li>
-                    <li><code>add-task</code>: botão Adicionar, desativado nesta etapa.</li>
+                    <li><code>add-task</code>: botão Adicionar, desativado no original e habilitado no exercício da Etapa 2.</li>
                     <li><code>task-list</code>: lista <code>&lt;ul&gt;</code> que receberá os itens.</li>
                     <li><code>empty-state</code>: aviso de lista vazia.</li>
                   </ul>
@@ -4856,9 +4864,9 @@ localStorage.removeItem("aula-16-topicos");</code></pre>
                     <li>Explique com suas palavras o que o HTML prepara e o que o CSS define. Não escreva JavaScript nesta etapa.</li>
                   </ol>
                   <h5>Como testar e resultado esperado</h5>
-                  <p>Abra em tela larga e estreita: em celular, o botão fica abaixo do campo. Use Tab para conferir o foco no link de pular conteúdo, no campo e nos links. O botão desativado é ignorado pelo Tab. Digitar não cria tarefas e Enter no campo não envia a página; a lista permanece vazia.</p>
+                  <p>Confira a referência original em tela larga e estreita: em celular, o botão fica abaixo do campo. Use Tab para conferir o foco no link de pular conteúdo, no campo e nos links. O botão desativado é ignorado pelo Tab. Digitar não cria tarefas e Enter no campo não envia a página; a lista permanece vazia.</p>
                   <h5>Compare com o original</h5>
-                  <p>Abra as duas versões na mesma largura de janela. Nesta etapa, os arquivos e o visual são iguais. Preserve o original para comparar com seu trabalho nas próximas etapas.</p>
+                  <p>As versões começaram iguais na Etapa 1. Agora, o exercício habilita o botão para a Etapa 2; o original mantém a base estática. Compare na mesma largura de janela e preserve a referência.</p>
                   <h5>Erros comuns</h5>
                   <p>Editar a referência em vez do exercício, esperar que o botão já adicione tarefas ou confundir uma classe CSS preparada com um comportamento implementado.</p>
                   <h5>Resposta comentada</h5>
@@ -4874,6 +4882,191 @@ localStorage.removeItem("aula-16-topicos");</code></pre>
                       <span class="completion-label-text">Marcar Etapa 1 como concluída</span>
                     </label>
                     <p>Marque depois de conferir a estrutura e o visual. Você pode desmarcar quando quiser; isso não conclui outras aulas nem o projeto inteiro.</p>
+                  </div>
+                </section>
+                <section id="projeto-2-etapa-2">
+                  <h4>Etapa 2 — Adicionar tarefas</h4>
+                  <h5>Objetivo</h5>
+                  <p>Implementar a criação de tarefas em <code>exercicio/script.js</code>. Cada tarefa será um objeto no array <code>tarefas</code>; uma função mostrará esse array na página. Ainda não vamos concluir tarefas nem usar <code>localStorage</code>.</p>
+                  <h5>Arquivos usados</h5>
+                  <p>Escreva somente em <code>projetos/mini-checklist/exercicio/script.js</code>, que contém instruções, sem solução pronta. O HTML já habilita o botão <code>add-task</code> e o CSS já tem <code>task-item</code> e <code>task-text</code>. Preserve a pasta <code>original/</code>.</p>
+                  <h5>Explicação simples</h5>
+                  <p>O array guarda os dados; a lista HTML mostra esses dados. <strong>Renderizar</strong> significa montar a representação dos dados na página. Ao adicionar, primeiro altere o array com <code>push()</code> e depois renderize novamente.</p>
+                  <pre><code>{ texto: "Revisar funções", concluida: false }</code></pre>
+                  <p><code>texto</code> guarda a descrição; <code>concluida: false</code> indica que a tarefa começa pendente. Por enquanto, essa propriedade não muda e não há checkbox nos itens.</p>
+                  <h5>Sua tarefa</h5>
+                  <ol>
+                    <li>Crie <code>const tarefas = []</code> e encontre <code>new-task</code>, <code>add-task</code>, <code>task-list</code> e <code>empty-state</code> com <code>document.getElementById()</code>.</li>
+                    <li>Crie <code>renderizarTarefas()</code>. Limpe os itens exibidos, percorra o array com <code>forEach()</code> e crie um <code>&lt;li&gt;</code> com classe <code>task-item</code> e um <code>&lt;span&gt;</code> com classe <code>task-text</code> para cada tarefa.</li>
+                    <li>Coloque <code>tarefa.texto</code> no <code>textContent</code> do span. Insira o span no item e o item na lista.</li>
+                    <li>Na mesma função, mostre o estado vazio quando <code>tarefas.length === 0</code> e esconda-o quando houver itens.</li>
+                    <li>Crie <code>adicionarTarefa()</code>. Leia <code>campo.value.trim()</code>; se o resultado for <code>""</code>, encerre a função sem alterar o array.</li>
+                    <li>Use <code>tarefas.push()</code> com um novo objeto contendo o texto lido e <code>concluida: false</code>. Renderize a lista, limpe o campo e devolva o foco a ele.</li>
+                    <li>Registre <code>"click"</code> no botão, passando <code>adicionarTarefa</code> sem executá-la naquele momento. Chame <code>renderizarTarefas()</code> uma vez ao carregar.</li>
+                  </ol>
+                  <div class="pronunciation">
+                    <h5>Como ler em português</h5>
+                    <p>“Encontre campo, botão, lista e aviso vazio. Ao clicar, leia o texto. Se não houver texto, pare. Caso contrário, guarde uma tarefa pendente no array, mostre a lista atualizada e prepare o campo para a próxima.”</p>
+                    <p>É o padrão encontrar → ouvir → alterar, agora conectando dados e interface.</p>
+                  </div>
+                  <h5>Dicas</h5>
+                  <ul>
+                    <li><code>trim()</code> devolve o texto sem espaços nas pontas. Use <code>return</code> para sair da função quando não houver texto.</li>
+                    <li><code>document.createElement("li")</code> cria um elemento ainda fora da página. <code>classList.add()</code> aplica uma classe e <code>append()</code> insere um elemento dentro de outro.</li>
+                    <li><code>lista.textContent = ""</code> remove os itens exibidos antes de reconstruir a lista; isso não apaga o array. Evita repetir os itens antigos a cada renderização.</li>
+                    <li><code>estadoVazio.hidden = tarefas.length &gt; 0</code> esconde o aviso quando há tarefas. <code>campo.value = ""</code> limpa o campo e <code>campo.focus()</code> devolve o foco.</li>
+                  </ul>
+                  <h5>Como testar</h5>
+                  <ol>
+                    <li>Salve seu JavaScript e recarregue a <a href="../../projetos/mini-checklist/exercicio/">versão de exercício</a>. A lista começa vazia.</li>
+                    <li>Clique em Adicionar sem texto e depois com apenas espaços: nenhuma tarefa deve aparecer.</li>
+                    <li>Digite <code>Revisar funções</code> e clique em Adicionar. Confira um item, o aviso vazio escondido, o campo limpo e focado.</li>
+                    <li>Adicione <code>Praticar arrays</code>. Devem existir exatamente dois itens, na ordem de inclusão, sem duplicar o primeiro.</li>
+                    <li>Use Tab para chegar ao botão e Enter ou Espaço para acioná-lo. Confira também em tela estreita. Enter no próprio campo ainda não adiciona: nesta etapa, a ação é do botão.</li>
+                    <li>Recarregue: a lista volta a ficar vazia. Isso é esperado, pois o array ainda não é persistido.</li>
+                  </ol>
+                  <h5>Diagnóstico e erros comuns</h5>
+                  <p>Se nada acontecer, confira os IDs e a mensagem no Console. Verifique se passou a função ao evento sem <code>()</code>, se chamou a renderização depois do <code>push()</code> e se limpou a lista HTML antes do <code>forEach()</code>. Limpar o campo deve acontecer depois de guardar o texto.</p>
+                  <h5>Resultado esperado e comparação</h5>
+                  <p>Depois da sua implementação, cada clique válido cria uma tarefa pendente. O <a href="../../projetos/mini-checklist/original/">original</a> continua estático, com botão desativado. O exercício não conclui nem salva tarefas; antes de escrever a solução, seu botão está habilitado, mas ainda não faz nada.</p>
+                  <h5>Resposta comentada</h5>
+                  <p>Tente primeiro. Use a resposta para conferir sua solução nos arquivos de exercício.</p>
+                  <button class="answer-toggle" type="button" aria-expanded="false" aria-controls="resposta-projeto-2-etapa-2">Mostrar resposta comentada</button>
+                  <div class="answer" id="resposta-projeto-2-etapa-2" hidden>
+                    <pre><code>const tarefas = [];
+const campo = document.getElementById("new-task");
+const botaoAdicionar = document.getElementById("add-task");
+const lista = document.getElementById("task-list");
+const estadoVazio = document.getElementById("empty-state");
+
+function renderizarTarefas() {
+  lista.textContent = "";
+  tarefas.forEach(function (tarefa) {
+    const item = document.createElement("li");
+    item.classList.add("task-item");
+    const texto = document.createElement("span");
+    texto.classList.add("task-text");
+    texto.textContent = tarefa.texto;
+    item.append(texto);
+    lista.append(item);
+  });
+  estadoVazio.hidden = tarefas.length &gt; 0;
+}
+
+function adicionarTarefa() {
+  const texto = campo.value.trim();
+  if (texto === "") {
+    campo.focus();
+    return;
+  }
+  tarefas.push({ texto: texto, concluida: false });
+  renderizarTarefas();
+  campo.value = "";
+  campo.focus();
+}
+
+botaoAdicionar.addEventListener("click", adicionarTarefa);
+renderizarTarefas();</code></pre>
+                    <p>O array é a fonte dos dados. <code>push()</code> acrescenta um objeto, e a renderização recria somente a lista HTML a partir dele. Cada descrição entra como texto no span; o aviso vazio acompanha a quantidade de objetos.</p>
+                    <p>A validação ocorre antes do <code>push()</code>. Limpar e focar o campo prepara a próxima inclusão. A chamada final exibe o estado inicial; registrar o evento prepara as chamadas futuras, feitas pelo clique.</p>
+                  </div>
+                  <div class="lesson-completion">
+                    <h5>Conclusão da etapa</h5>
+                    <label class="completion-control" for="completion-projeto-2-etapa-2">
+                      <input class="lesson-completion-input" id="completion-projeto-2-etapa-2" type="checkbox" data-course-id="javascript-iniciante" data-lesson-id="projeto-2-etapa-2" data-completion-label="Marcar Etapa 2 como concluída" data-completed-label="Etapa 2 concluída — desmarcar" />
+                      <span class="completion-label-text">Marcar Etapa 2 como concluída</span>
+                    </label>
+                    <p>Marque depois de implementar e testar. Você pode desmarcar quando quiser; a conclusão é independente da Etapa 1 e das aulas.</p>
+                  </div>
+                </section>
+                <section id="projeto-2-etapa-3">
+                  <h4>Etapa 3 — Marcar tarefa como concluída</h4>
+                  <h5>Objetivo</h5>
+                  <p>Alternar uma tarefa entre pendente e concluída, atualizando seu objeto no array e o visual na página. Continue sua solução da <a href="#projeto-2-etapa-2">Etapa 2</a>: adicionar tarefas deve continuar funcionando. Ainda não vamos usar <code>localStorage</code>.</p>
+                  <h5>Arquivos usados</h5>
+                  <p>Edite <code>projetos/mini-checklist/exercicio/script.js</code>. O arquivo fornecido contém somente orientações; preserve o código de inclusão que você escreveu. O CSS do exercício já oferece <code>task-checkbox</code>, <code>task-text</code> e <code>is-completed</code>. Não altere <code>original/</code>.</p>
+                  <h5>Explicação simples</h5>
+                  <p>O objeto continua com <code>texto</code> e <code>concluida</code>. O valor booleano <code>false</code> significa pendente; <code>true</code>, concluída. Riscar o texto sozinho não atualiza os dados: primeiro altere o objeto correspondente e depois renderize a lista novamente.</p>
+                  <p>Use um <strong>checkbox</strong>, uma caixa de seleção que pode ser marcada e desmarcada. Sua propriedade <code>checked</code> é um booleano. O evento <code>change</code> avisa quando a seleção muda, inclusive pelo teclado.</p>
+                  <h5>Sua tarefa</h5>
+                  <ol>
+                    <li>Mantenha o mesmo array <code>tarefas</code>, os quatro elementos encontrados e a função <code>adicionarTarefa()</code>. Novas tarefas continuam entrando com <code>concluida: false</code>.</li>
+                    <li>Na função <code>renderizarTarefas()</code>, percorra o array com <code>forEach(function (tarefa, indice) { ... })</code>. <code>indice</code> é a posição do objeto nessa lista, começando em zero.</li>
+                    <li>Para cada objeto, crie o item e um <code>input</code> com <code>type = "checkbox"</code> e classe <code>task-checkbox</code>. Defina <code>checked</code> a partir de <code>tarefa.concluida</code>.</li>
+                    <li>Crie um <code>label</code> com classe <code>task-text</code> e o texto da tarefa. Dê ao checkbox um ID como <code>"task-checkbox-" + indice</code> e use esse mesmo valor em <code>label.htmlFor</code>, que corresponde ao atributo HTML <code>for</code>. Assim, o texto rotula o controle e também permite marcá-lo.</li>
+                    <li>Aplique <code>is-completed</code> ao item quando <code>tarefa.concluida</code> for <code>true</code>. Quando for <code>false</code>, deixe o item sem essa classe.</li>
+                    <li>No <code>change</code> de cada checkbox, atribua <code>checkbox.checked</code> a <code>tarefa.concluida</code> e chame <code>renderizarTarefas()</code>. A variável <code>tarefa</code> corresponde ao objeto atual do array; alterar sua propriedade atualiza esse objeto.</li>
+                    <li>Após renderizar, encontre o checkbox recriado pelo mesmo ID e devolva o foco com <code>focus()</code>. Preserve a atualização do estado vazio no fim da função.</li>
+                  </ol>
+                  <div class="pronunciation">
+                    <h5>Como ler em português</h5>
+                    <p>“Mostre cada tarefa com uma caixa de seleção. Se o objeto diz que está concluída, marque a caixa e risque o texto. Quando a pessoa mudar a seleção, atualize esse mesmo objeto e mostre a lista novamente.”</p>
+                    <p>Encontrar → ouvir → alterar: o controle escuta a mudança, os dados guardam o novo estado e a renderização reflete esse estado na página.</p>
+                  </div>
+                  <h5>Dicas</h5>
+                  <ul>
+                    <li><code>item.classList.toggle("is-completed", tarefa.concluida)</code> usa o segundo argumento para decidir: <code>true</code> adiciona a classe; <code>false</code> remove. Ele não alterna às cegas a cada renderização.</li>
+                    <li>Defina <code>checkbox.checked = tarefa.concluida</code> a cada renderização. Os elementos HTML são recriados; o array mantém os estados durante essa execução.</li>
+                    <li>Registre o evento dentro do <code>forEach</code>, junto do checkbox daquele objeto. Assim, mudar uma caixa não altera todas as tarefas.</li>
+                    <li>Renderizar remove o controle que tinha foco. Use seu ID para focar o novo controle equivalente. Não devolva o foco ao campo de inclusão ao concluir uma tarefa.</li>
+                  </ul>
+                  <h5>Como testar</h5>
+                  <ol>
+                    <li>Salve e recarregue a <a href="../../projetos/mini-checklist/exercicio/">versão de exercício</a>. Adicione duas tarefas diferentes.</li>
+                    <li>Marque apenas a segunda: ela deve ficar riscada, com caixa marcada, enquanto a primeira permanece pendente.</li>
+                    <li>Desmarque a segunda e confira se o texto volta ao normal. Clique também no texto da tarefa para testar o rótulo.</li>
+                    <li>Conclua a primeira e adicione uma terceira. A primeira deve continuar concluída; a nova começa pendente. Entradas vazias continuam sem criar itens.</li>
+                    <li>Use Tab para chegar a um checkbox e Espaço para alterná-lo. Após cada mudança, o foco deve continuar na mesma tarefa. Confira também em tela estreita e com um texto longo.</li>
+                    <li>Com todas concluídas, o aviso vazio continua escondido: existem tarefas. Ao recarregar, a lista volta a ficar vazia, pois ainda não há persistência.</li>
+                  </ol>
+                  <h5>Diagnóstico e erros comuns</h5>
+                  <p>Se o estado se perder ao adicionar outra tarefa, confira se alterou o objeto, além do visual. Se todas mudarem juntas, confira o objeto usado pelo evento. Não crie outro array, não declare novamente as variáveis da Etapa 2 e não registre de novo o clique de Adicionar.</p>
+                  <h5>Resultado esperado e comparação</h5>
+                  <p>Depois da sua implementação, cada tarefa alterna de forma independente, e adicionar continua funcionando. O <a href="../../projetos/mini-checklist/original/">original</a> permanece na Etapa 1, estático. O script de exercício fornecido continua sem soluções prontas; o comportamento depende do código escrito por você.</p>
+                  <h5>Resposta comentada</h5>
+                  <p>Substitua somente sua função <code>renderizarTarefas()</code> pela versão abaixo para comparar. Preserve o array, as buscas no DOM, a função de adicionar, o evento do botão e a chamada inicial da Etapa 2. Não mantenha duas definições da mesma função.</p>
+                  <button class="answer-toggle" type="button" aria-expanded="false" aria-controls="resposta-projeto-2-etapa-3">Mostrar resposta comentada</button>
+                  <div class="answer" id="resposta-projeto-2-etapa-3" hidden>
+                    <pre><code>function renderizarTarefas() {
+  lista.textContent = "";
+  tarefas.forEach(function (tarefa, indice) {
+    const item = document.createElement("li");
+    item.classList.add("task-item");
+    item.classList.toggle("is-completed", tarefa.concluida);
+
+    const controleId = "task-checkbox-" + indice;
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.id = controleId;
+    checkbox.classList.add("task-checkbox");
+    checkbox.checked = tarefa.concluida;
+
+    const texto = document.createElement("label");
+    texto.classList.add("task-text");
+    texto.htmlFor = controleId;
+    texto.textContent = tarefa.texto;
+
+    checkbox.addEventListener("change", function () {
+      tarefa.concluida = checkbox.checked;
+      renderizarTarefas();
+      document.getElementById(controleId).focus();
+    });
+
+    item.append(checkbox, texto);
+    lista.append(item);
+  });
+  estadoVazio.hidden = tarefas.length &gt; 0;
+}</code></pre>
+                    <p>O checkbox e a classe leem o mesmo booleano do objeto. O evento modifica esse booleano e renderiza novamente; a nova lista é construída com os estados atualizados. A inclusão da Etapa 2 continua usando essa função sem mudar seu próprio código.</p>
+                    <p>O índice diferencia os IDs dos controles nesta lista, que ainda não permite remoção ou reordenação. O <code>htmlFor</code> associa o texto ao checkbox, e a busca pelo ID restaura o foco após a reconstrução.</p>
+                  </div>
+                  <div class="lesson-completion">
+                    <h5>Conclusão da etapa</h5>
+                    <label class="completion-control" for="completion-projeto-2-etapa-3">
+                      <input class="lesson-completion-input" id="completion-projeto-2-etapa-3" type="checkbox" data-course-id="javascript-iniciante" data-lesson-id="projeto-2-etapa-3" data-completion-label="Marcar Etapa 3 como concluída" data-completed-label="Etapa 3 concluída — desmarcar" />
+                      <span class="completion-label-text">Marcar Etapa 3 como concluída</span>
+                    </label>
+                    <p>Marque depois de implementar e testar. Você pode desmarcar quando quiser; esta conclusão é independente das etapas anteriores e das aulas.</p>
                   </div>
                 </section>
               </article>
@@ -4902,9 +5095,9 @@ localStorage.removeItem("aula-16-topicos");</code></pre>
             </article>
 
             <article class="project-card">
-              <span>Etapa 1 disponível</span>
+              <span>Etapas 1, 2 e 3 disponíveis</span>
               <h3><a href="#projeto-2">Mini Checklist</a></h3>
-              <p>Base visual de uma lista de tarefas, com referência original e versão de exercício. As interações serão construídas nas próximas etapas.</p>
+              <p>Base visual e exercícios guiados para adicionar e concluir tarefas. Escreva o JavaScript na versão de exercício e compare com o original fixo da Etapa 1.</p>
             </article>
           </div>
         </div>

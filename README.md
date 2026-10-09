@@ -1,6 +1,6 @@
 # Guias de Programação
 
-Projeto local de cursos e projetos práticos para quem está começando a programar. O curso **JavaScript Iniciante** possui dezesseis aulas disponíveis, as cinco etapas da Landing Page Interativa e a Etapa 1 do Mini Checklist. O curso **Desenvolvimento de Software com IA** possui sua estrutura inicial e a primeira aula publicada.
+Projeto local de cursos e projetos práticos para quem está começando a programar. O curso **JavaScript Iniciante** possui dezesseis aulas disponíveis, as cinco etapas da Landing Page Interativa e as Etapas 1, 2 e 3 do Mini Checklist. O curso **Desenvolvimento de Software com IA** possui sua estrutura inicial e a primeira aula publicada.
 
 ## Tecnologias
 
@@ -84,7 +84,7 @@ Na primeira execução, o `npx` pode pedir confirmação para baixar temporariam
 
 As Aulas 1 a 16 estão na página do curso JavaScript Iniciante. Cada aula disponível pode ser
 marcada como concluída, e esse estado permanece salvo localmente no navegador.
-O Mini Checklist possui a base visual da Etapa 1 disponível, com interações futuras.
+O Mini Checklist possui a base visual da Etapa 1 e os exercícios guiados das Etapas 2 e 3 disponíveis.
 O Projeto Prático 1 já possui uma seção após a Aula 13 e sua
 **Etapa 1 — Estrutura e visual** está disponível: uma landing page estática da
 cafeteria fictícia Café Origem. A **Etapa 2 — Menu mobile** oferece HTML e CSS
@@ -104,11 +104,14 @@ A pasta original preserva a Etapa 1; as próximas atividades serão feitas somen
 em exercicio. Consulte o [README do projeto](projetos/landing-page-interativa/README.md)
 para abrir as duas versões no navegador ou no servidor local.
 
-O **Projeto Prático 2 — Mini Checklist** tem campo Nova tarefa, botão Adicionar
-desativado, área da lista, estado vazio e CSS para tarefas concluídas. A Etapa 1
-não adiciona, conclui ou salva tarefas. Trabalhe na [versão de exercício](projetos/mini-checklist/exercicio/)
-e compare com o [original fixo](projetos/mini-checklist/original/). A etapa no curso
-tem resposta expansível e conclusão independente; consulte o [README do projeto](projetos/mini-checklist/README.md).
+O **Projeto Prático 2 — Mini Checklist** tem campo Nova tarefa, área da lista,
+estado vazio e CSS para tarefas concluídas. O [original fixo](projetos/mini-checklist/original/)
+preserva a Etapa 1 com botão desativado. A [versão de exercício](projetos/mini-checklist/exercicio/)
+habilita o botão na Etapa 2; o aluno escreverá a inclusão de objetos no array e a
+renderização. A Etapa 3 orienta acrescentar checkboxes, atualizar o objeto e refletir
+o estado concluído, preservando a inclusão. `script.js` contém somente instruções,
+com respostas expansíveis no curso e conclusões independentes das três etapas.
+Salvar tarefas fica para depois; consulte o [README do projeto](projetos/mini-checklist/README.md).
 
 O curso Desenvolvimento de Software com IA possui a primeira aula publicada e as demais
 aulas planejadas em seu sumário. A aula disponível também pode ser marcada como

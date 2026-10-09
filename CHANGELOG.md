@@ -2,6 +2,20 @@
 
 Este arquivo registra as principais mudanças do projeto Guias de Programação.
 
+## 2026-10-09 — Mini Checklist: Etapa 3
+
+### Adicionado
+
+- Exercício guiado para marcar e desmarcar tarefas, atualizando o objeto no array e renderizando checkbox rotulado e classe is-completed, com restauração de foco.
+- Continuação da inclusão da Etapa 2, resposta expansível para a função de renderização e conclusão independente; original preservado, script somente com instruções e sem persistência.
+
+## 2026-10-09 — Mini Checklist: Etapa 2
+
+### Adicionado
+
+- Exercício guiado para adicionar tarefas: array de objetos, push, validação de texto vazio, renderização e atualização do estado vazio, com limpeza e foco do campo.
+- Botão habilitado na versão de exercício, script somente com instruções, dicas e resposta expansível no curso e conclusão independente da etapa. Original preservado; sem concluir tarefas ou persistência.
+
 ## 2026-10-09 — Mini Checklist: Etapa 1
 
 ### Adicionado
