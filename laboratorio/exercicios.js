@@ -1,5 +1,13 @@
 // Os testes de cada exercício ficam separados do controlador.
 window.guiasLabExercises = {
+  "aula-14-exercicio-1": {
+    version: 1,
+    mode: "output",
+    maxExtraLogs: 0,
+    cases: [
+      { expected: "Meta atingida", hint: "Depois de corrigir aspas e nomes, confira se a comparação inclui 10. Mostre somente Meta atingida." },
+    ],
+  },
   "aula-2-exercicio-1": {
     version: 1,
     mode: "values",

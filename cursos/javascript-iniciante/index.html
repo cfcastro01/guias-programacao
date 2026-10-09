@@ -176,9 +176,9 @@
               <details class="summary-group" open>
                 <summary><span>Consolidando o JavaScript</span></summary>
                 <ol start="14">
-                  <li class="future">
-                    Debug e leitura de erros
-                    <span class="coming-soon">Em breve</span>
+                  <li class="current" data-course-id="javascript-iniciante" data-lesson-id="aula-14">
+                    <a href="#aula-14">Debug e leitura de erros</a>
+                    <span class="lesson-status">Não concluída</span>
                   </li>
                   <li class="future">
                     Como ler código JavaScript maior
@@ -4369,7 +4369,147 @@ metodos.forEach(function (metodo) {
                 </section>
                 <section>
                   <h4>Antes da próxima etapa</h4>
-                  <p>O Projeto Prático 1 está completo como conteúdo: as cinco etapas estão disponíveis. Marque cada etapa somente depois de realizar sua tarefa; nenhuma é marcada automaticamente. Não há checkbox geral de projeto. Antes de seguir para a Aula 14, que ainda está planejada, retome os padrões que você precisa praticar.</p>
+                  <p>O Projeto Prático 1 está completo como conteúdo: as cinco etapas estão disponíveis. Marque cada etapa somente depois de realizar sua tarefa; nenhuma é marcada automaticamente. Não há checkbox geral de projeto. Antes de seguir para a <a href="#aula-14">Aula 14</a>, retome os padrões que você precisa praticar.</p>
+                </section>
+              </article>
+
+              <article class="lesson" id="aula-14">
+                <header class="lesson-header">
+                  <span>Aula 14</span>
+                  <h3>Debug e leitura de erros</h3>
+                </header>
+
+                <section>
+                  <h4>Objetivo</h4>
+                  <p>Reconhecer erros comuns, entender a mensagem e corrigir um problema por vez. Fazer <strong>debug</strong> é investigar por que um programa não funciona como esperado.</p>
+                </section>
+
+                <section>
+                  <h4>Explicação simples</h4>
+                  <ul>
+                    <li><strong>Erro de sintaxe:</strong> falta ou sobra algo na escrita, como uma aspa ou um parêntese. O JavaScript não consegue interpretar o código e não começa a executá-lo.</li>
+                    <li><strong>Erro em execução:</strong> o código começa a rodar, mas uma instrução falha, como usar um nome que não existe. Essa execução é interrompida no erro.</li>
+                    <li><strong>Erro de lógica:</strong> o código roda, mas faz algo diferente do esperado. Pode não aparecer nenhuma mensagem de erro.</li>
+                  </ul>
+                  <p>A mensagem é uma pista, não uma avaliação sobre você. Não é preciso decorar o texto técnico; procure o tipo de erro, o nome citado e o local indicado.</p>
+                </section>
+
+                <section class="pronunciation">
+                  <h4>Como ler em português</h4>
+                  <ul>
+                    <li><strong><code>SyntaxError</code>:</strong> “não consegui entender a escrita do código”.</li>
+                    <li><strong><code>ReferenceError: pontoss is not defined</code>:</strong> “não encontrei um nome chamado pontoss”.</li>
+                    <li><strong><code>TypeError</code>:</strong> “essa operação não pode ser feita com o valor recebido”.</li>
+                    <li><strong><code>Cannot read properties of null</code>:</strong> “tentei acessar uma propriedade, mas o valor é null”.</li>
+                  </ul>
+                  <p><code>ReferenceError</code> e <code>TypeError</code> são exemplos de erros que podem surgir durante a execução. As palavras exatas da mensagem variam entre navegadores.</p>
+                </section>
+
+                <section>
+                  <h4>Rotina básica de diagnóstico</h4>
+                  <ol>
+                    <li>Leia a primeira mensagem de erro da sua execução.</li>
+                    <li>Localize a linha indicada ou o trecho citado.</li>
+                    <li>Confira nomes, aspas, parênteses, chaves e sinais.</li>
+                    <li>Corrija uma coisa por vez.</li>
+                    <li>Execute novamente e compare com o resultado esperado.</li>
+                  </ol>
+                  <p>No Console, <code>app.js:12:5</code> indica arquivo, linha 12 e coluna 5. Confira também a linha anterior: o problema pode começar antes do local apontado. No laboratório, procure o trecho pela mensagem; uma referência ao executor não indica uma linha confiável do seu código.</p>
+                  <p>Sem mensagem de erro, use <code>console.log</code> para conferir valores e condições. O Console continua útil para investigar DOM e eventos, mesmo com o laboratório do curso.</p>
+                </section>
+
+                <section>
+                  <h4>Exemplos comentados: sintaxe, execução e lógica</h4>
+                  <p><strong>Aspa não fechada:</strong> este texto começa com aspas, mas não termina.</p>
+                  <pre><code>const aviso = "Olá;
+// Correção:
+const aviso = "Olá";</code></pre>
+                  <p>Compare as versões separadamente. A primeira causa um <code>SyntaxError</code>. O mesmo tipo de erro pode acontecer quando falta fechar <code>)</code> em <code>console.log("Olá";</code> ou <code>}</code> em um bloco <code>if</code>.</p>
+                  <p><strong>Nome incorreto:</strong> JavaScript diferencia letras e maiúsculas.</p>
+                  <pre><code>const pontos = 10;
+console.log(pontoss); // ReferenceError: o nome criado foi pontos</code></pre>
+                  <p>Use <code>pontos</code>, o nome declarado. O mesmo cuidado vale para funções: chamar <code>mostrarAvisoo()</code> em vez de <code>mostrarAviso()</code> pode causar <code>ReferenceError</code>.</p>
+                  <p><strong>Símbolo matemático:</strong> <code>≥</code> significa “maior ou igual”, mas JavaScript não usa esse símbolo como operador. Escrever <code>idade ≥ 18</code> causa um <code>SyntaxError</code>. Em JavaScript, escrevemos:</p>
+                  <pre><code>idade &gt;= 18</code></pre>
+                  <p><strong>Erro de lógica:</strong> usar <code>&gt;</code> é válido, mas exclui o valor limite.</p>
+                  <pre><code>const pontos = 10;
+if (pontos &gt; 10) {
+  console.log("Meta atingida");
+}</code></pre>
+                  <p>Leia: “se os pontos forem maiores que 10”. Com 10, nada aparece. Se a regra inclui 10, use <code>pontos &gt;= 10</code>. Teste o valor limite para conferir a lógica.</p>
+                </section>
+
+                <section>
+                  <h4>Erros comuns na página: null e eventos</h4>
+                  <p>Uma busca no DOM retorna <code>null</code> quando não encontra o elemento. Isso, por si só, não lança um erro. Tentar usar uma propriedade desse resultado pode causar <code>TypeError</code>.</p>
+                  <pre><code>const titulo = document.getElementById("titulo");
+titulo.textContent = "Olá";</code></pre>
+                  <p>Se <code>titulo</code> for <code>null</code>, confira se existe um elemento com <code>id="titulo"</code>, se o nome está correto e se o script roda depois que esse HTML foi carregado.</p>
+                  <p>Em eventos, os parênteses mudam o momento da chamada:</p>
+                  <pre><code>function mostrarAviso() {
+  console.log("Clicou!");
+}
+
+// Chama agora; esta função retorna undefined, não um ouvinte.
+botao.addEventListener("click", mostrarAviso());
+
+// Entrega a função para executar no clique.
+botao.addEventListener("click", mostrarAviso);</code></pre>
+                  <p>Considere <code>botao</code> um elemento já encontrado. Na primeira versão, a mensagem aparece antes do clique e o clique não chama essa função. Pode não haver mensagem de erro: observe também o comportamento. Teste cada versão separadamente na sua página HTML, não no laboratório.</p>
+                </section>
+
+                <section class="javascript-lab" data-course-id="javascript-iniciante" data-exercise-id="aula-14-exercicio-1">
+                  <h4>Exercício básico</h4>
+                  <ol>
+                    <li>O código abaixo tem três problemas. Execute para ler a primeira mensagem.</li>
+                    <li>Corrija a escrita do texto e depois confira o nome usado na condição. Execute novamente a cada mudança.</li>
+                    <li>A regra é mostrar a mensagem quando os pontos forem maiores ou iguais a 10. Confira o sinal com <code>pontos = 10</code>.</li>
+                    <li>Ao final, deve aparecer somente <code>Meta atingida</code>. Remova logs de diagnóstico antes da verificação final.</li>
+                  </ol>
+                  <p>O laboratório valida apenas a saída final, sem exigir uma forma exata de correção. Pratique o diagnóstico: mostrar a frase diretamente também passaria, mas não corrigiria os problemas propostos.</p>
+                  <label class="lab-code-label" for="lab-code-aula-14">Seu código JavaScript</label>
+                  <textarea class="lab-code" id="lab-code-aula-14" rows="8" maxlength="20000" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" aria-describedby="lab-help-aula-14">const mensagem = "Meta atingida;
+const pontos = 10;
+if (pontoss &gt; 10) {
+  console.log(mensagem);
+}</textarea>
+                  <div class="lab-actions">
+                    <button class="lab-run" type="button">Executar</button>
+                    <button class="lab-clear" type="button">Limpar</button>
+                  </div>
+                  <h5 id="lab-result-title-aula-14">Resultado</h5>
+                  <pre class="lab-result" role="status" aria-live="polite" aria-atomic="true" tabindex="0" aria-labelledby="lab-result-title-aula-14"></pre>
+                  <p id="lab-help-aula-14">Rascunho salvo neste navegador. Limpar preserva o código. O resultado não bloqueia a conclusão.</p>
+                  <p class="lab-storage-notice" role="status" aria-live="polite"></p>
+                  <noscript>Ative o JavaScript para usar o laboratório ou pratique no Console do navegador.</noscript>
+                </section>
+
+                <section>
+                  <h4>Resposta correta</h4>
+                  <button class="answer-toggle" type="button" aria-expanded="false" aria-controls="exercise-answer-14">Mostrar resposta comentada</button>
+                  <div class="answer" id="exercise-answer-14" hidden>
+                    <pre><code>const mensagem = "Meta atingida";
+const pontos = 10;
+if (pontos &gt;= 10) {
+  console.log(mensagem);
+}</code></pre>
+                    <h5>Explicação da resposta</h5>
+                    <ul>
+                      <li>Fechar as aspas permite interpretar o código: corrige o erro de sintaxe.</li>
+                      <li>Trocar <code>pontoss</code> por <code>pontos</code> usa a variável que existe: corrige o erro em execução.</li>
+                      <li>Usar <code>&gt;=</code> inclui o valor 10: corrige o erro de lógica.</li>
+                    </ul>
+                    <p>Os problemas aparecem por etapas. Resolver a primeira mensagem pode revelar a próxima; isso faz parte do diagnóstico.</p>
+                  </div>
+                </section>
+
+                <section class="lesson-completion">
+                  <h4>Conclusão da aula</h4>
+                  <label class="completion-control" for="completion-aula-14">
+                    <input class="lesson-completion-input" id="completion-aula-14" type="checkbox" data-course-id="javascript-iniciante" data-lesson-id="aula-14" />
+                    <span class="completion-label-text">Marcar aula como concluída</span>
+                  </label>
+                  <p>Você pode desmarcar esta opção quando quiser.</p>
                 </section>
               </article>
             </div>

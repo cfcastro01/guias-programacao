@@ -2,6 +2,13 @@
 
 Este arquivo registra as principais mudanças do projeto Guias de Programação.
 
+## 2026-10-09 — Aula 14 do JavaScript Iniciante
+
+### Adicionado
+
+- Aula 14: Debug e leitura de erros, com sintaxe, execução, lógica, leitura de mensagens, exemplos de DOM/eventos e rotina básica de diagnóstico.
+- Exercício com três problemas no laboratório compacto, usando validação da saída existente sem mudanças no motor; resposta expansível, rascunho e conclusão livre preservados.
+
 ## 2026-10-09 — Laboratório na Aula 2
 
 ### Adicionado
