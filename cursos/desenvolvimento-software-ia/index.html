@@ -78,7 +78,14 @@
                     <a href="#aula-5">Ambiente local, staging e produção</a>
                     <span class="lesson-status">Não concluída</span>
                   </li>
-                  <li class="future">Build e deploy</li>
+                  <li
+                    class="current"
+                    data-course-id="desenvolvimento-software-ia"
+                    data-lesson-id="aula-6"
+                  >
+                    <a href="#aula-6">Build e deploy</a>
+                    <span class="lesson-status">Não concluída</span>
+                  </li>
                 </ol>
               </details>
 
@@ -1257,6 +1264,180 @@ Cliente</code></pre>
                       type="checkbox"
                       data-course-id="desenvolvimento-software-ia"
                       data-lesson-id="aula-5"
+                    />
+                    <span class="completion-label-text">Marcar aula como concluída</span>
+                  </label>
+                  <p>Você pode desmarcar esta opção quando quiser.</p>
+                </section>
+              </article>
+              <article class="lesson" id="aula-6">
+                <header class="lesson-header">
+                  <span>Aula 6</span>
+                  <h3>Build e deploy</h3>
+                </header>
+
+                <section>
+                  <h4>Objetivo da aula</h4>
+                  <p>Entender o que são build e deploy e distinguir preparar uma versão de disponibilizá-la em um ambiente.</p>
+                </section>
+
+                <section>
+                  <h4>O que é build?</h4>
+                  <p>Build é o processo de preparar os arquivos de uma versão do software para uso. Dependendo do projeto, ele pode transformar código, juntar arquivos ou reduzir seu tamanho.</p>
+                  <p>Por exemplo, um projeto pode reunir vários arquivos JavaScript em um arquivo menor para o navegador carregar. O conjunto de arquivos gerado também costuma ser chamado de build.</p>
+                  <p><strong>Preparar esses arquivos não significa publicá-los.</strong> Eles podem continuar apenas no computador de quem desenvolve.</p>
+                </section>
+
+                <section>
+                  <h4>O que é deploy?</h4>
+                  <p>Deploy é o processo de colocar uma versão do software em um ambiente e disponibilizá-la para uso ali. Em um site, isso pode envolver enviar os arquivos ao serviço que entrega as páginas aos visitantes.</p>
+                  <p>Um deploy pode ser feito em staging para validação ou em produção para atender os usuários reais. Portanto, fazer deploy não significa necessariamente publicar em produção.</p>
+                </section>
+
+                <section>
+                  <h4>Nem todo projeto precisa de um build separado</h4>
+                  <p>Um site simples com HTML, CSS e JavaScript puro, como este guia, pode usar os próprios arquivos escritos pela pessoa, sem uma transformação antes de publicá-los.</p>
+                  <p>Nesse caso, o fluxo pode ser <strong>alteração → validação → deploy</strong>. A ausência de um build separado não elimina a necessidade de revisar e testar os arquivos antes da publicação.</p>
+                  <p>O comando <code>npx serve . -l 8000</code> permite servir este guia localmente. Ele não cria um build nem publica o site na internet.</p>
+                </section>
+
+                <section class="pronunciation">
+                  <h4>Como ler em português</h4>
+                  <ul>
+                    <li><strong>Build:</strong> “preparar os arquivos da versão para uso”.</li>
+                    <li><strong>Validação:</strong> “conferir se essa versão atende ao esperado”.</li>
+                    <li><strong>Deploy:</strong> “disponibilizar a versão no ambiente escolhido”.</li>
+                    <li><strong>Build concluído:</strong> “os arquivos foram gerados; ainda preciso conferir o resultado”.</li>
+                    <li><strong>Deploy em produção:</strong> “a versão foi disponibilizada no ambiente usado pelas pessoas”.</li>
+                  </ul>
+                </section>
+
+                <section>
+                  <h4>Exemplo prático: atualizar um botão</h4>
+                  <p>Imagine um site que tem uma etapa de build. A equipe quer mudar o texto de um botão de “Enviar” para “Enviar mensagem”.</p>
+                  <ol>
+                    <li><strong>Alteração:</strong> a pessoa edita o texto no arquivo de origem, onde a equipe mantém o código do site.</li>
+                    <li><strong>Build:</strong> o processo do projeto gera os arquivos da nova versão, já com o texto atualizado.</li>
+                    <li><strong>Validação:</strong> a equipe abre a versão preparada em um ambiente de teste, confere o texto e verifica se o botão continua funcionando, inclusive por teclado.</li>
+                    <li><strong>Deploy:</strong> após revisão e autorização, a versão validada é disponibilizada em produção. A equipe confere o resultado no site publicado.</li>
+                  </ol>
+                  <p><strong>Alteração → build → validação → deploy.</strong> Esse fluxo resume a publicação neste exemplo. Se a validação precisar de staging, há também um deploy nesse ambiente antes de conferir a versão ali.</p>
+                  <p>Se um problema exigir nova alteração nos arquivos de origem, é necessário gerar e validar novamente o build antes de publicá-lo. Um build antigo não inclui mudanças feitas depois de sua geração.</p>
+                </section>
+
+                <section>
+                  <h4>Como isso aparece em um projeto real</h4>
+                  <p>Antes de publicar, a equipe precisa saber se o projeto exige build, quais arquivos devem ser enviados e em qual ambiente a versão será disponibilizada.</p>
+                  <p>Um build concluído indica que a preparação terminou, mas não comprova que todos os comportamentos estão corretos. Da mesma forma, um deploy concluído não dispensa conferir se o sistema funciona no ambiente de destino.</p>
+                </section>
+
+                <section>
+                  <h4>Como isso muda quando usamos IA</h4>
+                  <p>A IA pode ajudar a alterar arquivos, identificar como o projeto prepara uma versão e analisar erros. Ela precisa conhecer as instruções do projeto e os critérios de validação, sem inventar uma etapa de build que não existe.</p>
+                  <p>Um pedido possível é: “Altere o texto do botão, siga a preparação já usada neste projeto e confira o resultado. Informe o que foi validado e pare antes de fazer deploy.” Revise as mudanças antes de autorizar a publicação.</p>
+                </section>
+
+                <section>
+                  <h4>Erros comuns</h4>
+                  <ul>
+                    <li>Achar que executar o build já atualiza o site publicado.</li>
+                    <li>Publicar arquivos de um build antigo depois de alterar o código.</li>
+                    <li>Tratar a conclusão do build como prova de que a versão funciona corretamente.</li>
+                    <li>Adicionar ferramentas de build a um projeto simples sem uma necessidade clara.</li>
+                    <li>Fazer deploy no ambiente errado por não conferir o destino.</li>
+                  </ul>
+                </section>
+
+                <section>
+                  <h4>Perguntas úteis para fazer a um desenvolvedor</h4>
+                  <ul>
+                    <li>Este projeto precisa de build ou usa diretamente os arquivos de origem?</li>
+                    <li>Quais arquivos representam a versão que será publicada?</li>
+                    <li>O que foi validado e em qual ambiente será feito o deploy?</li>
+                  </ul>
+                </section>
+
+                <section>
+                  <h4>Como explicar esse assunto em uma entrevista</h4>
+                  <p><strong>Pergunta:</strong> Qual é a diferença entre build e deploy?</p>
+                  <p><strong>Resposta possível:</strong> “Build prepara os arquivos de uma versão. Deploy disponibiliza essa versão em um ambiente, como staging ou produção. Alguns projetos simples usam seus arquivos diretamente e não precisam de uma etapa de build separada.”</p>
+                </section>
+
+                <section>
+                  <h4>Resumo</h4>
+                  <p>Preparar uma versão e publicá-la são ações diferentes. Quando existe build, valide o resultado que será disponibilizado. Quando não existe, valide os próprios arquivos antes do deploy.</p>
+                </section>
+
+                <section>
+                  <h4>Exercício de reforço</h4>
+                  <p>Uma equipe alterou o título de uma página e concluiu o build sem erros. Os arquivos gerados continuam apenas no computador local, e ninguém conferiu a página preparada. O que podemos afirmar?</p>
+                  <div class="exercise-options">
+                    <label class="completion-control" for="exercise-ia-aula-6-option-a">
+                      <input
+                        class="exercise-answer-input"
+                        id="exercise-ia-aula-6-option-a"
+                        name="exercise-ia-aula-6"
+                        type="radio"
+                        value="a"
+                        data-course-id="desenvolvimento-software-ia"
+                        data-exercise-id="aula-6-exercicio"
+                      />
+                      <span><strong>A.</strong> O site em produção já foi atualizado, porque build e deploy são a mesma ação.</span>
+                    </label>
+                    <label class="completion-control" for="exercise-ia-aula-6-option-b">
+                      <input
+                        class="exercise-answer-input"
+                        id="exercise-ia-aula-6-option-b"
+                        name="exercise-ia-aula-6"
+                        type="radio"
+                        value="b"
+                        data-course-id="desenvolvimento-software-ia"
+                        data-exercise-id="aula-6-exercicio"
+                      />
+                      <span><strong>B.</strong> Os arquivos da versão foram preparados, mas ainda precisam de validação e de deploy para atualizar o site em produção.</span>
+                    </label>
+                    <label class="completion-control" for="exercise-ia-aula-6-option-c">
+                      <input
+                        class="exercise-answer-input"
+                        id="exercise-ia-aula-6-option-c"
+                        name="exercise-ia-aula-6"
+                        type="radio"
+                        value="c"
+                        data-course-id="desenvolvimento-software-ia"
+                        data-exercise-id="aula-6-exercicio"
+                      />
+                      <span><strong>C.</strong> A versão está completamente validada, pois um build sem erros comprova que a página funciona.</span>
+                    </label>
+                  </div>
+                  <p>Sua escolha fica salva, mas não altera a conclusão da aula.</p>
+                </section>
+
+                <section>
+                  <h4>Resposta comentada</h4>
+                  <button
+                    class="answer-toggle"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="exercise-answer-ia-6"
+                  >
+                    Mostrar resposta comentada
+                  </button>
+                  <div class="answer" id="exercise-answer-ia-6" hidden>
+                    <p><strong>A resposta correta é a opção B.</strong></p>
+                    <p>O build preparou os arquivos localmente. Como eles ainda não foram disponibilizados em produção, essa preparação não atualizou o site publicado.</p>
+                    <p>A equipe deve conferir a versão gerada antes de liberá-la. A opção A confunde preparação com publicação; a opção C confunde build concluído com validação do comportamento.</p>
+                  </div>
+                </section>
+
+                <section class="lesson-completion">
+                  <h4>Conclusão da aula</h4>
+                  <label class="completion-control" for="completion-ia-aula-6">
+                    <input
+                      class="lesson-completion-input"
+                      id="completion-ia-aula-6"
+                      type="checkbox"
+                      data-course-id="desenvolvimento-software-ia"
+                      data-lesson-id="aula-6"
                     />
                     <span class="completion-label-text">Marcar aula como concluída</span>
                   </label>

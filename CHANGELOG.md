@@ -2,6 +2,14 @@
 
 Este arquivo registra as principais mudanças do projeto Guias de Programação.
 
+## 2026-10-09 — Aula 6 do curso de IA
+
+### Adicionado
+
+- Aula 6: Build e deploy, distinguindo preparação e publicação de uma versão, com fluxo alteração → build → validação → deploy e projetos sem build separado, sem aprofundar CI/CD, pipelines ou infraestrutura.
+- Exercício conceitual com escolha persistida, resposta comentada expansível e conclusão independente pelo sistema existente.
+- Item da aula no sumário e README do curso atualizados.
+
 ## 2026-10-09 — Aula 5 do curso de IA
 
 ### Adicionado
