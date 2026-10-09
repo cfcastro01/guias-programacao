@@ -2,6 +2,13 @@
 
 Este arquivo registra as principais mudanças do projeto Guias de Programação.
 
+## 2026-10-09 — Aula 16 do JavaScript Iniciante
+
+### Adicionado
+
+- Aula 16: Salvando dados no navegador com localStorage, com chave e valor, persistência, remoção, texto e introdução curta a JSON para arrays.
+- Exercício no Console com chaves próprias da aula, complemento opcional, resposta expansível e conclusão independente; relação com o progresso do site e preparação para o Mini Checklist.
+
 ## 2026-10-09 — Aula 15 do JavaScript Iniciante
 
 ### Adicionado

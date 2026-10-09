@@ -14,7 +14,7 @@
 - Aulas 9–10: repetição e transformação.
 - Aulas 11–13: JavaScript na página.
 - Projeto prático 1: Landing Page Interativa.
-- Aulas 14–15: debug e leitura de código disponíveis; Aula 16: próxima aula de consolidação.
+- Aulas 14–16: debug, leitura de código e persistência local com localStorage disponíveis.
 - Projeto prático 2: Mini Checklist.
 
 ## Desenvolvimento de Software com IA

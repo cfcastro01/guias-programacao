@@ -184,9 +184,9 @@
                     <a href="#aula-15">Como ler código JavaScript maior</a>
                     <span class="lesson-status">Não concluída</span>
                   </li>
-                  <li class="future">
-                    Salvando dados no navegador com localStorage
-                    <span class="coming-soon">Em breve</span>
+                  <li class="current" data-course-id="javascript-iniciante" data-lesson-id="aula-16">
+                    <a href="#aula-16">Salvando dados no navegador com localStorage</a>
+                    <span class="lesson-status">Não concluída</span>
                   </li>
                 </ol>
               </details>
@@ -4663,6 +4663,146 @@ botaoRevisar.addEventListener("click", function () {
                     <span class="completion-label-text">Marcar aula como concluída</span>
                   </label>
                   <p>Você pode desmarcar esta opção quando quiser.</p>
+                </section>
+              </article>
+
+              <article class="lesson" id="aula-16">
+                <header class="lesson-header">
+                  <span>Aula 16</span>
+                  <h3>Salvando dados no navegador com localStorage</h3>
+                </header>
+
+                <section>
+                  <h4>Objetivo</h4>
+                  <p>Salvar, recuperar e remover informações simples no navegador. Entender como um valor pode continuar disponível depois de recarregar a página.</p>
+                </section>
+
+                <section>
+                  <h4>Explicação simples</h4>
+                  <p><strong>Persistir</strong> uma informação é guardá-la para usar depois. Uma variável existe durante a execução: ao recarregar a página, a execução recomeça e seu valor anterior não é preservado. Se o código declarar a variável novamente, ela recebe o valor inicial outra vez.</p>
+                  <p>O <code>localStorage</code> guarda dados localmente e permite buscá-los na próxima visita ou depois de recarregar. Você precisa salvar e recuperar explicitamente; alterar uma variável não atualiza o dado salvo automaticamente.</p>
+                  <p>Esse armazenamento pertence ao navegador e à <strong>origem</strong> da página: a combinação de protocolo, endereço e porta, como <code>http://localhost:8000</code>. Outro navegador ou outra origem tem seu próprio espaço. Os dados podem ser apagados pelo usuário; não são um banco de dados nem são enviados automaticamente a um servidor.</p>
+                  <p>Cada informação usa uma <strong>chave</strong>, um nome para encontrá-la, e um <strong>valor</strong>, o conteúdo guardado. Pense em uma etiqueta e no que ela identifica. Salvar novamente com a mesma chave substitui o valor anterior.</p>
+                </section>
+
+                <section class="pronunciation">
+                  <h4>Como ler em português</h4>
+                  <ul>
+                    <li><code>localStorage.setItem("aula-16-nome", "Ana")</code>: “salve no navegador o valor Ana usando a chave aula-16-nome”.</li>
+                    <li><code>const nomeSalvo = localStorage.getItem("aula-16-nome")</code>: “busque o valor dessa chave e guarde em nomeSalvo”.</li>
+                    <li><code>localStorage.removeItem("aula-16-nome")</code>: “apague o valor salvo com essa chave”.</li>
+                  </ul>
+                  <p><code>setItem</code> salva, <code>getItem</code> busca e <code>removeItem</code> remove. Usaremos chaves próprias da aula para separar a prática dos dados do site.</p>
+                </section>
+
+                <section>
+                  <h4>Exemplo comentado: lembrar o nome</h4>
+                  <p><strong>1. Salvar:</strong> a variável guarda o nome nesta execução; a segunda linha guarda uma cópia no navegador.</p>
+                  <pre><code>const nome = "Ana";
+localStorage.setItem("aula-16-nome", nome);</code></pre>
+                  <p><strong>2. Recuperar:</strong> depois de recarregar, execute somente este trecho. Em uma página, ele pode fazer parte do código executado ao carregar.</p>
+                  <pre><code>const nomeSalvo = localStorage.getItem("aula-16-nome");
+if (nomeSalvo === null) {
+  console.log("Ainda não há nome salvo.");
+} else {
+  console.log("Olá, " + nomeSalvo + "!");
+}</code></pre>
+                  <p>Se você salvou Ana, verá <code>Olá, Ana!</code>. Quando a chave não existe, <code>getItem()</code> retorna <code>null</code>, indicando ausência de valor. Isso é diferente do texto <code>"null"</code>.</p>
+                  <p><strong>3. Remover:</strong> apague apenas a chave usada no exemplo e confira o retorno.</p>
+                  <pre><code>localStorage.removeItem("aula-16-nome");
+console.log(localStorage.getItem("aula-16-nome")); // null</code></pre>
+                  <p>Remover o dado salvo não apaga uma variável já carregada. Uma nova busca é que retorna <code>null</code>.</p>
+                </section>
+
+                <section>
+                  <h4>Evolução curta: salvar uma lista com JSON</h4>
+                  <p>O <code>localStorage</code> armazena valores como <strong>texto</strong>. Mesmo um número salvo diretamente volta como texto. Para preservar a estrutura de um array, usamos JSON, um formato de texto que representa dados.</p>
+                  <p><code>JSON.stringify()</code> transforma a lista em texto JSON; <code>JSON.parse()</code> transforma esse texto de volta em uma lista. Eles fazem a ponte entre estruturas JavaScript e texto.</p>
+                  <pre><code>const topicos = ["DOM", "Eventos"];
+localStorage.setItem("aula-16-topicos", JSON.stringify(topicos));</code></pre>
+                  <p>Para recuperar, inclusive depois de recarregar:</p>
+                  <pre><code>const textoSalvo = localStorage.getItem("aula-16-topicos");
+if (textoSalvo !== null) {
+  const topicosSalvos = JSON.parse(textoSalvo);
+  console.log(topicosSalvos[0]); // DOM
+}</code></pre>
+                  <p>Primeiro buscamos texto; depois reconstruímos o array. Neste exemplo, <code>parse</code> recebe o texto criado por <code>stringify</code>. Ele não converte qualquer frase em uma lista: texto que não é JSON válido causa erro.</p>
+                </section>
+
+                <section>
+                  <h4>Erros comuns</h4>
+                  <ul>
+                    <li>Salvar com uma chave e tentar buscar com outra: os nomes precisam ser iguais.</li>
+                    <li>Reexecutar o trecho de salvar antes de conferir a persistência: isso grava o dado novamente.</li>
+                    <li>Esperar um número ou array de <code>getItem()</code>: ele retorna texto ou <code>null</code>.</li>
+                    <li>Salvar um array diretamente e esperar recuperar sua estrutura sem JSON.</li>
+                    <li>Achar que mudar uma variável já mudou o armazenamento: é preciso chamar <code>setItem()</code> outra vez.</li>
+                    <li>Evite guardar senhas ou informações sensíveis no <code>localStorage</code>; ele serve aqui apenas para dados simples do navegador.</li>
+                  </ul>
+                </section>
+
+                <section>
+                  <h4>Exercício básico</h4>
+                  <ol>
+                    <li>Salve seu nome usando a chave <code>"aula-16-nome"</code>.</li>
+                    <li>Recarregue a página. Busque e mostre o nome salvo, sem salvá-lo novamente antes.</li>
+                    <li>Remova essa chave.</li>
+                    <li>Faça outra busca e confira se o resultado é <code>null</code>.</li>
+                  </ol>
+                  <p><strong>Complemento opcional:</strong> salve dois tópicos na chave <code>"aula-16-topicos"</code> com <code>JSON.stringify()</code>. Depois de recarregar, recupere com <code>JSON.parse()</code>, mostre o primeiro tópico e remova essa chave.</p>
+                </section>
+
+                <section>
+                  <h4>Como testar no Console</h4>
+                  <ol>
+                    <li>Com o site aberto em <code>http://localhost:8000</code>, pressione <kbd>F12</kbd> e entre em <strong>Console</strong>.</li>
+                    <li>Execute o comando de salvar. Recarregue e execute apenas os comandos de buscar e mostrar.</li>
+                    <li>Execute o comando de remover e faça uma nova busca. Compare os resultados antes e depois da remoção.</li>
+                  </ol>
+                  <p>Continue no mesmo navegador e origem. Se repetir uma declaração <code>const</code> com o mesmo nome no Console, recarregue antes de testá-la novamente.</p>
+                  <p>Use somente as chaves <code>aula-16-nome</code> e <code>aula-16-topicos</code> nesta prática. Remova-as individualmente com <code>removeItem()</code>, preservando o progresso salvo do site.</p>
+                </section>
+
+                <section>
+                  <h4>Resposta correta</h4>
+                  <button class="answer-toggle" type="button" aria-expanded="false" aria-controls="exercise-answer-16">Mostrar resposta comentada</button>
+                  <div class="answer" id="exercise-answer-16" hidden>
+                    <p>Exemplo com Ana; use seu nome. Execute cada etapa no momento indicado.</p>
+                    <pre><code>// Antes de recarregar:
+localStorage.setItem("aula-16-nome", "Ana");</code></pre>
+                    <pre><code>// Depois de recarregar, sem salvar novamente:
+console.log(localStorage.getItem("aula-16-nome")); // Ana
+localStorage.removeItem("aula-16-nome");
+console.log(localStorage.getItem("aula-16-nome")); // null</code></pre>
+                    <h5>Explicação da resposta</h5>
+                    <p><code>setItem</code> guarda o nome sob a chave escolhida. A primeira busca após recarregar confirma que o dado persistiu. <code>removeItem</code> apaga esse dado; por isso, a segunda busca retorna <code>null</code>.</p>
+                    <h5>Complemento opcional com array</h5>
+                    <pre><code>// Antes de recarregar:
+localStorage.setItem("aula-16-topicos", JSON.stringify(["DOM", "Eventos"]));</code></pre>
+                    <pre><code>// Depois de recarregar:
+const textoRecuperado = localStorage.getItem("aula-16-topicos");
+if (textoRecuperado !== null) {
+  const listaRecuperada = JSON.parse(textoRecuperado);
+  console.log(listaRecuperada[0]); // DOM
+}
+localStorage.removeItem("aula-16-topicos");</code></pre>
+                    <p><code>stringify</code> prepara o texto para salvar. <code>parse</code> recupera a estrutura, permitindo acessar o primeiro item com <code>[0]</code>. A condição verifica se há um valor antes dessa conversão.</p>
+                  </div>
+                </section>
+
+                <section>
+                  <h4>Aplicação prática: progresso e Mini Checklist</h4>
+                  <p>Este site já salva suas conclusões no navegador: ao marcar uma aula, o JavaScript grava o progresso; ao voltar, recupera os dados e atualiza os controles. As conclusões usam a chave <code>guias-programacao-progress</code>, separada das chaves desta prática.</p>
+                  <p>No Mini Checklist, a mesma ideia poderá guardar uma lista de tarefas: transformar em texto, salvar, buscar e reconstruir a lista. Esta aula prepara esse passo; o projeto continua planejado.</p>
+                </section>
+
+                <section class="lesson-completion">
+                  <h4>Conclusão da aula</h4>
+                  <label class="completion-control" for="completion-aula-16">
+                    <input class="lesson-completion-input" id="completion-aula-16" type="checkbox" data-course-id="javascript-iniciante" data-lesson-id="aula-16" />
+                    <span class="completion-label-text">Marcar aula como concluída</span>
+                  </label>
+                  <p>Você pode desmarcar esta opção quando quiser. O exercício não bloqueia a conclusão.</p>
                 </section>
               </article>
             </div>
