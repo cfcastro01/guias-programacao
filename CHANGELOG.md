@@ -2,6 +2,13 @@
 
 Este arquivo registra as principais mudanças do projeto Guias de Programação.
 
+## 2026-10-09 — Aula 2 do curso de IA
+
+### Adicionado
+
+- Aula 2: Frontend, backend e banco de dados, com responsabilidades, fluxo de uma despesa e uso de IA.
+- Exercício de classificação com escolha persistida, resposta comentada expansível e conclusão independente, usando o sistema atual de progresso.
+
 ## 2026-10-07 — Laboratório na Aula 4
 
 ### Adicionado

@@ -46,7 +46,14 @@
                     <a href="#aula-1">O que é desenvolvimento de software</a>
                     <span class="lesson-status">Não concluída</span>
                   </li>
-                  <li class="future">Frontend, backend e banco de dados</li>
+                  <li
+                    class="current"
+                    data-course-id="desenvolvimento-software-ia"
+                    data-lesson-id="aula-2"
+                  >
+                    <a href="#aula-2">Frontend, backend e banco de dados</a>
+                    <span class="lesson-status">Não concluída</span>
+                  </li>
                   <li class="future">Cliente e servidor</li>
                   <li class="future">APIs, HTTP e JSON</li>
                   <li class="future">Ambiente local, staging e produção</li>
@@ -519,6 +526,198 @@
                       type="checkbox"
                       data-course-id="desenvolvimento-software-ia"
                       data-lesson-id="aula-1"
+                    />
+                    <span class="completion-label-text">Marcar aula como concluída</span>
+                  </label>
+                  <p>Você pode desmarcar esta opção quando quiser.</p>
+                </section>
+              </article>
+              <article class="lesson" id="aula-2">
+                <header class="lesson-header">
+                  <span>Aula 2</span>
+                  <h3>Frontend, backend e banco de dados</h3>
+                </header>
+
+                <section>
+                  <h4>Objetivo da aula</h4>
+                  <p>Explicar o papel de cada parte, como elas trabalham juntas e onde a IA pode ajudar no desenvolvimento.</p>
+                </section>
+
+                <section>
+                  <h4>Frontend: a parte com a qual a pessoa interage</h4>
+                  <p>Frontend inclui telas, botões, formulários, menus e mensagens. Essa parte visível e interativa também é chamada de interface.</p>
+                  <p>Não é só aparência: também há lógica no navegador ou aplicativo, como abrir um menu e avisar que um campo está vazio.</p>
+                </section>
+
+                <section>
+                  <h4>Backend: regras e operações por trás da interface</h4>
+                  <p>Backend verifica informações e permissões, processa solicitações e coordena a busca ou o salvamento de dados. Por exemplo, confere se uma pessoa pode registrar determinada despesa.</p>
+                </section>
+
+                <section>
+                  <h4>Banco de dados: informações organizadas</h4>
+                  <p>É onde o sistema organiza e guarda informações, como usuários, pedidos, produtos e despesas. Quando uma informação precisa continuar disponível depois que a página é fechada, ela pode ser armazenada em um banco de dados.</p>
+                </section>
+
+                <section class="pronunciation">
+                  <h4>Como ler em português</h4>
+                  <ul>
+                    <li><strong>Frontend:</strong> parte visível e interativa do sistema.</li>
+                    <li><strong>Backend:</strong> parte que processa regras e coordena o que acontece por trás da interface.</li>
+                    <li><strong>Banco de dados:</strong> lugar onde o sistema organiza e guarda informações.</li>
+                  </ul>
+                </section>
+
+                <section>
+                  <h4>Como as três partes trabalham juntas</h4>
+                  <p>Imagine uma pessoa registrando uma despesa:</p>
+                  <pre><code>Usuário
+   ↓
+Frontend
+   ↓
+Backend
+   ↓
+Banco de dados</code></pre>
+                  <ol>
+                    <li>O frontend recebe a descrição e o valor digitados.</li>
+                    <li>O backend verifica as regras e processa o pedido de registro.</li>
+                    <li>O banco de dados armazena a despesa.</li>
+                    <li>Depois, o backend pode buscar a despesa no banco.</li>
+                    <li>O frontend apresenta o resultado à pessoa.</li>
+                  </ol>
+                  <p>Esse é um modelo simplificado. Sistemas reais podem variar, e nem todo site precisa dessas três partes.</p>
+                </section>
+
+                <section>
+                  <h4>Exemplo prático: cadastrar um novo usuário</h4>
+                  <ul>
+                    <li><strong>Frontend:</strong> exibe o formulário, coleta os dados e mostra mensagens.</li>
+                    <li><strong>Backend:</strong> valida as regras, verifica se o cadastro pode ser feito e processa a operação.</li>
+                    <li><strong>Banco de dados:</strong> guarda os dados do usuário.</li>
+                  </ul>
+                </section>
+
+                <section>
+                  <h4>Como isso aparece em um projeto real</h4>
+                  <p>As responsabilidades podem estar em arquivos diferentes. No frontend, HTML organiza o conteúdo, CSS define a aparência e JavaScript cria comportamentos. O backend tem código para executar regras. No banco de dados, as informações podem ser organizadas em tabelas, com linhas e colunas.</p>
+                  <p>As tecnologias variam. Primeiro, procure entender a responsabilidade de cada parte.</p>
+                </section>
+
+                <section>
+                  <h4>Como isso muda quando usamos IA</h4>
+                  <p>Ferramentas de IA podem criar interfaces, escrever regras de backend, preparar buscas e alterações no banco, analisar as conexões entre essas partes e encontrar erros.</p>
+                  <p><strong>A IA precisa receber contexto suficiente para saber em qual parte do sistema deve mexer.</strong> Pedir uma mudança na cor de um botão não deveria levar automaticamente a mudanças no banco. Explique o problema, limite o pedido e teste o resultado.</p>
+                </section>
+
+                <section>
+                  <h4>Erros comuns</h4>
+                  <ul>
+                    <li>Achar que frontend é só aparência ou que backend é o próprio banco.</li>
+                    <li>Confiar apenas no frontend para regras importantes: dados também precisam ser verificados no backend quando ele existe.</li>
+                    <li>Alterar dados sem entender o impacto ou pedir à IA uma correção sem explicar o problema.</li>
+                  </ul>
+                </section>
+
+                <section>
+                  <h4>Como explicar esse assunto em uma entrevista</h4>
+                  <p><strong>Pergunta:</strong> Qual é a diferença entre frontend, backend e banco de dados?</p>
+                  <p><strong>Resposta possível:</strong> “Frontend é a parte com a qual o usuário interage. Backend processa regras e operações. Banco de dados guarda as informações que precisam ser mantidas. As três partes normalmente trabalham juntas.”</p>
+                </section>
+
+                <section>
+                  <h4>Exercício de reforço</h4>
+                  <p>Em um cadastro de produtos, classifique a responsabilidade principal de cada item antes de escolher a combinação:</p>
+                  <ol type="A">
+                    <li>Exibir o formulário de cadastro.</li>
+                    <li>Verificar se a pessoa tem permissão para cadastrar.</li>
+                    <li>Guardar nome e preço do produto.</li>
+                    <li>Mostrar uma mensagem de sucesso.</li>
+                    <li>Aplicar uma regra que impede o registro de preço negativo.</li>
+                  </ol>
+                  <p>Qual combinação corresponde aos itens A, B, C, D e E, nessa ordem?</p>
+                  <div class="exercise-options">
+                    <label class="completion-control" for="exercise-ia-aula-2-option-a">
+                      <input
+                        class="exercise-answer-input"
+                        id="exercise-ia-aula-2-option-a"
+                        name="exercise-ia-aula-2"
+                        type="radio"
+                        value="a"
+                        data-course-id="desenvolvimento-software-ia"
+                        data-exercise-id="aula-2-exercicio"
+                      />
+                      <span><strong>1.</strong> Frontend · Banco de dados · Backend · Frontend · Banco de dados</span>
+                    </label>
+                    <label class="completion-control" for="exercise-ia-aula-2-option-b">
+                      <input
+                        class="exercise-answer-input"
+                        id="exercise-ia-aula-2-option-b"
+                        name="exercise-ia-aula-2"
+                        type="radio"
+                        value="b"
+                        data-course-id="desenvolvimento-software-ia"
+                        data-exercise-id="aula-2-exercicio"
+                      />
+                      <span><strong>2.</strong> Backend · Backend · Banco de dados · Backend · Frontend</span>
+                    </label>
+                    <label class="completion-control" for="exercise-ia-aula-2-option-c">
+                      <input
+                        class="exercise-answer-input"
+                        id="exercise-ia-aula-2-option-c"
+                        name="exercise-ia-aula-2"
+                        type="radio"
+                        value="c"
+                        data-course-id="desenvolvimento-software-ia"
+                        data-exercise-id="aula-2-exercicio"
+                      />
+                      <span><strong>3.</strong> Frontend · Backend · Banco de dados · Frontend · Backend</span>
+                    </label>
+                    <label class="completion-control" for="exercise-ia-aula-2-option-d">
+                      <input
+                        class="exercise-answer-input"
+                        id="exercise-ia-aula-2-option-d"
+                        name="exercise-ia-aula-2"
+                        type="radio"
+                        value="d"
+                        data-course-id="desenvolvimento-software-ia"
+                        data-exercise-id="aula-2-exercicio"
+                      />
+                      <span><strong>4.</strong> Frontend · Frontend · Banco de dados · Frontend · Frontend</span>
+                    </label>
+                  </div>
+                  <p>Sua escolha fica salva, mas não altera a conclusão da aula.</p>
+                </section>
+
+                <section>
+                  <h4>Resposta comentada</h4>
+                  <button
+                    class="answer-toggle"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="exercise-answer-ia-2"
+                  >
+                    Mostrar resposta comentada
+                  </button>
+                  <div class="answer" id="exercise-answer-ia-2" hidden>
+                    <p><strong>A combinação correta é a opção 3.</strong></p>
+                    <ul>
+                      <li><strong>A e D — Frontend:</strong> o formulário e a mensagem são partes da interação com a pessoa.</li>
+                      <li><strong>B e E — Backend:</strong> permissão e preço permitido são regras que precisam ser verificadas antes de aceitar o cadastro.</li>
+                      <li><strong>C — Banco de dados:</strong> guardar nome e preço mantém o produto disponível para consultas posteriores.</li>
+                    </ul>
+                    <p>O frontend também pode avisar sobre um preço negativo, mas esse aviso não substitui a verificação da regra no backend.</p>
+                  </div>
+                </section>
+
+                <section class="lesson-completion">
+                  <h4>Conclusão da aula</h4>
+                  <label class="completion-control" for="completion-ia-aula-2">
+                    <input
+                      class="lesson-completion-input"
+                      id="completion-ia-aula-2"
+                      type="checkbox"
+                      data-course-id="desenvolvimento-software-ia"
+                      data-lesson-id="aula-2"
                     />
                     <span class="completion-label-text">Marcar aula como concluída</span>
                   </label>
