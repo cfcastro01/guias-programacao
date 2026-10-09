@@ -180,9 +180,9 @@
                     <a href="#aula-14">Debug e leitura de erros</a>
                     <span class="lesson-status">Não concluída</span>
                   </li>
-                  <li class="future">
-                    Como ler código JavaScript maior
-                    <span class="coming-soon">Em breve</span>
+                  <li class="current" data-course-id="javascript-iniciante" data-lesson-id="aula-15">
+                    <a href="#aula-15">Como ler código JavaScript maior</a>
+                    <span class="lesson-status">Não concluída</span>
                   </li>
                   <li class="future">
                     Salvando dados no navegador com localStorage
@@ -4507,6 +4507,159 @@ if (pontos &gt;= 10) {
                   <h4>Conclusão da aula</h4>
                   <label class="completion-control" for="completion-aula-14">
                     <input class="lesson-completion-input" id="completion-aula-14" type="checkbox" data-course-id="javascript-iniciante" data-lesson-id="aula-14" />
+                    <span class="completion-label-text">Marcar aula como concluída</span>
+                  </label>
+                  <p>Você pode desmarcar esta opção quando quiser.</p>
+                </section>
+              </article>
+              <article class="lesson" id="aula-15">
+                <header class="lesson-header">
+                  <span>Aula 15</span>
+                  <h3>Como ler código JavaScript maior</h3>
+                </header>
+
+                <section>
+                  <h4>Objetivo</h4>
+                  <p>Ler um trecho maior pela ideia geral, reconhecer suas partes e acompanhar o que acontece. Você não precisa entender 100% do código para começar a analisá-lo.</p>
+                </section>
+
+                <section>
+                  <h4>Explicação simples</h4>
+                  <p>Antes de traduzir cada linha, procure a história do código: quais dados ele usa, o que dispara uma ação e o que muda no final. Depois, separe mentalmente pequenos blocos, cada um com uma tarefa clara.</p>
+                  <p>Nomes são pistas: <code>botaoRevisar</code> sugere um botão de revisão; <code>mostrarResumo</code> sugere uma ação. Confirme essa intenção lendo o que o código faz. Se encontrar um detalhe desconhecido, anote a dúvida e continue buscando a ideia principal.</p>
+                </section>
+
+                <section>
+                  <h4>Exemplo comentado: um botão de revisão</h4>
+                  <p>Imagine uma página com este HTML. O objetivo é clicar no botão, mostrar um resumo na mensagem e listar os tópicos no Console.</p>
+                  <pre><code>&lt;button id="botao-revisar" type="button"&gt;Revisar&lt;/button&gt;
+&lt;p id="mensagem-revisao"&gt;Escolha quando revisar.&lt;/p&gt;</code></pre>
+                  <p>Leia primeiro o JavaScript inteiro, sem parar em cada símbolo. Usaremos somente este exemplo nas próximas etapas.</p>
+                  <pre><code>// Encontra os elementos e prepara os dados.
+const botaoRevisar = document.getElementById("botao-revisar");
+const mensagemRevisao = document.getElementById("mensagem-revisao");
+const topicos = ["DOM", "Eventos", "Condições"];
+
+// Define o que fazer com uma lista recebida.
+function mostrarResumo(itens) {
+  if (itens.length &gt; 0) {
+    mensagemRevisao.textContent = "Revise " + itens.length + " tópicos.";
+    itens.forEach(function (topico) {
+      console.log(topico);
+    });
+  } else {
+    mensagemRevisao.textContent = "Nenhum tópico para revisar.";
+  }
+}
+
+// Ouve o clique e chama a função com os dados.
+botaoRevisar.addEventListener("click", function () {
+  mostrarResumo(topicos);
+});</code></pre>
+                </section>
+
+                <section class="pronunciation">
+                  <h4>Como ler em português</h4>
+                  <p>“Encontre o botão e a mensagem. Prepare uma lista de tópicos. Quando houver um clique, peça à função que mostre o resumo dessa lista. Se houver itens, altere a mensagem com a quantidade e mostre cada tópico no Console. Caso contrário, avise que não há tópicos.”</p>
+                  <p>Essa é a história dos blocos, sem traduzir literalmente cada símbolo. Ela segue o padrão <strong>encontrar → ouvir → alterar</strong> já usado no curso.</p>
+                </section>
+
+                <section>
+                  <h4>Lendo o mesmo código por partes</h4>
+                  <ol>
+                    <li><strong>Elementos e valores iniciais:</strong> <code>document.getElementById</code> acessa o DOM, a representação do HTML que o JavaScript pode usar. As duas primeiras variáveis guardam elementos; <code>topicos</code> guarda uma lista com três textos.</li>
+                    <li><strong>Definição da função:</strong> <code>function mostrarResumo(itens)</code> descreve uma tarefa. <code>itens</code> é o parâmetro, o nome usado dentro da função para a lista recebida. Definir essa função não altera a mensagem naquele momento.</li>
+                    <li><strong>Condição e repetição:</strong> <code>if (itens.length &gt; 0)</code> verifica se a lista tem itens. <code>length</code> informa a quantidade. O método de array <code>forEach</code> repete uma ação para cada item; aqui, mostra cada tópico no Console. O <code>else</code> trata a lista vazia.</li>
+                    <li><strong>Evento e chamada:</strong> <code>addEventListener</code> registra a ação para o evento <code>click</code>. A função sem nome dentro dele espera o clique; só então executa <code>mostrarResumo(topicos)</code>. Nessa chamada, a lista <code>topicos</code> entra na função como <code>itens</code>.</li>
+                    <li><strong>O que muda:</strong> <code>textContent</code> altera o texto da mensagem. Os <code>console.log</code> mostram valores no Console, sem acrescentar tópicos à página.</li>
+                  </ol>
+                  <p><strong>Preparar e agir acontecem em momentos diferentes:</strong> ao carregar, o código encontra elementos, cria a lista, define a função e registra o evento. No clique, entra na função e executa a condição, a mudança de texto e, se houver itens, a repetição.</p>
+                  <p>Acompanhe de cima para baixo o código que está sendo executado. Ao chegar a uma chamada, siga para o corpo da função e depois retome o ponto da chamada. A posição da definição no arquivo não significa que seu corpo será executado imediatamente.</p>
+                </section>
+
+                <section>
+                  <h4>Estratégia prática de leitura</h4>
+                  <ol>
+                    <li>Descubra o objetivo geral: que resultado esse código pretende produzir?</li>
+                    <li>Identifique os dados e elementos principais pelos nomes e valores iniciais.</li>
+                    <li>Encontre as funções e veja quais valores elas recebem.</li>
+                    <li>Localize as chamadas e o que as dispara, como um clique.</li>
+                    <li>Procure condições e repetições, como <code>if</code> e <code>forEach</code>.</li>
+                    <li>Acompanhe o que muda nos valores ou na página.</li>
+                    <li>Só depois investigue os detalhes desconhecidos que ainda impedem entender o resultado.</li>
+                  </ol>
+                </section>
+
+                <section>
+                  <h4>Erros comuns</h4>
+                  <ul>
+                    <li>Parar no primeiro símbolo desconhecido e perder a ideia geral.</li>
+                    <li>Achar que definir uma função já executa seu conteúdo, ou que registrar um evento já dispara o clique.</li>
+                    <li>Ler uma condição sem conferir os valores que chegam até ela.</li>
+                    <li>Confundir uma mensagem no Console com uma alteração visível na página.</li>
+                  </ul>
+                </section>
+
+                <section>
+                  <h4>Exercício básico: conte a história do código</h4>
+                  <p>Retome o JavaScript do exemplo, sem escrever outro programa. Antes de abrir a resposta, identifique:</p>
+                  <ol>
+                    <li>Quais elementos são encontrados e qual lista é preparada?</li>
+                    <li>Qual evento dispara a ação e qual função é chamada?</li>
+                    <li>Qual valor entra na função e qual condição é testada?</li>
+                    <li>O que muda na página com a lista original? O que aparece no Console?</li>
+                    <li>O que aconteceria se <code>topicos</code> fosse <code>[]</code>?</li>
+                  </ol>
+                  <p id="exercise-question-15">Qual sequência em português descreve o exemplo?</p>
+                  <div class="exercise-options" role="group" aria-labelledby="exercise-question-15">
+                    <label class="completion-control" for="exercise-aula-15-option-a">
+                      <input class="exercise-answer-input" id="exercise-aula-15-option-a" name="exercise-aula-15" type="radio" value="a" data-course-id="javascript-iniciante" data-exercise-id="aula-15-exercicio" />
+                      <span><strong>A.</strong> Encontra os elementos e mostra o resumo ao definir a função; o clique apenas cria a lista.</span>
+                    </label>
+                    <label class="completion-control" for="exercise-aula-15-option-b">
+                      <input class="exercise-answer-input" id="exercise-aula-15-option-b" name="exercise-aula-15" type="radio" value="b" data-course-id="javascript-iniciante" data-exercise-id="aula-15-exercicio" />
+                      <span><strong>B.</strong> Encontra os elementos e prepara a lista; no clique, chama a função com a lista, verifica a quantidade e altera a mensagem. Se houver itens, mostra cada um no Console.</span>
+                    </label>
+                    <label class="completion-control" for="exercise-aula-15-option-c">
+                      <input class="exercise-answer-input" id="exercise-aula-15-option-c" name="exercise-aula-15" type="radio" value="c" data-course-id="javascript-iniciante" data-exercise-id="aula-15-exercicio" />
+                      <span><strong>C.</strong> Espera um clique para encontrar os elementos; depois, o forEach cria um parágrafo na página para cada tópico.</span>
+                    </label>
+                  </div>
+                  <p>Sua escolha fica salva neste navegador, sem correção automática e sem alterar a conclusão da aula.</p>
+                </section>
+
+                <section>
+                  <h4>Como conferir a leitura</h4>
+                  <p>Faça o caminho mental “carregou → clicou → chamou → verificou → alterou” e compare sua interpretação com a resposta comentada.</p>
+                  <p>Se quiser confirmar sua leitura, use <code>console.log()</code> temporariamente para observar valores importantes.</p>
+                </section>
+
+                <section>
+                  <h4>Resposta correta</h4>
+                  <button class="answer-toggle" type="button" aria-expanded="false" aria-controls="exercise-answer-15">Mostrar resposta comentada</button>
+                  <div class="answer" id="exercise-answer-15" hidden>
+                    <p><strong>A alternativa correta é B.</strong></p>
+                    <h5>Explicação da resposta</h5>
+                    <ul>
+                      <li>Os elementos têm os IDs <code>botao-revisar</code> e <code>mensagem-revisao</code>. A lista inicial é <code>["DOM", "Eventos", "Condições"]</code>.</li>
+                      <li>O evento é <code>click</code>. A função do evento chama <code>mostrarResumo(topicos)</code>; ela não é chamada só por ter sido definida.</li>
+                      <li>A lista passa pelo parâmetro <code>itens</code>. A condição verifica se sua quantidade é maior que zero.</li>
+                      <li>Com três itens, a página mostra <code>Revise 3 tópicos.</code> no parágrafo. O <code>forEach</code> mostra DOM, Eventos e Condições no Console, um por vez.</li>
+                      <li>Com a lista vazia, o <code>else</code> mostra <code>Nenhum tópico para revisar.</code> na página. O <code>forEach</code> desse exemplo não é executado.</li>
+                    </ul>
+                    <p>A alternativa A antecipa a execução da função. A C muda a ordem da preparação e atribui ao <code>forEach</code> uma alteração de HTML que não existe no código.</p>
+                  </div>
+                </section>
+
+                <section>
+                  <h4>Aplicação prática</h4>
+                  <p>Ao retomar a Landing Page Interativa, escolha uma interação e procure os mesmos blocos: elementos encontrados, evento ouvido e alteração realizada. Conte essa história em uma frase antes de investigar os detalhes.</p>
+                </section>
+
+                <section class="lesson-completion">
+                  <h4>Conclusão da aula</h4>
+                  <label class="completion-control" for="completion-aula-15">
+                    <input class="lesson-completion-input" id="completion-aula-15" type="checkbox" data-course-id="javascript-iniciante" data-lesson-id="aula-15" />
                     <span class="completion-label-text">Marcar aula como concluída</span>
                   </label>
                   <p>Você pode desmarcar esta opção quando quiser.</p>

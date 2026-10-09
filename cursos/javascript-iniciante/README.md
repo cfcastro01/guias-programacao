@@ -4,7 +4,7 @@
 
 ## Estrutura atual
 
-O curso possui quatorze aulas disponíveis:
+O curso possui quinze aulas disponíveis:
 
 1. O que é JavaScript e como pensar sem decorar tudo
 2. Variáveis e valores
@@ -20,6 +20,7 @@ O curso possui quatorze aulas disponíveis:
 12. Eventos: reagindo a cliques e outras ações
 13. Classes e estados visuais
 14. Debug e leitura de erros
+15. Como ler código JavaScript maior
 
 As aulas, o sumário e os projetos disponíveis ou planejados estão em `index.html`. Cada aula
 segue o modelo de objetivo, explicação simples, leitura em português, exemplo,
@@ -27,6 +28,9 @@ exercício e resposta comentada.
 
 O progresso é salvo no navegador com a chave `guias-programacao-progress` e o
 identificador de curso `javascript-iniciante`.
+
+A Aula 15 usa um exercício de leitura com escolha salva e resposta comentada
+expansível, sem laboratório. A escolha e a conclusão da aula são independentes.
 
 ## Projeto Prático 1 — Landing Page Interativa
 
@@ -49,4 +53,4 @@ com a Etapa 1 aprovada, sem editar essa referência. O [README do projeto](../..
 explica o papel de HTML, CSS, JavaScript e Console e o formato das próximas tarefas.
 O original permanece na Etapa 1; apenas exercicio/ recebe as tarefas do menu, da seleção de preparo e da história.
 As Etapas 1, 2, 3, 4 e 5 têm controles de conclusão independentes, usando o progresso existente
-do curso. Não há controle de conclusão geral do projeto. As Aulas 15–16 e o Mini Checklist seguem planejados.
+do curso. Não há controle de conclusão geral do projeto. A Aula 16 e o Mini Checklist seguem planejados.

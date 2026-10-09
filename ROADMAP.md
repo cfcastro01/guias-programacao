@@ -14,7 +14,7 @@
 - Aulas 9–10: repetição e transformação.
 - Aulas 11–13: JavaScript na página.
 - Projeto prático 1: Landing Page Interativa.
-- Aula 14: Debug e leitura de erros disponível; Aulas 15–16: próximas aulas de consolidação.
+- Aulas 14–15: debug e leitura de código disponíveis; Aula 16: próxima aula de consolidação.
 - Projeto prático 2: Mini Checklist.
 
 ## Desenvolvimento de Software com IA
@@ -27,7 +27,7 @@
 
 As Aulas 1, 2, 4, 5, 6, 8, 9, 10 e 14 usam o laboratório integrado. A Aula 5 valida apresentarPessoa(nome);
 as Aulas 1, 4, 9 e 14 validam a saída do programa e as Aulas 6, 8 e 10 comparam valores tipados.
-As demais mantêm o fluxo no Console.
+As demais mantêm o fluxo no Console, exceto a Aula 15, que prioriza leitura com escolha salva e resposta expansível.
 
 ### Implementado no piloto
 

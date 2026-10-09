@@ -2,6 +2,13 @@
 
 Este arquivo registra as principais mudanças do projeto Guias de Programação.
 
+## 2026-10-09 — Aula 15 do JavaScript Iniciante
+
+### Adicionado
+
+- Aula 15: Como ler código JavaScript maior, com um exemplo de interface analisado em blocos, fluxo de execução e leitura em português.
+- Exercício de leitura com escolha salva, resposta comentada expansível e conclusão independente, reutilizando os mecanismos existentes sem laboratório.
+
 ## 2026-10-09 — Aula 14 do JavaScript Iniciante
 
 ### Adicionado
