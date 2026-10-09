@@ -11,4 +11,11 @@
 // 2. Use tarefa.concluida para definir checked e a classe is-completed.
 // 3. No evento change, atualize o objeto correspondente no array.
 // 4. Renderize novamente e devolva o foco ao checkbox recriado.
-// Mantenha adicionar tarefas funcionando. Não implemente localStorage ainda.
+// Mantenha adicionar tarefas funcionando. A persistência entra na Etapa 4.
+
+// Etapa 4 — Salvar tarefas com localStorage. Continue sua solução anterior.
+// 1. Use a chave guias-programacao-mini-checklist-tarefas.
+// 2. Recupere os dados antes da primeira renderização; sem dados, use [].
+// 3. Use JSON.parse para recuperar e JSON.stringify para salvar o array.
+// 4. Salve após adicionar e após marcar ou desmarcar uma tarefa.
+// Preserve a renderização, o estado vazio e o foco. Não acrescente outras ações.

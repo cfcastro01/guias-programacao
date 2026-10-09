@@ -82,4 +82,18 @@ O aluno acrescentará checkboxes rotulados, atualizará `concluida` no objeto e
 renderizará o estado com `is-completed`, preservando a inclusão e o foco por teclado.
 O script mantém apenas instruções; a resposta expansível mostra a substituição
 da função de renderização. A Etapa 3 tem conclusão independente. Ainda não há persistência.
+
+A **Etapa 4 — Salvar tarefas com localStorage** continua a solução anterior:
+o aluno recuperará o array antes de renderizar e salvará após adicionar ou alternar
+uma tarefa, usando JSON e a chave `guias-programacao-mini-checklist-tarefas`.
+Sem dados salvos, a lista começa vazia. O arquivo de exercício continua com
+instruções; a resposta expansível mostra somente os trechos a alterar.
+A conclusão é independente dos dados do checklist e das etapas anteriores.
+
+A **Etapa 5 — Revisão final** consolida o fluxo de recuperação, renderização,
+inclusão, conclusão e salvamento. Inclui mapa do código, atividade curta de leitura,
+resposta expansível e checklist de testes finais, sem novas funcionalidades.
+O Projeto Prático 2 está completo como conteúdo: as cinco etapas estão disponíveis,
+com conclusões independentes e sem marcar automaticamente o progresso do aluno.
+O original e os arquivos de exercício permanecem preservados nesta revisão.
 Consulte o [README do projeto](../../projetos/mini-checklist/README.md).

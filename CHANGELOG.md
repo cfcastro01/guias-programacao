@@ -2,6 +2,20 @@
 
 Este arquivo registra as principais mudanças do projeto Guias de Programação.
 
+## 2026-10-09 — Mini Checklist: Etapa 5 e encerramento do conteúdo
+
+### Adicionado
+
+- Revisão final do fluxo de dados, DOM e localStorage, com atividade curta de leitura, resposta expansível, checklist de testes e conclusão independente.
+- Projeto Prático 2 completo como conteúdo, com cinco etapas disponíveis, sem marcar progresso automaticamente ou acrescentar funcionalidades. Original, arquivos de exercício e conteúdo das Etapas 1–4 preservados nesta revisão.
+
+## 2026-10-09 — Mini Checklist: Etapa 4
+
+### Adicionado
+
+- Exercício guiado de persistência com localStorage e JSON: recuperação antes da primeira renderização, lista vazia sem dados e salvamento após adicionar, marcar ou desmarcar.
+- Chave própria do checklist, resposta expansível com os trechos a alterar e conclusão independente. Original e etapas anteriores preservados; script do aluno somente com instruções, sem novas funcionalidades.
+
 ## 2026-10-09 — Mini Checklist: Etapa 3
 
 ### Adicionado

@@ -1,6 +1,6 @@
 # Guias de Programação
 
-Projeto local de cursos e projetos práticos para quem está começando a programar. O curso **JavaScript Iniciante** possui dezesseis aulas disponíveis, as cinco etapas da Landing Page Interativa e as Etapas 1, 2 e 3 do Mini Checklist. O curso **Desenvolvimento de Software com IA** possui sua estrutura inicial e a primeira aula publicada.
+Projeto local de cursos e projetos práticos para quem está começando a programar. O curso **JavaScript Iniciante** possui dezesseis aulas disponíveis e as cinco etapas de cada projeto: Landing Page Interativa e Mini Checklist. O curso **Desenvolvimento de Software com IA** possui sua estrutura inicial e a primeira aula publicada.
 
 ## Tecnologias
 
@@ -84,7 +84,7 @@ Na primeira execução, o `npx` pode pedir confirmação para baixar temporariam
 
 As Aulas 1 a 16 estão na página do curso JavaScript Iniciante. Cada aula disponível pode ser
 marcada como concluída, e esse estado permanece salvo localmente no navegador.
-O Mini Checklist possui a base visual da Etapa 1 e os exercícios guiados das Etapas 2 e 3 disponíveis.
+O Mini Checklist está completo como conteúdo: base visual, exercícios guiados das Etapas 2–4 e revisão final na Etapa 5.
 O Projeto Prático 1 já possui uma seção após a Aula 13 e sua
 **Etapa 1 — Estrutura e visual** está disponível: uma landing page estática da
 cafeteria fictícia Café Origem. A **Etapa 2 — Menu mobile** oferece HTML e CSS
@@ -109,9 +109,13 @@ estado vazio e CSS para tarefas concluídas. O [original fixo](projetos/mini-che
 preserva a Etapa 1 com botão desativado. A [versão de exercício](projetos/mini-checklist/exercicio/)
 habilita o botão na Etapa 2; o aluno escreverá a inclusão de objetos no array e a
 renderização. A Etapa 3 orienta acrescentar checkboxes, atualizar o objeto e refletir
-o estado concluído, preservando a inclusão. `script.js` contém somente instruções,
-com respostas expansíveis no curso e conclusões independentes das três etapas.
-Salvar tarefas fica para depois; consulte o [README do projeto](projetos/mini-checklist/README.md).
+o estado concluído, preservando a inclusão. A Etapa 4 ensina a salvar e recuperar
+a lista com localStorage e JSON, usando uma chave própria do projeto.
+`script.js` contém somente instruções, com respostas expansíveis no curso e
+conclusões independentes das cinco etapas. A Etapa 5 revisa dados, interface e
+persistência, com atividade de leitura e checklist de testes finais. O conteúdo
+completo não marca automaticamente o progresso do aluno nem implementa as soluções.
+Consulte o [README do projeto](projetos/mini-checklist/README.md).
 
 O curso Desenvolvimento de Software com IA possui a primeira aula publicada e as demais
 aulas planejadas em seu sumário. A aula disponível também pode ser marcada como

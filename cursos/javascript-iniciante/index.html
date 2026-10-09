@@ -195,7 +195,7 @@
                 <h4>Projeto prático 2</h4>
                 <div class="summary-project-card">
                   <strong><a href="#projeto-2">Mini Checklist</a></strong>
-                  <span class="project-status">Etapas 1, 2 e 3 disponíveis</span>
+                  <span class="project-status">Projeto completo como conteúdo do curso</span>
                   <p>
                     Projeto para aplicar arrays, objetos, funções, condições,
                     atualização da interface e armazenamento local.
@@ -211,6 +211,14 @@
                     </li>
                     <li class="current" data-course-id="javascript-iniciante" data-lesson-id="projeto-2-etapa-3">
                       <a href="#projeto-2-etapa-3">Marcar tarefa como concluída</a>
+                      <span class="lesson-status">Não concluída</span>
+                    </li>
+                    <li class="current" data-course-id="javascript-iniciante" data-lesson-id="projeto-2-etapa-4">
+                      <a href="#projeto-2-etapa-4">Salvar tarefas com localStorage</a>
+                      <span class="lesson-status">Não concluída</span>
+                    </li>
+                    <li class="current" data-course-id="javascript-iniciante" data-lesson-id="projeto-2-etapa-5">
+                      <a href="#projeto-2-etapa-5">Revisão final</a>
                       <span class="lesson-status">Não concluída</span>
                     </li>
                   </ol>
@@ -5069,6 +5077,177 @@ renderizarTarefas();</code></pre>
                     <p>Marque depois de implementar e testar. Você pode desmarcar quando quiser; esta conclusão é independente das etapas anteriores e das aulas.</p>
                   </div>
                 </section>
+                <section id="projeto-2-etapa-4">
+                  <h4>Etapa 4 — Salvar tarefas com localStorage</h4>
+                  <h5>Objetivo</h5>
+                  <p>Fazer a lista continuar disponível após recarregar a página, incluindo o estado concluído de cada tarefa. Continue a solução da <a href="#projeto-2-etapa-3">Etapa 3</a>, mantendo a inclusão, os checkboxes, a renderização e o estado vazio.</p>
+                  <h5>Arquivos usados</h5>
+                  <p>Edite somente <code>projetos/mini-checklist/exercicio/script.js</code>. O arquivo fornecido contém orientações; aproveite o código que você escreveu nas etapas anteriores. Preserve <code>original/</code>. Não acrescente exclusão, filtros ou outros controles.</p>
+                  <h5>Explicação simples</h5>
+                  <p>O array vive na execução atual da página. <strong>Persistir</strong> é guardar os dados para recuperá-los depois. Como vimos na <a href="#aula-16">Aula 16</a>, <code>localStorage</code> guarda texto no navegador para a mesma origem, isto é, a mesma combinação de protocolo, endereço e porta.</p>
+                  <p>Use a chave <code>guias-programacao-mini-checklist-tarefas</code> somente para esta lista, separada do progresso do curso. <code>JSON.stringify(tarefas)</code> transforma o array de objetos em texto; <code>JSON.parse(dadosSalvos)</code> faz o caminho de volta, recuperando também os booleanos de <code>concluida</code>.</p>
+                  <p>Se ainda não houver essa chave, <code>getItem()</code> retorna <code>null</code>. Nesse caso, comece com <code>[]</code> e deixe a renderização mostrar o estado vazio. Carregue antes de renderizar; salve depois de mudar os dados.</p>
+                  <div class="pronunciation">
+                    <h5>Como ler em português</h5>
+                    <p>“Ao abrir, busque a lista salva. Se existir, transforme o texto em um array; se não existir, comece sem tarefas. Mostre esse array na página. Depois de adicionar, marcar ou desmarcar uma tarefa, guarde a lista atualizada.”</p>
+                  </div>
+                  <h5>Exemplo comentado</h5>
+                  <pre><code>function salvarTarefas() {
+  // Guarde os dados, não o HTML da lista.
+  localStorage.setItem(chaveTarefas, JSON.stringify(tarefas));
+}</code></pre>
+                  <p>Essa função usa a chave e o array do projeto. Chamá-la grava uma nova cópia da lista inteira, substituindo o valor anterior dessa mesma chave.</p>
+                  <h5>Sua tarefa</h5>
+                  <ol>
+                    <li>No início do script, defina <code>chaveTarefas</code> com a chave indicada. Troque sua declaração <code>const tarefas = []</code> por <code>let tarefas = []</code>: vamos atribuir o array recuperado à variável.</li>
+                    <li>Busque <code>localStorage.getItem(chaveTarefas)</code> e guarde em <code>dadosSalvos</code>. Se for diferente de <code>null</code>, atribua <code>JSON.parse(dadosSalvos)</code> a <code>tarefas</code>. Faça isso antes da chamada inicial de <code>renderizarTarefas()</code>.</li>
+                    <li>Acrescente a função <code>salvarTarefas()</code> do exemplo. Em <code>adicionarTarefa()</code>, chame-a logo depois do <code>push()</code>, mantendo a validação antes da inclusão.</li>
+                    <li>No evento <code>change</code> do checkbox, chame <code>salvarTarefas()</code> depois de atualizar <code>tarefa.concluida</code> e antes de renderizar novamente.</li>
+                    <li>Preserve a chamada inicial de renderização no fim do script, o foco e a atualização de <code>estadoVazio.hidden</code>. Não duplique o array, as funções nem o evento de Adicionar.</li>
+                  </ol>
+                  <h5>Como testar</h5>
+                  <ol>
+                    <li>Use <code>npx serve . -l 8000</code> na raiz e abra a <a href="../../projetos/mini-checklist/exercicio/">versão de exercício</a> pelo localhost. Sem dados anteriores, a lista deve começar vazia e sem erro no Console.</li>
+                    <li>Adicione duas tarefas e marque apenas a segunda. Recarregue: textos, ordem, checkboxes e visual concluído devem permanecer.</li>
+                    <li>Desmarque a segunda e recarregue novamente: ela deve continuar pendente. Adicione uma terceira e recarregue: devem aparecer exatamente três itens.</li>
+                    <li>Tente adicionar só espaços: nada deve mudar na lista salva. Com tarefas presentes, mesmo todas concluídas, o aviso vazio deve continuar escondido.</li>
+                    <li>Confira Tab e Espaço nos checkboxes: o foco continua na mesma tarefa após alternar. Confira também em tela estreita.</li>
+                  </ol>
+                  <p>Para repetir o teste sem dados, remova somente a chave do projeto pelo Console e recarregue. Isso apaga as tarefas salvas do exercício; não use <code>localStorage.clear()</code>, que também apagaria o progresso do site.</p>
+                  <pre><code>localStorage.removeItem("guias-programacao-mini-checklist-tarefas");</code></pre>
+                  <h5>Diagnóstico e erros comuns</h5>
+                  <p>Se a lista sumir, confira se usa a mesma chave e o mesmo endereço, incluindo a porta. Não salve o array vazio antes de recuperar os dados. Sem <code>JSON.stringify()</code>, o array não é salvo no formato esperado; sem <code>JSON.parse()</code>, você recupera texto em vez do array.</p>
+                  <p>Se só a conclusão se perder, confira a chamada de salvamento no <code>change</code>, depois da mudança do objeto. Evite guardar senhas ou informações sensíveis no localStorage; use aqui apenas tarefas simples.</p>
+                  <h5>Resultado esperado e comparação</h5>
+                  <p>Depois da sua implementação, a lista reaparece ao recarregar no mesmo navegador e origem, com as tarefas pendentes e concluídas. O <a href="../../projetos/mini-checklist/original/">original</a> permanece estático na Etapa 1. O progresso desta etapa continua separado dos dados do checklist.</p>
+                  <h5>Resposta comentada</h5>
+                  <p>Tente primeiro. Aplique os trechos nos pontos indicados da sua solução da Etapa 3; não substitua o arquivo inteiro nem mantenha declarações duplicadas.</p>
+                  <button class="answer-toggle" type="button" aria-expanded="false" aria-controls="resposta-projeto-2-etapa-4">Mostrar resposta comentada</button>
+                  <div class="answer" id="resposta-projeto-2-etapa-4" hidden>
+                    <p>Substitua apenas a declaração inicial do array por este bloco. Mantenha as buscas no DOM em seguida.</p>
+                    <pre><code>const chaveTarefas = "guias-programacao-mini-checklist-tarefas";
+let tarefas = [];
+const dadosSalvos = localStorage.getItem(chaveTarefas);
+
+if (dadosSalvos !== null) {
+  tarefas = JSON.parse(dadosSalvos);
+}</code></pre>
+                    <p>Sem chave salva, o array continua vazio. Com dados salvos pelo projeto, <code>JSON.parse()</code> recupera os objetos com <code>texto</code> e <code>concluida</code>. <code>let</code> permite atribuir esse array recuperado.</p>
+                    <p>Acrescente a função de salvamento e substitua sua função de adicionar por esta versão.</p>
+                    <pre><code>function salvarTarefas() {
+  localStorage.setItem(chaveTarefas, JSON.stringify(tarefas));
+}
+
+function adicionarTarefa() {
+  const texto = campo.value.trim();
+  if (texto === "") {
+    campo.focus();
+    return;
+  }
+  tarefas.push({ texto: texto, concluida: false });
+  salvarTarefas();
+  renderizarTarefas();
+  campo.value = "";
+  campo.focus();
+}</code></pre>
+                    <p>Dentro de <code>renderizarTarefas()</code>, substitua somente o evento do checkbox. Todo o restante da renderização da Etapa 3 permanece.</p>
+                    <pre><code>checkbox.addEventListener("change", function () {
+  tarefa.concluida = checkbox.checked;
+  salvarTarefas();
+  renderizarTarefas();
+  document.getElementById(controleId).focus();
+});</code></pre>
+                    <p>As duas mudanças nos dados passam pelo salvamento. A renderização continua responsável apenas pela interface, lendo o array atualizado.</p>
+                    <p>Mantenha estas duas linhas uma única vez no fim do script, depois da recuperação dos dados e das definições das funções.</p>
+                    <pre><code>botaoAdicionar.addEventListener("click", adicionarTarefa);
+renderizarTarefas();</code></pre>
+                    <p>A primeira renderização já encontra a lista recuperada. Se ela estiver vazia, o aviso aparece; se houver tarefas, os checkboxes e a classe <code>is-completed</code> refletem seus booleanos salvos.</p>
+                  </div>
+                  <div class="lesson-completion">
+                    <h5>Conclusão da etapa</h5>
+                    <label class="completion-control" for="completion-projeto-2-etapa-4">
+                      <input class="lesson-completion-input" id="completion-projeto-2-etapa-4" type="checkbox" data-course-id="javascript-iniciante" data-lesson-id="projeto-2-etapa-4" data-completion-label="Marcar Etapa 4 como concluída" data-completed-label="Etapa 4 concluída — desmarcar" />
+                      <span class="completion-label-text">Marcar Etapa 4 como concluída</span>
+                    </label>
+                    <p>Marque depois de implementar e testar a recuperação após recarregar. Esta conclusão é independente dos dados do checklist, das outras etapas e das aulas.</p>
+                  </div>
+                </section>
+                <section id="projeto-2-etapa-5">
+                  <h4>Etapa 5 — Revisão final</h4>
+                  <h5>Objetivo</h5>
+                  <p>Ler o Mini Checklist completo e explicar como os dados chegam à página e continuam disponíveis após recarregar. Esta revisão não acrescenta funcionalidades: use sua implementação das <a href="#projeto-2-etapa-2">Etapas 2</a>, <a href="#projeto-2-etapa-3">3</a> e <a href="#projeto-2-etapa-4">4</a>, consultando as respostas quando precisar.</p>
+                  <h5>Explicação simples: três partes conectadas</h5>
+                  <p>O <strong>array</strong> guarda os dados durante a execução. O <strong>DOM</strong>, a representação do HTML acessada pelo JavaScript, mostra esses dados. O <strong>localStorage</strong> guarda uma cópia em texto para a próxima abertura. Mudar só o visual não atualiza o objeto; mudar só o objeto não redesenha a lista nem salva automaticamente.</p>
+                  <h5>Mapa para encontrar as partes no código</h5>
+                  <ul>
+                    <li><strong>Array:</strong> <code>tarefas</code> reúne os objetos. Cada objeto tem <code>texto</code> e <code>concluida</code>, como <code>{ texto: "Revisar funções", concluida: false }</code>.</li>
+                    <li><strong>Funções:</strong> <code>adicionarTarefa()</code> valida e inclui; <code>renderizarTarefas()</code> monta a lista; <code>salvarTarefas()</code> grava os dados.</li>
+                    <li><strong>Eventos:</strong> <code>click</code> no botão chama a inclusão; <code>change</code> em cada checkbox atualiza o objeto correspondente. Registrar esses eventos prepara ações que acontecerão depois.</li>
+                    <li><strong>Atualização do DOM:</strong> <code>getElementById()</code> encontra os elementos; <code>createElement()</code>, <code>textContent</code> e <code>append()</code> montam os itens. <code>estadoVazio.hidden</code> acompanha a quantidade de tarefas.</li>
+                    <li><strong>Estado visual:</strong> <code>checkbox.checked</code> e <code>classList.toggle("is-completed", tarefa.concluida)</code> leem o mesmo booleano. O CSS define a aparência da tarefa concluída.</li>
+                    <li><strong>Persistência:</strong> <code>getItem()</code> e <code>JSON.parse()</code> recuperam; <code>setItem()</code> e <code>JSON.stringify()</code> salvam. A chave <code>guias-programacao-mini-checklist-tarefas</code> é separada do progresso do curso.</li>
+                  </ul>
+                  <h5>Fluxo completo</h5>
+                  <ol>
+                    <li><strong>Ao abrir:</strong> comece com um array vazio, busque os dados salvos e, se existirem, recupere o array. Sem chave salva, <code>getItem()</code> retorna <code>null</code> e a lista continua vazia.</li>
+                    <li><strong>Primeira renderização:</strong> mostre o array recuperado e prepare os eventos dos checkboxes. Não grave um array vazio por cima dos dados antes de carregá-los.</li>
+                    <li><strong>Ao adicionar:</strong> valide o texto, inclua um objeto com <code>concluida: false</code>, salve, renderize e limpe o campo.</li>
+                    <li><strong>Ao concluir ou desmarcar:</strong> copie <code>checkbox.checked</code> para o objeto, salve, renderize e restaure o foco no controle recriado.</li>
+                    <li><strong>Ao recarregar:</strong> a execução anterior termina; o início do script recupera novamente os dados salvos.</li>
+                  </ol>
+                  <div class="pronunciation">
+                    <h5>Como ler em português</h5>
+                    <p>“Busque a lista guardada e mostre as tarefas. Quando a pessoa adicionar ou mudar uma seleção, atualize os dados, guarde a nova lista e mostre o resultado. Na próxima abertura, leia o que ficou salvo.”</p>
+                    <p>É o padrão encontrar → ouvir → alterar, conectando os elementos aos dados e ao salvamento. Comece pela história do código; consulte os detalhes sem precisar decorar cada linha.</p>
+                  </div>
+                  <h5>Atividade curta de leitura</h5>
+                  <p>Leia este recorte do <code>forEach()</code> de <code>renderizarTarefas()</code>. <code>tarefa</code> é o objeto daquela passagem, e <code>controleId</code> identifica seu checkbox. Não copie o trecho novamente para seu script.</p>
+                  <pre><code>checkbox.addEventListener("change", function () {
+  tarefa.concluida = checkbox.checked;
+  salvarTarefas();
+  renderizarTarefas();
+  document.getElementById(controleId).focus();
+});</code></pre>
+                  <ol>
+                    <li>Qual evento executa este bloco? Registrar o evento já conclui a tarefa?</li>
+                    <li>Qual dado muda ao marcar a caixa? E ao desmarcar?</li>
+                    <li>Qual chamada guarda o novo estado após recarregar, e qual atualiza a página?</li>
+                    <li>Se você retirasse apenas <code>salvarTarefas()</code> deste bloco, o que poderia acontecer após recarregar? Por que o foco é restaurado no fim?</li>
+                  </ol>
+                  <h5>Resposta comentada</h5>
+                  <button class="answer-toggle" type="button" aria-expanded="false" aria-controls="resposta-projeto-2-etapa-5">Mostrar resposta comentada</button>
+                  <div class="answer" id="resposta-projeto-2-etapa-5" hidden>
+                    <ol>
+                      <li>O evento é <code>change</code>. O registro apenas prepara a reação; o bloco roda quando a seleção muda, inclusive pelo teclado.</li>
+                      <li><code>concluida</code> no objeto correspondente recebe <code>true</code> ao marcar e <code>false</code> ao desmarcar. Esse objeto faz parte do array <code>tarefas</code>.</li>
+                      <li><code>salvarTarefas()</code> grava a lista atualizada em texto; <code>renderizarTarefas()</code> recria os itens, definindo checkbox, classe <code>is-completed</code> e estado vazio a partir do array.</li>
+                      <li>Sem salvar aqui, a página mostraria a mudança na execução atual, mas a recarga poderia trazer o estado anterior. Outra inclusão ainda poderia salvar o array depois. A renderização remove o checkbox antigo; buscar o mesmo ID devolve o foco ao novo controle equivalente.</li>
+                    </ol>
+                    <p><strong>Leitura do trecho:</strong> quando esta caixa mudar, atualize seu objeto, salve a lista, mostre o novo estado e mantenha o foco na mesma tarefa. Dados, persistência e interface têm papéis diferentes nessa sequência.</p>
+                  </div>
+                  <h5>Checklist de testes finais</h5>
+                  <p>Depois de implementar as Etapas 2–4, confira na <a href="../../projetos/mini-checklist/exercicio/">versão de exercício</a>, pelo mesmo navegador e endereço localhost com porta 8000:</p>
+                  <ul>
+                    <li><strong>Sem dados salvos:</strong> lista vazia, aviso visível e nenhum erro no Console. Se precisar reiniciar esse teste, use somente a remoção da chave do projeto explicada na <a href="#projeto-2-etapa-4">Etapa 4</a>; ela apaga suas tarefas salvas.</li>
+                    <li><strong>Inclusão:</strong> vazio e só espaços não criam itens. Duas inclusões válidas mantêm a ordem, sem duplicar itens; o campo fica limpo e focado.</li>
+                    <li><strong>Conclusão:</strong> marcar e desmarcar a segunda tarefa altera somente ela. Checkbox e classe <code>is-completed</code> ficam sincronizados; clicar no rótulo também funciona.</li>
+                    <li><strong>Combinação:</strong> concluir uma tarefa e adicionar outra preserva o estado anterior. A nova começa pendente; mesmo com todas concluídas, o aviso vazio fica escondido.</li>
+                    <li><strong>Persistência:</strong> após adicionar, marcar e desmarcar, recarregue e confira textos, ordem e estados. O progresso do curso continua separado da lista.</li>
+                    <li><strong>Acessibilidade e visual:</strong> use Tab e Espaço, confira foco na mesma tarefa após alternar, tela estreita e texto longo.</li>
+                  </ul>
+                  <h5>Erros comuns e comparação</h5>
+                  <p>Se o visual muda, mas a recarga perde o estado, confira a atualização do objeto e o salvamento. Se os itens duplicam, confira a limpeza da lista antes do <code>forEach()</code>. O <a href="../../projetos/mini-checklist/original/">original</a> continua estático na Etapa 1; os comportamentos dependem da solução escrita pelo aluno em <code>exercicio/</code>.</p>
+                  <div class="lesson-completion">
+                    <h5>Conclusão da etapa</h5>
+                    <label class="completion-control" for="completion-projeto-2-etapa-5">
+                      <input class="lesson-completion-input" id="completion-projeto-2-etapa-5" type="checkbox" data-course-id="javascript-iniciante" data-lesson-id="projeto-2-etapa-5" data-completion-label="Marcar Etapa 5 como concluída" data-completed-label="Etapa 5 concluída — desmarcar" />
+                      <span class="completion-label-text">Marcar Etapa 5 como concluída</span>
+                    </label>
+                    <p>Marque depois de revisar a leitura e conferir sua implementação. A conclusão é livre e independente da atividade, das outras etapas e dos dados salvos do checklist.</p>
+                  </div>
+                  <h5>Projeto completo como conteúdo do curso</h5>
+                  <p>As cinco etapas do Mini Checklist estão disponíveis. Isso não marca automaticamente seu progresso nem preenche a solução: conclua cada etapa depois de praticar. Esta revisão encerra o projeto sem adicionar exclusão, filtros, edição ou outras funcionalidades.</p>
+                </section>
               </article>
             </div>
           </div>
@@ -5095,9 +5274,9 @@ renderizarTarefas();</code></pre>
             </article>
 
             <article class="project-card">
-              <span>Etapas 1, 2 e 3 disponíveis</span>
+              <span>Projeto completo como conteúdo do curso</span>
               <h3><a href="#projeto-2">Mini Checklist</a></h3>
-              <p>Base visual e exercícios guiados para adicionar e concluir tarefas. Escreva o JavaScript na versão de exercício e compare com o original fixo da Etapa 1.</p>
+              <p>Todas as cinco etapas estão disponíveis, com revisão do fluxo de dados, interface e persistência. As soluções dos exercícios continuam sendo escritas pelo aluno; o original permanece fixo na Etapa 1.</p>
             </article>
           </div>
         </div>
