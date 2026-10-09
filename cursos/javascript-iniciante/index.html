@@ -194,12 +194,18 @@
               <div class="summary-group summary-project">
                 <h4>Projeto prático 2</h4>
                 <div class="summary-project-card">
-                  <strong>Mini Checklist</strong>
-                  <span class="project-status">Em breve</span>
+                  <strong><a href="#projeto-2">Mini Checklist</a></strong>
+                  <span class="project-status">Etapa 1 disponível</span>
                   <p>
                     Projeto para aplicar arrays, objetos, funções, condições,
                     atualização da interface e armazenamento local.
                   </p>
+                  <ol>
+                    <li class="current" data-course-id="javascript-iniciante" data-lesson-id="projeto-2-etapa-1">
+                      <a href="#projeto-2-etapa-1">Estrutura e visual</a>
+                      <span class="lesson-status">Não concluída</span>
+                    </li>
+                  </ol>
                 </div>
               </div>
             </aside>
@@ -4805,6 +4811,72 @@ localStorage.removeItem("aula-16-topicos");</code></pre>
                   <p>Você pode desmarcar esta opção quando quiser. O exercício não bloqueia a conclusão.</p>
                 </section>
               </article>
+
+              <article class="lesson" id="projeto-2">
+                <header class="lesson-header">
+                  <span>Projeto Prático 2</span>
+                  <h3>Mini Checklist</h3>
+                </header>
+                <section>
+                  <h4>Objetivo</h4>
+                  <p>Construir aos poucos uma lista de tarefas, aplicando os dados, funções, DOM, eventos e persistência estudados no curso. Começamos pela página e sua aparência, antes das interações.</p>
+                  <p><strong><a href="../../projetos/mini-checklist/exercicio/">Abrir versão de exercício — trabalhe aqui</a></strong></p>
+                  <p><a href="../../projetos/mini-checklist/original/">Ver referência original da Etapa 1</a></p>
+                </section>
+                <section id="projeto-2-etapa-1">
+                  <h4>Etapa 1 — Estrutura e visual</h4>
+                  <h5>Objetivo da etapa</h5>
+                  <p>Reconhecer o HTML e o CSS que receberão o JavaScript. A página já tem campo Nova tarefa, botão Adicionar, área de lista e uma mensagem de lista vazia. O botão está desativado: adicionar, concluir e salvar tarefas serão atividades futuras.</p>
+                  <h5>Arquivos usados</h5>
+                  <p>Abra <code>projetos/mini-checklist/exercicio/</code> no editor. <code>index.html</code> organiza o conteúdo, <code>styles.css</code> define o visual e <code>script.js</code> contém somente um comentário. A pasta <code>original/</code> guarda a referência fixa desta etapa; faça suas atividades somente em <code>exercicio/</code>.</p>
+                  <h5>Explicação simples</h5>
+                  <p>Os elementos têm nomes para que possamos encontrá-los depois. A lista começa sem itens; o estado vazio é o aviso mostrado enquanto não há tarefas. O CSS já prevê uma tarefa concluída, mas nenhuma interação aplica esse estado ainda.</p>
+                  <ul>
+                    <li><code>new-task</code>: campo de texto, com rótulo visível.</li>
+                    <li><code>add-task</code>: botão Adicionar, desativado nesta etapa.</li>
+                    <li><code>task-list</code>: lista <code>&lt;ul&gt;</code> que receberá os itens.</li>
+                    <li><code>empty-state</code>: aviso de lista vazia.</li>
+                  </ul>
+                  <div class="pronunciation">
+                    <h5>Como ler em português</h5>
+                    <p>“Prepare um lugar para escrever a tarefa, um botão para adicioná-la e uma lista para mostrá-la. Enquanto não houver itens, apresente o aviso de lista vazia.”</p>
+                    <p>Nas próximas etapas, vamos encontrar → ouvir → alterar. Hoje, apenas reconhecemos a estrutura que receberá essas ações.</p>
+                  </div>
+                  <h5>Exemplo comentado: um estado visual preparado</h5>
+                  <pre><code>.task-item.is-completed .task-text {
+  color: var(--muted);
+  text-decoration: line-through;
+}</code></pre>
+                  <p>Leia: “quando um item tiver também a classe <code>is-completed</code>, deixe seu texto riscado”. Essa regra prepara o visual; ela não decide quando a tarefa foi concluída nem salva dados.</p>
+                  <h5>Sua tarefa</h5>
+                  <ol>
+                    <li>Abra a versão de exercício e localize campo, botão e estado vazio.</li>
+                    <li>No HTML, encontre os quatro IDs acima e confira que a lista não tem itens.</li>
+                    <li>No CSS, encontre <code>.task-item.is-completed</code> e a regra que risca o texto.</li>
+                    <li>Explique com suas palavras o que o HTML prepara e o que o CSS define. Não escreva JavaScript nesta etapa.</li>
+                  </ol>
+                  <h5>Como testar e resultado esperado</h5>
+                  <p>Abra em tela larga e estreita: em celular, o botão fica abaixo do campo. Use Tab para conferir o foco no link de pular conteúdo, no campo e nos links. O botão desativado é ignorado pelo Tab. Digitar não cria tarefas e Enter no campo não envia a página; a lista permanece vazia.</p>
+                  <h5>Compare com o original</h5>
+                  <p>Abra as duas versões na mesma largura de janela. Nesta etapa, os arquivos e o visual são iguais. Preserve o original para comparar com seu trabalho nas próximas etapas.</p>
+                  <h5>Erros comuns</h5>
+                  <p>Editar a referência em vez do exercício, esperar que o botão já adicione tarefas ou confundir uma classe CSS preparada com um comportamento implementado.</p>
+                  <h5>Resposta comentada</h5>
+                  <button class="answer-toggle" type="button" aria-expanded="false" aria-controls="resposta-projeto-2-etapa-1">Mostrar resposta comentada</button>
+                  <div class="answer" id="resposta-projeto-2-etapa-1" hidden>
+                    <p>O HTML prepara o campo <code>new-task</code>, o botão <code>add-task</code>, a lista <code>task-list</code> e o aviso <code>empty-state</code>. O CSS organiza a página, adapta o layout e prevê o estado concluído com <code>is-completed</code>.</p>
+                    <p>O JavaScript ainda não encontra elementos, ouve eventos ou modifica a lista. Por isso, não há tarefas criadas nem dados salvos. A classe de conclusão está pronta no CSS para ser usada depois.</p>
+                  </div>
+                  <div class="lesson-completion">
+                    <h5>Conclusão da etapa</h5>
+                    <label class="completion-control" for="completion-projeto-2-etapa-1">
+                      <input class="lesson-completion-input" id="completion-projeto-2-etapa-1" type="checkbox" data-course-id="javascript-iniciante" data-lesson-id="projeto-2-etapa-1" data-completion-label="Marcar Etapa 1 como concluída" data-completed-label="Etapa 1 concluída — desmarcar" />
+                      <span class="completion-label-text">Marcar Etapa 1 como concluída</span>
+                    </label>
+                    <p>Marque depois de conferir a estrutura e o visual. Você pode desmarcar quando quiser; isso não conclui outras aulas nem o projeto inteiro.</p>
+                  </div>
+                </section>
+              </article>
             </div>
           </div>
         </div>
@@ -4830,9 +4902,9 @@ localStorage.removeItem("aula-16-topicos");</code></pre>
             </article>
 
             <article class="project-card">
-              <span>Planejado</span>
-              <h3>Mini checklist</h3>
-              <p>Uma pequena lista de tarefas para praticar JavaScript.</p>
+              <span>Etapa 1 disponível</span>
+              <h3><a href="#projeto-2">Mini Checklist</a></h3>
+              <p>Base visual de uma lista de tarefas, com referência original e versão de exercício. As interações serão construídas nas próximas etapas.</p>
             </article>
           </div>
         </div>

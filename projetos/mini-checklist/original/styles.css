@@ -1,0 +1,119 @@
+:root {
+  color-scheme: light;
+  --background: #f6f5f0;
+  --surface: #ffffff;
+  --text: #20322e;
+  --muted: #53635e;
+  --border: #cbd5ce;
+  --accent: #246348;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  line-height: 1.6;
+}
+
+a { color: var(--accent); text-underline-offset: 0.2em; }
+button, input { font: inherit; }
+button { min-height: 48px; }
+
+:focus-visible {
+  outline: 3px solid #945019;
+  outline-offset: 4px;
+}
+
+.skip-link {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  padding: 0.7rem 1rem;
+  background: var(--surface);
+  transform: translateY(-180%);
+  z-index: 1;
+}
+
+.skip-link:focus { transform: translateY(0); }
+.page-shell { width: min(100% - 2rem, 880px); margin-inline: auto; }
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-block: 2rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.brand { font-size: 1.1rem; font-weight: 750; text-decoration: none; }
+.brand span { margin-right: 0.4rem; }
+.stage-badge { padding: 0.35rem 0.75rem; border-radius: 2rem; background: #e7ede5; font-size: 0.8rem; }
+main { max-width: 680px; margin-inline: auto; padding-block: 3rem; }
+.intro { margin-bottom: 2rem; }
+.eyebrow { color: var(--accent); font-size: 0.8rem; font-weight: 750; letter-spacing: 0.06em; text-transform: uppercase; }
+h1 { margin: 0.5rem 0; font-size: clamp(2rem, 6vw, 3rem); line-height: 1.15; letter-spacing: -0.04em; }
+.intro > p:last-child { color: var(--muted); }
+
+.checklist {
+  padding: 2rem;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: var(--surface);
+  box-shadow: 0 12px 30px rgb(32 50 46 / 5%);
+}
+
+.checklist-header { margin-bottom: 1.5rem; }
+h2 { margin: 0; font-size: 1.3rem; }
+.list-caption { color: var(--muted); font-size: 0.9rem; }
+label { display: block; margin-bottom: 0.4rem; font-weight: 650; }
+.task-entry { display: flex; gap: 0.6rem; }
+
+.task-entry input {
+  min-width: 0;
+  width: 100%;
+  min-height: 48px;
+  padding: 0.7rem 0.85rem;
+  border: 1px solid #81948a;
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--text);
+}
+
+.task-entry input::placeholder { color: var(--muted); opacity: 1; }
+.task-entry button { padding: 0.7rem 1.1rem; border: 0; border-radius: 8px; background: var(--accent); color: #fff; font-weight: 650; cursor: pointer; }
+.task-entry button:disabled { background: #e1e7e1; color: #53635e; cursor: not-allowed; }
+.field-help { margin-block: 0.65rem 0; color: var(--muted); font-size: 0.85rem; }
+.list-area { margin-top: 1.75rem; border-top: 1px solid var(--border); }
+.task-list { display: grid; gap: 0.65rem; margin: 0; padding: 0; list-style: none; }
+.task-list:not(:empty) { padding-top: 1.25rem; }
+
+/* Estados preparados para as próximas etapas. */
+.task-item { display: flex; align-items: center; gap: 0.75rem; min-height: 48px; padding: 0.85rem; border: 1px solid var(--border); border-radius: 8px; }
+.task-checkbox { flex: 0 0 auto; width: 1.25rem; height: 1.25rem; margin: 0; accent-color: var(--accent); }
+.task-text { min-width: 0; overflow-wrap: anywhere; }
+.task-item.is-completed { background: #edf3eb; }
+.task-item.is-completed .task-text { color: var(--muted); text-decoration: line-through; }
+[hidden] { display: none !important; }
+
+.empty-state { padding: 2.5rem 0.5rem 1rem; text-align: center; }
+.empty-icon { display: inline-grid; place-items: center; width: 3rem; height: 3rem; border-radius: 50%; background: #edf3eb; color: var(--accent); font-size: 1.4rem; }
+.empty-state h3 { margin: 1rem 0 0.3rem; font-size: 1.1rem; }
+.empty-state p { margin: 0; color: var(--muted); }
+.closing-note { margin-top: 1.5rem; color: var(--muted); text-align: center; font-size: 0.9rem; }
+.site-footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem; padding-block: 1.5rem; border-top: 1px solid var(--border); font-size: 0.85rem; }
+.site-footer p { margin: 0; color: var(--muted); }
+
+@media (max-width: 540px) {
+  .site-header { padding-block: 1.25rem; }
+  main { padding-block: 2rem; }
+  .checklist { padding: 1.25rem; border-radius: 14px; }
+  .task-entry { flex-direction: column; }
+  .task-entry button { width: 100%; }
+}
+
+/* Sem animações; respeita também a preferência de movimento reduzido. */

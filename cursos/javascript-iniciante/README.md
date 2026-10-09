@@ -57,4 +57,16 @@ com a Etapa 1 aprovada, sem editar essa referência. O [README do projeto](../..
 explica o papel de HTML, CSS, JavaScript e Console e o formato das próximas tarefas.
 O original permanece na Etapa 1; apenas exercicio/ recebe as tarefas do menu, da seleção de preparo e da história.
 As Etapas 1, 2, 3, 4 e 5 têm controles de conclusão independentes, usando o progresso existente
-do curso. Não há controle de conclusão geral do projeto. O Mini Checklist segue planejado.
+do curso. Não há controle de conclusão geral do projeto.
+
+## Projeto Prático 2 — Mini Checklist
+
+A **Etapa 1 — Estrutura e visual** está disponível após a Aula 16. Inclui campo
+Nova tarefa, botão Adicionar desativado, lista vazia e CSS para o estado concluído,
+com layout responsivo, rótulos e foco visível. Não implementa interações ou persistência.
+
+Trabalhe na [versão de exercício](../../projetos/mini-checklist/exercicio/) e compare
+com a [referência fixa da Etapa 1](../../projetos/mini-checklist/original/).
+As duas versões começam iguais. O curso oferece uma atividade de leitura da estrutura,
+resposta expansível e conclusão independente da etapa com o progresso existente.
+Consulte o [README do projeto](../../projetos/mini-checklist/README.md).

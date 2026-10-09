@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Mini Checklist — base visual do projeto prático de JavaScript Iniciante." />
+    <title>Mini Checklist — Um passo de cada vez</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="brand" href="#conteudo"><span aria-hidden="true">✓</span> Mini Checklist</a>
+        <span class="stage-badge">Etapa 1 · Estrutura e visual</span>
+      </header>
+
+      <main id="conteudo">
+        <div class="intro">
+          <p class="eyebrow">Pequenos passos, novas conquistas</p>
+          <h1>Uma coisa de cada vez.</h1>
+          <p>Um espaço simples para organizar o que você quer fazer.</p>
+        </div>
+
+        <section class="checklist" aria-labelledby="checklist-title">
+          <header class="checklist-header">
+            <h2 id="checklist-title">Minha lista</h2>
+            <span class="list-caption">Seu próximo passo começa aqui</span>
+          </header>
+
+          <label for="new-task">Nova tarefa</label>
+          <div class="task-entry">
+            <input id="new-task" name="new-task" type="text" maxlength="180" placeholder="Ex.: Revisar a aula de hoje" autocomplete="off" aria-describedby="task-help" />
+            <button id="add-task" type="button" disabled>Adicionar</button>
+          </div>
+          <p class="field-help" id="task-help">Nesta prévia, você pode explorar o campo. Adicionar e concluir tarefas serão ações das próximas etapas.</p>
+
+          <div class="list-area">
+            <ul class="task-list" id="task-list" aria-label="Tarefas"></ul>
+            <div class="empty-state" id="empty-state">
+              <span class="empty-icon" aria-hidden="true">✓</span>
+              <h3>Sua lista está vazia</h3>
+              <p>O que você gostaria de fazer primeiro?</p>
+            </div>
+          </div>
+        </section>
+        <p class="closing-note">Não precisa fazer tudo hoje. Comece pelo próximo passo.</p>
+      </main>
+
+      <footer class="site-footer">
+        <a href="../../../cursos/javascript-iniciante/#projeto-2-etapa-1">← Voltar à etapa no curso</a>
+        <p>Guias de Programação · Projeto Prático 2</p>
+      </footer>
+    </div>
+  </body>
+</html>

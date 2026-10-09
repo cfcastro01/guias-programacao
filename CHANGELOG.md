@@ -2,6 +2,13 @@
 
 Este arquivo registra as principais mudanças do projeto Guias de Programação.
 
+## 2026-10-09 — Mini Checklist: Etapa 1
+
+### Adicionado
+
+- Base visual responsiva do Projeto Prático 2, com campo rotulado, botão Adicionar desativado, área da lista, estado vazio e CSS para tarefas concluídas.
+- Versões original e exercicio inicialmente iguais, sem comportamento JavaScript; etapa no curso com atividade de leitura, resposta expansível e conclusão independente.
+
 ## 2026-10-09 — Aula 16 do JavaScript Iniciante
 
 ### Adicionado
