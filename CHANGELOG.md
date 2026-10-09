@@ -2,6 +2,14 @@
 
 Este arquivo registra as principais mudanças do projeto Guias de Programação.
 
+## 2026-10-09 — Aula 5 do curso de IA
+
+### Adicionado
+
+- Aula 5: Ambiente local, staging e produção, com diferenças, motivos para separação e riscos de testar diretamente em produção, sem aprofundar CI/CD ou infraestrutura.
+- Fluxo prático local → staging → produção para um formulário, exercício com escolha persistida, resposta comentada expansível e conclusão independente pelo sistema existente.
+- Item da aula no sumário e README do curso atualizados.
+
 ## 2026-10-09 — Aula 4 do curso de IA
 
 ### Adicionado

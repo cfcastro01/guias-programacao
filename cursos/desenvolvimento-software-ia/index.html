@@ -70,7 +70,14 @@
                     <a href="#aula-4">APIs, HTTP e JSON</a>
                     <span class="lesson-status">Não concluída</span>
                   </li>
-                  <li class="future">Ambiente local, staging e produção</li>
+                  <li
+                    class="current"
+                    data-course-id="desenvolvimento-software-ia"
+                    data-lesson-id="aula-5"
+                  >
+                    <a href="#aula-5">Ambiente local, staging e produção</a>
+                    <span class="lesson-status">Não concluída</span>
+                  </li>
                   <li class="future">Build e deploy</li>
                 </ol>
               </details>
@@ -1073,6 +1080,183 @@ Cliente</code></pre>
                       type="checkbox"
                       data-course-id="desenvolvimento-software-ia"
                       data-lesson-id="aula-4"
+                    />
+                    <span class="completion-label-text">Marcar aula como concluída</span>
+                  </label>
+                  <p>Você pode desmarcar esta opção quando quiser.</p>
+                </section>
+              </article>
+              <article class="lesson" id="aula-5">
+                <header class="lesson-header">
+                  <span>Aula 5</span>
+                  <h3>Ambiente local, staging e produção</h3>
+                </header>
+
+                <section>
+                  <h4>Objetivo da aula</h4>
+                  <p>Distinguir ambiente local, staging e produção, entender por que são separados e reconhecer o risco de experimentar alterações no sistema usado pelas pessoas.</p>
+                </section>
+
+                <section>
+                  <h4>O que é um ambiente?</h4>
+                  <p>Ambiente é o conjunto de condições em que um software funciona: sua versão, suas configurações, seus dados e os serviços aos quais se conecta.</p>
+                  <p>O mesmo sistema pode funcionar em ambientes separados. Assim, a equipe consegue desenvolver e conferir mudanças antes de colocá-las à disposição dos usuários.</p>
+                </section>
+
+                <section>
+                  <h4>Ambiente local: desenvolver e experimentar</h4>
+                  <p>É o ambiente preparado no computador de quem desenvolve. Nele, a pessoa altera arquivos e verifica o resultado enquanto trabalha.</p>
+                  <p>Ao abrir este guia em <code>http://localhost:8000/</code>, você acessa um servidor no próprio computador. <code>localhost</code> é o nome usado para se referir à própria máquina.</p>
+                  <p>Estar no ambiente local não garante que tudo esteja isolado: se o programa estiver configurado para usar um serviço ou dados de produção, suas ações ainda podem afetar o sistema real.</p>
+                </section>
+
+                <section>
+                  <h4>Staging: conferir antes de publicar</h4>
+                  <p>Staging é um ambiente de validação, também chamado de homologação. Ele busca se aproximar das condições de produção para que a equipe confira uma versão antes de liberá-la aos usuários.</p>
+                  <p>Por exemplo, outras pessoas podem testar um formulário e verificar se as partes do sistema funcionam juntas, usando dados de teste e serviços separados dos reais.</p>
+                  <p>Staging ajuda a encontrar problemas, mas não garante que nenhum erro aparecerá em produção. Os ambientes podem ter diferenças de configuração, dados e quantidade de acessos.</p>
+                </section>
+
+                <section>
+                  <h4>Produção: o sistema em uso real</h4>
+                  <p>É o ambiente que atende os usuários de verdade. Em uma loja, é onde as pessoas consultam produtos e fazem pedidos reais.</p>
+                  <p>Testar uma mudança diretamente ali pode interromper uma compra, gravar dados incorretos ou enviar mensagens indevidas. O impacto deixa de ficar restrito ao trabalho da equipe e chega às pessoas que dependem do sistema.</p>
+                </section>
+
+                <section class="pronunciation">
+                  <h4>Como ler em português</h4>
+                  <ul>
+                    <li><strong>Ambiente:</strong> onde e em quais condições o sistema funciona.</li>
+                    <li><strong>Local:</strong> “vou desenvolver e conferir no meu computador”.</li>
+                    <li><strong>Staging ou homologação:</strong> “vamos validar esta versão antes de liberar aos usuários”.</li>
+                    <li><strong>Produção:</strong> “esta é a versão usada pelas pessoas no dia a dia”.</li>
+                    <li><strong>Local → staging → produção:</strong> “desenvolver, validar e então liberar para uso real”.</li>
+                  </ul>
+                </section>
+
+                <section>
+                  <h4>Exemplo prático: melhorar um formulário de contato</h4>
+                  <p>Uma equipe quer mostrar uma mensagem mais clara quando alguém deixa o campo de e-mail vazio.</p>
+                  <ol>
+                    <li><strong>Local:</strong> a pessoa desenvolve a mensagem e testa o formulário com o campo vazio e preenchido, sem enviar mensagens reais.</li>
+                    <li><strong>Staging:</strong> a equipe confere a mesma mudança em um ambiente separado, com contatos fictícios e envio direcionado a uma caixa de teste. Verifica também se o formulário continua funcionando no celular e por teclado.</li>
+                    <li><strong>Produção:</strong> depois da validação e da revisão, a versão é liberada para os usuários. A equipe acompanha se o formulário continua funcionando como esperado.</li>
+                  </ol>
+                  <p>Se a validação em staging revelar um problema, a mudança volta para correção e novos testes antes de seguir. Esse fluxo reduz riscos; não é uma garantia de ausência de falhas.</p>
+                </section>
+
+                <section>
+                  <h4>Como isso aparece em um projeto real</h4>
+                  <p>Antes de alterar ou testar algo, confirme o ambiente, os dados usados e os serviços conectados. Um endereço com a palavra “teste” não comprova, sozinho, que tudo está separado de produção.</p>
+                  <p>A organização varia entre projetos: um site pequeno pode começar apenas com local e produção. O importante é saber quem pode ser afetado e como validar a mudança antes de liberá-la.</p>
+                </section>
+
+                <section>
+                  <h4>Como isso muda quando usamos IA</h4>
+                  <p>Ao pedir ajuda a um agente de IA, informe em qual ambiente ele pode trabalhar, o que deve alterar e como conferir o resultado. Revise as mudanças e os testes antes de autorizar uma publicação.</p>
+                  <p>Um pedido possível é: “Ajuste a mensagem do formulário no ambiente local. Use dados fictícios, confira o campo vazio e preenchido e pare antes de publicar.” A IA não deve presumir que pode testar em produção só porque tem acesso a ela.</p>
+                </section>
+
+                <section>
+                  <h4>Riscos ou erros comuns</h4>
+                  <ul>
+                    <li>Experimentar em produção porque a alteração parece pequena: um detalhe pode impedir uma ação importante.</li>
+                    <li>Achar que funcionar localmente garante o mesmo resultado nos outros ambientes.</li>
+                    <li>Usar dados pessoais reais ou serviços de produção em testes sem conferir as consequências.</li>
+                    <li>Tratar a aprovação em staging como motivo para dispensar o acompanhamento após a publicação.</li>
+                  </ul>
+                </section>
+
+                <section>
+                  <h4>Perguntas úteis para fazer a um desenvolvedor</h4>
+                  <ul>
+                    <li>Em qual ambiente estamos e quem pode ser afetado por esta ação?</li>
+                    <li>Os dados e os serviços usados nos testes estão separados de produção?</li>
+                    <li>O que precisa ser validado antes da liberação e como agir se houver um problema depois?</li>
+                  </ul>
+                </section>
+
+                <section>
+                  <h4>Como explicar esse assunto em uma entrevista</h4>
+                  <p><strong>Pergunta:</strong> Qual é a diferença entre local, staging e produção?</p>
+                  <p><strong>Resposta possível:</strong> “Local é onde desenvolvemos no nosso computador. Staging é um ambiente separado para validar uma versão em condições próximas às de produção. Produção atende os usuários reais, por isso experimentar diretamente ali pode afetar pessoas e dados.”</p>
+                </section>
+
+                <section>
+                  <h4>Resumo</h4>
+                  <p>Local permite desenvolver, staging ajuda a validar e produção atende o uso real. Separar esses ambientes reduz o risco de uma experiência ou um erro atingir os usuários.</p>
+                </section>
+
+                <section>
+                  <h4>Exercício de reforço</h4>
+                  <p>Uma loja vai alterar a mensagem de erro do formulário de pedidos. Qual plano reduz o risco de atrapalhar compras reais?</p>
+                  <div class="exercise-options">
+                    <label class="completion-control" for="exercise-ia-aula-5-option-a">
+                      <input
+                        class="exercise-answer-input"
+                        id="exercise-ia-aula-5-option-a"
+                        name="exercise-ia-aula-5"
+                        type="radio"
+                        value="a"
+                        data-course-id="desenvolvimento-software-ia"
+                        data-exercise-id="aula-5-exercicio"
+                      />
+                      <span><strong>A.</strong> Desenvolver localmente, validar em staging com pedidos fictícios e serviços de teste e, após revisão, liberar em produção e acompanhar o resultado.</span>
+                    </label>
+                    <label class="completion-control" for="exercise-ia-aula-5-option-b">
+                      <input
+                        class="exercise-answer-input"
+                        id="exercise-ia-aula-5-option-b"
+                        name="exercise-ia-aula-5"
+                        type="radio"
+                        value="b"
+                        data-course-id="desenvolvimento-software-ia"
+                        data-exercise-id="aula-5-exercicio"
+                      />
+                      <span><strong>B.</strong> Alterar diretamente em produção e pedir que os clientes avisem caso não consigam comprar.</span>
+                    </label>
+                    <label class="completion-control" for="exercise-ia-aula-5-option-c">
+                      <input
+                        class="exercise-answer-input"
+                        id="exercise-ia-aula-5-option-c"
+                        name="exercise-ia-aula-5"
+                        type="radio"
+                        value="c"
+                        data-course-id="desenvolvimento-software-ia"
+                        data-exercise-id="aula-5-exercicio"
+                      />
+                      <span><strong>C.</strong> Testar em staging conectado aos pedidos reais, porque o nome do ambiente já garante que os clientes não serão afetados.</span>
+                    </label>
+                  </div>
+                  <p>Sua escolha fica salva, mas não altera a conclusão da aula.</p>
+                </section>
+
+                <section>
+                  <h4>Resposta comentada</h4>
+                  <button
+                    class="answer-toggle"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="exercise-answer-ia-5"
+                  >
+                    Mostrar resposta comentada
+                  </button>
+                  <div class="answer" id="exercise-answer-ia-5" hidden>
+                    <p><strong>A resposta correta é a opção A.</strong></p>
+                    <p>O fluxo local → staging → produção permite encontrar e corrigir problemas antes de expor a mudança aos clientes. Dados fictícios e serviços de teste ajudam a evitar pedidos e outras ações reais durante a validação.</p>
+                    <p>Na opção B, os clientes ficam expostos a uma mudança ainda não validada. Na opção C, a conexão aos pedidos reais mantém o risco, mesmo que o ambiente se chame staging. Após a liberação, acompanhar o resultado continua necessário.</p>
+                  </div>
+                </section>
+
+                <section class="lesson-completion">
+                  <h4>Conclusão da aula</h4>
+                  <label class="completion-control" for="completion-ia-aula-5">
+                    <input
+                      class="lesson-completion-input"
+                      id="completion-ia-aula-5"
+                      type="checkbox"
+                      data-course-id="desenvolvimento-software-ia"
+                      data-lesson-id="aula-5"
                     />
                     <span class="completion-label-text">Marcar aula como concluída</span>
                   </label>
