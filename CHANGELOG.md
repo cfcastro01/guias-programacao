@@ -2,6 +2,13 @@
 
 Este arquivo registra as principais mudanças do projeto Guias de Programação.
 
+## 2026-10-09 — Aula 3 do curso de IA
+
+### Adicionado
+
+- Aula 3: Cliente e servidor, com fluxo de solicitação e resposta e distinção de frontend/backend.
+- Exercício sobre um aplicativo de clima, resposta comentada expansível e progresso independente pelo sistema existente.
+
 ## 2026-10-09 — Aula 2 do curso de IA
 
 ### Adicionado

@@ -54,7 +54,14 @@
                     <a href="#aula-2">Frontend, backend e banco de dados</a>
                     <span class="lesson-status">Não concluída</span>
                   </li>
-                  <li class="future">Cliente e servidor</li>
+                  <li
+                    class="current"
+                    data-course-id="desenvolvimento-software-ia"
+                    data-lesson-id="aula-3"
+                  >
+                    <a href="#aula-3">Cliente e servidor</a>
+                    <span class="lesson-status">Não concluída</span>
+                  </li>
                   <li class="future">APIs, HTTP e JSON</li>
                   <li class="future">Ambiente local, staging e produção</li>
                   <li class="future">Build e deploy</li>
@@ -718,6 +725,167 @@ Banco de dados</code></pre>
                       type="checkbox"
                       data-course-id="desenvolvimento-software-ia"
                       data-lesson-id="aula-2"
+                    />
+                    <span class="completion-label-text">Marcar aula como concluída</span>
+                  </label>
+                  <p>Você pode desmarcar esta opção quando quiser.</p>
+                </section>
+              </article>
+              <article class="lesson" id="aula-3">
+                <header class="lesson-header">
+                  <span>Aula 3</span>
+                  <h3>Cliente e servidor</h3>
+                </header>
+
+                <section>
+                  <h4>Objetivo da aula</h4>
+                  <p>Identificar quem solicita e quem responde em uma comunicação, sem confundir esses papéis com frontend e backend.</p>
+                </section>
+
+                <section>
+                  <h4>O que é cliente?</h4>
+                  <p>Cliente é a parte que solicita algo. O navegador ou aplicativo costuma atuar como cliente: por exemplo, o navegador pede uma página para mostrar à pessoa.</p>
+                  <p>Aqui, cliente é um papel do programa na comunicação, não a pessoa que compra um produto.</p>
+                </section>
+
+                <section>
+                  <h4>O que é servidor?</h4>
+                  <p>Servidor é a parte que recebe a solicitação, processa o pedido e devolve uma resposta. Essa resposta pode trazer uma página, informações ou uma mensagem de erro.</p>
+                  <p>Esse trabalho é feito por um programa. Ele pode funcionar no seu computador ou em outras máquinas; não precisa corresponder a um único computador físico.</p>
+                </section>
+
+                <section class="pronunciation">
+                  <h4>Como ler em português</h4>
+                  <ul>
+                    <li><strong>Cliente:</strong> quem pede.</li>
+                    <li><strong>Solicitação:</strong> o pedido enviado.</li>
+                    <li><strong>Servidor:</strong> quem recebe o pedido e responde.</li>
+                    <li><strong>Resposta:</strong> o retorno do pedido.</li>
+                  </ul>
+                </section>
+
+                <section>
+                  <h4>Fluxo simples</h4>
+                  <pre><code>Cliente
+   ↓
+Solicitação
+   ↓
+Servidor
+   ↓
+Resposta
+   ↓
+Cliente</code></pre>
+                  <p>Cliente e servidor trocam mensagens seguindo regras de comunicação. Por enquanto, acompanhe apenas o caminho do pedido e da resposta.</p>
+                </section>
+
+                <section>
+                  <h4>Exemplo prático: abrir uma página de produtos</h4>
+                  <ol>
+                    <li>O navegador solicita a página de produtos.</li>
+                    <li>O servidor recebe o pedido.</li>
+                    <li>O servidor busca as informações necessárias e prepara o resultado.</li>
+                    <li>O servidor envia a resposta ao navegador.</li>
+                    <li>O navegador interpreta a resposta e mostra a página.</li>
+                  </ol>
+                  <p>Em um projeto real, acompanhar esse caminho ajuda a investigar uma página que não carrega: o pedido foi enviado? Houve resposta? O navegador conseguiu mostrá-la?</p>
+                </section>
+
+                <section>
+                  <h4>Cliente/servidor e frontend/backend</h4>
+                  <p><strong>Cliente e servidor</strong> descrevem quem solicita e quem responde. <strong>Frontend e backend</strong> descrevem responsabilidades da aplicação: interação com a pessoa e processamento de regras.</p>
+                  <p>Frequentemente, o frontend funciona no cliente e o backend no servidor. Mas os termos não são sinônimos: um backend também pode atuar como cliente ao pedir informações a outro servidor.</p>
+                </section>
+
+                <section>
+                  <h4>Como isso muda quando usamos IA</h4>
+                  <p>A IA pode ajudar a gerar código e investigar erros dos dois lados. Para isso, precisa saber se o problema está no cliente, no servidor ou na comunicação entre eles.</p>
+                  <p>Descreva a ação, o resultado esperado e o que aconteceu. Por exemplo: “O pedido de produtos recebe uma resposta, mas o navegador não mostra a lista.” Confira a investigação e teste a correção sugerida.</p>
+                </section>
+
+                <section>
+                  <h4>Erros comuns</h4>
+                  <ul>
+                    <li>Achar que servidor é sempre um único computador físico.</li>
+                    <li>Confundir servidor com banco de dados: receber e responder pedidos é diferente de organizar e guardar informações.</li>
+                    <li>Usar cliente/servidor como sinônimos de frontend/backend.</li>
+                  </ul>
+                </section>
+
+                <section>
+                  <h4>Como explicar esse assunto em uma entrevista</h4>
+                  <p><strong>Pergunta:</strong> Qual é a diferença entre cliente e servidor?</p>
+                  <p><strong>Resposta possível:</strong> “Cliente é quem faz uma solicitação, como um navegador pedindo uma página. Servidor é quem recebe esse pedido, processa e devolve uma resposta.”</p>
+                </section>
+
+                <section>
+                  <h4>Exercício de reforço</h4>
+                  <p>Um aplicativo de clima solicita a previsão para uma cidade. Um serviço recebe o pedido e devolve a previsão. Quem atua como cliente e quem atua como servidor nessa troca?</p>
+                  <div class="exercise-options">
+                    <label class="completion-control" for="exercise-ia-aula-3-option-a">
+                      <input
+                        class="exercise-answer-input"
+                        id="exercise-ia-aula-3-option-a"
+                        name="exercise-ia-aula-3"
+                        type="radio"
+                        value="a"
+                        data-course-id="desenvolvimento-software-ia"
+                        data-exercise-id="aula-3-exercicio"
+                      />
+                      <span><strong>A.</strong> O aplicativo é o servidor; o serviço que responde é o cliente.</span>
+                    </label>
+                    <label class="completion-control" for="exercise-ia-aula-3-option-b">
+                      <input
+                        class="exercise-answer-input"
+                        id="exercise-ia-aula-3-option-b"
+                        name="exercise-ia-aula-3"
+                        type="radio"
+                        value="b"
+                        data-course-id="desenvolvimento-software-ia"
+                        data-exercise-id="aula-3-exercicio"
+                      />
+                      <span><strong>B.</strong> O aplicativo é o cliente; o serviço que recebe e responde é o servidor.</span>
+                    </label>
+                    <label class="completion-control" for="exercise-ia-aula-3-option-c">
+                      <input
+                        class="exercise-answer-input"
+                        id="exercise-ia-aula-3-option-c"
+                        name="exercise-ia-aula-3"
+                        type="radio"
+                        value="c"
+                        data-course-id="desenvolvimento-software-ia"
+                        data-exercise-id="aula-3-exercicio"
+                      />
+                      <span><strong>C.</strong> Os dois são clientes, porque ambos participam da comunicação.</span>
+                    </label>
+                  </div>
+                  <p>Sua escolha fica salva, mas não altera a conclusão da aula.</p>
+                </section>
+
+                <section>
+                  <h4>Resposta comentada</h4>
+                  <button
+                    class="answer-toggle"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="exercise-answer-ia-3"
+                  >
+                    Mostrar resposta comentada
+                  </button>
+                  <div class="answer" id="exercise-answer-ia-3" hidden>
+                    <p><strong>A resposta correta é a opção B.</strong></p>
+                    <p>O aplicativo atua como cliente porque faz o pedido da previsão. O serviço atua como servidor porque recebe esse pedido, processa e envia uma resposta. Os papéis são identificados pelo que cada parte faz nessa troca.</p>
+                  </div>
+                </section>
+
+                <section class="lesson-completion">
+                  <h4>Conclusão da aula</h4>
+                  <label class="completion-control" for="completion-ia-aula-3">
+                    <input
+                      class="lesson-completion-input"
+                      id="completion-ia-aula-3"
+                      type="checkbox"
+                      data-course-id="desenvolvimento-software-ia"
+                      data-lesson-id="aula-3"
                     />
                     <span class="completion-label-text">Marcar aula como concluída</span>
                   </label>

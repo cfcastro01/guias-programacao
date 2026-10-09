@@ -17,8 +17,9 @@ arquitetura, desenvolvimento com IA, agentes, skills, MCP, aplicações com IA,
 workflow profissional, decisões técnicas, projeto prático e preparação
 profissional.
 
-O sumário e as aulas 1, **O que é desenvolvimento de software**, e 2,
-**Frontend, backend e banco de dados**, estão publicados em `index.html`.
+O sumário e as aulas 1, **O que é desenvolvimento de software**, 2,
+**Frontend, backend e banco de dados**, e 3, **Cliente e servidor**, estão
+publicados em `index.html`.
 As próximas aulas deverão ser adicionadas aos poucos
 e seguir o padrão definido em `MODELO_DE_AULA_IA.md`.
 
