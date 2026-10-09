@@ -2,6 +2,14 @@
 
 Este arquivo registra as principais mudanças do projeto Guias de Programação.
 
+## 2026-10-09 — Aula 4 do curso de IA
+
+### Adicionado
+
+- Aula 4: APIs, HTTP e JSON, com conceitos, relação entre eles e exemplo fictício de consulta de clima, sem aprofundar autenticação.
+- Exercício de identificação dos três conceitos, escolha persistida, resposta comentada expansível e conclusão independente pelo sistema existente.
+- Item da aula no sumário e README do curso atualizados.
+
 ## 2026-10-09 — Aula 3 do curso de IA
 
 ### Adicionado

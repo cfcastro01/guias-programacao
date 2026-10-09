@@ -18,7 +18,8 @@ workflow profissional, decisões técnicas, projeto prático e preparação
 profissional.
 
 O sumário e as aulas 1, **O que é desenvolvimento de software**, 2,
-**Frontend, backend e banco de dados**, e 3, **Cliente e servidor**, estão
+**Frontend, backend e banco de dados**, 3, **Cliente e servidor**, e 4,
+**APIs, HTTP e JSON**, estão
 publicados em `index.html`.
 As próximas aulas deverão ser adicionadas aos poucos
 e seguir o padrão definido em `MODELO_DE_AULA_IA.md`.

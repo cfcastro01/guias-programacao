@@ -62,7 +62,14 @@
                     <a href="#aula-3">Cliente e servidor</a>
                     <span class="lesson-status">Não concluída</span>
                   </li>
-                  <li class="future">APIs, HTTP e JSON</li>
+                  <li
+                    class="current"
+                    data-course-id="desenvolvimento-software-ia"
+                    data-lesson-id="aula-4"
+                  >
+                    <a href="#aula-4">APIs, HTTP e JSON</a>
+                    <span class="lesson-status">Não concluída</span>
+                  </li>
                   <li class="future">Ambiente local, staging e produção</li>
                   <li class="future">Build e deploy</li>
                 </ol>
@@ -886,6 +893,186 @@ Cliente</code></pre>
                       type="checkbox"
                       data-course-id="desenvolvimento-software-ia"
                       data-lesson-id="aula-3"
+                    />
+                    <span class="completion-label-text">Marcar aula como concluída</span>
+                  </label>
+                  <p>Você pode desmarcar esta opção quando quiser.</p>
+                </section>
+              </article>
+              <article class="lesson" id="aula-4">
+                <header class="lesson-header">
+                  <span>Aula 4</span>
+                  <h3>APIs, HTTP e JSON</h3>
+                </header>
+
+                <section>
+                  <h4>Objetivo da aula</h4>
+                  <p>Entender o que são API, HTTP e JSON e reconhecer o papel de cada um em uma troca de informações entre cliente e servidor.</p>
+                </section>
+
+                <section>
+                  <h4>O que é uma API?</h4>
+                  <p>API vem de <em>Application Programming Interface</em>, ou interface de programação de aplicações. É uma forma definida de um programa usar recursos de outro, com regras sobre o que pode pedir e o que pode receber.</p>
+                  <p>Uma API de clima, por exemplo, pode permitir consultar a previsão de uma cidade. Sua documentação explica como fazer o pedido e quais informações aparecem na resposta.</p>
+                  <p>Existem APIs em diferentes contextos. Nesta aula, vamos olhar para uma API web, acessada pela comunicação entre cliente e servidor.</p>
+                </section>
+
+                <section>
+                  <h4>O que é HTTP?</h4>
+                  <p>HTTP vem de <em>Hypertext Transfer Protocol</em>, ou protocolo de transferência de hipertexto. Um protocolo é um conjunto de regras de comunicação. HTTP define como cliente e servidor trocam pedidos e respostas na web.</p>
+                  <p>O pedido informa, por exemplo, o endereço do recurso desejado. A resposta inclui um código de status, que indica o resultado: <code>200</code> costuma indicar sucesso, enquanto <code>404</code> indica que o recurso não foi encontrado.</p>
+                  <p>Você também verá HTTPS: é HTTP com proteção da comunicação por criptografia, que ajuda a impedir a leitura e a alteração das mensagens por terceiros durante o caminho.</p>
+                </section>
+
+                <section>
+                  <h4>O que é JSON?</h4>
+                  <p>JSON vem de <em>JavaScript Object Notation</em>, ou notação de objetos JavaScript. É um formato de texto usado para organizar e trocar dados. Apesar do nome, programas escritos em várias linguagens conseguem usá-lo.</p>
+                  <p>Em um objeto JSON, cada nome aparece entre aspas duplas e é separado de seu valor por dois-pontos. Os pares ficam entre chaves e são separados por vírgulas.</p>
+                  <pre><code>{
+  "cidade": "Recife",
+  "temperatura": 28,
+  "chovendo": false
+}</code></pre>
+                  <p><code>"Recife"</code> é um texto, <code>28</code> é um número e <code>false</code> é um valor booleano: significa falso. Neste exemplo, a temperatura está em graus Celsius e não está chovendo.</p>
+                  <p>JSON representa dados; ele não é um programa que executa ações.</p>
+                </section>
+
+                <section class="pronunciation">
+                  <h4>Como ler em português</h4>
+                  <ul>
+                    <li><strong>API:</strong> a forma definida para um programa pedir dados ou recursos a outro.</li>
+                    <li><strong>HTTP:</strong> as regras usadas para enviar o pedido e receber a resposta na web.</li>
+                    <li><strong>JSON:</strong> o formato de texto que organiza os dados trocados.</li>
+                    <li><strong><code>"cidade": "Recife"</code>:</strong> “o campo cidade tem o valor Recife”.</li>
+                    <li><strong><code>"chovendo": false</code>:</strong> “é falso que está chovendo”.</li>
+                  </ul>
+                </section>
+
+                <section>
+                  <h4>Exemplo prático: consultar o clima</h4>
+                  <p>Imagine uma API fictícia que oferece a consulta <code>/clima?cidade=Recife</code>. Esse caminho identifica a consulta de clima, e a parte depois de <code>?</code> informa a cidade desejada.</p>
+                  <ol>
+                    <li>O aplicativo, como cliente, envia um pedido HTTP para esse endereço no servidor da API.</li>
+                    <li>O servidor consulta as informações de clima e prepara a resposta.</li>
+                    <li>A resposta HTTP chega com status <code>200</code> e um corpo, a parte que contém os dados, em JSON como o exemplo acima.</li>
+                    <li>O aplicativo interpreta os dados e mostra “Recife: 28 °C, sem chuva”.</li>
+                  </ol>
+                  <p><strong>A API define a consulta disponível; HTTP organiza a troca de mensagens; JSON organiza os dados da resposta.</strong> Este exemplo serve para leitura: não há um serviço de clima conectado a esta página.</p>
+                  <p>Nem toda API usa HTTP, e nem toda resposta HTTP usa JSON: uma resposta também pode trazer HTML, uma imagem ou outro conteúdo.</p>
+                </section>
+
+                <section>
+                  <h4>Como isso aparece em um projeto real</h4>
+                  <p>Um aplicativo pode usar uma API para buscar produtos, consultar entregas ou mostrar o clima. Para investigar um problema, confira qual consulta foi feita, qual status voltou e se os dados têm os campos esperados.</p>
+                  <p>Receber status <code>200</code> não garante que a tela esteja correta: o aplicativo ainda precisa interpretar e apresentar os dados.</p>
+                </section>
+
+                <section>
+                  <h4>Como isso muda quando usamos IA</h4>
+                  <p>A IA pode ajudar a escrever uma consulta e interpretar a resposta. Forneça a documentação da API e um exemplo de JSON sem dados pessoais ou segredos, em vez de pedir que ela adivinhe endereços e campos.</p>
+                  <p>Um pedido possível é: “Com base nesta documentação e nesta resposta de exemplo, explique como mostrar a cidade e a temperatura. Aponte o que conferir se a consulta falhar.” Compare a sugestão com a documentação e valide o resultado.</p>
+                </section>
+
+                <section>
+                  <h4>Erros comuns</h4>
+                  <ul>
+                    <li>Tratar API, HTTP e JSON como sinônimos: cada um tem um papel diferente.</li>
+                    <li>Achar que JSON executa código ou funciona apenas com JavaScript.</li>
+                    <li>Escrever nomes de campos com aspas simples ou deixar uma vírgula depois do último par: isso não é JSON válido.</li>
+                    <li>Supor que a API sempre responde com sucesso ou sempre devolve os mesmos dados.</li>
+                  </ul>
+                </section>
+
+                <section>
+                  <h4>Perguntas úteis para fazer a um desenvolvedor</h4>
+                  <ul>
+                    <li>Onde está a documentação dessa API e qual consulta devemos usar?</li>
+                    <li>Quais campos a resposta traz e o que significa cada um?</li>
+                    <li>O que o aplicativo deve mostrar se a consulta falhar ou não houver dados?</li>
+                  </ul>
+                </section>
+
+                <section>
+                  <h4>Como explicar esse assunto em uma entrevista</h4>
+                  <p><strong>Pergunta:</strong> Como API, HTTP e JSON se relacionam?</p>
+                  <p><strong>Resposta possível:</strong> “Uma API define como um programa usa recursos de outro. Em uma API web, HTTP pode ser usado para trocar pedidos e respostas, e JSON pode organizar os dados dessas mensagens.”</p>
+                </section>
+
+                <section>
+                  <h4>Resumo</h4>
+                  <p>API define o acesso aos recursos, HTTP define a comunicação na web e JSON é um formato para representar os dados. Eles podem trabalhar juntos, mas não são a mesma coisa.</p>
+                </section>
+
+                <section>
+                  <h4>Exercício de reforço</h4>
+                  <p>Um aplicativo de entregas usa uma consulta documentada para buscar um pedido. Ele envia uma mensagem HTTP e recebe <code>{"pedido": 42, "status": "em rota"}</code>. Qual alternativa identifica corretamente os três conceitos?</p>
+                  <div class="exercise-options">
+                    <label class="completion-control" for="exercise-ia-aula-4-option-a">
+                      <input
+                        class="exercise-answer-input"
+                        id="exercise-ia-aula-4-option-a"
+                        name="exercise-ia-aula-4"
+                        type="radio"
+                        value="a"
+                        data-course-id="desenvolvimento-software-ia"
+                        data-exercise-id="aula-4-exercicio"
+                      />
+                      <span><strong>A.</strong> API é o formato dos dados; HTTP é a consulta disponível; JSON é a regra de comunicação.</span>
+                    </label>
+                    <label class="completion-control" for="exercise-ia-aula-4-option-b">
+                      <input
+                        class="exercise-answer-input"
+                        id="exercise-ia-aula-4-option-b"
+                        name="exercise-ia-aula-4"
+                        type="radio"
+                        value="b"
+                        data-course-id="desenvolvimento-software-ia"
+                        data-exercise-id="aula-4-exercicio"
+                      />
+                      <span><strong>B.</strong> API, HTTP e JSON são três nomes para a mesma parte do sistema.</span>
+                    </label>
+                    <label class="completion-control" for="exercise-ia-aula-4-option-c">
+                      <input
+                        class="exercise-answer-input"
+                        id="exercise-ia-aula-4-option-c"
+                        name="exercise-ia-aula-4"
+                        type="radio"
+                        value="c"
+                        data-course-id="desenvolvimento-software-ia"
+                        data-exercise-id="aula-4-exercicio"
+                      />
+                      <span><strong>C.</strong> A API define a consulta do pedido; HTTP organiza a comunicação; JSON representa os dados recebidos.</span>
+                    </label>
+                  </div>
+                  <p>Sua escolha fica salva, mas não altera a conclusão da aula.</p>
+                </section>
+
+                <section>
+                  <h4>Resposta comentada</h4>
+                  <button
+                    class="answer-toggle"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="exercise-answer-ia-4"
+                  >
+                    Mostrar resposta comentada
+                  </button>
+                  <div class="answer" id="exercise-answer-ia-4" hidden>
+                    <p><strong>A resposta correta é a opção C.</strong></p>
+                    <p>A consulta documentada faz parte da API. O pedido e a resposta seguem HTTP. O texto com os campos <code>pedido</code> e <code>status</code> está em JSON e informa que o pedido 42 está em rota.</p>
+                    <p>O campo <code>status</code> desse JSON descreve a entrega. Ele não é o código de status HTTP, que informa o resultado da comunicação.</p>
+                  </div>
+                </section>
+
+                <section class="lesson-completion">
+                  <h4>Conclusão da aula</h4>
+                  <label class="completion-control" for="completion-ia-aula-4">
+                    <input
+                      class="lesson-completion-input"
+                      id="completion-ia-aula-4"
+                      type="checkbox"
+                      data-course-id="desenvolvimento-software-ia"
+                      data-lesson-id="aula-4"
                     />
                     <span class="completion-label-text">Marcar aula como concluída</span>
                   </label>
